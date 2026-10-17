@@ -69,31 +69,31 @@ const wineColor = computed(() => (stage.value === 'vinegar' ? '#e3bd5c' : '#f6d9
 // ---------- 文案 ----------
 const message = computed(() => {
   if (stage.value === 'wine') {
-    if (dead.value) return '😵 哎呀，太烫了！酵母菌全被烫死了，赶紧把温度调回来。'
-    if (coldSleep.value) return '❄️ 太冷了，小工人们在冬眠。把它们挪到温暖的地方吧！'
-    if (sugarFactor.value === 0) return '🍬 没有糖，小工人们没饭吃。加点糖（或想想：米饭里的糖从哪来？）'
+    if (dead.value) return '😵 哎呀，太烫了（>50°C）！酵母菌酶变性失活被烫死了，快降温！'
+    if (coldSleep.value) return '❄️ 太冷了（<5°C），小工人在休眠。快把它们挪到温暖处～'
+    if (sugarFactor.value === 0) return '🍬 糖量为 0，小工人没饭吃！加点糖（想想：米饭的糖从哪来？）'
     const r = gasRate.value
     if (r < 0.3) return '🐌 偶尔冒个小泡，小工人们慢吞吞的。'
-    if (r < 0.7) return '😊 咕嘟咕嘟～小工人们干劲不错！'
-    return '🔥 哇！气球都快吹飞啦，酵母菌大军干得热火朝天！'
+    if (r < 0.7) return '😊 咕嘟咕嘟～小工人们干劲不错，正在大量产气！'
+    return '🔥 哇！气球鼓得圆溜溜的，酵母菌大军在 30°C 黄金温度下热火朝天！'
   }
-  if (alcohol.value <= 0) return '🤔 坛子里还没有酒！先回「酿酒吧」做出一点酒精，醋酸菌才有饭吃。'
-  if (sealed.value) return '🛑 密封状态：没有氧气，醋酸菌罢工了。（记住：酿醋要敞口！）'
-  if (aceticTempFactor.value === 0) return '🥶 这个温度醋酸菌不喜欢，酸味几乎不增加。'
-  if (vinegar.value >= alcohol.value - 0.01) return '🎉 酒全部变身成功！酸溜溜的老陈醋出炉～'
-  return '✨ 酸味正在变浓，液面浮起一层白膜——那是醋酸菌大军在开工！'
+  if (alcohol.value <= 0) return '🤔 坛子里还没有酒精！先回「酿酒吧」做出酒精，醋酸菌才有口粮。'
+  if (sealed.value) return '🛑 密封状态：缺氧！醋酸菌罢工了。（科学铁律：酿醋必须敞口富氧！）'
+  if (aceticTempFactor.value === 0) return '🥶 这个温度偏离适宜区，醋酸菌氧化酶活力很低。'
+  if (vinegar.value >= alcohol.value - 0.01) return '🎉 酒精已充分氧化！一坛酸香扑鼻的老陈醋出炉～'
+  return '✨ 敞口通风中：酸味逐渐加浓，液面白色醋酸菌膜正在蔓延开工！'
 })
 
 const gasLabel = computed(() => {
   const r = gasRate.value
-  if (dead.value) return '停止'
-  if (r === 0) return '静悄悄'
-  if (r < 0.3) return '偶尔冒泡'
-  if (r < 0.7) return '咕嘟咕嘟'
-  return '咕嘟咕嘟咕嘟！'
+  if (dead.value) return '停止 ❌'
+  if (r === 0) return '静悄悄 💤'
+  if (r < 0.3) return '偶尔冒泡 🫧'
+  if (r < 0.7) return '咕嘟咕嘟 🫧🫧'
+  return '咕嘟咕嘟咕嘟 🚀'
 })
 
-const oxygenLabel = computed(() => (sealed.value ? '被密封 🛑' : '充足 💨'))
+const oxygenLabel = computed(() => (sealed.value ? '被密封缺氧 🛑' : '空气流通富氧 💨'))
 
 const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 </script>
@@ -101,15 +101,15 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 <template>
   <section class="card demo">
     <h2 class="heading">🧪 发酵模拟器：亲手「酿」一次</h2>
-    <p class="sub">拖动滑块做实验：两个阶段是接力的，先把糖酿成酒，再把酒变成醋！</p>
+    <p class="sub">滑动调节或点击快捷档位：两个阶段是接力赛，先把糖酿成酒，再把酒变成醋！</p>
 
     <!-- 阶段切换 -->
     <div class="stages">
       <button class="stage-tab" :class="{ on: stage === 'wine' }" @click="stage = 'wine'">
-        ① 酿酒吧 🍶 <small>酵母菌吃糖</small>
+        ① 酿酒吧 🍶 <small>酵母菌吃糖产酒</small>
       </button>
       <button class="stage-tab" :class="{ on: stage === 'vinegar' }" @click="stage = 'vinegar'">
-        ② 变醋吧 🧴 <small>醋酸菌接班</small>
+        ② 变醋吧 🧴 <small>醋酸菌好氧接班</small>
       </button>
     </div>
 
@@ -158,14 +158,14 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 
       <div class="readouts">
         <template v-if="stage === 'wine'">
-          <span class="readout" :class="{ bad: dead || coldSleep }">🌡️ {{ temp }}°C</span>
-          <span class="readout">🫧 产气：{{ gasLabel }}</span>
-          <span class="readout" :class="{ ok: alcohol > 0.1 }">🍶 酒精 {{ alcohol.toFixed(1) }}°</span>
+          <span class="readout" :class="{ bad: dead || coldSleep }">🌡️ 温度 {{ temp }}°C</span>
+          <span class="readout">🫧 产气速率：{{ gasLabel }}</span>
+          <span class="readout" :class="{ ok: alcohol > 0.1 }">🍶 酒精积累 {{ alcohol.toFixed(1) }}°</span>
         </template>
         <template v-else>
-          <span class="readout" :class="{ bad: sealed }">💨 氧气：{{ oxygenLabel }}</span>
+          <span class="readout" :class="{ bad: sealed }">💨 环境氧气：{{ oxygenLabel }}</span>
           <span class="readout">🍶 剩余酒精 {{ Math.max(0, alcohol - vinegar).toFixed(1) }}°</span>
-          <span class="readout" :class="{ ok: vinegar > 0.1 }">🧴 醋酸 {{ vinegar.toFixed(1) }}°</span>
+          <span class="readout" :class="{ ok: vinegar > 0.1 }">🧴 醋酸转化 {{ vinegar.toFixed(1) }}°</span>
         </template>
       </div>
 
@@ -174,40 +174,102 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 
     <!-- 控制面板 -->
     <div class="controls">
-      <label class="ctrl">
-        <span class="ctrl-name">🌡️ 温度 <em>{{ temp }}°C</em></span>
-        <input v-model.number="temp" type="range" min="0" max="60" step="1" />
-        <span class="ctrl-hint">小工人最喜欢 25~35°C</span>
-      </label>
+      <!-- 温度控制 -->
+      <div class="ctrl">
+        <div class="ctrl-header">
+          <span class="ctrl-name">🌡️ 探究自变量：发酵温度 <em>{{ temp }}°C</em></span>
+          <span class="ctrl-hint">黄金适宜区 25~35°C</span>
+        </div>
+        <div class="slider-row">
+          <button type="button" class="step-btn" title="降低 1°C" @click="temp = Math.max(0, temp - 1)">−</button>
+          <input v-model.number="temp" type="range" min="0" max="60" step="1" aria-label="温度调节" />
+          <button type="button" class="step-btn" title="升高 1°C" @click="temp = Math.min(60, temp + 1)">+</button>
+        </div>
+        <div class="preset-row">
+          <button type="button" class="preset-chip" :class="{ active: temp === 0 }" @click="temp = 0">❄️ 0°C 冬眠</button>
+          <button type="button" class="preset-chip" :class="{ active: temp === 20 }" @click="temp = 20">🌱 20°C 常温</button>
+          <button type="button" class="preset-chip" :class="{ active: temp === 30 }" @click="temp = 30">✨ 30°C 黄金适宜</button>
+          <button type="button" class="preset-chip" :class="{ active: temp === 55 }" @click="temp = 55">🔥 55°C 烫死失活</button>
+        </div>
+      </div>
 
-      <label v-if="stage === 'wine'" class="ctrl">
-        <span class="ctrl-name">🍬 糖量 <em>{{ sugar }} 勺</em></span>
-        <input v-model.number="sugar" type="range" min="0" max="10" step="1" />
-        <span class="ctrl-hint">糖是小工人们的饭</span>
-      </label>
+      <!-- 糖量控制（阶段 1） -->
+      <div v-if="stage === 'wine'" class="ctrl">
+        <div class="ctrl-header">
+          <span class="ctrl-name">🍬 培养碳源：加糖量 <em>{{ sugar }} 勺</em></span>
+          <span class="ctrl-hint">糖是小工人的能量基质</span>
+        </div>
+        <div class="slider-row">
+          <button type="button" class="step-btn" title="减少 1 勺" @click="sugar = Math.max(0, sugar - 1)">−</button>
+          <input v-model.number="sugar" type="range" min="0" max="10" step="1" aria-label="糖量调节" />
+          <button type="button" class="step-btn" title="增加 1 勺" @click="sugar = Math.min(10, sugar + 1)">+</button>
+        </div>
+        <div class="preset-row">
+          <button type="button" class="preset-chip" :class="{ active: sugar === 0 }" @click="sugar = 0">0 勺 没饭吃</button>
+          <button type="button" class="preset-chip" :class="{ active: sugar === 3 }" @click="sugar = 3">3 勺 少量</button>
+          <button type="button" class="preset-chip" :class="{ active: sugar === 5 }" @click="sugar = 5">5 勺 适量</button>
+          <button type="button" class="preset-chip" :class="{ active: sugar === 10 }" @click="sugar = 10">10 勺 甜度爆棚</button>
+        </div>
+      </div>
 
-      <label v-if="stage === 'wine'" class="ctrl">
-        <span class="ctrl-name">⏰ 发酵时间 <em>{{ hours1 }} 小时</em></span>
-        <input v-model.number="hours1" type="range" min="0" max="72" step="1" />
-        <span class="ctrl-hint">时间越长，产出的酒精越多</span>
-      </label>
+      <!-- 发酵时长（阶段 1） -->
+      <div v-if="stage === 'wine'" class="ctrl">
+        <div class="ctrl-header">
+          <span class="ctrl-name">⏰ 发酵时间 <em>{{ hours1 }} 小时</em></span>
+          <span class="ctrl-hint">时间累积酒精与气球膨胀</span>
+        </div>
+        <div class="slider-row">
+          <button type="button" class="step-btn" title="减少 6 小时" @click="hours1 = Math.max(0, hours1 - 6)">−</button>
+          <input v-model.number="hours1" type="range" min="0" max="72" step="1" aria-label="发酵时间调节" />
+          <button type="button" class="step-btn" title="增加 6 小时" @click="hours1 = Math.min(72, hours1 + 6)">+</button>
+        </div>
+        <div class="preset-row">
+          <button type="button" class="preset-chip" :class="{ active: hours1 === 12 }" @click="hours1 = 12">12h 初步起泡</button>
+          <button type="button" class="preset-chip" :class="{ active: hours1 === 24 }" @click="hours1 = 24">24h 产气高峰</button>
+          <button type="button" class="preset-chip" :class="{ active: hours1 === 48 }" @click="hours1 = 48">48h 酒度成熟</button>
+          <button type="button" class="preset-chip" :class="{ active: hours1 === 72 }" @click="hours1 = 72">72h 充分发酵</button>
+        </div>
+      </div>
 
-      <label v-if="stage === 'vinegar'" class="ctrl">
-        <span class="ctrl-name">⏰ 醋化时间 <em>{{ hours2 }} 小时</em></span>
-        <input v-model.number="hours2" type="range" min="0" max="72" step="1" />
-        <span class="ctrl-hint">继承酿酒吧做出的 {{ alcohol.toFixed(1) }}° 酒精</span>
-      </label>
+      <!-- 醋化时长（阶段 2） -->
+      <div v-if="stage === 'vinegar'" class="ctrl">
+        <div class="ctrl-header">
+          <span class="ctrl-name">⏰ 醋化时间 <em>{{ hours2 }} 小时</em></span>
+          <span class="ctrl-hint">继承阶段①产出的 {{ alcohol.toFixed(1) }}° 酒精口粮</span>
+        </div>
+        <div class="slider-row">
+          <button type="button" class="step-btn" title="减少 6 小时" @click="hours2 = Math.max(0, hours2 - 6)">−</button>
+          <input v-model.number="hours2" type="range" min="0" max="72" step="1" aria-label="醋化时间调节" />
+          <button type="button" class="step-btn" title="增加 6 小时" @click="hours2 = Math.min(72, hours2 + 6)">+</button>
+        </div>
+        <div class="preset-row">
+          <button type="button" class="preset-chip" :class="{ active: hours2 === 12 }" @click="hours2 = 12">12h 微酸起膜</button>
+          <button type="button" class="preset-chip" :class="{ active: hours2 === 24 }" @click="hours2 = 24">24h 菌膜增厚</button>
+          <button type="button" class="preset-chip" :class="{ active: hours2 === 48 }" @click="hours2 = 48">48h 酸味浓烈</button>
+          <button type="button" class="preset-chip" :class="{ active: hours2 === 72 }" @click="hours2 = 72">72h 彻底陈化</button>
+        </div>
+      </div>
 
-      <div v-if="stage === 'vinegar'" class="seal-toggle">
-        <span class="ctrl-name">🏺 坛口：</span>
-        <button class="seal-btn" :class="{ on: !sealed }" @click="sealed = false">敞口（透气）</button>
-        <button class="seal-btn" :class="{ on: sealed }" @click="sealed = true">密封</button>
+      <!-- 坛口开关（阶段 2） -->
+      <div v-if="stage === 'vinegar'" class="seal-section">
+        <div class="ctrl-header">
+          <span class="ctrl-name">🏺 核心自变量：坛口氧气状态</span>
+          <span class="ctrl-hint">好氧 vs 厌氧分界点</span>
+        </div>
+        <div class="seal-toggle">
+          <button type="button" class="seal-btn" :class="{ on: !sealed }" @click="sealed = false">
+            🍃 敞口通气（富氧，醋酸菌开工）
+          </button>
+          <button type="button" class="seal-btn" :class="{ on: sealed }" @click="sealed = true">
+            🛑 严密加盖（缺氧，醋酸菌罢工）
+          </button>
+        </div>
       </div>
     </div>
 
     <div class="tips">
-      <strong>🔬 试试看：</strong>
-      把温度拉到 55°C 会发生什么？把糖减到 0 呢？切到「变醋吧」，先选密封、再选敞口，读数有什么不同？
+      <strong>🔬 科学对照探究：</strong>
+      ① 点击「🔥 55°C」看看气球为什么立刻瘪掉？② 把糖量减到 0，观察没有原料时会产酒吗？③ 切到「变醋吧」，在有酒精的前提下，点击「🛑 严密加盖」，观察醋酸菌读数是否立刻停止变化？体验「酿酒密封、酿醋敞口」的生化本质！
     </div>
   </section>
 </template>
@@ -216,6 +278,7 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 .demo {
   padding: 26px 28px;
   background: linear-gradient(160deg, #fff 0%, #fff4e4 100%);
+  user-select: none;
 }
 
 .heading {
@@ -231,11 +294,12 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 .stages {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 18px;
 }
 
 .stage-tab {
+  min-height: 56px;
   padding: 12px 10px;
   border-radius: 14px;
   border: 2px solid var(--line);
@@ -244,9 +308,12 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
   font-size: 15px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   align-items: center;
-  transition: all 0.15s;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .stage-tab small {
@@ -255,10 +322,15 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
   color: var(--ink-faint);
 }
 
+.stage-tab:active {
+  transform: scale(0.98);
+}
+
 .stage-tab.on {
   border-color: var(--brand);
   background: var(--brand-soft);
   color: var(--brand-deep);
+  box-shadow: 0 4px 14px rgba(239, 108, 26, 0.12);
 }
 
 .stage-tab.on small {
@@ -277,7 +349,7 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 }
 
 .balloon {
-  transition: transform 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .bub {
@@ -300,9 +372,9 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 .worker {
   position: absolute;
   top: -170px;
-  font-size: 21px;
+  font-size: 22px;
   animation: floaty ease-in-out infinite;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 @keyframes floaty {
@@ -319,21 +391,24 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
 }
 
 .readout {
-  padding: 5px 12px;
+  padding: 6px 13px;
   border-radius: 999px;
   background: #fff;
   border: 2px solid var(--line);
   font-weight: 700;
   font-size: 13.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .readout.ok {
   border-color: #bfe6cc;
+  background: var(--ok-soft);
   color: var(--ok);
 }
 
 .readout.bad {
   border-color: #f3c1c3;
+  background: var(--danger-soft);
   color: var(--danger);
 }
 
@@ -343,51 +418,55 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
   font-weight: 700;
   font-size: 15px;
   background: #fff;
-  border-radius: 12px;
-  padding: 10px 16px;
+  border-radius: 14px;
+  padding: 11px 18px;
   box-shadow: var(--shadow);
-  max-width: 460px;
+  max-width: 520px;
+  line-height: 1.5;
+  border: 1px solid var(--line);
 }
 
 .message.warn {
   background: var(--danger-soft);
+  border-color: #f6c8c9;
+  color: var(--danger);
 }
 
 .controls {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   background: #fff;
-  border-radius: 16px;
-  padding: 16px 18px;
+  border-radius: 18px;
+  padding: 18px 20px;
   box-shadow: var(--shadow);
 }
 
 .ctrl {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ctrl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .ctrl-name {
-  display: flex;
-  justify-content: space-between;
   font-weight: 700;
   font-size: 14.5px;
-  margin-bottom: 4px;
+  color: var(--ink);
 }
 
 .ctrl-name em {
   font-style: normal;
   color: var(--brand-deep);
-}
-
-.ctrl input[type='range'] {
-  width: 100%;
-  accent-color: var(--brand);
-  height: 26px;
-  padding: 0;
-  border: none;
-  background: transparent;
+  font-weight: 800;
 }
 
 .ctrl-hint {
@@ -395,43 +474,183 @@ const workerEmojis = computed(() => (stage.value === 'wine' ? '🍄' : '🦠'))
   color: var(--ink-faint);
 }
 
-.seal-toggle {
+.slider-row {
   display: flex;
   align-items: center;
+  gap: 10px;
+  touch-action: pan-y;
+}
+
+.step-btn {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: #faf6f0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: transform 0.1s, background 0.15s, border-color 0.15s;
+}
+
+.step-btn:hover {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+}
+
+.step-btn:active {
+  transform: scale(0.92);
+  background: var(--brand);
+  color: #fff;
+}
+
+.ctrl input[type='range'] {
+  flex: 1;
+  width: 100%;
+  accent-color: var(--brand);
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+.ctrl input[type='range']::-webkit-slider-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--brand);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  cursor: grab;
+}
+
+.ctrl input[type='range']::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.15);
+}
+
+.ctrl input[type='range']::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--brand);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  cursor: grab;
+}
+
+.preset-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.preset-chip {
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #f7efe4;
+  border: 1px solid transparent;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: all 0.15s ease;
+}
+
+.preset-chip:hover {
+  background: #ede1d3;
+  color: var(--ink);
+}
+
+.preset-chip:active {
+  transform: scale(0.95);
+}
+
+.preset-chip.active {
+  background: var(--brand-soft);
+  border-color: var(--brand);
+  color: var(--brand-deep);
+  font-weight: 800;
+}
+
+.seal-section {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
+.seal-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .seal-btn {
-  padding: 8px 16px;
-  border-radius: 999px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 12px;
   border: 2px solid var(--line);
-  background: #fff;
+  background: #faf6f0;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.seal-btn:active {
+  transform: scale(0.98);
 }
 
 .seal-btn.on {
   border-color: var(--brand);
   background: var(--brand-soft);
   color: var(--brand-deep);
+  box-shadow: 0 2px 8px rgba(239, 108, 26, 0.12);
 }
 
 .tips {
   margin-top: 16px;
   font-size: 13.5px;
   color: var(--ink-soft);
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 12px;
-  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 14px;
+  padding: 12px 16px;
   line-height: 1.7;
+  border: 1px dashed var(--line);
 }
 
 @media (max-width: 560px) {
   .demo {
-    padding: 20px 16px;
+    padding: 20px 14px;
   }
   .scene {
     width: 170px;
+  }
+  .seal-toggle {
+    grid-template-columns: 1fr;
+  }
+  .ctrl-header {
+    flex-direction: column;
+    gap: 2px;
   }
 }
 </style>

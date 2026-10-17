@@ -101,7 +101,7 @@ function finish() {
 }
 
 .scroll-bar {
-  position: fixed;
+  position: sticky;
   top: 60px;
   left: 0;
   height: 4px;
