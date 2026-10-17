@@ -14,17 +14,40 @@
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "name": { "type": "string" },
+          "en": { "type": "string" },
+          "ipa": { "type": "string" },
           "emoji": { "type": "string" },
           "domain": { "enum": ["life", "matter", "earth", "space", "tech"] },
           "summary": { "type": "string", "minLength": 5 },
+          "summaryEn": { "type": "string" },
           "explain": {
             "type": "object",
             "required": ["basic", "advanced"],
             "additionalProperties": false,
             "properties": { "basic": { "type": "string" }, "advanced": { "type": "string" } }
           },
+          "explainEn": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": { "basic": { "type": "string" }, "advanced": { "type": "string" } }
+          },
           "relatedIds": { "type": "array", "items": { "type": "string" } },
-          "issueIds": { "type": "array", "items": { "type": "string" } }
+          "issueIds": { "type": "array", "items": { "type": "string" } },
+          "bridges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["target", "badge", "title", "desc", "url"],
+              "additionalProperties": false,
+              "properties": {
+                "target": { "enum": ["minimax", "sky", "pre", "zperiod"] },
+                "badge": { "type": "string" },
+                "title": { "type": "string" },
+                "desc": { "type": "string" },
+                "url": { "type": "string" }
+              }
+            }
+          }
         }
       }
     }

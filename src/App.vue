@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
 import VocabPopup from './components/VocabPopup.vue'
+import HoverPopover from './components/HoverPopover.vue'
+import SelectionSearch from './components/SelectionSearch.vue'
 </script>
 
 <template>
@@ -18,7 +20,15 @@ import VocabPopup from './components/VocabPopup.vue'
       <RouterLink to="/parent" class="parent-link">家长入口</RouterLink>
     </div>
   </footer>
+
+  <!-- 1. 全局词条弹窗（移动端与点击深度展开） -->
   <VocabPopup />
+
+  <!-- 2. 桌面端轻量鼠标悬停浮层（Hover Popover + 读音） -->
+  <HoverPopover />
+
+  <!-- 3. 全局智能划词探秘搜索（Selection Search + 兄弟站实操跃迁） -->
+  <SelectionSearch />
 </template>
 
 <style scoped>

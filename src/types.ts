@@ -49,15 +49,28 @@ export interface Issue {
   blocks: Block[]
 }
 
+export interface BridgingCapsule {
+  target: 'minimax' | 'sky' | 'pre' | 'zperiod'
+  badge: string
+  title: string
+  desc: string
+  url: string
+}
+
 export interface KnowledgePoint {
   id: string
   name: string
+  en?: string
+  ipa?: string
   emoji: string
   domain: DomainId
   summary: string
+  summaryEn?: string
   explain: { basic: string; advanced: string }
+  explainEn?: { basic: string; advanced: string }
   relatedIds: string[]
   issueIds: string[]
+  bridges?: BridgingCapsule[]
 }
 
 export interface KidProfile {

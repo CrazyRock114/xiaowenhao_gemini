@@ -3,145 +3,363 @@
     {
       "id": "fermentation",
       "name": "发酵",
+      "en": "Fermentation",
+      "ipa": "/ˌfɜːrmenˈteɪʃn/",
       "emoji": "🫧",
       "domain": "life",
       "summary": "微生物帮忙分解食物、产生新物质的过程。",
+      "summaryEn": "The metabolic process where microorganisms break down organic substances into new products like alcohol, acid, or gas.",
       "explain": {
         "basic": "微生物小工人吃掉食物里的一种东西，「吐」出另一种新东西的过程，就叫做发酵。比如把糖变成酒、把牛奶变成酸奶、把面团变蓬松。泡菜、馒头、面包、酱油和醋的背后，都是发酵小工人在默默劳作。",
         "advanced": "在微生物（或其分泌的胞内/胞外酶）催化下，有机物（碳水化合物等）被分解转化并释放能量的生物化学过程。分为厌氧发酵（如酒精发酵、乳酸发酵）和需氧发酵（如醋酸发酵）。人类已有数千年发酵食品历史，微观本质直到巴斯德证实微生物作用后才被揭开。"
       },
+      "explainEn": {
+        "basic": "Tiny microscopic helpers eat up one substance in food and produce a brand new substance! That's how bread becomes fluffy and rice turns into sweet rice wine.",
+        "advanced": "An enzymatic biochemical process where microorganisms metabolize carbohydrates anaerobically or aerobically to extract ATP energy without a complete respiratory electron transport chain."
+      },
       "relatedIds": ["microorganism", "yeast", "acetobacter", "sterilization", "gluten-network", "gas-trapping"],
-      "issueIds": ["issue-001", "issue-002"]
+      "issueIds": ["issue-001", "issue-002"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 母舰核心实验",
+          "title": "剑桥 0610 酶与发酵反应器实操",
+          "desc": "亲手调节温度与底物，观察气体释放速率与能量代谢",
+          "url": "https://www.igcse.xyz/practical"
+        },
+        {
+          "target": "sky",
+          "badge": "🎯 G8 单词冲关",
+          "title": "G8 Unit 5 发酵与微生物核心词速记",
+          "desc": "60秒限时拼写挑战与真题演练",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "microorganism",
       "name": "微生物",
+      "en": "Microorganism",
+      "ipa": "/ˌmaɪkroʊˈɔːrɡənɪzəm/",
       "emoji": "🔬",
       "domain": "life",
       "summary": "眼睛看不见的微小生命：细菌、酵母菌、霉菌等。",
+      "summaryEn": "Microscopic living organisms invisible to the naked eye, including bacteria, fungi, and viruses.",
       "explain": {
         "basic": "个子特别微小、必须借助显微镜才能看清的小生命。它们无处不在：空气中、土壤里、皮肤表面甚至肠道中。有些致病菌会让我们生病，但绝大多数是生态卫士和厨房帮手：帮我们酿醋、做面包、使枯枝落叶降解为大地的养分。",
         "advanced": "个体微小、结构简单的单细胞或多细胞微小生物统称，涵盖原核生物（如细菌、醋酸菌）、真核生物（如酵母菌、霉菌）及非细胞生物（病毒）。它们比表面积大、代谢速率极高、繁殖迅速，是地球生物圈碳氮物质循环与工业生物制造的核心中枢。"
       },
+      "explainEn": {
+        "basic": "Incredible microscopic creatures you can only see through a microscope. They live everywhere and help us bake bread, make cheese, and recycle fallen leaves!",
+        "advanced": "Diverse microscopic cellular or acellular entities with massive surface-area-to-volume ratios, driving global biogeochemical nutrient cycles."
+      },
       "relatedIds": ["yeast", "acetobacter", "fermentation"],
-      "issueIds": ["issue-001", "issue-002"]
+      "issueIds": ["issue-001", "issue-002"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧫 母舰虚拟显微镜",
+          "title": "剑桥 0610 显微切片观测工坊",
+          "desc": "放大 400 倍观察细菌、真菌酵母菌细胞结构",
+          "url": "https://www.igcse.xyz/practical"
+        },
+        {
+          "target": "pre",
+          "badge": "🌱 小学自然启蒙",
+          "title": "植物与微观生命奇幻积木",
+          "desc": "探索微观厨房与细胞壁城堡",
+          "url": "https://pre.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "yeast",
       "name": "酵母菌",
+      "en": "Yeast",
+      "ipa": "/jiːst/",
       "emoji": "🍄",
       "domain": "life",
       "summary": "一种爱吃糖的单细胞真菌，无氧时把糖分解为酒精和二氧化碳。",
+      "summaryEn": "A single-celled fungus that converts sugar into ethanol and carbon dioxide under anaerobic conditions.",
       "explain": {
         "basic": "圆圆胖胖的单细胞小真菌，最喜欢吃糖。在没有氧气的温暖密闭环境里，它大口吃糖，「呼」出酒精和二氧化碳气泡——酿酒、做米酒靠它，蒸馒头和烤面包让面团蓬松鼓起的也是它！",
         "advanced": "兼性厌氧（Facultative Anaerobic）单细胞真核微生物，属于真菌界。在有氧环境下进行高效有氧呼吸迅速繁殖；在缺氧条件下启动酒精发酵（C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂）。最适发酵温度在 25~35°C 之间，高于 50°C 时蛋白质变性失活死亡。"
       },
+      "explainEn": {
+        "basic": "A cute, single-celled fungus with a huge sweet tooth! In warm dough, it eats sugar and exhales carbon dioxide bubbles to make bread rise.",
+        "advanced": "A facultative anaerobic eukaryotic unicellular fungus (commonly Saccharomyces cerevisiae) that switches from aerobic respiration to alcoholic fermentation when oxygen is depleted."
+      },
       "relatedIds": ["microorganism", "alcohol-fermentation", "gluten-network", "gas-trapping"],
-      "issueIds": ["issue-001", "issue-002"]
+      "issueIds": ["issue-001", "issue-002"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 官方课时",
+          "title": "Chapter 12: 无氧呼吸与工业酿造",
+          "desc": "探索酵母在厌氧与好氧条件下的巴斯德效应",
+          "url": "https://www.igcse.xyz"
+        },
+        {
+          "target": "sky",
+          "badge": "🎯 G8 真题大练兵",
+          "title": "G8 酵母发酵条件对比探究训练",
+          "desc": "掌握温度自变量控制与实验变量设计",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "acetobacter",
       "name": "醋酸菌",
+      "en": "Acetobacter",
+      "ipa": "/əˌsiːtoʊˈbæktər/",
       "emoji": "🦠",
       "domain": "life",
       "summary": "必须有氧气、专门把酒精氧化成醋酸的好氧细菌。",
+      "summaryEn": "Strictly aerobic bacteria that oxidize ethanol into acetic acid (vinegar) in the presence of oxygen.",
       "explain": {
         "basic": "一种必须呼吸新鲜空气才能干活的细菌小工人。它不爱吃糖，专门「吃」酒精，把酒精变成酸溜溜的醋酸——这是酿醋的大功臣。所以米酒开盖敞开放着，才容易慢慢变酸。",
         "advanced": "严格好氧（Obligate Aerobic）革兰氏阴性杆菌（醋酸杆菌属 Acetobacter 等）。利用细胞膜上的呼吸链酶系，将乙醇经由乙醛两步氧化为乙酸（C₂H₅OH + O₂ → CH₃COOH + H₂O）获取能量。发酵过程中在液体表面聚集形成的半透明凝胶膜即为菌膜。"
       },
+      "explainEn": {
+        "basic": "Hardworking bacteria that need plenty of fresh air. They love turning wine alcohol into tangy, delicious vinegar!",
+        "advanced": "Obligate aerobic Gram-negative rod bacteria utilizing membrane-bound dehydrogenases to oxidize ethanol directly into acetic acid and water."
+      },
       "relatedIds": ["microorganism", "acetic-fermentation"],
-      "issueIds": ["issue-001"]
+      "issueIds": ["issue-001"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧪 0620 化学氧化",
+          "title": "乙醇催化氧化为乙酸全流程",
+          "desc": "好氧生物氧化与工业深层通风发酵罐原理",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "saccharification",
       "name": "糖化",
+      "en": "Saccharification",
+      "ipa": "/səˌkærɪfɪˈkeɪʃn/",
       "emoji": "🍬",
       "domain": "matter",
       "summary": "淀粉大分子被酶「剪短」成可溶性小分子糖的过程。",
+      "summaryEn": "The enzymatic hydrolysis of long starch polymer chains into fermentable small sugars like maltose and glucose.",
       "explain": {
         "basic": "米饭和面粉里的淀粉，像是一长串成千上万颗糖珠手拉手穿成的项链。酒曲里的霉菌分泌出「小剪刀」（淀粉酶），把项链剪成一颗颗单粒的小糖，舌头就能尝到甜味了，这是酿造的第一步。",
         "advanced": "大分子多糖淀粉 (C₆H₁₀O₅)ₙ 在淀粉酶（如 α-淀粉酶、β-淀粉酶、葡糖淀粉酶）催化下水解断开糖苷键，逐步降解为糊精、二糖（麦芽糖 C₁₂H₂₂O₁₁）和单糖（葡萄糖 C₆H₁₂O₆）的过程。淀粉质原料必须经过糖化，后续酵母菌才有可发酵性碳源。"
       },
+      "explainEn": {
+        "basic": "Starch is like a giant pearl necklace made of sugars. Special enzymes act like microscopic scissors to snip it into tiny sweet sugars!",
+        "advanced": "The enzymatic cleavage of glycosidic bonds in starch polymers by amylases, converting insoluble polysaccharide into maltose and glucose."
+      },
       "relatedIds": ["alcohol-fermentation"],
-      "issueIds": ["issue-001"]
+      "issueIds": ["issue-001"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 营养检测台",
+          "title": "淀粉酶催化水解与碘液变色实验",
+          "desc": "试管滴管亲手操作：遇碘蓝黑，水解后褪色成糖",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
     },
     {
       "id": "alcohol-fermentation",
       "name": "酒精发酵",
+      "en": "Alcohol Fermentation",
+      "ipa": "/ˈælkəhɔːl ˌfɜːrmenˈteɪʃn/",
       "emoji": "🍶",
       "domain": "life",
       "summary": "酵母菌在无氧环境下把糖分解为乙醇和二氧化碳的生化反应。",
+      "summaryEn": "Anaerobic biological pathway where glucose is converted into cellular energy, producing ethanol and CO₂.",
       "explain": {
         "basic": "酵母菌在没有氧气的密封坛子里「憋气干活」，把甜甜的糖分解成香喷喷的酒精和扑哧扑哧冒出的二氧化碳气泡。米酒的香气和坛子里的气压都来自于它。",
         "advanced": "在无氧条件下，酵母菌通过糖酵解途径将葡萄糖降解为丙酮酸，再经丙酮酸脱羧酶和乙醇脱氢酶催化生成乙醇和二氧化碳：C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + 2ATP。这是微生物在无外源电子受体（缺氧）时再生产 NAD⁺ 的厌氧代谢机制。"
       },
+      "explainEn": {
+        "basic": "Yeast works silently without oxygen inside sealed jars, converting sweet glucose into fragrant ethanol and fizzy carbon dioxide bubbles.",
+        "advanced": "Anaerobic pathway regenerating NAD⁺ via pyruvate decarboxylation and alcohol dehydrogenase reduction: C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + 2ATP."
+      },
       "relatedIds": ["yeast", "saccharification", "acetic-fermentation"],
-      "issueIds": ["issue-001"]
+      "issueIds": ["issue-001"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 生物课时",
+          "title": "无氧呼吸产物与 ATP 能量产额推导",
+          "desc": "从糖酵解到乙醇脱羧生成 CO₂ 能量代偿",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "acetic-fermentation",
       "name": "醋酸发酵",
+      "en": "Acetic Acid Fermentation",
+      "ipa": "/əˌsiːtɪk ˈæsɪd ˌfɜːrmenˈteɪʃn/",
       "emoji": "🧴",
       "domain": "life",
       "summary": "醋酸菌在有氧条件下把乙醇氧化为乙酸的过程。",
+      "summaryEn": "The aerobic biological oxidation of ethanol into acetic acid (vinegar) by Acetobacter bacteria.",
       "explain": {
         "basic": "醋酸菌在敞开口、空气流通的地方，把酒精和空气里的氧气结合，变成酸味十足的醋酸。这是酿醋的关键一步，也是酒放久了变酸的科学秘密。",
         "advanced": "好氧生物氧化过程：乙醇脱氢转化为乙醛，再水化脱氢生成乙酸：C₂H₅OH + O₂ → CH₃COOH + H₂O。反应每氧化 1 摩尔乙醇消耗 1 摩尔氧气，释放约 493 kJ 自由能。因此酿醋工业采用转鼓、深层通风或多层敞口淋浇，保持高溶氧量以确保发酵效率。"
       },
+      "explainEn": {
+        "basic": "Acetobacter combines alcohol with atmospheric oxygen in open containers to make sour, delicious vinegar.",
+        "advanced": "Bio-oxidation of ethanol to acetic acid: C₂H₅OH + O₂ → CH₃COOH + H₂O, yielding approx. 493 kJ/mol of free energy."
+      },
       "relatedIds": ["acetobacter", "alcohol-fermentation"],
-      "issueIds": ["issue-001"]
+      "issueIds": ["issue-001"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧪 0620 化学工坊",
+          "title": "有机酸生成与 pH 值监测实验",
+          "desc": "测定食醋酸度与酸碱滴定曲线",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
     },
     {
       "id": "sterilization",
       "name": "灭菌",
+      "en": "Sterilization",
+      "ipa": "/ˌsterələˈzeɪʃn/",
       "emoji": "🌡️",
       "domain": "tech",
       "summary": "用高温物理手段杀灭杂菌，确保目标菌种专一健康工作。",
+      "summaryEn": "Thermal or physical elimination of unwanted microbial contaminants to guarantee pure culture fermentation.",
       "explain": {
         "basic": "用滚烫的开水烫容器、蒸煮糯米，把偷偷潜伏的杂菌坏蛋通通消灭。这样我们请来的酵母菌小工人才能在干净的大房子里安心干活，不会被坏菌抢走食物。",
         "advanced": "通过高温（如沸水煮沸、巴氏杀菌 65~85°C 或高压蒸汽）破坏微生物体内的蛋白质结构和细胞膜系统，彻底杀死可能引起腐败发酸的有害杂菌。酿醋成品的加热灭菌还能灭活残存菌体和酶，使酸度与风味长期稳定保存。"
       },
+      "explainEn": {
+        "basic": "Scalding containers with boiling water wipes out rogue wild bacteria so our friendly yeast helpers can thrive in a squeaky clean environment.",
+        "advanced": "Destruction of microbial vegetative cells and spores via protein denaturation and membrane disruption using heat sterilization or pasteurization."
+      },
       "relatedIds": ["fermentation"],
-      "issueIds": ["issue-001"]
+      "issueIds": ["issue-001"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧫 0610 实验技能",
+          "title": "无菌操作与巴氏消毒法实验",
+          "desc": "高温对细菌蛋白质变性与杂菌阻断实验",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
     },
     {
       "id": "gluten-network",
       "name": "面筋网络",
+      "en": "Gluten Network",
+      "ipa": "/ˈɡluːtn ˈnetwɜːrk/",
       "emoji": "🕸️",
       "domain": "matter",
       "summary": "面粉里的麦谷蛋白和醇溶蛋白加水揉搓后形成的弹性网状结构，专门用来兜住气泡。",
+      "summaryEn": "A resilient, viscoelastic 3D matrix formed by cross-linked glutenin and gliadin proteins that traps gas in dough.",
       "explain": {
         "basic": "面粉加水用力揉一揉，里面的蛋白质就像无数根弹性小皮筋紧紧咬合在一起，织成一张能够兜住空气的「充气城堡网」。揉出薄薄透光的「手套膜」，就说明结实的面筋网络织好啦！",
         "advanced": "小麦面粉中的麦谷蛋白（Glutenin，赋予面团弹性与韧性）与醇溶蛋白（Gliadin，赋予延展性与黏性）在加水水合与机械揉捏作用下，分子间通过半胱氨酸的二硫键（-S-S-）发生交联，形成连续的三维网状蛋白质凝胶骨架。该弹性网络在烘焙受热膨胀时不破裂，是面包能够形成高耸蓬松海绵结构的力学基础。"
       },
+      "explainEn": {
+        "basic": "When wheat flour meets water and kneads, proteins link like tiny elastic bands into an invisible balloon skin that locks in bubbles!",
+        "advanced": "A viscoelastic 3D hydrogel network formed when glutenin (elasticity) and gliadin (extensibility) form intermolecular disulfide cross-links (-S-S-)."
+      },
       "relatedIds": ["gas-trapping", "yeast", "fermentation"],
-      "issueIds": ["issue-002"]
+      "issueIds": ["issue-002"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 生化检测",
+          "title": "双缩脲试剂检验纯面筋蛋白质",
+          "desc": "滴加双缩脲试剂呈现高亮紫色反应",
+          "url": "https://www.igcse.xyz/practical"
+        },
+        {
+          "target": "sky",
+          "badge": "🎯 G8 词汇大练兵",
+          "title": "蛋白质与水合交联核心词汇",
+          "desc": "初中科学食物成分与人体生理题库",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "leavening-agent",
       "name": "膨松剂",
+      "en": "Leavening Agent",
+      "ipa": "/ˈlevnɪŋ ˈeɪdʒənt/",
       "emoji": "🧁",
       "domain": "matter",
       "summary": "利用化学酸碱反应瞬间产生二氧化碳气体让面糊快速鼓起的物质，如小苏打和泡打粉。",
+      "summaryEn": "Substances (like baking powder and baking soda) that rapidly release carbon dioxide gas to expand dough or batter.",
       "explain": {
         "basic": "做松饼和蛋糕时用的白色神奇小粉末（像小苏打、泡打粉）。它们一遇到水或者受热，就会「哧哧」快速释放出成千上万个二氧化碳小气泡。不用像酵母菌那样慢慢等上几个小时，几分钟就能让点心蓬松松软！",
         "advanced": "用于烘焙食品中促进体积膨胀的多孔质形成剂。化学膨松剂通常包含碱性剂（碳酸氢钠 NaHCO₃，小苏打）与酸性盐（如酸性焦磷酸钠、酒石酸氢钾）。加热或水化时发生中和反应：NaHCO₃ + H⁺ → Na⁺ + H₂O + CO₂↑。与酵母生物发酵相比，化学膨松速度极快（瞬时或热促），不产生醇类风味物质，主要用于面筋含量较低、不宜过度揉面的蛋糕、饼干和松饼中。"
       },
+      "explainEn": {
+        "basic": "White powders like baking powder that instantly fizz out millions of carbon dioxide bubbles when heated or mixed with water!",
+        "advanced": "Chemical leaveners like sodium hydrogencarbonate (NaHCO₃) undergoing acid-base neutralization to release gas: NaHCO₃ + H⁺ → Na⁺ + H₂O + CO₂↑."
+      },
       "relatedIds": ["gas-trapping", "fermentation"],
-      "issueIds": ["issue-002"]
+      "issueIds": ["issue-002"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧪 0620 酸碱反应台",
+          "title": "碳酸氢钠与稀酸反应速率模拟",
+          "desc": "气体注射器实时记录 CO₂ 收集体积曲线",
+          "url": "https://www.igcse.xyz/practical"
+        },
+        {
+          "target": "zperiod",
+          "badge": "🧪 3D 周期表微观",
+          "title": "碳 (C)、钠 (Na)、氧 (O) 元素结构",
+          "desc": "观察碳酸氢根化学键与电子排布",
+          "url": "https://zperiod.igcse.xyz"
+        }
+      ]
     },
     {
       "id": "gas-trapping",
       "name": "气体捕获",
+      "en": "Gas Trapping",
+      "ipa": "/ɡæs ˈtræpɪŋ/",
       "emoji": "🎈",
       "domain": "matter",
       "summary": "气体被弹性微孔结构拦截兜截，并在受热膨胀与固化中定型为多孔海绵蜂窝。",
+      "summaryEn": "The entrapment and thermal expansion of gas bubbles in a viscoelastic matrix followed by starch-protein thermosetting.",
       "explain": {
         "basic": "酵母吹出的小气泡被弹弹的面筋网死死兜住，跑也跑不掉。放进烤箱一烤，热气让气泡像热气球一样拼命胀大，同时周围的面粉被烤熟固定成型，切开面包就看到了一个个奇妙的蜂窝小气孔！",
         "advanced": "气相截留与热定型机制（Charles's Law & Heat Fixation）。发酵产生的 CO₂ 与水蒸气分散溶解在水相中，随着烤箱温度攀升至 50~60°C，气体热膨胀并在面筋基质中成核聚集；温度升至 60~85°C 时，淀粉吸水糊化（Gelatinization），面筋蛋白质受热变性凝固，由黏弹性连续膜转化为多孔刚性海绵状多孔固态网络，使面包冷却后保持蜂窝孔隙而不塌陷。"
       },
+      "explainEn": {
+        "basic": "Bubbles trapped inside the stretchy gluten network expand furiously in the hot oven, while baking sets the sponge walls permanently in place!",
+        "advanced": "Entrapment of gas bubbles under Charles's Law thermal expansion, solidified as starch gelatinizes and proteins denature between 60~85°C."
+      },
       "relatedIds": ["gluten-network", "leavening-agent", "yeast"],
-      "issueIds": ["issue-002"]
+      "issueIds": ["issue-002"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "⚛️ 0625 热物理",
+          "title": "气体热膨胀与查理定律动态模拟",
+          "desc": "观察分子撞击壁面与气孔体积增大过程",
+          "url": "https://www.igcse.xyz"
+        },
+        {
+          "target": "pre",
+          "badge": "🌱 小学自然启蒙",
+          "title": "微观气孔与植物气体交换",
+          "desc": "看保卫细胞控制气孔开闭",
+          "url": "https://pre.igcse.xyz/plants/"
+        }
+      ]
     }
   ]
 }

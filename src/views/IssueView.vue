@@ -7,6 +7,7 @@ import { blockComponents } from '../blocks'
 import BlockHero from '../blocks/BlockHero.vue'
 import BlockOpenQuestion from '../blocks/BlockOpenQuestion.vue'
 import CompletionModal from '../components/CompletionModal.vue'
+import EcosystemBridge from '../components/EcosystemBridge.vue'
 
 const route = useRoute()
 const kids = useKidsStore()
@@ -59,6 +60,9 @@ function finish() {
         />
         <div v-if="i === 0" class="hero-gap" />
       </template>
+
+      <!-- 走出小问号，穿梭全域科学宇宙传送门 -->
+      <EcosystemBridge :issue-id="issue.id" />
 
       <!-- 结业区 -->
       <section class="finish card">
