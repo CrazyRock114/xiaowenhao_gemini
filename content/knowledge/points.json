@@ -1,0 +1,108 @@
+{
+  "points": [
+    {
+      "id": "fermentation",
+      "name": "发酵",
+      "emoji": "🫧",
+      "domain": "life",
+      "summary": "微生物帮忙分解食物、产生新物质的过程。",
+      "explain": {
+        "basic": "微生物小工人吃掉食物里的一种东西，「吐」出另一种东西的过程，就叫做发酵。比如把糖变成酒、把牛奶变成酸奶。泡菜、馒头、酱油里都发生了发酵。",
+        "advanced": "在微生物（或它们分泌的酶）的作用下，有机物被分解转化，生成酒精、乳酸、醋酸等新物质的过程。人类利用发酵制作食品已有几千年历史，但直到显微镜发明后才看清这些「小工人」。"
+      },
+      "relatedIds": ["microorganism", "sterilization"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "microorganism",
+      "name": "微生物",
+      "emoji": "🔬",
+      "domain": "life",
+      "summary": "眼睛看不见的微小生命：细菌、酵母菌、霉菌等。",
+      "explain": {
+        "basic": "个子特别特别小、要用显微镜才能看清的小生命。它们无处不在：空气里、皮肤上、土壤里。有的会让我们生病，但更多的在默默帮忙：做面包、酿醋、让落叶变成肥料。",
+        "advanced": "细菌、真菌（酵母菌、霉菌）、病毒等微小生物的统称。它们数量庞大、代谢方式多样，是地球上物质循环的主力军。一克土壤里可能住着几亿个微生物。"
+      },
+      "relatedIds": ["yeast", "acetobacter", "fermentation"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "yeast",
+      "name": "酵母菌",
+      "emoji": "🍄",
+      "domain": "life",
+      "summary": "一种爱吃糖的真菌，会把糖变成酒精和二氧化碳。",
+      "explain": {
+        "basic": "圆圆的小真菌，最喜欢吃糖。它吃下糖，「呼」出酒精和二氧化碳气泡——酿酒靠它，蒸馒头让它蓬松的也是它。它喜欢在温暖、密封（没有氧气）的地方干活。",
+        "advanced": "单细胞真菌，最常见的是酿酒酵母。在无氧条件下进行酒精发酵：葡萄糖 → 乙醇 + 二氧化碳；在有氧条件下则进行有氧呼吸，快速繁殖。温度 25~35°C 时最活跃，超过 50°C 会被烫死。"
+      },
+      "relatedIds": ["microorganism", "alcohol-fermentation"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "acetobacter",
+      "name": "醋酸菌",
+      "emoji": "🦠",
+      "domain": "life",
+      "summary": "必须有氧气、专门把酒精变成醋酸的细菌。",
+      "explain": {
+        "basic": "一种必须有新鲜空气才能干活的细菌。它不吃糖，专门「吃」酒精，把酒精变成酸酸的醋酸——酿醋的大功臣。所以酒敞开放着，才容易变酸。",
+        "advanced": "好氧化能细菌（常见醋酸杆菌属），把乙醇氧化为乙酸来获取能量：乙醇 + 氧气 → 醋酸 + 水。酿醋厂会让酒液充分接触空气，醋酸菌才能高效工作；液面上那层白膜就是醋酸菌聚集形成的。"
+      },
+      "relatedIds": ["microorganism", "acetic-fermentation"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "saccharification",
+      "name": "糖化",
+      "emoji": "🍬",
+      "domain": "matter",
+      "summary": "淀粉被酶「剪」成小分子糖的过程。",
+      "explain": {
+        "basic": "米、面里的淀粉，是很多糖手拉手连成的长链条。曲里的霉菌会分泌「小剪刀」（酶），把长链剪成一粒一粒的小糖，我们就尝到甜味了。这是酿造的第一步。",
+        "advanced": "淀粉酶将淀粉长链水解为麦芽糖、葡萄糖等可发酵性糖的过程。淀粉原料必须先糖化，酵母菌才有糖可吃——所以糖化是酿酒工序的起点，传统工艺靠曲霉，现代工艺也用麦芽。"
+      },
+      "relatedIds": ["alcohol-fermentation"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "alcohol-fermentation",
+      "name": "酒精发酵",
+      "emoji": "🍶",
+      "domain": "life",
+      "summary": "酵母菌在无氧环境下把糖变成酒精和二氧化碳。",
+      "explain": {
+        "basic": "酵母菌在没有氧气的密封坛子里，把糖变成酒精和二氧化碳气泡的过程。酿酒的核心步骤就是它。",
+        "advanced": "无氧条件下，酵母菌把葡萄糖转化为乙醇和二氧化碳并释放少量能量：C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂。与有氧呼吸相比，释放的能量少得多，但能在缺氧环境里维持生命——这正是酿酒的秘密。"
+      },
+      "relatedIds": ["yeast", "saccharification", "acetic-fermentation"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "acetic-fermentation",
+      "name": "醋酸发酵",
+      "emoji": "🧴",
+      "domain": "life",
+      "summary": "醋酸菌在有氧环境下把酒精氧化成醋酸。",
+      "explain": {
+        "basic": "醋酸菌在敞口、有新鲜空气的地方，把酒精变成酸酸的醋酸。酿醋的关键一步，也是酒放着放着变酸的原因。",
+        "advanced": "醋酸菌将乙醇氧化为乙酸：C₂H₅OH + O₂ → CH₃COOH + H₂O。反应需要充足供氧，因此酿醋采用敞口或通气发酵工艺。这一步产生的醋酸正是食醋酸味的主要来源。"
+      },
+      "relatedIds": ["acetobacter", "alcohol-fermentation"],
+      "issueIds": ["issue-001"]
+    },
+    {
+      "id": "sterilization",
+      "name": "灭菌",
+      "emoji": "🌡️",
+      "domain": "tech",
+      "summary": "用高温等方法消灭杂菌，只留下我们请来的小工人。",
+      "explain": {
+        "basic": "用开水烫、蒸煮等办法，把捣乱的杂菌消灭掉。这样我们请来的酵母菌才能安心干活，不被别人抢了食物。",
+        "advanced": "通过高温（如 100°C 蒸煮、巴氏消毒）杀灭物料中的大部分微生物，防止杂菌与目标菌种竞争或产生怪味毒素，保证发酵稳定可控。酿醋的最后一步加热装瓶，也是灭菌。"
+      },
+      "relatedIds": ["fermentation"],
+      "issueIds": ["issue-001"]
+    }
+  ]
+}

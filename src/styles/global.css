@@ -1,0 +1,306 @@
+/* ========== 设计令牌 ========== */
+:root {
+  --bg: #fff6ea;
+  --card: #ffffff;
+  --ink: #3d3229;
+  --ink-soft: #8a7666;
+  --ink-faint: #b3a291;
+  --line: #f0e3d2;
+
+  --brand: #ff8a3d;
+  --brand-deep: #ef6c1a;
+  --brand-soft: #ffe9d6;
+  --star: #ffb92e;
+  --danger: #e5484d;
+  --danger-soft: #fdeaea;
+  --ok: #37a35c;
+  --ok-soft: #e6f6ec;
+
+  --life: #4caf6d;
+  --matter: #4c9ef8;
+  --earth: #2bb3a3;
+  --space: #8b72e9;
+  --tech: #ff8a3d;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 6px 24px rgba(120, 78, 30, 0.09);
+  --shadow-lift: 0 10px 30px rgba(120, 78, 30, 0.14);
+
+  --font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Segoe UI', sans-serif;
+}
+
+/* ========== 基础 ========== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(255, 185, 46, 0.09) 0 140px, transparent 200px),
+    radial-gradient(circle at 88% 20%, rgba(139, 114, 233, 0.07) 0 150px, transparent 220px),
+    radial-gradient(circle at 75% 85%, rgba(75, 175, 109, 0.07) 0 160px, transparent 230px);
+  background-attachment: fixed;
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.3;
+  margin: 0;
+}
+
+p {
+  margin: 0.4em 0;
+}
+
+a {
+  color: var(--brand-deep);
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--ink);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--brand);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+::selection {
+  background: var(--brand-soft);
+}
+
+/* ========== 布局 ========== */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.container-wide {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* ========== 通用组件 ========== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(255, 138, 61, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 138, 61, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn:disabled {
+  filter: grayscale(0.5);
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-ghost {
+  background: #fff;
+  color: var(--brand-deep);
+  border: 2px solid var(--brand-soft);
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background: var(--brand-soft);
+  box-shadow: none;
+}
+
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 14px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  white-space: nowrap;
+}
+
+.chip-gray {
+  background: #f3ede4;
+  color: var(--ink-soft);
+}
+
+.chip-ok {
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.chip-star {
+  background: #fff3d6;
+  color: #c98a00;
+}
+
+.vocab-chip {
+  display: inline-block;
+  padding: 0 8px;
+  margin: 0 1px;
+  border-radius: 8px;
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  font-weight: 700;
+  border-bottom: 2px dashed rgba(239, 108, 26, 0.45);
+  transition: background 0.15s, transform 0.15s;
+  line-height: 1.5;
+}
+
+.vocab-chip:hover {
+  background: #ffd9b8;
+  transform: translateY(-1px);
+}
+
+.rich strong {
+  color: var(--brand-deep);
+}
+
+/* ========== 动画 ========== */
+@keyframes pop-in {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.06); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { transform: translateY(-70px); opacity: 0; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.anim-pop { animation: pop-in 0.3s ease-out both; }
+.anim-shake { animation: shake 0.3s ease-in-out; }
+.anim-slide-up { animation: slide-up 0.35s ease-out both; }
+
+/* ========== 弹层 ========== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(61, 50, 41, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow-lift);
+  max-width: 520px;
+  width: 100%;
+  max-height: 86vh;
+  overflow-y: auto;
+  padding: 26px;
+  animation: pop-in 0.25s ease-out both;
+}
+
+/* ========== 页面进出场 ========== */
+.fade-enter-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 560px) {
+  .card {
+    padding: 18px;
+  }
+  body {
+    font-size: 15.5px;
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Issue",
+  "type": "object",
+  "required": ["id", "no", "slug", "title", "subtitle", "domain", "date", "emoji", "status", "intro", "knowledgeIds", "blocks"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^issue-\\d{3}$" },
+    "no": { "type": "integer", "minimum": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "title": { "type": "string", "minLength": 2 },
+    "subtitle": { "type": "string", "minLength": 2 },
+    "domain": { "$ref": "#/$defs/domain" },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "emoji": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["published", "draft"] },
+    "intro": { "type": "string", "minLength": 10 },
+    "knowledgeIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "blocks": { "type": "array", "items": { "$ref": "#/$defs/block" }, "minItems": 3 }
+  },
+  "$defs": {
+    "domain": { "enum": ["life", "matter", "earth", "space", "tech"] },
+    "level": { "enum": ["basic", "advanced"] },
+    "richText": { "type": "string" },
+    "vocabRef": { "type": "string", "pattern": "^\\[\\[[a-z0-9-]+\\]\\]" },
+    "block": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": { "id": { "type": "string" }, "type": { "enum": ["hero", "story", "qa-card", "quiz", "match", "sort", "vocab", "experiment", "demo", "open-question", "related"] } },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "hero" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type"],
+            "properties": { "id": { "type": "string" }, "type": { "const": "hero" } }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "story" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "heading", "paragraphs"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "story" },
+              "heading": { "type": "string" },
+              "paragraphs": { "type": "array", "items": { "$ref": "#/$defs/richText" }, "minItems": 1 },
+              "illustration": { "type": "string", "enum": ["jars", "microscope", "flow"] }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "qa-card" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "question", "answer"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "qa-card" },
+              "question": { "type": "string" },
+              "emoji": { "type": "string" },
+              "answer": {
+                "type": "object",
+                "required": ["basic", "advanced"],
+                "additionalProperties": false,
+                "properties": { "basic": { "$ref": "#/$defs/richText" }, "advanced": { "$ref": "#/$defs/richText" } }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "quiz" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "questions"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "quiz" },
+              "questions": { "type": "array", "items": { "$ref": "#/$defs/quizQuestion" }, "minItems": 1 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "match" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "title", "pairs"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "match" },
+              "title": { "type": "string" },
+              "instruction": { "type": "string" },
+              "pairs": {
+                "type": "array", "minItems": 3,
+                "items": {
+                  "type": "object", "required": ["left", "right"], "additionalProperties": false,
+                  "properties": { "left": { "type": "string" }, "right": { "type": "string" }, "emoji": { "type": "string" } }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "sort" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "title", "items"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "sort" },
+              "title": { "type": "string" },
+              "instruction": { "type": "string" },
+              "goal": { "type": "string" },
+              "items": { "type": "array", "items": { "type": "string" }, "minItems": 3 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "vocab" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "ids"],
+            "properties": { "id": { "type": "string" }, "type": { "const": "vocab" }, "ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 } }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "experiment" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "title", "adultHelp", "materials", "steps", "safety", "observe"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "experiment" },
+              "title": { "type": "string" },
+              "emoji": { "type": "string" },
+              "time": { "type": "string" },
+              "adultHelp": { "type": "string" },
+              "materials": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+              "steps": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+              "safety": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+              "observe": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "demo" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "demo"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "demo" },
+              "demo": { "enum": ["fermentation"] },
+              "title": { "type": "string" },
+              "instruction": { "type": "string" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "open-question" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type", "heading"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "open-question" },
+              "heading": { "type": "string" },
+              "text": { "type": "string" },
+              "suggestions": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "related" } } },
+          "then": {
+            "additionalProperties": false,
+            "required": ["id", "type"],
+            "properties": {
+              "id": { "type": "string" }, "type": { "const": "related" },
+              "knowledgeIds": { "type": "array", "items": { "type": "string" } },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      ]
+    },
+    "quizQuestion": {
+      "type": "object",
+      "required": ["id", "level", "question", "options", "answer", "explain"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "level": { "$ref": "#/$defs/level" },
+        "question": { "type": "string" },
+        "options": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+        "answer": { "type": "integer", "minimum": 0 },
+        "explain": {
+          "type": "object", "required": ["basic", "advanced"], "additionalProperties": false,
+          "properties": { "basic": { "type": "string" }, "advanced": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

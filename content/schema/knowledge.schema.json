@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "KnowledgePoints",
+  "type": "object",
+  "required": ["points"],
+  "additionalProperties": false,
+  "properties": {
+    "points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "emoji", "domain", "summary", "explain", "relatedIds", "issueIds"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string" },
+          "emoji": { "type": "string" },
+          "domain": { "enum": ["life", "matter", "earth", "space", "tech"] },
+          "summary": { "type": "string", "minLength": 5 },
+          "explain": {
+            "type": "object",
+            "required": ["basic", "advanced"],
+            "additionalProperties": false,
+            "properties": { "basic": { "type": "string" }, "advanced": { "type": "string" } }
+          },
+          "relatedIds": { "type": "array", "items": { "type": "string" } },
+          "issueIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}
