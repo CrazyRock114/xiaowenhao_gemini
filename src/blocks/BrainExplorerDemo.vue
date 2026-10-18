@@ -497,7 +497,7 @@ onMounted(() => {
     <div v-if="activeTab === 'map'" class="tab-pane anim-fade">
       <div class="map-toolbar">
         <span class="toolbar-hint">
-          💡 点击大图上的<strong>呼吸光标探针</strong>，或点击右侧列表，深度解剖每个脑区：
+          💡 点击大图上的<strong>呼吸光标探针</strong>，或点击下方脑区导航，在下方深度解剖每个脑区：
         </span>
         <div class="source-switch">
           <button
@@ -564,7 +564,7 @@ onMounted(() => {
           </div>
         </div>
 
-        <!-- 右侧：当前选中脑区深度解析卡片 -->
+        <!-- 下方：当前选中脑区深度解析卡片（全宽上下排布） -->
         <div class="region-detail-card" :style="{ '--reg-color': activeRegion.color }">
           <div class="detail-top">
             <div class="detail-header-left">
@@ -589,11 +589,11 @@ onMounted(() => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="hardware-box">
-            <span class="hw-icon">📊</span>
-            <span class="hw-text">{{ activeRegion.hardwareNum }}</span>
+            <div class="hardware-box">
+              <span class="hw-icon">📊</span>
+              <span class="hw-text">{{ activeRegion.hardwareNum }}</span>
+            </div>
           </div>
 
           <div class="detail-content">
@@ -957,33 +957,34 @@ onMounted(() => {
 }
 
 .map-layout {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 20px;
-}
-
-@media (max-width: 900px) {
-  .map-layout {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
 }
 
 .map-view-box {
-  background: #0d1117;
-  border: 1.5px solid var(--line);
-  border-radius: 16px;
-  padding: 12px;
+  background: #0b0e14;
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
 }
 
 .img-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  max-height: 820px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hd-brain-img {
@@ -1001,83 +1002,118 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-  transition: transform 0.2s ease;
+  gap: 3px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .hotspot-pin:hover {
-  transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(1.22);
+  z-index: 20;
+}
+
+.hotspot-pin.active {
+  transform: translate(-50%, -50%) scale(1.28);
+  z-index: 30;
 }
 
 .pin-marker {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--c, #ffffff);
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 12px var(--c, #ffffff);
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 16px var(--c, #ffffff), 0 0 30px rgba(0, 0, 0, 0.5);
   animation: pulse-pin 1.8s infinite ease-out;
+}
+
+.hotspot-pin.active .pin-marker {
+  box-shadow: 0 0 0 4px #ffffff, 0 0 24px var(--c, #ffffff);
 }
 
 @keyframes pulse-pin {
   0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
   100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
 .pin-tag {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 2px 6px;
-  border-radius: 4px;
+  background: rgba(11, 14, 20, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
   white-space: nowrap;
   pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hotspot-pin.active .pin-tag {
+  background: var(--c, #ffffff);
+  color: #0d0f16;
+  border-color: #ffffff;
 }
 
 .img-bottom-tip {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
-  padding: 4px 6px;
-  font-size: 12px;
+  margin-top: 12px;
+  padding: 4px 8px;
+  font-size: 12.5px;
   color: #8b949e;
 }
 
 .view-raw-link {
   color: #38bdf8;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  transition: all 0.15s ease;
+}
+
+.view-raw-link:hover {
+  background: #38bdf8;
+  color: #0b0e14;
 }
 
 .region-detail-card {
   background: #ffffff;
   border: 2px solid var(--line);
   border-top: 6px solid var(--reg-color, var(--brand));
-  border-radius: 16px;
-  padding: 20px;
+  border-radius: 18px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(61, 50, 41, 0.05);
 }
 
 .detail-top {
-  padding-bottom: 12px;
+  padding-bottom: 14px;
   border-bottom: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .detail-header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .reg-emoji {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  font-size: 26px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 28px;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -1090,7 +1126,7 @@ onMounted(() => {
 }
 
 .reg-en {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 900;
   color: var(--ink);
   margin: 0;
@@ -1103,6 +1139,11 @@ onMounted(() => {
   padding: 3px 6px;
   border-radius: 6px;
   cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.audio-btn:hover {
+  transform: scale(1.15);
 }
 
 .title-zh-row {
@@ -1113,7 +1154,7 @@ onMounted(() => {
 }
 
 .reg-zh {
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: 800;
   color: var(--brand-deep);
 }
@@ -1124,17 +1165,17 @@ onMounted(() => {
 }
 
 .hardware-box {
-  margin: 12px 0;
+  margin: 0;
   background: #fdf8ed;
   border: 1px solid #fde68a;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 12px;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #b45309;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .summary-text {
