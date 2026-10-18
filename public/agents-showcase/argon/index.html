@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>你的高科技大脑 · Your High-Tech Brain | 双语脑科学全细节交互科普站</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-lang="bi">
+  <!-- Sticky Top Navigation -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-icon">🧠</div>
+        <div class="brand-titles">
+          <h1>
+            <span class="lang-zh">你的高科技大脑：追踪 8 大感官输入</span>
+            <span class="lang-en">Your High-Tech Brain: Follow the 8 Sensory Inputs</span>
+          </h1>
+          <p>100% Full-Detail Interactive Bilingual Neuroscience Atlas (Audited Edition)</p>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#schematic-section"><span class="lang-zh">全景电路图</span><span class="lang-en">Circuit Map</span></a>
+        <a href="#neuron-lab"><span class="lang-zh">神经元与动作电位</span><span class="lang-en">Neuron &amp; Firing</span></a>
+        <a href="#sensory-section"><span class="lang-zh">8大感官输入</span><span class="lang-en">8 Senses</span></a>
+        <a href="#visual-section"><span class="lang-zh">视觉层级(V1-V7)</span><span class="lang-en">Visual Hierarchy</span></a>
+        <a href="#executive-section"><span class="lang-zh">前额叶/灵与肉/小脑/脊髓</span><span class="lang-en">Executive &amp; Reflex</span></a>
+        <a href="#quotes-section"><span class="lang-zh">19处原图引文与全词条</span><span class="lang-en">Quotes &amp; Index</span></a>
+      </nav>
+
+      <div class="lang-switcher" role="group" aria-label="Language Mode">
+        <button class="lang-btn active" data-set-lang="bi">中英双语</button>
+        <button class="lang-btn" data-set-lang="zh">仅中文</button>
+        <button class="lang-btn" data-set-lang="en">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero & Core Quantitative Benchmarks -->
+    <section class="hero">
+      <div class="hero-top">
+        <div class="hero-title-group">
+          <h2 class="lang-zh">你的高科技大脑：追踪 8 大感官输入全景科普</h2>
+          <div class="en-sub lang-en">Your High-Tech Brain: Follow the 8 Sensory Inputs &amp; The Visual Processing System</div>
+          <p style="color: var(--text-secondary); max-width: 880px; font-size: 0.92rem;">
+            <span class="lang-zh">本网站 1:1 完整收录海报中的每一处解剖区域、神经环路、算力对比、电生理公式、8 大感官参数、V1–V7 视觉双流层级、前额叶“灵与肉（Spirit vs. Flesh）”决策博弈、小脑惯性导航计算机、脊髓 97% 中间神经元反射回路、DNA 存储密度及全部 19 处原始科学文献引文，并附有**现代神经科学严谨性审校注记**以消除工程类比可能带来的歧义。</span>
+            <span class="lang-en">Covers 100% of the poster's anatomical nodes, neural pathways, processor benchmarks (Apple A8 &amp; Intel i7), action potential formula, 8 sensory inputs, V1–V7 visual streams, Prefrontal/OFC "Spirit vs. Flesh" valuation, Cerebellar inertial navigation, Spinal Cord 97% interneuron circuitry, DNA storage density, and all 19 verbatim scientific quotes — supplemented with **mainstream neuroscience rigor notes**.</span>
+          </p>
+        </div>
+
+        <div class="circuit-rule-banner">
+          <span class="dot-inhibitory"></span>
+          <span class="dot-excitatory"></span>
+          <div>
+            <div class="lang-zh">原图核心电路法则：红色电路为抑制性（Inhibitory），其余所有颜色均为兴奋性（Excitatory）</div>
+            <div class="lang-en">Poster Circuit Rule: Red Circuits are inhibitory, all other colors are excitatory</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Core Hardware Benchmarks from Poster -->
+      <div id="benchmarks-container" class="benchmarks-grid"></div>
+
+      <!-- 3 Scientific Rigor & Disambiguation Callouts -->
+      <div id="scientific-notes-container" class="rigor-notes-grid"></div>
+    </section>
+
+    <!-- SECTION 1: Interactive Full-Poster Schematic & Hotspot Explorer -->
+    <section id="schematic-section" class="section-block">
+      <div class="section-header">
+        <div>
+          <span class="section-badge">Interactive Schematic &amp; Pin-by-Pin Atlas</span>
+          <h3>
+            <span class="lang-zh">1. 全景脑神经电路图谱与原图细节探索器</span>
+            <span class="lang-en">1. Interactive Full-Poster Neural Circuit Schematic &amp; Explorer</span>
+          </h3>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          <span class="lang-zh">点击图中任意节点查看该区域的全部原图英文标签与双语深度解析；支持加载您上传的原图叠加比对。</span>
+          <span class="lang-en">Click any node to inspect every verbatim label and bilingual neuroscience explanation; optional original poster overlay supported.</span>
+        </p>
+      </div>
+
+      <div class="map-workspace">
+        <div class="map-stage-card">
+          <div class="map-toolbar">
+            <div class="filter-pills" id="map-filter-pills">
+              <button class="filter-pill active" data-filter="all">全部节点 · All (14)</button>
+              <button class="filter-pill" data-filter="inhibitory">🔴 含红色抑制电路 · Red Inhibitory</button>
+              <button class="filter-pill" data-filter="neuron">⚡ 神经元与运动 · Neuron &amp; Motor</button>
+              <button class="filter-pill" data-filter="executive">⚖️ 前额叶与OFC · PFC &amp; OFC</button>
+              <button class="filter-pill" data-filter="limbic">❤️ 奖赏/丘脑/边缘 · Limbic &amp; Thalamus</button>
+              <button class="filter-pill" data-filter="visual">👁️ 视觉系统 V1-V7 · Visual Cortex</button>
+              <button class="filter-pill" data-filter="sensory">📡 8大感官器官 · 8 Senses</button>
+              <button class="filter-pill" data-filter="cerebellum">🧭 小脑/迷走/脊髓/DNA · Cerebellum &amp; Spinal</button>
+            </div>
+
+            <div class="poster-upload-controls">
+              <label class="upload-label" for="poster-file-input">
+                🖼️ <span class="lang-zh">加载原图叠加对比</span><span class="lang-en">Overlay Original Poster</span>
+              </label>
+              <input type="file" id="poster-file-input" accept="image/*" style="display: none;" />
+              <input type="range" id="poster-opacity-slider" min="0" max="100" value="55" title="Poster Overlay Opacity" style="width: 80px; display: none;" />
+            </div>
+          </div>
+
+          <!-- Interactive Schematic Viewport -->
+          <div class="schematic-viewport" id="schematic-viewport">
+            <img id="poster-bg-img" class="poster-bg-img" alt="Original Brain Poster Overlay" />
+            <svg class="schematic-svg" viewBox="0 0 1000 750" preserveAspectRatio="none">
+              <defs>
+                <marker id="arrow-excitatory" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+                </marker>
+                <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399" />
+                </marker>
+                <marker id="arrow-inhibitory" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#f43f5e" />
+                </marker>
+              </defs>
+
+              <!-- Outer Brain Cortex Silhouette (6-Layer Folded Circuit Board) -->
+              <path d="M 180,430 C 145,330 190,175 330,135 C 460,95 650,95 775,180 C 865,245 885,390 825,495 C 780,570 740,615 620,615 C 515,615 445,585 375,565 C 285,540 210,505 180,430 Z"
+                    fill="rgba(30, 41, 59, 0.55)" stroke="rgba(148, 163, 184, 0.45)" stroke-width="4" stroke-dasharray="10,4" />
+              <text x="490" y="118" fill="#94a3b8" font-size="13" text-anchor="middle" font-family="monospace">
+                6 Layer Cortex (1.5 - 4.5 mm thick · 2,500 cm² · 15B+ Neurons · 65T+ Connections)
+              </text>
+
+              <!-- Cerebellum Contour -->
+              <ellipse cx="680" cy="555" rx="115" ry="72" fill="rgba(52, 211, 153, 0.1)" stroke="#34d399" stroke-width="2.5" />
+              <!-- Spinal Cord Column -->
+              <rect x="555" y="595" width="48" height="145" rx="18" fill="rgba(251, 191, 36, 0.12)" stroke="#fbbf24" stroke-width="2" />
+
+              <!-- EXCITATORY PATHWAYS (Cyan / Green / Amber) -->
+              <!-- Retina -> Optic Nerve -> Thalamus -> Optic Radiations (570K) -> V1 -->
+              <path d="M 200,475 L 455,425 L 775,295" fill="none" stroke="#38bdf8" stroke-width="3" marker-end="url(#arrow-excitatory)" />
+              <text x="635" y="345" fill="#38bdf8" font-size="11" font-family="monospace">Optic Radiations 570K</text>
+
+              <!-- V1 -> Dorsal Stream (V2a -> V6/V7 & MT -> IPS -> Motor) -->
+              <path d="M 780,280 L 755,155 L 550,170 L 405,180" fill="none" stroke="#34d399" stroke-width="3" marker-end="url(#arrow-green)" />
+              <!-- V1 -> Ventral Stream (V2b -> V3b/V4h/Face/Nudity -> OFC) -->
+              <path d="M 775,300 L 725,400 L 470,340 L 255,365" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow-excitatory)" />
+
+              <!-- Smell / Taste / Touch -> Insula / Rewards / Thalamus -->
+              <path d="M 285,595 L 460,425 L 470,255" fill="none" stroke="#fbbf24" stroke-width="2.2" marker-end="url(#arrow-excitatory)" />
+              <!-- Vestibule & Cochlea -> Cerebellum & Thalamus -->
+              <path d="M 875,610 L 690,555 L 475,425" fill="none" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrow-green)" />
+              <!-- Spinal Cord <-> Sensory/Motor & Cerebellum -->
+              <path d="M 620,675 L 540,180" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arrow-excitatory)" />
+
+              <!-- RED INHIBITORY CIRCUITS (PFC/DLPFC -> OFC & Rewards; Stop Habits; Punishment -> Dopamine Off; Attention Shoot; Stress; Pain Control) -->
+              <path d="M 290,285 C 245,325 235,380 250,415" fill="none" stroke="#f43f5e" stroke-width="3.5" marker-end="url(#arrow-inhibitory)" />
+              <path d="M 295,285 L 455,330" fill="none" stroke="#f43f5e" stroke-width="3" marker-end="url(#arrow-inhibitory)" />
+              <path d="M 465,335 L 475,420" fill="none" stroke="#f43f5e" stroke-width="2.8" marker-end="url(#arrow-inhibitory)" />
+              <path d="M 475,430 L 580,665" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="6,3" marker-end="url(#arrow-inhibitory)" />
+              <text x="365" y="295" fill="#fda4af" font-size="11" font-weight="bold" font-family="monospace">Red Inhibitory Control (PFC / GABA- / Stop Habits / Pain Off)</text>
+            </svg>
+
+            <!-- Hotspot Pins Container (Populated dynamically by app.js) -->
+            <div id="hotspot-pins-layer"></div>
+          </div>
+        </div>
+
+        <!-- Right: Node Inspector Panel -->
+        <aside class="inspector-card" id="node-inspector">
+          <div class="inspector-header">
+            <span class="section-badge" id="insp-category">NODE INSPECTOR</span>
+            <h4 id="insp-title">点击左侧脑图节点查看详情</h4>
+            <div class="inspector-sub" id="insp-subtitle">Select any node on the schematic</div>
+          </div>
+          <div class="inspector-body">
+            <p id="insp-zh" class="lang-zh"></p>
+            <p id="insp-en" class="lang-en"></p>
+            <div class="poster-tags-title">
+              <span class="lang-zh">该区域原图完整英文标签 (Verbatim Poster Labels)</span>
+              <span class="lang-en">Verbatim Poster Labels in This Region</span>
+            </div>
+            <div class="poster-label-chips" id="insp-chips"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Interactive Lab 1 — The Neuron, Action Potential & Cortex Silicon Calculator -->
+    <section id="neuron-lab" class="section-block">
+      <div class="section-header">
+        <div>
+          <span class="section-badge">Interactive Lab 1 · Electrophysiology &amp; Silicon Equivalence</span>
+          <h3>
+            <span class="lang-zh">2. 神经元动作电位触发实验室与皮层芯片算力换算器</span>
+            <span class="lang-en">2. The Neuron Action Potential Simulator &amp; Cortex Processor Benchmark</span>
+          </h3>
+        </div>
+      </div>
+
+      <div class="lab-grid-2">
+        <!-- Left: Action Potential Simulator -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">动作电位触发公式实验室 (The Neuron &amp; Ion Flow)</span>
+            <span class="lang-en">Action Potential Threshold Gate Simulator</span>
+          </h4>
+          <div class="formula-banner">
+            Poster Formula: IF ( D⁺ + G⁺ - GABA⁻ ) &gt; +20 mV Then FIRE
+            <span class="sub-eq">Electrophysiology: Vm = Vrest (-70 mV) + ΔV &gt; Vth (-50 mV) ⇒ Voltage-Gated Na⁺ Spike (+35 mV Peak)</span>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>🟢 Glutamate (G⁺ 谷氨酸 · 主快离子型兴奋性递质 EPSP)</span>
+              <span class="val" id="val-glutamate">+12 mV</span>
+            </div>
+            <input type="range" id="sim-glutamate" min="0" max="35" step="1" value="12" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>🔵 Dopamine (D⁺ 多巴胺 · D₁受体正性兴奋调制)</span>
+              <span class="val" id="val-dopamine">+8 mV</span>
+            </div>
+            <input type="range" id="sim-dopamine" min="0" max="25" step="1" value="8" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>🟡 + Others (Serotonin 血清素 / +Ca²⁺ / Na⁺ 树突离子流)</span>
+              <span class="val" id="val-others">+6 mV</span>
+            </div>
+            <input type="range" id="sim-others" min="0" max="20" step="1" value="6" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label inhibitory">
+              <span>🔴 GABA⁻ (Red Inhibitory Circuit · GABA_A 氯离子通道超极化抑制 IPSP)</span>
+              <span class="val" id="val-gaba">-4 mV</span>
+            </div>
+            <input type="range" id="sim-gaba" class="inhibitory-slider" min="0" max="35" step="1" value="4" />
+          </div>
+
+          <canvas id="ap-canvas" class="sim-canvas"></canvas>
+
+          <div class="status-readout">
+            <div>
+              Vrest: <strong>-70 mV</strong> | Net Depolarization ΔV: <strong id="ap-net-dv">+22 mV</strong> (Need &gt; +20 mV) | Vm: <strong id="ap-vm">-48 mV</strong> (Vth: -50 mV)
+            </div>
+            <span id="ap-fire-badge" class="fire-badge firing">⚡ FIRE! (Na⁺ Spike)</span>
+          </div>
+        </div>
+
+        <!-- Right: 6-Layer Cortex Circuit Board & Apple A8 / Intel i7 Calculator -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">6层皮层折叠电路板 vs. Apple A8 / Intel i7 算力实验室</span>
+            <span class="lang-en">6-Layer Folded Cortex Board vs. Apple A8 &amp; Intel i7 Calculator</span>
+          </h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+            <span class="lang-zh">原图标注：“皮层是一块装满电子元件的 6 层折叠电路板（厚 1.5–4.5 mm，灰质容纳所有皮层神经元胞体，总表面积 2,500 cm²）。1 mm³ 皮层含 50,000+ 神经元与 1 亿+ 突触，按晶体管数量折算超过 5 颗苹果 A8 处理器（iPhone 6 的 A8 每 mm³ 约含 2,300 万晶体管）；全皮层 65 万亿+ 突触相当于 45,000 颗英特尔 i7 双核处理器。”</span>
+            <span class="lang-en">Poster specification: "The Cortex is a 6 layer folded circuit board filled with electronics (1.5 - 4.5 mm thick, 2,500 cm² area). 1 mm³ contains 50,000+ Neurons making over 100 Million Synapses (switches) = est. processing power of over five A8 processors (23M transistors/mm³). 65+ Trillion synapses = 45,000 i7 Dual Core Processors."</span>
+          </p>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>📏 <span class="lang-zh">选择皮层采样体积 (mm³)</span><span class="lang-en">Select Cortical Sample Volume (mm³)</span></span>
+              <span class="val" id="val-cortex-vol">1 mm³</span>
+            </div>
+            <input type="range" id="sim-cortex-vol" min="1" max="1000" step="1" value="1" />
+          </div>
+
+          <div class="benchmarks-grid" style="grid-template-columns: 1fr 1fr; margin-top: 0.75rem;">
+            <div class="benchmark-card">
+              <div class="benchmark-val" id="calc-neurons">50,000+</div>
+              <div class="benchmark-label"><span class="lang-zh">采样区皮层神经元</span><span class="lang-en">Sampled Cortical Neurons</span></div>
+              <div class="benchmark-detail">50,000+ Neurons / mm³</div>
+            </div>
+            <div class="benchmark-card">
+              <div class="benchmark-val" id="calc-synapses">100,000,000+</div>
+              <div class="benchmark-label"><span class="lang-zh">采样区突触连接数</span><span class="lang-en">Sampled Synapse Connections</span></div>
+              <div class="benchmark-detail">100M+ Synapses / mm³ (1,000–10,000/neuron)</div>
+            </div>
+            <div class="benchmark-card">
+              <div class="benchmark-val" id="calc-a8">5.0+ Chips</div>
+              <div class="benchmark-label"><span class="lang-zh">采样区等效 Apple A8 芯片数</span><span class="lang-en">Sampled Apple A8 Equiv.</span></div>
+              <div class="benchmark-detail">A8 = ~23 Million transistors / mm³</div>
+            </div>
+            <div class="benchmark-card">
+              <div class="benchmark-val" id="calc-i7">45,000 i7 (全皮层)</div>
+              <div class="benchmark-label"><span class="lang-zh">等效 Intel i7 双核处理器</span><span class="lang-en">Equivalent i7 Dual-Core CPUs</span></div>
+              <div class="benchmark-detail" id="calc-i7-detail">Full Cortex (65T+ synapses) = 45,000 i7 CPUs</div>
+            </div>
+          </div>
+
+          <!-- 6-Layer Cortex Look Inside Diagram (Anatomically Accurate + Verbatim Poster Labels) -->
+          <div style="margin-top: 1rem; padding: 0.9rem; background: rgba(15,23,42,0.85); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.81rem;">
+            <strong style="color: var(--excitatory-amber);">🔬 Look Inside: 6 Layer Cortex (Thickness 1.5 – 4.5 mm · Grey Matter Contains Cortical Neuron Somata)</strong>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.55rem; margin-top: 0.5rem; font-family: var(--font-mono); color: var(--text-secondary);">
+              <div>• <strong>Layer I (Molecular):</strong> Apical Dendrites &amp; horizontal axons</div>
+              <div>• <strong>Layer II–III:</strong> Cortico-cortical Pyramidal Neurons</div>
+              <div>• <strong>Layer IV (Granular):</strong> <em>Axons In</em> (Thalamic sensory inputs)</div>
+              <div>• <strong>Layer V–VI:</strong> Deep Pyramidal Somata &amp; <em>Axons Out</em> (to brainstem/spinal/thalamus)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Follow the 8 Sensory Inputs (Complete Deep-Dive + Interactive Sub-Labs) -->
+    <section id="sensory-section" class="section-block">
+      <div class="section-header">
+        <div>
+          <span class="section-badge">Follow the 8 Sensory Inputs</span>
+          <h3>
+            <span class="lang-zh">3. 追踪 8 大感官输入：从感受器到大脑皮层 + 4 大感官微实验室</span>
+            <span class="lang-en">3. Follow the 8 Sensory Inputs: Complete Specs &amp; 4 Sensory Micro-Labs</span>
+          </h3>
+        </div>
+      </div>
+
+      <!-- 8 Sensory Input Tabs -->
+      <div class="sensory-tabs" id="sensory-tabs-nav"></div>
+
+      <!-- Selected Sensory Input Detail Panel -->
+      <div class="sensory-detail-panel" id="sensory-detail-panel"></div>
+
+      <!-- Interactive Sensory Sub-Labs -->
+      <div class="lab-grid-2">
+        <!-- Sub-Lab A: Sight (Retina Fovea High-Res vs Periphery & Inverted Optics) + Touch Skin 1 cm2 Patch + Smell -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">感官微实验 A：1. 视网膜倒像与中央凹分辨率 / 4. 皮肤 1 cm² 感受器探针 / 2. 跨物种嗅觉对比</span>
+            <span class="lang-en">Sensory Lab A: 1. Retinal Optics &amp; Fovea / 4. 1 cm² Skin Probe / 2. Olfactory Comparator</span>
+          </h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0;" id="sensory-mode-btns">
+            <button class="btn-secondary active" id="btn-mode-retina" data-mode="retina">👁️ 1. Sight: 视网膜倒像与中央凹(Fovea)</button>
+            <button class="btn-secondary" id="btn-mode-skin" data-mode="skin">🖐️ 4. Touch: 1 cm² 皮肤感受器 (200:15:6:1)</button>
+            <button class="btn-secondary" id="btn-mode-smell" data-mode="smell">🐕 2. Smell: 人/狗/猎犬嗅觉阈值与对数对比</button>
+          </div>
+          <canvas id="sensory-canvas" class="sim-canvas"></canvas>
+          <div class="slider-group" style="margin-top: 0.75rem;">
+            <div class="slider-label">
+              <span id="sensory-slider-title">🎯 调节视角偏心度 Eccentricity (0° 中央凹 Fovea ↔ 45° 周边视野 Periphery)</span>
+              <span class="val" id="val-sensory-param">0° (Fovea Notch 1.5 mm)</span>
+            </div>
+            <input type="range" id="sim-sensory-param" min="0" max="100" value="0" />
+          </div>
+        </div>
+
+        <!-- Sub-Lab B: 6. Balance & Acceleration (Space Shuttle 3-Axis Vestibule Gyro Triad & Smooth Pursuit) -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">感官微实验 B：6. 耳后“航天飞机制导传感器”——三轴前庭陀螺仪与前庭-动眼反射 (VOR)</span>
+            <span class="lang-en">Sensory Lab B: 6. Vestibule 3-Axis Space Shuttle Gyro Triad &amp; Oculo Reflex (VOR)</span>
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.6rem;">
+            <span class="lang-zh">原图作者（航天飞机制导系统 CAD 主管）指出：“我们装在航天飞机和所有导弹制导系统里的三轴陀螺仪/加速度计三联传感器，就藏在你的耳朵后面。”调节下方头部 X-Roll（横滚）、Y-Pitch（俯仰）、Z-Yaw（偏航）角速度，观察三轴半规管响应，以及眼球如何反向等速旋转以将目标图像稳定锁死在 1.5 mm 中央凹上：</span>
+            <span class="lang-en">"The 3 axis gyro/accelerometer triad sensor we put in the Space Shuttle and all missile guidance systems is behind your ear." Adjust head X-Roll, Y-Pitch, and Z-Yaw angular velocity below to observe the 3-axis canal triad and opposing eye rotation keeping the target locked on the 1.5 mm fovea:</span>
+          </p>
+          <canvas id="vestibular-canvas" class="sim-canvas" style="height: 215px;"></canvas>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 0.65rem;">
+            <div>
+              <div class="slider-label"><span>X-Roll (横滚)</span><span class="val" id="val-gyro-x">15°/s</span></div>
+              <input type="range" id="sim-gyro-x" min="-60" max="60" value="15" />
+            </div>
+            <div>
+              <div class="slider-label"><span>Y-Pitch (俯仰)</span><span class="val" id="val-gyro-y">-10°/s</span></div>
+              <input type="range" id="sim-gyro-y" min="-60" max="60" value="-10" />
+            </div>
+            <div>
+              <div class="slider-label"><span>Z-Yaw (偏航)</span><span class="val" id="val-gyro-z">25°/s</span></div>
+              <input type="range" id="sim-gyro-z" min="-60" max="60" value="25" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: The Visual Processing System (4-6 Billion Neurons, V1-V7 & N170 ERP Wave) -->
+    <section id="visual-section" class="section-block">
+      <div class="section-header">
+        <div>
+          <span class="section-badge">The Visual Processing System · 4–6 Billion Neurons</span>
+          <h3>
+            <span class="lang-zh">4. 视觉处理系统层级计算 (V1–V7 双流模型) 与 N170 脑电响应实验室</span>
+            <span class="lang-en">4. The Visual Processing System (V1–V7 Dual Streams) &amp; N170 ERP Simulator</span>
+          </h3>
+        </div>
+      </div>
+
+      <!-- 5 Pipeline Cards -->
+      <div class="pipeline-steps" id="visual-pipeline-cards"></div>
+
+      <div class="lab-grid-2">
+        <!-- Left: Visual Stream Hierarchy Interactive Visualizer -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">从局部边缘 (V1) 到全局物体 (V3b→OFC) 与手眼协调 (V6/V7→IPS)</span>
+            <span class="lang-en">From V1 Local Primitives (1 2 3 / A) to Global Shape (V3b→OFC) &amp; Action (V6/V7→IPS)</span>
+          </h4>
+          <p style="font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 0.7rem;" id="visual-stage-desc"></p>
+          <canvas id="visual-stream-canvas" class="sim-canvas" style="cursor: pointer;" title="Click any node on the diagram to inspect that visual stage"></canvas>
+        </div>
+
+        <!-- Right: N170 Face, Body & Nudity Early Detection ERP Simulator -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">枕颞叶面孔、身体与裸体早期检测 (N170 事件相关电位 ERP 实验室)</span>
+            <span class="lang-en">Occipito-Temporal Face, Body &amp; Nudity Processing (Calibrated N170 ERP Lab)</span>
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.65rem;">
+            <span class="lang-zh">原图引用 Hietanen &amp; Nummenmaa (2011) 《The Naked Truth》研究：“人类身体的裸露在视觉处理的早期阶段即被检测到……有趣的是，对裸体的 N170 响应甚至大于对面孔的响应！”注：**N170 是刺激呈现后约 170 ms 在枕颞叶记录到的负向脑电波（Negative-going potential，单位 μV，负值越大代表皮层神经元同步激活越强）**。点击下方按钮切换对比：</span>
+            <span class="lang-en">Poster quote (Hietanen &amp; Nummenmaa, 2011): "Interestingly, the N170 response to nude bodies was even greater than that to faces." Note: **N170 is a negative-going voltage deflection (in μV) peaking ~170 ms post-stimulus**; a deeper negative trough indicates stronger synchronized occipito-temporal activation.</span>
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.75rem;" id="n170-buttons">
+            <button class="filter-pill active" data-n170="nude">🔥 Nude Bodies (裸体 · -9.2 μV 最强负波)</button>
+            <button class="filter-pill" data-n170="face">😊 Faces (正/侧脸与表情 · -6.8 μV)</button>
+            <button class="filter-pill" data-n170="body">🕺 Clothed Body Parts (着装身体 · -4.5 μV)</button>
+            <button class="filter-pill" data-n170="object">🏠 Objects / Places / Words (物体/文字 · -2.1 μV)</button>
+          </div>
+          <canvas id="n170-canvas" class="sim-canvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Executive Control (PFC vs. OFC Spirit/Flesh), Limbic Rewards & Spinal/Cerebellar Reflexes -->
+    <section id="executive-section" class="section-block">
+      <div class="section-header">
+        <div>
+          <span class="section-badge">Prefrontal Executive Control · Spirit vs. Flesh · Cerebellum &amp; Spinal Reflex</span>
+          <h3>
+            <span class="lang-zh">5. 前额叶执行控制 (DLPFC vs. OFC 灵与肉)、奖惩环路与脊髓 97% 中间神经元反射</span>
+            <span class="lang-en">5. Executive Control (DLPFC vs. OFC Spirit/Flesh), Reward/Punishment &amp; Spinal Reflex Lab</span>
+          </h3>
+        </div>
+      </div>
+
+      <div class="lab-grid-2">
+        <!-- Left: Prefrontal DLPFC / ACC / OFC (Spirit vs. Flesh) & Dopamine/Opioid Balance -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">前额叶三环路 (DLPFC / OFC / ACC) 与“灵与肉”冲动抑制模拟器</span>
+            <span class="lang-en">Prefrontal Decision Triad (DLPFC / OFC / ACC) &amp; "Spirit vs. Flesh" Inhibition Simulator</span>
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+            <span class="lang-zh">模拟**晚熟的背外侧前额叶 DLPFC（25岁+成熟，道德/法律/价值观/悔改，发出红色抑制信号）**、**前扣带皮层 ACC（信仰信念可降低其对错误/不确定性的焦虑反应）**与**早熟的眶额皮层 OFC（习得自动感官奖赏：贪婪、赌博、游戏、食物、物质主义、偶像崇拜）**及**皮层下奖赏（多巴胺 Wants）与愉悦（催产素/阿片肽 Needs）**之间的动态博弈：</span>
+            <span class="lang-en">Simulate the interaction between late-maturing DLPFC Executive Control (Age 25+, Morals/Laws/Values, red inhibitory brake), ACC conflict/uncertainty reduction, and early-developing OFC Learned Auto-Sensory Rewards ("Spirit vs. Flesh") + Subcortical Dopamine Wants:</span>
+          </p>
+
+          <div class="slider-group">
+            <div class="slider-label inhibitory">
+              <span>🔴 DLPFC Executive Control (道德/法律/价值观 · Can Inhibit Sensory Rewards · Age 25+)</span>
+              <span class="val" id="val-dlpfc">75%</span>
+            </div>
+            <input type="range" id="sim-dlpfc" class="inhibitory-slider" min="0" max="100" value="75" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>🕊️ OFC "Spirit" &amp; Meaning System (降低 ACC 错误焦虑与压力 · Anxiolytic Effect)</span>
+              <span class="val" id="val-spirit">70%</span>
+            </div>
+            <input type="range" id="sim-spirit" min="0" max="100" value="70" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>🎰 OFC "Flesh" &amp; Learned Auto-Sensory Rewards (赌博/游戏/贪婪/物质/吹嘘/偶像崇拜)</span>
+              <span class="val" id="val-flesh">45%</span>
+            </div>
+            <input type="range" id="sim-flesh" min="0" max="100" value="45" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>🔥 Subcortical Rewards (Wants: Dopamine) &amp; Pleasure (Needs: Hunger/Drugs/Mating)</span>
+              <span class="val" id="val-wants">50%</span>
+            </div>
+            <input type="range" id="sim-wants" min="0" max="100" value="50" />
+          </div>
+
+          <div class="status-readout" id="executive-readout" style="margin-top: 0.9rem;"></div>
+        </div>
+
+        <!-- Right: Spinal Cord Pain Reflex (97% Interneurons), Vagus Nerve & DNA Storage -->
+        <div class="lab-card">
+          <h4>
+            <span class="lang-zh">脊髓痛觉反射环路 (97% 中间神经元)、迷走神经调控与 DNA 存储密度</span>
+            <span class="lang-en">Spinal Cord Pain Reflex Arc (97% Interneurons), Vagus Nerve &amp; DNA Blueprint</span>
+          </h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.7rem;">
+            <button class="btn-secondary" id="btn-trigger-pain">⚡ 触发皮肤痛觉反射 (Trigger Bilateral Pain Reflex)</button>
+            <button class="btn-secondary" id="btn-toggle-vagus">🫀 切换迷走神经激活 (Toggle Vagus Nerve: ↓HR &amp; ↓BP)</button>
+            <button class="btn-secondary inhibitory-btn" id="btn-toggle-painoff">🔴 切换下行镇痛门控 (Toggle Adrenaline / Pain Off)</button>
+          </div>
+          <canvas id="spinal-canvas" class="sim-canvas" style="height: 225px;"></canvas>
+          <div class="status-readout" style="margin-top: 0.7rem;">
+            <span id="spinal-status-text">Spinal Cord: 1B Neurons (97% Interneurons in Butterfly Grey Matter Lamina) · Longest Motor Axon &gt; 1m</span>
+            <span style="color: var(--excitatory-amber);">DNA Theoretical Max: 455B GB / gram</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: All 19 Verbatim Quotes & Complete Searchable Bilingual Label Glossary -->
+    <section id="quotes-section" class="section-block">
+      <div class="section-header">
+        <div>
+          <span class="section-badge">100% Verbatim Poster Citations &amp; Complete Term Index</span>
+          <h3>
+            <span class="lang-zh">6. 海报全部 19 处科学文献引文原文对照与全细节检索词典</span>
+            <span class="lang-en">6. All 19 Verbatim Scientific Quotes &amp; Searchable Complete Poster Glossary</span>
+          </h3>
+        </div>
+      </div>
+
+      <!-- 19 Quotes Grid -->
+      <div class="quotes-grid" id="quotes-container" style="margin-bottom: 2.5rem;"></div>
+
+      <!-- Searchable Complete Glossary Table -->
+      <div class="section-header" style="margin-top: 2rem;">
+        <h3>
+          <span class="lang-zh">7. 原图全细节标签中英对照检索表 (覆盖每一处微标签)</span>
+          <span class="lang-en">7. Complete Poster Micro-Label Bilingual Directory</span>
+        </h3>
+      </div>
+      <div class="search-bar-row">
+        <input type="text" id="glossary-search" class="search-input" placeholder="🔍 搜索任意原图英文标签或中文释义 (例如: Fovea, V3b, N170, GABA, 455 Billion, 迷走神经, 偶像崇拜, A8)..." />
+      </div>
+      <div class="glossary-table-wrap">
+        <table class="glossary-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">系统分类 · System Group</th>
+              <th style="width: 39%;">原图英文标签 · Verbatim Poster English</th>
+              <th style="width: 39%;">中文精准科普释义 · Chinese Explanation</th>
+            </tr>
+          </thead>
+          <tbody id="glossary-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer with Full Author Credit from Bottom-Left of Poster -->
+    <footer class="site-footer">
+      <h4 style="color: #fff; margin-bottom: 0.5rem;">
+        <span class="lang-zh">关于原图作者与工程背景 (左下角原图铭文完整翻译)</span>
+        <span class="lang-en">Original Poster Author &amp; Aerospace Engineering Attribution (Bottom-Left Box)</span>
+      </h4>
+      <blockquote id="footer-author-en" class="lang-en" style="border-left: 3px solid var(--excitatory-cyan); padding-left: 0.85rem; margin-bottom: 0.6rem; font-style: italic;"></blockquote>
+      <p id="footer-author-zh" class="lang-zh" style="margin-bottom: 0.75rem;"></p>
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">
+        <span>Original Schematic: Copyright 2018 <a href="https://thehighestofthemountains.com/index.html" target="_blank" rel="noopener" style="color: var(--excitatory-cyan);">www.thehighestofthemountains.com</a></span>
+        <span>Interactive Bilingual Popular Science Edition · Audited for Scientific &amp; Pedagogical Rigor</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="data/poster-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

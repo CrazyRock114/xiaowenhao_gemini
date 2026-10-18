@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你的高科技大脑 · Your High-Tech Brain — 双语脑科学科普</title>
+<meta name="description" content="基于科普海报《Your High-Tech Brain》的中英双语脑科学网站：8 大感觉输入、神经元动作电位、脑区地图、视觉处理系统、奖赏与情绪、小脑/脊髓/迷走神经、DNA 布线。">
+<link rel="stylesheet" href="style.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body class="lang-both">
+
+<!-- ══════════════ 顶部导航 ══════════════ -->
+<header class="topbar">
+  <a class="brand" href="#hero">🧠 <span class="zh">你的高科技大脑</span><span class="en en-i">Your High-Tech Brain</span></a>
+  <nav id="mainNav" aria-label="页面导航">
+    <a href="#hero"><span class="zh">首页</span><span class="en en-i">Home</span></a>
+    <a href="#numbers"><span class="zh">数字</span><span class="en en-i">Numbers</span></a>
+    <a href="#neuron"><span class="zh">神经元</span><span class="en en-i">Neuron</span></a>
+    <a href="#senses"><span class="zh">八感</span><span class="en en-i">8 Senses</span></a>
+    <a href="#map"><span class="zh">脑图</span><span class="en en-i">Map</span></a>
+    <a href="#regions"><span class="zh">脑区</span><span class="en en-i">Regions</span></a>
+    <a href="#visual"><span class="zh">视觉</span><span class="en en-i">Vision</span></a>
+    <a href="#limbic"><span class="zh">奖赏·情绪</span><span class="en en-i">Reward·Emotion</span></a>
+    <a href="#hardware"><span class="zh">硬件</span><span class="en en-i">Hardware</span></a>
+    <a href="#wiring"><span class="zh">导线</span><span class="en en-i">Wiring</span></a>
+    <a href="#about"><span class="zh">关于</span><span class="en en-i">About</span></a>
+  </nav>
+  <div class="lang-switch" role="group" aria-label="语言切换 Language switch">
+    <button data-lang="both" class="active" aria-pressed="true">双语</button>
+    <button data-lang="zh" aria-pressed="false">中文</button>
+    <button data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero" class="hero">
+  <div class="syn-bg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <p class="eyebrow"><span class="zh">双语脑科学科普 · 跟随 8 大感觉输入</span><span class="en en-i">Bilingual Brain Science · Follow the 8 Sensory Inputs</span></p>
+  <h1>🧠 <span class="zh">你的高科技大脑</span><span class="en">Your High-Tech Brain</span></h1>
+  <p class="hero-sub">
+    <span class="zh">这是一台被塞进颅骨、功耗约 20 瓦的“超高技术”机器。原海报由一位航空航天工程师绘制——本站带你逐一读懂它的每一处标注。</span>
+    <span class="en">An "ultra high-tech" machine folded into your skull, running on about 20 watts. This site walks through every label of the original poster, drawn by an aerospace engineer.</span>
+  </p>
+  <div class="legend">
+    <span class="chip chip-red">🔴 <span class="zh">红色线路 = 抑制性</span><span class="en en-i">Red circuits are inhibitory</span></span>
+    <span class="chip">🌈 <span class="zh">其余颜色均为兴奋性</span><span class="en en-i">all other colors are excitatory</span></span>
+    <span class="chip chip-sr"><b>S→R</b> <span class="zh">= 海报中的“刺激→反应”芯片模块</span><span class="en en-i">= the poster's stimulus→response chips</span></span>
+  </div>
+  <div class="stat-strip">
+    <div class="stat"><b><span class="zh">860亿+</span><span class="en en-i">86B+</span></b><span class="zh">个神经元</span><span class="en">neurons</span></div>
+    <div class="stat"><b><span class="zh">65万亿+</span><span class="en en-i">65T+</span></b><span class="zh">条皮层连接</span><span class="en">cortical connections</span></div>
+    <div class="stat"><b>2,500</b><span class="zh">cm² 皮层表面积</span><span class="en en-i">cm² of cortical surface</span></div>
+    <div class="stat"><b><span class="zh">690亿</span><span class="en en-i">69B</span></b><span class="zh">个小脑神经元</span><span class="en">cerebellar neurons</span></div>
+    <div class="stat"><b><span class="zh">40–60亿</span><span class="en en-i">4–6B</span></b><span class="zh">视觉系统神经元</span><span class="en">visual-system neurons</span></div>
+    <div class="stat"><b><span class="zh">100万</span><span class="en en-i">1M</span></b><span class="zh">条视神经轴突</span><span class="en">optic-nerve axons per eye</span></div>
+  </div>
+  <a class="cta" href="#senses"><span class="zh">开始探索 8 大感觉 ↓</span><span class="en en-i">Start with the 8 senses ↓</span></a>
+</section>
+
+<!-- ══════════════ 数字 ══════════════ -->
+<section id="numbers">
+  <h2><span class="zh">📐 大脑规格表</span><span class="en">The Brain by the Numbers</span></h2>
+  <p class="sec-lead"><span class="zh">原海报左上角列出的“硬件参数”，每一项都令人咋舌：</span><span class="en">The spec sheet printed in the poster's top-left corner — every line is staggering:</span></p>
+  <div class="grid auto">
+    <div class="card num-card reveal"><div class="big">86,000,000,000+</div>
+      <p><span class="zh">个神经元 —— 你头颅里的神经元总数（860 多亿）。</span><span class="en">neurons in total — 86+ billion packed inside your head.</span></p></div>
+    <div class="card num-card reveal"><div class="big">15,000,000,000+</div>
+      <p><span class="zh">个大脑皮层神经元（150 多亿）。</span><span class="en">neurons in the cerebral cortex (15+ billion).</span></p></div>
+    <div class="card num-card reveal"><div class="big">65,000,000,000,000+</div>
+      <p><span class="zh">条大脑皮层连接（65 万亿多）。</span><span class="en">connections in the cerebral cortex (65+ trillion).</span></p></div>
+    <div class="card num-card reveal"><div class="big">1,000–10,000</div>
+      <p><span class="zh">每个神经元的平均连接（突触）数——相当于约 45,000 晶体管的双核处理器，因为突触就像晶体管开关一样工作。</span><span class="en">connections (synapses) per neuron on average — the transistor equivalent of a 45,000-transistor dual-core processor, since synapses work like transistor switches.</span></p></div>
+    <div class="card num-card reveal"><div class="big">50,000+</div>
+      <p><span class="zh">每 1 mm³ 皮层含 5 万多个神经元、超过 1 亿个突触（开关），算力超过一颗 Apple A9 处理器（iPhone 6s 每平方毫米约 2,300 万个晶体管）。</span><span class="en">neurons in 1 mm³ of cortex, with over 100 million synapses (switches) — more powerful than an Apple A9 chip (the iPhone 6s had ~23 million transistors per mm²).</span></p></div>
+    <div class="card num-card reveal"><div class="big">~2,500 cm²</div>
+      <p><span class="zh">大脑皮层总表面积——折叠进颅骨后只有巴掌大。</span><span class="en">total surface area of the cerebral cortex — folded to fit inside the skull.</span></p></div>
+    <div class="card num-card reveal"><div class="big">6 <span class="zh">层</span><span class="en en-i">layers</span></div>
+      <p><span class="zh">皮层是一块 6 层折叠的“电路板”，里面装满了电子元件般的神经元。</span><span class="en">the cortex is a 6-layer folded circuit board filled with electronics.</span></p></div>
+  </div>
+</section>
+
+<!-- ══════════════ 神经元 ══════════════ -->
+<section id="neuron">
+  <h2><span class="zh">⚡ 神经元：放电的 IF 语句</span><span class="en">The Neuron: an IF-statement that fires</span></h2>
+  <div class="two-col">
+    <div class="card reveal">
+      <h3><span class="zh">海报左上角：一根神经元的解剖</span><span class="en">Top-left of the poster: anatomy of one neuron</span></h3>
+      <ul class="feat">
+        <li>🌳 <b><span class="zh">树突 Dendrites</span></b> — <span class="zh">接收 thousands of inputs；海报在此标注“往里看 Look Inside：树突 / 神经元”。</span><span class="en">collect thousands of inputs; the poster tags a "Look Inside: Dendrite / Neuron" magnifier here.</span></li>
+        <li>🧵 <b><span class="zh">轴突 Axons</span></b> — <span class="zh">把输出信号送往下一站，海报用“导线”来比喻。</span><span class="en">carry the output onward — the poster's wiring.</span></li>
+        <li>🔋 <b><span class="zh">静息电位 Resting potential：−70 mV</span></b> — <span class="zh">神经元待机时的膜电位。</span><span class="en">the neuron's idling membrane voltage.</span></li>
+        <li>🧪 <b><span class="zh">离子与递质 Ions & neurotransmitters</span></b> — Na⁺ · K⁺ · Ca²⁺；<span class="zh">多巴胺 Dopamine、谷氨酸 Glutamate（兴奋），GABA（抑制），血清素 Serotonin（调制）。</span><span class="en">dopamine and glutamate (excitatory), GABA (inhibitory), serotonin (modulatory).</span></li>
+      </ul>
+      <div class="formula" dir="ltr">IF ( D⁺ + G⁺ − GABA⁻ ) + Others &gt; +20 mV&nbsp;&nbsp;THEN&nbsp;&nbsp;<b>FIRE</b> ⚡</div>
+      <p class="formula-cap"><span class="zh">动作电位（action potential）：当兴奋输入（多巴胺 D、谷氨酸 G）减去抑制输入（GABA），再加上其他输入，使膜电位越过 +20 mV 阈值，神经元就“放电”。下面自己动手试：</span><span class="en">Action potential: when excitation (dopamine D, glutamate G) minus inhibition (GABA), plus other inputs, pushes the membrane past +20 mV, the neuron fires. Try it yourself below.</span></p>
+    </div>
+    <div class="card reveal">
+      <h3><span class="zh">🧪 互动：让神经元放电</span><span class="en">Interactive: make the neuron fire</span></h3>
+      <div class="ap-widget" id="apWidget">
+        <div class="ap-slider"><label for="inDop"><span class="zh">多巴胺（兴奋 +）</span><span class="en en-i">Dopamine (excitatory)</span><output id="vDop">12</output></label><input type="range" id="inDop" min="0" max="60" value="12"></div>
+        <div class="ap-slider"><label for="inGlu"><span class="zh">谷氨酸（兴奋 +）</span><span class="en en-i">Glutamate (excitatory)</span><output id="vGlu">12</output></label><input type="range" id="inGlu" min="0" max="60" value="12"></div>
+        <div class="ap-slider"><label for="inGaba"><span class="zh">GABA（抑制 −）</span><span class="en en-i">GABA (inhibitory)</span><output id="vGaba">10</output></label><input type="range" id="inGaba" min="0" max="60" value="10"></div>
+        <div class="ap-slider"><label for="inOth"><span class="zh">其他输入（+）</span><span class="en en-i">Others</span><output id="vOth">0</output></label><input type="range" id="inOth" min="0" max="60" value="0"></div>
+        <div class="meter" aria-hidden="true"><div class="meter-fill" id="apFill"></div><div class="meter-thresh"></div><span class="meter-label">−80 mV</span><span class="meter-label r">+50 mV</span><span class="meter-cap">▲ +20 mV <span class="zh">阈值</span><span class="en en-i">threshold</span></span></div>
+        <p class="ap-read"><span class="zh">输入合计 <b id="apSum"></b><span id="apCalcZh"></span></span><span class="en">input sum <b id="apSumEn"></b><span id="apCalcEn"></span></span></p>
+        <div class="neuron-stage" id="apStage">
+          <svg viewBox="0 0 260 120" class="neuron-svg" aria-hidden="true">
+            <g class="dendrites" stroke="#8ecae6" stroke-width="2.5" fill="none" stroke-linecap="round">
+              <path d="M78,60 C58,60 52,34 34,30 M78,60 C54,58 44,44 22,44 M78,60 C56,66 46,84 26,88 M78,60 C64,78 60,100 44,108"/>
+            </g>
+            <g class="myelin">
+              <rect x="112" y="48" width="24" height="24" rx="7" fill="#ffd166"/>
+              <rect x="144" y="48" width="24" height="24" rx="7" fill="#ffd166"/>
+              <rect x="176" y="48" width="24" height="24" rx="7" fill="#ffd166"/>
+              <rect x="208" y="48" width="24" height="24" rx="7" fill="#ffd166"/>
+            </g>
+            <circle cx="95" cy="60" r="22" fill="#f72585" class="soma"/>
+            <circle cx="95" cy="60" r="8" fill="#0a0e1c" class="nucleus"/>
+            <text x="95" y="104" text-anchor="middle" class="svg-lbl">胞体 soma · −70 mV</text>
+            <text x="208" y="104" text-anchor="middle" class="svg-lbl">轴突 axon →</text>
+          </svg>
+          <div class="fire-badge" id="fireBadge">FIRE! ⚡</div>
+        </div>
+        <p class="ap-msg" id="apMsg"><span class="zh" id="msgZh">未达阈值：神经元保持静息……拉高兴奋输入试试。</span><span class="en" id="msgEn">Below threshold: the neuron stays quiet. Push excitation higher.</span></p>
+        <p class="ap-count"><span class="zh">已放电次数：<b id="apFires">0</b></span><span class="en">times fired: <b id="apFiresEn">0</b></span></p>
+      </div>
+    </div>
+  </div>
+  <blockquote class="reveal">
+    <p class="zh">“镜像神经元是一类特殊的视觉-运动神经元：无论动物自己做出一个动作，还是看到另一个个体做出同样的动作，它们都会放电。”</p>
+    <p class="en">"Mirror neurons are a particular class of visuomotor neurons, that discharge both when an animal does an action and when observing the same action done by another individual."</p>
+    <cite>— The Mirror Neuron System 《镜像神经元系统》<span class="zh">（对应海报“镜像运动学习 Mirror Motor Learning”“镜像感受 Mirror Feelings”标注）</span><span class="en en-i">(see the poster's "Mirror Motor Learning" / "Mirror Feelings" tags)</span></cite>
+  </blockquote>
+</section>
+
+<!-- ══════════════ 八大感觉 ══════════════ -->
+<section id="senses">
+  <h2><span class="zh">🎯 跟随 8 大感觉输入</span><span class="en">Follow the 8 Sensory Inputs</span></h2>
+  <p class="sec-lead"><span class="zh">海报用编号 1–8 标出八条进入大脑的信号通路。每张卡片汇总了海报上该通路的全部数字与标注。</span><span class="en">The poster numbers eight input channels, 1–8. Each card gathers every number and label the poster gives that channel.</span></p>
+  <div class="grid two">
+
+    <!-- 1 Sight -->
+    <article class="card sense reveal" style="--accent:var(--sight)">
+      <h3><span class="idx">1.</span> 👁️ <span class="zh">视觉</span><span class="en en-i">Sight</span></h3>
+      <ul class="feat">
+        <li><span class="zh"><b>视网膜里的视觉处理：</b>1.25 亿个视杆细胞 + 600 万个彩色视锥细胞 → 压缩成视神经中仅 <b>100 万条</b>轴突（单眼标注 1.26 亿视杆）。</span><span class="en"><b>Visual processing in the retina:</b> 125 million rods & 6 million color cone photoreceptors are compressed to just <b>1 million axons</b> in the optic nerve (the eye diagram labels 126 million rods).</span></li>
+        <li><span class="zh">视网膜会压缩“视频”、检测运动、留意“事故征兆”、对碰撞路径上的物体发出警报，并自动向四肢发送反射控制信号——估算<b>每只眼超过 4 颗 Apple A9 处理器</b>的处理能力。</span><span class="en">The retina compresses video, detects movement and accident evidence, watches for objects on a collision path, and automatically sends reflex control to the limbs — an estimated <b>4+ Apple A9 processors per eye</b>.</span></li>
+        <li><span class="zh"><b>中央凹 Fovea</b>（“小凹坑”）：直径约 1.5 mm，聚集 <b>20 万个视锥细胞</b>——高分辨率视野。</span><span class="en"><b>Fovea</b> ("the pit"): ~1.5 mm across, holding <b>200,000 cones</b> — the foveal high-resolution view.</span></li>
+        <li><span class="zh">视网膜厚度约 0.12 mm，总面积约 2,500 mm²。</span><span class="en">Retinal thickness ~0.12 mm; total retinal area ~2,500 mm².</span></li>
+        <li><span class="zh"><b>周边视野 = 低分辨率</b>，但周边运动感知电路持续提供视觉反射：运动检测中央凹反射 + 平滑追踪中央凹反射。</span><span class="en">The <b>periphery is low-resolution</b>, but its motion-sensing circuitry drives visual reflexes: motion-detection and smooth-pursuit foveal reflexes.</span></li>
+        <li><span class="zh">视神经 100 万连接 → 视觉中继 → <b>视辐射 570K</b> 条纤维 → 枕叶 V1。动眼神经控制眼肌；海报同时画出左眼与右眼。</span><span class="en">Optic nerve: 1 million connections → vision relay → <b>optic radiations: 570K</b> fibers → V1 in the occipital lobe. The oculomotor nerve steers the eye muscles; both eyes are drawn in the poster.</span></li>
+      </ul>
+    </article>
+
+    <!-- 2 Smell -->
+    <article class="card sense reveal" style="--accent:var(--smell)">
+      <h3><span class="idx">2.</span> 👃 <span class="zh">嗅觉</span><span class="en en-i">Smell</span></h3>
+      <ul class="feat">
+        <li><b>12,000,000</b> <span class="zh">个嗅觉感受器细胞（人类 Human）。</span><span class="en en-i">olfactory receptor cells (human).</span></li>
+        <li><b>1,000,000,000</b> <span class="zh">个（狗 Dog）。</span><span class="en en-i">(dog).</span></li>
+        <li><b>5,000,000,000</b> <span class="zh">个（猎犬 Hound）——比人类多 400 多倍。</span><span class="en en-i">(hound) — over 400× a human's.</span></li>
+        <li><span class="zh">海报中“气味 Odors”的箭头绕过丘脑，直达情绪与奖赏回路——这就是气味为何能瞬间唤起记忆与欲望。</span><span class="en">In the poster, the "Odors" arrows bypass the thalamus and land straight on the emotion and reward circuits — why a smell can trigger memory and craving instantly.</span></li>
+      </ul>
+    </article>
+
+    <!-- 3 Taste -->
+    <article class="card sense reveal" style="--accent:var(--taste)">
+      <h3><span class="idx">3.</span> 👅 <span class="zh">味觉</span><span class="en en-i">Taste</span></h3>
+      <ul class="feat">
+        <li><b>9,000</b> <span class="zh">个味蕾。</span><span class="en en-i">taste buds.</span></li>
+        <li><span class="zh">每个味蕾含 <b>5–10 个感受器细胞</b>。</span><span class="en">Each bud holds <b>5–10 receptor cells</b>.</span></li>
+        <li><span class="zh">味觉信号上传至<b>岛叶皮层</b>——海报在岛叶上同时标注“味觉 Taste”与“性 Sexual”。</span><span class="en">Taste ascends to the <b>insular cortex</b> — where the poster also tags "Sexual".</span></li>
+      </ul>
+    </article>
+
+    <!-- 4 Touch -->
+    <article class="card sense reveal" style="--accent:var(--touch)">
+      <h3><span class="idx">4.</span> ✋ <span class="zh">触觉</span><span class="en en-i">Touch</span></h3>
+      <blockquote class="mini">
+        <p class="zh">“你皮肤的每一平方厘米约有 200 个痛觉感受器，而压力感受器只有 15 个，冷觉 6 个，温觉 2 个。”</p>
+        <p class="en">"Every square centimetre of your skin contains around 200 pain receptors but only 15 receptors for pressure, 6 for cold and 2 for warmth."</p>
+        <cite>— BBC Science & Nature</cite>
+      </blockquote>
+      <ul class="feat">
+        <li><span class="zh">触觉沿<b>“痛觉-触觉-本体感觉”</b>通路上行至顶叶体感区（海报标注 Pain–Touch–Proprioception → Sensory Area）。</span><span class="en">Touch ascends via the <b>pain–touch–proprioception</b> line to the parietal sensory area.</span></li>
+      </ul>
+    </article>
+
+    <!-- 5 Hearing -->
+    <article class="card sense reveal" style="--accent:var(--hear)">
+      <h3><span class="idx">5.</span> 👂 <span class="zh">听觉</span><span class="en en-i">Hearing</span></h3>
+      <ul class="feat">
+        <li><b>15,500</b> <span class="zh">个毛细胞在耳蜗（Cochlea）里。</span><span class="en en-i">hair cells in the cochlea.</span></li>
+        <li><b>30,000</b> <span class="zh">条连接在听神经（Auditory Nerve）中。</span><span class="en en-i">connections in the auditory nerve.</span></li>
+        <li><b>100,000,000</b> <span class="zh">个神经元在听觉皮层（Auditory Cortex）。</span><span class="en en-i">neurons in the auditory cortex.</span></li>
+        <li><span class="zh">信号经<b>声音中继 Sound Relay</b>（丘脑）送往颞叶，皮层在此完成<b>词语 Words</b> 处理；海报还标出视听反射 Visual/Audio Reflexes。</span><span class="en">Signals pass the <b>sound relay</b> (thalamus) to the temporal lobe for <b>words</b>; the poster also marks visual/audio reflexes.</span></li>
+      </ul>
+    </article>
+
+    <!-- 6 Balance -->
+    <article class="card sense reveal" style="--accent:var(--balance)">
+      <h3><span class="idx">6.</span> 🤸 <span class="zh">平衡与加速度</span><span class="en en-i">Balance & Acceleration</span></h3>
+      <ul class="feat">
+        <li><span class="zh"><b>前庭 Vestibule</b> 接收“陀螺仪 + 加速度计”输入——即<b>军用加速度计-陀螺三件套</b>（Military Accelerometer-Gyro Triad）。</span><span class="en">The <b>vestibule</b> takes gyro & accelerometer inputs — a <b>military accelerometer-gyro triad</b>.</span></li>
+        <li><span class="zh">“前庭器类似于军用制导系统和航天飞机上使用的主传感器。”（海报原文）</span><span class="en">"Vestibule is similar to the main sensor used in Military Guidance and the Space Shuttle." (poster text)</span></li>
+        <li><span class="zh">三大功能（海报剪影）：图像稳定 Image Stabilization · 导航 Navigation · 眼反射 Eye Reflex；另有“图像稳定对抗反射（平衡）” Image-Stabilization Counter Reflex。</span><span class="en">Three poster functions: image stabilization, navigation, eye reflex — plus the image-stabilization counter reflex for balance.</span></li>
+        <li><span class="zh">小脑深处藏着惯性导航计算机：“研究者发现，小脑深处埋着一台精密的神经计算机，它执行惯性导航计算，解算一个人在空间中的运动。”——《大脑惯性导航系统被定位》</span><span class="en">Deep in the cerebellum sits an inertial-navigation computer: "Researchers have discovered a sophisticated neural computer, buried deep in the cerebellum, that performs inertial navigation calculations to figure out a person's movement through space." — Brain's Inertial Navigation System Pinpointed</span></li>
+        <li><span class="zh">与视觉追踪联动：“头部运动时，两套系统必须与前庭系统互动。追踪系统的目标是让眼速匹配目标速度，使目标图像稳定落在中央凹上。”——前庭相关额叶皮层与平滑追踪</span><span class="en">Linked with pursuit: "During head movements, both systems must interact with the vestibular system. The goal of the pursuit system is to keep the retinal target image on the fovea by matching the eye velocity to target velocity." — The vestibular-related frontal cortex and its role in smooth-pursuit</span></li>
+      </ul>
+    </article>
+
+    <!-- 7 Joint position -->
+    <article class="card sense reveal" style="--accent:var(--prop)">
+      <h3><span class="idx">7.</span> 🦴 <span class="zh">关节位置（本体感觉）</span><span class="en en-i">Joint Position / Proprioception</span></h3>
+      <ul class="feat">
+        <li><span class="zh">闭上眼也知道手脚在哪——肌腱与关节的本体感觉持续上报；小脑据此设置<b>力量限制 Strength Limits</b>，防止你把自己拧断。</span><span class="en">You know where your limbs are with eyes shut — proprioception reports continuously, and the cerebellum uses it to set <b>strength limits</b> so you don't wrench yourself apart.</span></li>
+        <li><span class="zh">信息沿脊髓上传：<b>脊髓有 10 亿个神经元</b>，灰质在横截面上呈<b>蝴蝶形</b>（脊髓板层 lamina）；髓鞘绝缘的轴突（“导线”）沿脊髓上下行。</span><span class="en">It rides the spinal cord: <b>1 billion neurons</b>, gray matter shaped like a <b>butterfly</b> (the spinal laminae), with myelin-insulated axon "wiring" running up and down.</span></li>
+        <li><span class="zh">“人类运动神经元最长的轴突可以超过 1 米。”（海报标注）</span><span class="en">"The largest axon of a human motor neuron can be over a meter long." (poster note)</span></li>
+        <li><span class="zh">海报还标出“手臂层 Arm Layer”与“中间神经元 Inter Neurons”——“脊髓中必然存在复杂的神经元间回路，才能在双侧多个部位协调肢体伸肌与屈肌活动。中间神经元最多可占脊髓全部细胞的 97%。”——《脊髓》Marieb《人体解剖生理学》</span><span class="en">The poster's "Arm Layer" and "Inter Neurons" tags: "A complex inter-neuronal circuitry must exist to coordinate the control of limb extensor and flexor activity across multiple points bilaterally. Interneurons make up as much as 97% of all cells in the cord." — Spinal cord, Marieb, Human A&P</span></li>
+      </ul>
+    </article>
+
+    <!-- 8 Facial expressions -->
+    <article class="card sense reveal" style="--accent:var(--face)">
+      <h3><span class="idx">8.</span> 😀 <span class="zh">面部表情</span><span class="en en-i">Facial Expressions</span></h3>
+      <p class="tagline"><span class="zh">自动产生，也自动被读取 Automatically produced and read</span><span class="en en-i">Automatically produced and read</span></p>
+      <ul class="feat">
+        <li><span class="zh"><b>六大基本表情：</b>快乐 happiness · 悲伤 sadness · 惊讶 surprise · 恐惧 fear · 愤怒 anger · 厌恶 disgust。</span><span class="en"><b>The six main expressions:</b> happiness, sadness, surprise, fear, anger, and disgust.</span></li>
+        <li><span class="zh">“人脸是一件工程奇迹：皮肤之下的大量肌肉，让我们能组合出无数种面部表情。”——《人类面部表情知觉模型》</span><span class="en">"The human face is an engineering marvel. Underneath our skin, a large number of muscles allow us to produce many configurations of facial expressions." — A Model of the Perception of Facial Expressions of Emotion by Humans</span></li>
+        <li><span class="zh"><b>面神经</b>驱动表情肌；皮层在颞-枕区完成<b>面孔处理</b>（海报画有正面 front 与侧面 profile 两张脸）与<b>面部表情处理</b>。</span><span class="en">The <b>facial nerve</b> drives the muscles; face processing (front & profile faces drawn in the poster) and facial-expression processing happen in occipito-temporal cortex.</span></li>
+        <li><span class="zh">面孔/身体知觉：“功能神经影像证据表明，对人脸与人体的视觉加工由枕-颞皮层中分布式的人脸/身体敏感网络完成。”——《面孔与身体知觉中不同的皮层动力学》</span><span class="en">"Evidence from functional neuroimaging indicates that visual perception of human faces and bodies is carried out by distributed networks of face and body-sensitive areas in the occipito-temporal cortex." — Different Cortical Dynamics in Face and Body Perception</span></li>
+        <li><span class="zh">裸体检测（海报 V2b 旁的 Nudity 剪影）：“人体裸露在视觉加工早期即被检测到，人脑对他人裸体表现出增强的视觉加工。有趣的是，裸体引发的 N170 反应甚至强于面孔。”——《赤裸的真相》</span><span class="en">Nudity (the poster's Nudity silhouettes by V2b): "Our results thus confirm that nudity of human bodies is detected early on during visual processing, and that the human brain exhibits enhanced visual processing to other people's nude bodies. Interestingly, the N170 response to nude bodies was even greater than that to faces." — The Naked Truth</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════════ 交互脑图 ══════════════ -->
+<section id="map">
+  <h2><span class="zh">🗺️ 交互脑区地图</span><span class="en">Interactive Brain Map</span></h2>
+  <p class="sec-lead"><span class="zh">海报把几十条标注画在一张大脑侧面图上。点击下方色块，跳到对应脑区的详解卡片。</span><span class="en">The poster paints dozens of labels onto one side view. Click a region below to jump to its detail card.</span></p>
+  <figure class="brainmap card reveal">
+    <svg id="brainSvg" viewBox="0 0 920 690" role="group" aria-label="大脑侧面分区图 Sagittal brain regions">
+      <!-- cerebrum regions -->
+      <path class="rgn prefrontal" tabindex="0" data-goto="#r-prefrontal" data-zh="前额叶皮层" data-en="Prefrontal cortex"
+        d="M175,402 C98,368 66,286 88,214 C106,148 172,96 262,80 C300,72 342,67 382,70 C356,142 342,238 346,318 C348,362 340,398 322,428 C268,426 214,422 175,402 Z"><title>前额叶 Prefrontal</title></path>
+      <path class="rgn ofc" tabindex="0" data-goto="#r-ofc" data-zh="眶额皮层" data-en="Orbital frontal cortex"
+        d="M175,402 C214,422 268,426 322,428 C334,404 342,368 344,322 C312,338 258,352 222,372 C202,384 186,394 175,402 Z"><title>眶额皮层 OFC</title></path>
+      <path class="rgn motor" tabindex="0" data-goto="#r-motor" data-zh="运动控制（含 FEF）" data-en="Motor control (incl. FEF)"
+        d="M382,70 C398,69 414,70 430,73 C416,140 408,226 412,306 C398,310 384,312 370,312 C356,232 360,142 382,70 Z"><title>运动区 Motor</title></path>
+      <path class="rgn parietal" tabindex="0" data-goto="#r-parietal" data-zh="顶叶" data-en="Parietal lobe"
+        d="M430,73 C486,68 538,78 584,98 C566,158 556,222 560,278 C522,290 480,294 440,290 C428,222 420,142 430,73 Z"><title>顶叶 Parietal</title></path>
+      <path class="rgn occipital" tabindex="0" data-goto="#visual" data-zh="枕叶（视觉系统）" data-en="Occipital lobe (visual system)"
+        d="M584,98 C646,124 694,178 706,252 C714,314 690,376 640,410 C618,376 596,330 578,296 C570,282 566,280 560,278 C556,222 566,158 584,98 Z"><title>枕叶 Occipital</title></path>
+      <path class="rgn temporal" tabindex="0" data-goto="#r-temporal" data-zh="颞叶" data-en="Temporal lobe"
+        d="M322,428 C356,432 402,436 452,438 C512,440 572,432 640,410 C616,378 594,336 578,296 C540,286 496,284 456,286 C446,330 420,372 384,398 C364,412 342,422 322,428 Z"><title>颞叶 Temporal</title></path>
+      <circle class="rgn insular" tabindex="0" cx="418" cy="326" r="24" data-goto="#r-insular" data-zh="岛叶" data-en="Insular cortex"><title>岛叶 Insular</title></circle>
+      <!-- cerebellum -->
+      <path class="rgn cerebellum" tabindex="0" data-goto="#r-cerebellum" data-zh="小脑" data-en="Cerebellum"
+        d="M590,446 C592,414 636,398 682,414 C724,428 744,466 730,504 C714,544 656,556 614,536 C586,522 580,478 590,446 Z"><title>小脑 Cerebellum</title></path>
+      <path class="cereb-lines" d="M600,455 C630,448 668,446 706,458 M598,485 C632,477 672,476 716,486 M606,514 C636,508 668,507 706,514" fill="none"/>
+      <!-- brainstem + spinal cord -->
+      <path class="rgn brainstem" tabindex="0" data-goto="#r-brainstem" data-zh="脑干" data-en="Brain stem"
+        d="M434,436 C446,458 452,482 450,508 C449,526 446,542 448,560 L492,562 C492,542 496,520 496,498 C497,472 488,450 480,434 C464,440 448,440 434,436 Z"><title>脑干 Brain stem</title></path>
+      <path class="rgn spinal" tabindex="0" data-goto="#r-spinal" data-zh="脊髓" data-en="Spinal cord"
+        d="M448,560 L492,562 L486,650 L444,648 Z"><title>脊髓 Spinal cord</title></path>
+      <!-- cingulate (internal, dashed; 绘制于大脑分区之上, 避免被不透明路径盖死) -->
+      <ellipse cx="470" cy="150" rx="80" ry="34" class="rgn cing" tabindex="0" data-goto="#r-cingulate" data-zh="扣带皮层" data-en="Cingulate cortex"><title>扣带皮层 Cingulate</title></ellipse>
+      <!-- labels -->
+      <g class="lbls">
+        <text x="225" y="205">前额叶 Prefrontal</text>
+        <text x="243" y="378">眶额 OFC</text>
+        <text x="398" y="185" transform="rotate(90 398 185)">运动 Motor · FEF</text>
+        <text x="470" y="152" class="small">扣带 Cingulate</text>
+        <text x="472" y="205">顶叶 Parietal</text>
+        <text x="612" y="180">枕叶 Occipital</text>
+        <text x="440" y="378">颞叶 Temporal</text>
+        <text x="418" y="330" class="tiny" text-anchor="middle">岛叶</text>
+        <text x="648" y="495">小脑 Cerebellum</text>
+        <text x="508" y="500">脑干 Brain stem</text>
+        <text x="504" y="608">脊髓 Spinal cord</text>
+        <text x="70" y="120" class="small">⬅ 前方 front</text>
+      </g>
+    </svg>
+    <figcaption id="mapTip" class="map-tip"><span class="zh">悬停查看名称，点击跳转详解 · </span><span class="en en-i">Hover to name, click to jump</span></figcaption>
+  </figure>
+</section>
+
+<!-- ══════════════ 脑区详解 ══════════════ -->
+<section id="regions">
+  <h2><span class="zh">🧩 皮层脑区详解</span><span class="en">Cortical Regions in Detail</span></h2>
+  <p class="sec-lead"><span class="zh">海报中部每个文字标签对应的脑区与功能，含原文引述。</span><span class="en">Every cortical label from the middle of the poster, with its quoted sources.</span></p>
+  <div class="grid two">
+
+    <article class="card region reveal" id="r-prefrontal" style="--accent:var(--pref)">
+      <h3>🧭 <span class="zh">前额叶皮层</span><span class="en en-i">Prefrontal Cortex</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">执行控制 Executive Control</span></b> — <span class="zh">任务 Tasks 分配、规划与“虚拟 Virtual”情景的模拟运行。</span><span class="en">assigns tasks, plans, and runs "virtual" scenarios.</span></li>
+        <li><b><span class="zh">能抑制感官奖赏 Can inhibit sensory rewards</span></b> — <span class="zh">海报把它标为 spirit（灵性），把眶额标为 flesh（肉体）：灵与肉的拉锯就在这两区之间。</span><span class="en">the poster labels it <i>spirit</i> versus the orbital cortex's <i>flesh</i>.</span></li>
+        <li><b><span class="zh">“好坏处理” Bad vs Good Processing</span></b> — <span class="zh">权衡利弊（海报配了赛车游戏画面）。</span><span class="en">weighing good against bad (racing-game artwork).</span></li>
+        <li><b><span class="zh">行为的执行控制 Executive Control of Behavior</span></b> — <span class="zh">道德 Morals · 法律 Laws · 价值观 Values。</span><span class="en">morals, laws, values.</span></li>
+      </ul>
+      <blockquote class="mini">
+        <p class="zh">“三个额叶回路与决策相关：1) 眶额皮层 OFC；2) 背外侧前额叶 DLPFC；3) 前扣带 ACC——它们在冲突选项间的取舍与结果处理中至关重要。”</p>
+        <p class="en">"Three frontal circuits have been associated with decision making; 1: the OFC, 2: the DLPFC, and 3: the ACC, important in setting among conflicting options, as well as outcome processing."</p>
+        <cite>— The Functional Neuroanatomy of Decision-Making</cite>
+      </blockquote>
+    </article>
+
+    <article class="card region reveal" id="r-ofc" style="--accent:var(--ofc)">
+      <h3>🏷️ <span class="zh">眶额皮层（OFC）</span><span class="en en-i">Orbital Frontal Cortex</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">习得奖赏 Learned</span></b> + <b><span class="zh">自动感官奖赏 Auto-Sensory Rewards</span></b> — <span class="zh">食物、气味、面孔等原始奖赏在此“估值”。</span><span class="en">where food, odors and faces get their value tags.</span></li>
+        <li><span class="zh">海报注释：“习得的图像会铭刻进记忆，被认出后转发给眶额皮层。”</span><span class="en">Poster note: "Learned images become etched in memory, then recognized and forwarded to the OFC."</span></li>
+        <li><span class="zh">flesh（肉体）一侧：原始欲望的入口。</span><span class="en">The <i>flesh</i> side: the doorway of raw appetite.</span></li>
+      </ul>
+      <blockquote class="mini">
+        <p class="zh">“如今可以确认：眶额-内侧前额叶皮层整体上接收高度加工的感觉传入，对内脏功能施加皮层影响，并参与高级认知与情绪过程。”</p>
+        <p class="en">"It can now be recognized that the region (Orbital and Medial Prefrontal Cortex) as a whole receives highly processed sensory afferents, provides cortical influence over visceral functions, and participates in high-level cognitive and emotional processes."</p>
+        <cite>— The Organization of Networks within the Orbital and Medial Prefrontal Cortex of Rats, Monkeys and Humans</cite>
+      </blockquote>
+    </article>
+
+    <article class="card region reveal" id="r-acc" style="--accent:var(--accr)">
+      <h3>⚠️ <span class="zh">前扣带皮层 ACC（含 PCC）</span><span class="en en-i">Anterior Cingulate Cortex (with PCC)</span></h3>
+      <ul class="feat">
+        <li><span class="zh">决策三回路之一：冲突监测与结果处理（与 OFC、DLPFC 并列）。</span><span class="en">Third member of the decision triad: conflict monitoring and outcome processing.</span></li>
+        <li><span class="zh">海报将其与信仰、错误监控的画面放在一起（香烟、赌博、轮盘等“坏 Bad”提示）。</span><span class="en">The poster groups it with error-monitoring imagery (cigarettes, gambling, the roulette wheel).</span></li>
+        <li><span class="zh"><b>后扣带 PCC</b> 旁的灯泡标注：<b>想法 Ideas</b>。</span><span class="en">By the <b>PCC</b> sits a lightbulb labeled <b>Ideas</b>.</span></li>
+      </ul>
+      <blockquote class="mini">
+        <p class="zh">“宗教信念像一种抗焦虑药：它降低对错误或不确定性的情绪反应，为人们提供意义系统，帮助理解这个复杂而不确定的世界。在生理层面，它降低 ACC 的活动，从而减轻痛苦。”</p>
+        <p class="en">"Religious conviction acts like an anxiolytic, reducing emotional reactions to errors or uncertainty, providing people with meaningful system helping them to understand the complex and uncertain world that we live in. In physiological terms, it reduces ACC activity and consequently distress."</p>
+        <cite>— The Arthur C. Clarke Center<span class="zh">（海报标注）</span><span class="en en-i"> (as cited on the poster)</span></cite>
+      </blockquote>
+    </article>
+
+    <article class="card region reveal" id="r-motor" style="--accent:var(--motr)">
+      <h3>🏀 <span class="zh">运动控制（含 FEF 与镜像系统）</span><span class="en en-i">Motor Control, FEF & mirror system</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">运动规划 Motor Planning · 抓握 Grip · 存储 Storage · 头/手臂控制 Head & Arm Control</span></b><span class="zh">——海报的齿轮图标=自动化程序。</span><span class="en">the poster's gear icons mark automated programs.</span></li>
+        <li><span class="zh">篮球运动员旁的标签：<b>觉醒 Aroused → 投篮 Shot</b>，“逐级调用小脑程序 Escalate Cerebellar Programs”。</span><span class="en">By the basketball player: <b>Aroused → Shot</b>, "escalate cerebellar programs."</span></li>
+        <li><b>FEF <span class="zh">额叶眼区</span></b> — <span class="zh">眼动控制 Eye Control · 注意 Attention · 平滑追踪 Smooth Pursuit（望远镜瞄准画面）。</span><span class="en">eye control, attention, smooth pursuit (the telescopic-sight artwork).</span></li>
+        <li><b><span class="zh">镜像运动学习 Mirror Motor Learning</span></b> — <span class="zh">看别人做，自己脑内“排练”；对应上文镜像神经元引文。</span><span class="en">watching others rehearses the move in your own brain — see the mirror-neuron quote above.</span></li>
+      </ul>
+    </article>
+
+    <article class="card region reveal" id="r-insular" style="--accent:var(--insr)">
+      <h3>🫀 <span class="zh">岛叶</span><span class="en en-i">Insular Cortex</span></h3>
+      <ul class="feat">
+        <li><span class="zh">海报标注：<b>味觉 Taste</b> 与 <b>性 Sexual</b> 在此汇合——最“肉体”的皮层。</span><span class="en">The poster tags both <b>Taste</b> and <b>Sexual</b> here — the body's most visceral cortex.</span></li>
+        <li><span class="zh">附近的“镜像感受 Mirror Feelings”标注：看见别人的感受，自己脑内也泛起一丝。</span><span class="en">The nearby "Mirror Feelings" tag: seeing a feeling makes you feel an echo of it.</span></li>
+      </ul>
+    </article>
+
+    <article class="card region reveal" id="r-cingulate" style="--accent:var(--cingr)">
+      <h3>🎗️ <span class="zh">扣带皮层</span><span class="en en-i">Cingulate Cortex</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">感知感觉 Perceived Sensations</span></b> — <span class="zh">把身体与情绪的感觉串成“我”的体验。</span><span class="en">weaves bodily and emotional feelings into experience.</span></li>
+        <li><b><span class="zh">悔恨 Remorse · 共情 Empathy</span></b> — <span class="zh">社会性情绪的中枢（海报配手捧爱心图案）。</span><span class="en">the hub of social emotions (heart-in-hands artwork).</span></li>
+        <li><span class="zh">ACC 部分见上方前扣带卡片（含宗教信念引文）。</span><span class="en">The ACC portion lives in the ACC card above (with the religious-conviction quote).</span></li>
+      </ul>
+    </article>
+
+    <article class="card region reveal" id="r-parietal" style="--accent:var(--parr)">
+      <h3>🖐️ <span class="zh">顶叶皮层（感觉区 · IPS · PCC）</span><span class="en en-i">Parietal Cortex — Sensory Area · IPS · PCC</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">感觉区 Sensory Area</span></b> — <span class="zh">感觉反馈 Sensory Feedback · 抓握 Grasp · 痛-触-本体感觉 Pain–Touch–Proprioception。</span><span class="en">sensory feedback, grasp, pain–touch–proprioception.</span></li>
+        <li><b>IPS <span class="zh">顶内沟</span></b> — <span class="zh"><b>视觉引导肢体 Visual Guided Limbs</b>；S→R 芯片在此密布。</span><span class="en"><b>visual guided limbs</b>; S→R chips stud this area.</span></li>
+        <li><span class="zh"><b>词语处理 Word Processing</b> · <b>位置处理/位置地图 Place Processing / Place Mapping</b>（海报配指南针与红绿灯图标）。</span><span class="en">word processing; place processing / place mapping (compass and traffic-light icons).</span></li>
+      </ul>
+      <blockquote class="mini">
+        <p class="zh">“有压倒性的证据表明，IPS 区域参与复杂的手部使用、够取与抓握，参与工具使用和以身体为中心的参照系，并参与编程有意图的手部运动。”</p>
+        <p class="en">"There is overwhelming evidence that areas in the IPS are involved in complex hand use, reaching, grasping, for tool use and body centered frames of references for reaching and grasping, and programming intentional hand movements."</p>
+        <cite>— Topographic Maps within Brodmann's Area 5 of Macaque Monkeys</cite>
+      </blockquote>
+    </article>
+
+    <article class="card region reveal" id="r-temporal" style="--accent:var(--temr)">
+      <h3>🎼 <span class="zh">颞叶</span><span class="en en-i">Temporal Lobe</span></h3>
+      <ul class="feat">
+        <li><span class="zh">听觉皮层所在（<b>1 亿神经元</b>），完成声音→词语的升级。</span><span class="en">Home of the auditory cortex (100 million neurons), upgrading sound into words.</span></li>
+        <li><span class="zh">面孔与身份识别（“这是谁 Who？”）、习得图像进入记忆后送往 OFC。</span><span class="en">Faces and identity ("Who?"); learned images are stored here before forwarding to the OFC.</span></li>
+        <li><span class="zh">海报同时标注<b>视觉中继 Vision Relay</b> 与<b>声音中继 Sound Relay</b>（丘脑）、视听反射、时钟 Clock / 睡眠 Sleep 标签。</span><span class="en">The poster also marks the vision and sound relays (thalamus), visual/audio reflexes, and clock/sleep tags.</span></li>
+      </ul>
+    </article>
+
+    <article class="card region reveal" id="r-relays" style="--accent:var(--relr)">
+      <h3>🔁 <span class="zh">中继站与反射</span><span class="en en-i">Relays & Reflexes</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">视觉中继 Vision Relay</span></b> — <span class="zh">视网膜信号在此换乘开往枕叶的列车（视辐射 570K）。</span><span class="en">where retinal signals change trains for the occipital lobe (570K radiation fibers).</span></li>
+        <li><b><span class="zh">声音中继 Sound Relay → 词语 Words。</span><span class="en en-i">Sound relay → words.</span></b></li>
+        <li><b><span class="zh">视听反射 Visual/Audio Reflexes</span></b> — <span class="zh">巨响让你眨眼、闪光让你转头，快过思考。</span><span class="en">a bang blinks you, a flash turns you — faster than thought.</span></li>
+        <li><b><span class="zh">图像稳定对抗反射（平衡）Image-Stabilization Counter Reflex</span></b> — <span class="zh">跑动时视野依然稳定。</span><span class="en">your view stays level even while running.</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════════ 视觉处理系统 ══════════════ -->
+<section id="visual">
+  <h2><span class="zh">👁️ 视觉处理系统</span><span class="en">The Visual Processing System</span></h2>
+  <p class="sec-lead"><span class="zh">海报右上整栏都在讲它——由 <b>40–60 亿神经元</b>组成的识别流水线。</span><span class="en">The poster's entire right column: a recognition pipeline built from <b>4–6 billion neurons</b>.</span></p>
+  <div class="pipeline reveal" dir="ltr">
+    <span class="pipe">👁️ <span class="zh">视网膜 1.26亿视杆+600万视锥</span><span class="en en-i">Retina: 126M rods + 6M cones</span></span><i>→</i>
+    <span class="pipe">🧵 <span class="zh">视神经 100万轴突</span><span class="en en-i">Optic nerve: 1M axons</span></span><i>→</i>
+    <span class="pipe">🔁 <span class="zh">视觉中继</span><span class="en en-i">Vision relay</span></span><i>→</i>
+    <span class="pipe">📡 <span class="zh">视辐射 570K</span><span class="en en-i">Radiations: 570K</span></span><i>→</i>
+    <span class="pipe">🅚 <span class="zh">V1 视觉区</span><span class="en en-i">V1 sight area</span></span><i>→</i>
+    <span class="pipe">🅥 <span class="zh">V2a/b · V3-5/MT · V3b · V4h · V6&V7</span><span class="en en-i">V2a/b · V3-5/MT · V3b · V4h · V6&V7</span></span>
+  </div>
+  <div class="grid auto">
+    <div class="card vcard reveal" style="--accent:var(--v1)"><h4>V1 · <span class="zh">视觉区</span><span class="en en-i">Sight Area</span><small class="zh">枕叶</small><small class="en en-i">Occipital Lobe</small></h4>
+      <p><span class="zh">初级视皮层：线条、边角、朝向的第一站（海报配房屋/汽车/字母 A 与“1 2 3”图标——识别从这里开始）。</span><span class="en">Primary visual cortex: first stop for edges and orientation (the poster's house/car/A and "1 2 3" icons — recognition starts here).</span></p></div>
+    <div class="card vcard reveal" style="--accent:var(--v2a)"><h4>V2a</h4>
+      <p><span class="zh">特征组合与“1→2→3”式的逐级识别；S→R 模块芯片串联其中。</span><span class="en">Feature combination and the stepwise "1→2→3" recognition cascade, threaded with S→R chips.</span></p></div>
+    <div class="card vcard reveal" style="--accent:var(--v2b)"><h4>V2b</h4>
+      <p><span class="zh"><b>运动处理 Motion</b> · <b>面部表情处理 Facial Expressions</b> · <b>身体部位 Body Parts</b> · <b>裸体检测 Nudity</b>（海报在旁画满剪影与面孔）。</span><span class="en"><b>Motion</b> · <b>facial expressions</b> · <b>body parts</b> · <b>nudity detection</b> (surrounded by the poster's silhouettes and faces).</span></p></div>
+    <div class="card vcard reveal" style="--accent:var(--v3m)"><h4>V3-5 / MT</h4>
+      <p><span class="zh">运动处理 Motion Processing：追球、避车全靠它。</span><span class="en">Motion processing: chasing balls, dodging cars.</span></p></div>
+    <div class="card vcard reveal" style="--accent:var(--v3b)"><h4>V3b · <span class="zh">物体处理</span><span class="en en-i">Object Processing</span></h4>
+      <p><span class="zh">蝴蝶、玫瑰、蛇、钞票被“认出”——习得图像铭刻记忆，转发眶额皮层 OFC。</span><span class="en">Butterfly, rose, snake, banknote get recognized — learned images etched in memory, then forwarded to the OFC.</span></p></div>
+    <div class="card vcard reveal" style="--accent:var(--v4)"><h4>V4h · <span class="zh">颜色</span><span class="en en-i">Colors</span></h4>
+      <p><span class="zh">世界由此带上色相（海报的彩色蝴蝶）。</span><span class="en">Where the world acquires hue (the poster's paintbox butterfly).</span></p></div>
+    <div class="card vcard reveal" style="--accent:var(--v67)"><h4>V6 & V7 · <span class="zh">手眼协调</span><span class="en en-i">Hand-Eye Coordination</span></h4>
+      <p><span class="zh">海报剪影阵容：棒球击球手、高尔夫挥杆、足球守门、持枪瞄准——全是 V6/V7 在校准。</span><span class="en">The poster's silhouette lineup — batter, golfer, goalkeeper, marksman — all calibrated by V6/V7.</span></p></div>
+  </div>
+  <blockquote class="reveal">
+    <p class="zh">“识别过程很可能是横跨视皮层的一系列计算：从早期视皮层对刺激低级属性（视差、运动、朝向）的局部计算开始——此时几乎还没有整体物体形状的概念——再逐级进入更高层次、更全局的计算。”</p>
+    <p class="en">"The recognition process likely entails a sequence of computations across visual cortex, starting from local computations in early visual cortex related to low-level properties of the visual stimulus, such as disparity, motion, or orientation, conveying little sense of the global object shape, then proceeding to more global computations in higher levels of the hierarchy of visual processing."</p>
+    <cite>— Representation of Shapes, Edges, and Surfaces Across Multiple Cues in the Human Visual Cortex</cite>
+  </blockquote>
+  <blockquote class="reveal">
+    <p class="zh">“越来越明显的是，即便是单个神经元也能执行复杂的计算。”</p>
+    <p class="en">"It is now becoming increasingly apparent that even single neurons can perform complex computations."</p>
+    <cite>— Wikipedia<span class="zh">（海报在导航模块旁引用）</span><span class="en en-i"> (cited beside the poster's navigation module)</span></cite>
+  </blockquote>
+</section>
+
+<!-- ══════════════ 奖赏 · 惩罚 · 情绪 ══════════════ -->
+<section id="limbic">
+  <h2><span class="zh">🍬 奖赏、惩罚、情绪与压力</span><span class="en">Rewards, Punishment, Emotion & Stress</span></h2>
+  <p class="sec-lead"><span class="zh">海报中央的“化学票房”：多巴胺上演渴望，阿片肽上演满足，前额叶负责 censorship。</span><span class="en">The poster's chemical box-office: dopamine plays craving, opioids play satisfaction, and the prefrontal cortex runs censorship.</span></p>
+  <div class="grid two">
+    <article class="card reveal" style="--accent:var(--rewr)">
+      <h3>🎁 <span class="zh">奖赏系统 Rewards</span><span class="en en-i">Rewards</span></h3>
+      <ul class="feat">
+        <li><b>Dopamine <span class="zh">多巴胺</span></b> → <span class="zh"><b>愉悦 Pleasure</b> 与 <b>需求 Needs</b>。</span><span class="en en-i">drives pleasure and needs.</span></li>
+        <li><span class="zh">海报点名的四大驱动：<b>赌博 Gambling（轮盘）</b> · <b>教育 Education</b> · <b>食物 Food</b> · <b>生殖 Reproduction</b>。</span><span class="en">The poster's four drives: gambling (roulette), education, food, reproduction.</span></li>
+        <li><span class="zh">好坏标签 Good / Bad；前额叶可<b>抑制</b>这些奖赏（“虚拟 Virtual”的想象也能点亮它们）。</span><span class="en">Good/bad tags; the prefrontal cortex can <b>inhibit</b> these rewards — even imagined "virtual" ones light them up.</span></li>
+      </ul>
+    </article>
+    <article class="card reveal" style="--accent:var(--punr)">
+      <h3>🚫 <span class="zh">惩罚系统 Punishment</span><span class="en en-i">Punishment</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">多巴胺关闭 Dopamine off</span></b> — <span class="zh">奖赏信号熄灭，枯燥与失落登场。</span><span class="en">the reward signal goes dark; boredom and loss move in.</span></li>
+        <li><b>Opioids <span class="zh">阿片肽</span></b> — <span class="zh">安慰与止痛的内部药房。</span><span class="en">the in-house pharmacy of comfort and pain relief.</span></li>
+        <li><b><span class="zh">停止习惯 Stop Habits</span></b> — <span class="zh">戒断的开关（海报配“停止”标牌）。</span><span class="en">the habit brake (the poster's stop sign).</span></li>
+      </ul>
+    </article>
+    <article class="card reveal" style="--accent:var(--emor)">
+      <h3>🎭 <span class="zh">情绪 Emotion</span><span class="en en-i">Emotion</span></h3>
+      <ul class="feat">
+        <li><span class="zh">六张表情面孔排在脑中央：<b>恐惧 Fear · 愤怒 Anger · 悲伤 Sad · 快乐 Happy · 厌恶 Disgust</b>（+惊讶 Surprise）。</span><span class="en">The six expression faces line the brain's center: fear, anger, sad, happy, disgust (+ surprise).</span></li>
+        <li><span class="zh">旁挂标签：<b>睡眠 Sleep</b> · <b>生物钟 Clock</b> · <b>“这是谁？”Who</b>。</span><span class="en">Hanging tags: sleep, clock, "Who?".</span></li>
+        <li><span class="zh">嗅觉 Odors 直通此处——情绪 therefore 最容易被气味点燃。</span><span class="en">Odors plug straight in — which is why emotion ignites fastest through the nose.</span></li>
+      </ul>
+    </article>
+    <article class="card reveal" style="--accent:var(--strr)">
+      <h3>🔥 <span class="zh">压力与欲望 Stress & Drives</span><span class="en en-i">Stress & Drives</span></h3>
+      <ul class="feat">
+        <li><b><span class="zh">激素 Hormones</span></b> — <span class="zh">海报的“Stress”标题旁挂满腺体输出。</span><span class="en">the poster's Stress banner drips with glandular output.</span></li>
+        <li><span class="zh">驱动清单：<b>饥饿 Hunger · 交配 Mating · 催产素 Oxytocin · 肥胖 Obesity · 药物 Drugs · 吸烟 Smoking</b>。</span><span class="en">The drive list: hunger, mating, oxytocin, obesity, drugs, smoking.</span></li>
+        <li><span class="zh">海报尖刻的一角：“<b>意识形态如何控制我们</b>——偶像崇拜 Idiot Worship。”</span><span class="en">The poster's sharpest corner: "<b>How Ideology controls us</b> — Idiot Worship."</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════════ 底层硬件 ══════════════ -->
+<section id="hardware">
+  <h2><span class="zh">⚙️ 底层硬件：脑干、小脑、脊髓与迷走神经</span><span class="en">Lower Hardware: Brain Stem, Cerebellum, Spinal Cord & Vagus</span></h2>
+  <div class="grid two">
+    <article class="card region reveal" id="r-brainstem" style="--accent:var(--bsr)">
+      <h3>🎛️ <span class="zh">脑干</span><span class="en en-i">Brain Stem</span></h3>
+      <ul class="feat">
+        <li><span class="zh">海报给脑干写了五个“快捷指令”：<b>刹车 Brake · 瞄准 Aim · 射击 Shoot · 争吵 Quarrel · 打招呼 Say Hi</b>。</span><span class="en">The poster gives it five shortcuts: brake, aim, shoot, quarrel, say hi.</span></li>
+        <li><span class="zh">呼吸、心率等生命节律也在此打底，并与迷走神经、内脏相连（见下）。</span><span class="en">Life rhythms — breathing, heart rate — are grounded here, wired to the vagus and organs below.</span></li>
+      </ul>
+    </article>
+    <article class="card region reveal" id="r-cerebellum" style="--accent:var(--cbr)">
+      <h3>🧮 <span class="zh">小脑</span><span class="en en-i">Cerebellum</span></h3>
+      <ul class="feat">
+        <li><b>69,000,000,000</b> <span class="zh">个神经元——比全脑其他部分的任何分区都多（整个大脑才 860 亿）。</span><span class="en">neurons — 69 billion, more than any other partition of the brain (the whole brain has only 86 billion).</span></li>
+        <li><span class="zh">展开后<b>长 1 米、面积约 500 cm²</b>。</span><span class="en">Unfolded it is <b>1 meter long, ~500 cm²</b>.</span></li>
+        <li><b><span class="zh">习得习惯 / 技能 Learned Habits & Skills</span></b> — <span class="zh">骑车、打球一旦学会就存进这里（齿轮图标）。</span><span class="en">once a skill is learned it is stored here (gear icons).</span></li>
+        <li><span class="zh">接收陀螺仪/加速度计输入（前庭），执行惯性导航——引文见“平衡”卡片；并设<b>力量限制 Strength Limits</b>。</span><span class="en">Takes gyro/accelerometer (vestibular) input and runs inertial navigation — quote in the balance card — while enforcing <b>strength limits</b>.</span></li>
+      </ul>
+    </article>
+    <article class="card region reveal" id="r-spinal" style="--accent:var(--scr)">
+      <h3>🪢 <span class="zh">脊髓</span><span class="en en-i">Spinal Cord</span></h3>
+      <ul class="feat">
+        <li><b>1,000,000,000</b> <span class="zh">个神经元；灰质横断面呈<b>蝴蝶形</b>（脊髓板层 lamina，海报的“Butterfly”标注）。</span><span class="en">neurons; the gray matter forms a <b>butterfly</b> in cross-section (spinal laminae — the poster's "Butterfly" tag).</span></li>
+        <li><span class="zh">“髓鞘绝缘的轴突（导线）沿脊髓在皮层与身体之间上下穿行。”最长的轴突可超 1 米。</span><span class="en">"Myelin insulated axons (wiring) run up/down from the cortex around the lamina." The longest axon exceeds a meter.</span></li>
+        <li><b><span class="zh">痛反射回路 Pain Reflex Circuitry</span><span class="en en-i">Pain reflex circuitry</span></b><span class="zh">——“手臂层 Arm Layer”与中间神经元（97%）引文见“本体感觉”卡片。</span><span class="en">— see the proprioception card for the arm-layer / interneuron (97%) quote.</span></li>
+      </ul>
+    </article>
+    <article class="card region reveal" id="r-vagus" style="--accent:var(--vgr)">
+      <h3>🫁 <span class="zh">迷走神经与内脏</span><span class="en en-i">Vagus Nerve & Organs</span></h3>
+      <blockquote class="mini">
+        <p class="zh">“激活迷走神经通常会降低心率、血压，或两者同时降低。”</p>
+        <p class="en">"Activation of the vagus nerve typically leads to a reduction in heart rate, blood pressure, or both."</p>
+        <cite>— Wikipedia</cite>
+      </blockquote>
+      <ul class="feat">
+        <li><span class="zh">海报把心、肺、肠画在脑下方，标着“来自器官 from organs”：<b>消化 Digestion · 心率 Heart rate · 血压 Blood pressure · 呼吸 Breathing</b>。</span><span class="en">The poster draws heart, lungs and gut under the brain, "from organs": digestion, heart rate, blood pressure, breathing.</span></li>
+        <li><span class="zh">旁注 <b>“2 亿条输入程序 200 Million Input Programs”</b>——内脏向脑上报的洪流量。</span><span class="en">Beside it: "<b>200 million input programs</b>" — the flood of visceral reporting.</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ══════════════ 导线与存储 ══════════════ -->
+<section id="wiring">
+  <h2><span class="zh">💾 导线与存储：一切都是工程</span><span class="en">Wiring & Storage: It's All Engineering</span></h2>
+  <blockquote class="reveal">
+    <p class="zh">海报的注脚——“布线存储在 DNA 密码里”：“DNA 存储极其致密：理论极限下，每克 DNA 可编码 4,550 亿 GB（455 Billion Gigabytes）。”</p>
+    <p class="en">The poster's footnote — "Wiring stored in DNA code": "DNA storage is very dense. At theoretical maximum, DNA can encode 455 Billion Gigabytes per gram."</p>
+    <cite>— Next-Generation Digital Information Storage in DNA, Harvard University</cite>
+  </blockquote>
+  <div class="table-wrap reveal">
+    <table class="cmp">
+      <thead><tr><th><span class="zh">生物硬件</span><span class="en en-i">Biological hardware</span></th><th><span class="zh">工程对照</span><span class="en en-i">Engineering analogue</span></th><th><span class="zh">海报数据</span><span class="en en-i">Poster figure</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="zh">突触 Synapse</span><span class="en en-i">Synapse</span></td><td><span class="zh">晶体管开关（双核处理器）</span><span class="en en-i">transistor switch (dual-core CPU)</span></td><td>1,000–10,000 / <span class="zh">神经元</span><span class="en en-i">per neuron</span> · ≈45,000 T</td></tr>
+        <tr><td><span class="zh">大脑皮层 Cortex</span><span class="en en-i">Cortex</span></td><td><span class="zh">6 层折叠电路板</span><span class="en en-i">6-layer folded circuit board</span></td><td>50,000+ <span class="zh">神经元</span><span class="en en-i">neurons</span>/mm³ · <span class="zh">1 亿+突触 &gt; Apple A9</span><span class="en en-i">100M+ synapses &gt; Apple A9</span></td></tr>
+        <tr><td><span class="zh">视网膜 Retina</span><span class="en en-i">Retina</span></td><td><span class="zh">视频压缩器 + 碰撞检测</span><span class="en en-i">video compressor + collision detector</span></td><td>&gt;4× Apple A9 / <span class="zh">每只眼</span><span class="en en-i">per eye</span></td></tr>
+        <tr><td><span class="zh">前庭器 Vestibule</span><span class="en en-i">Vestibule</span></td><td><span class="zh">军用陀螺-加速度三件套 / 航天飞机主传感器</span><span class="en en-i">military accelerometer-gyro triad / Shuttle's main sensor</span></td><td>3 <span class="zh">轴</span><span class="en en-i">axes</span></td></tr>
+        <tr><td><span class="zh">小脑 Cerebellum</span><span class="en en-i">Cerebellum</span></td><td><span class="zh">惯性导航计算机</span><span class="en en-i">inertial-navigation computer</span></td><td>69B <span class="zh">神经元</span><span class="en en-i">neurons</span> · 500 cm²</td></tr>
+        <tr><td><span class="zh">脊髓 Spinal cord</span><span class="en en-i">Spinal cord</span></td><td><span class="zh">反射控制器（97% 中间神经元）</span><span class="en en-i">reflex controller (97% interneurons)</span></td><td>1B <span class="zh">神经元</span><span class="en en-i">neurons</span> · <span class="zh">轴突可长</span><span class="en en-i">axon &gt;</span> 1 m</td></tr>
+        <tr><td><span class="zh">神经递质 Neurotransmitters</span><span class="en en-i">Neurotransmitters</span></td><td><span class="zh">兴奋(+)/抑制(−) 逻辑门</span><span class="en en-i">excitatory(+)/inhibitory(−) logic gates</span></td><td>(D⁺+G⁺−GABA⁻)+Others &gt; +20 mV</td></tr>
+        <tr><td><span class="zh">DNA 布线 DNA wiring</span><span class="en en-i">DNA wiring</span></td><td><span class="zh">存储介质</span><span class="en en-i">storage medium</span></td><td>455 Billion GB / g</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ 关于 ══════════════ -->
+<section id="about">
+  <h2><span class="zh">🧾 关于原海报</span><span class="en">About the Poster</span></h2>
+  <div class="card reveal">
+    <p><span class="zh">原海报《Your High-Tech Brain》（© 2018，www.thebrainisthemountain.com）由一位航空航天工程师制作：Villanova 大学机械工程学士（1984 届），曾任航天飞机制导系统主管、后任制导与导航软件公司副总监，并在一家大型防务软件公司从事设计工作。他花了 4 年多分析 1,000 多项神经影像研究，最终组装出这张海报。</span><span class="en">The original poster "Your High-Tech Brain" (© 2018, www.thebrainisthemountain.com) was assembled by an aerospace engineer — a Villanova B.S. Mechanical Engineering '84, supervisor of the Space Shuttle guidance system, later deputy director of a guidance & navigation software company and designer at a large defense software firm. After analyzing 1,000+ neuroimage studies over four-plus years, he assembled the poster.</span></p>
+    <blockquote class="mini">
+      <p class="zh">“这套三轴加速度计/陀螺仪制导系统就在你耳朵后面。我们真是超高技术。”</p>
+      <p class="en">"This 3 axis accelerometer/gyroscope guidance system is behind your ear. We're ultra high-tech."</p>
+      <cite>— <span class="zh">海报作者</span><span class="en en-i">the poster's author</span></cite>
+    </blockquote>
+    <ul class="feat">
+      <li>🔍 <span class="zh"><b>阅读指南：</b>海报中的 <b>S→R</b> 芯片图标表示“刺激→反应”模块；红色线路为抑制性，其余颜色为兴奋性。</span><span class="en"><b>Reading key:</b> the poster's <b>S→R</b> chips are stimulus→response modules; red circuits are inhibitory, all other colors excitatory.</span></li>
+      <li>⚖️ <span class="zh"><b>忠实度说明：</b>本站尽量逐条保留海报的数字与引文（含原文）；个别数值为海报作者的引述，与最新文献或有出入，请以原始论文为准。</span><span class="en"><b>Fidelity note:</b> every figure and quote is kept as the poster gives it (originals included); a few values are the author's citations and may drift from the newest literature — defer to the primary papers.</span></li>
+    </ul>
+    <p class="src">Poster: <a href="http://www.thebrainisthemountain.com" target="_blank" rel="noopener">www.thebrainisthemountain.com</a> · © 2018<span class="zh">（原站已下线，2026-10 验证）</span><span class="en en-i"> (original site offline, verified 2026-10)</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><span class="zh">🧠 你的高科技大脑 · 双语脑科学科普 — 内容整理自海报《Your High-Tech Brain》© 2018 www.thebrainisthemountain.com，仅用于科普教育。</span>
+  <span class="en">🧠 Your High-Tech Brain · bilingual brain science — compiled from the poster "Your High-Tech Brain" © 2018 www.thebrainisthemountain.com, for educational use.</span></p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

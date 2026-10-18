@@ -360,6 +360,259 @@
           "url": "https://pre.igcse.xyz/plants/"
         }
       ]
+    },
+    {
+      "id": "cerebral-cortex",
+      "name": "大脑皮层",
+      "en": "Cerebral Cortex",
+      "ipa": "/səˈriːbrəl ˈkɔːrteks/",
+      "emoji": "🧠",
+      "domain": "life",
+      "summary": "折叠成沟回的6层超级生物电路板，掌管思维、记忆、语言与所有高级智慧。",
+      "summaryEn": "The highly folded 6-layer outer neural sheet covering the cerebral hemispheres, orchestrating high-level cognition, perception, and voluntary movement.",
+      "explain": {
+        "basic": "包在大脑最外面、皱皱巴巴像核桃仁一样的神奇灰白色外衣。虽然厚度只有薄薄的几毫米（大概两枚硬币叠起来），但如果把它摊平，足足有一张大披萨那么大！这里住着150多亿个神经元小精灵，是你算数学题、画画、讲故事和做美梦的总司令部。",
+        "advanced": "端脑两半球表面覆被的灰质层，厚度约为1.5~4.5 mm，总表面积约2,500 cm²。其微观结构呈现典型6层神经元层级架构（Ⅰ分子层~Ⅵ多形细胞层），容纳超过150亿神经元和65万亿以上突触连接。高度卷曲形成的脑回（Gyri）和脑沟（Sulci）极大扩增了皮层表面积，以在有界颅骨内实现极高密度的信息集成与高级认知运算。"
+      },
+      "explainEn": {
+        "basic": "The wrinkly outer layer of your brain that looks like a walnut! If you flattened it out, it would be as big as a large pizza. This is your personal HQ for thinking, creating, and dreaming.",
+        "advanced": "The outer gray matter covering of the cerebrum, featuring a 6-layered cytoarchitecture folded into gyri and sulci to maximize cortical computational surface area within the cranial cavity."
+      },
+      "relatedIds": ["frontal-lobe", "parietal-lobe", "occipital-lobe", "temporal-lobe", "synapse-circuit"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 神经系统",
+          "title": "剑桥中枢神经与反射中枢架构",
+          "desc": "探索大脑高级皮层与脊髓反射弧的分工与协同",
+          "url": "https://www.igcse.xyz"
+        },
+        {
+          "target": "sky",
+          "badge": "🎯 G8 神经词汇",
+          "title": "G8 Unit 14 Nervous System 核心考点词挑战",
+          "desc": "掌握大脑皮层、反射弧与感觉受体",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "frontal-lobe",
+      "name": "额叶",
+      "en": "Frontal Lobe",
+      "ipa": "/ˈfrʌntl loʊb/",
+      "emoji": "👑",
+      "domain": "life",
+      "summary": "大脑飞船的总指挥舰长，负责制定计划、专注自控、组织说话和指挥动作。",
+      "summaryEn": "The anterior brain lobe responsible for executive control, decision-making, working memory, emotional regulation, and voluntary motor output.",
+      "explain": {
+        "basic": "就在你的额头后面，它是整个身体的总舰长！当你克制住先写完作业再去玩玩具的冲动时、当你排队耐心等待时、当你用嘴巴组织词汇讲故事时，都是额叶舰长在果断下达指令。它是人类最聪明、发育最晚（要到20多岁才完全成熟）的脑区。",
+        "advanced": "大脑半球前部结构，包含前额叶皮层（PFC，执行控制、工作记忆、决策与冲动抑制）、初级运动皮层（Primary Motor Cortex，随意运动精细输出）以及布罗卡区（Broca's Area，运动性言语表达中枢）。前额叶与边缘系统紧密交互，实现自上而下的认知抑制与长期价值权衡。"
+      },
+      "explainEn": {
+        "basic": "Sitting right behind your forehead, this is the captain of your brain spaceship! It helps you make wise choices, focus on tasks, and resist eating sweets before dinner.",
+        "advanced": "The anterior region comprising prefrontal cortex (executive functioning), primary motor strip, and Broca's area for motor speech encoding."
+      },
+      "relatedIds": ["cerebral-cortex", "temporal-lobe", "synapse-circuit"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 神经调控",
+          "title": "自主运动神经元与效应器肌肉驱动",
+          "desc": "观察神经冲动如何沿着运动神经元传递至骨骼肌",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "parietal-lobe",
+      "name": "顶叶",
+      "en": "Parietal Lobe",
+      "ipa": "/pəˈraɪətl loʊb/",
+      "emoji": "📡",
+      "domain": "life",
+      "summary": "身体感觉雷达站，负责触觉、温度、痛觉感知与三维空间位置导航。",
+      "summaryEn": "The superior lobe integrating somatosensory inputs (touch, pain, temperature, proprioception) and constructing spatial attention maps.",
+      "explain": {
+        "basic": "在大脑头顶偏后的位置，像一台超级空间雷达。当你闭上眼睛也能摸到自己的鼻子、当你伸手接住飞来的皮球、当你摸到冰块觉得冰凉或被羽毛挠得发痒时，全靠顶叶雷达站帮你准确定位和感知身体。",
+        "advanced": "位于中央沟之后、顶枕沟之前。前部为初级躯体感觉皮层（Primary Somatosensory Cortex / S1），依据感觉小人（Sensory Homunculus）比例接收全身对侧皮肤触觉、温痛觉与本体感觉；后部为顶叶联合区与顶内沟（IPS），整合多感官信息并构建自眼心/头心三维空间坐标系，指导肢体抓握与视觉导向运动。"
+      },
+      "explainEn": {
+        "basic": "Located at the top of your head, this radar station lets you feel warmth, touch, and know exactly where your hands and feet are even with eyes closed!",
+        "advanced": "Housing the primary somatosensory cortex and IPS for multimodal spatial coordinate transformation and sensory feedback control."
+      },
+      "relatedIds": ["cerebral-cortex", "occipital-lobe", "cerebellum"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 感觉受体",
+          "title": "皮肤感觉感受器分布与灵敏度探究",
+          "desc": "探究指尖与后背两点辨别觉阈值的巨大差异",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
+    },
+    {
+      "id": "occipital-lobe",
+      "name": "枕叶",
+      "en": "Occipital Lobe",
+      "ipa": "/ɑːkˈsɪpɪtl loʊb/",
+      "emoji": "🖥️",
+      "domain": "life",
+      "summary": "大脑后脑勺的超高清显示处理中心，专门解码眼睛看到的形状、色彩与动作。",
+      "summaryEn": "The posterior visual processing hub containing primary visual cortex (V1) and extrastriate areas (V2~V7) for retinotopic scene analysis.",
+      "explain": {
+        "basic": "虽然你的眼睛长在前面，但真正「看懂」世界的大脑部门却长在后脑勺！双眼视网膜拍到的光线信号，像闪电一样飞速传到后脑勺的枕叶，经过一连串微观加工厂：先挑出线条、再涂上色彩、最后拼成立体动态的电影画面。",
+        "advanced": "位于大脑半球后下部，负责视觉信息层级化解析。包含初级视皮层（V1 / 纹状皮层，按视网膜拓扑结构抽取朝向、边缘和空间频率特征），并通过腹侧流（V2→V4h→颞下回，识别物体是什么/颜色形态）与背侧流（V2→V3/MT→V6/V7→顶叶，定位物体在哪里/运动轨迹与动作导向）完成高阶视觉重构。"
+      },
+      "explainEn": {
+        "basic": "Even though your eyes are in front, your visual computer sits right at the back of your head! It takes light signals and turns them into a full-color 3D movie.",
+        "advanced": "Primary retinotopic cortex (V1) branching into the ventral 'what' stream (V4/IT) and dorsal 'where/how' stream (V5/MT/IPS)."
+      },
+      "relatedIds": ["cerebral-cortex", "parietal-lobe", "temporal-lobe"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 感觉器官",
+          "title": "眼睛解剖与视网膜视锥/视杆细胞成像",
+          "desc": "光线经角膜和晶状体折射聚焦，在视网膜形成倒立实像",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "temporal-lobe",
+      "name": "颞叶",
+      "en": "Temporal Lobe",
+      "ipa": "/ˈtempərəl loʊb/",
+      "emoji": "📻",
+      "domain": "life",
+      "summary": "耳朵边上的电台与记忆相册，负责听觉处理、听懂语言以及把今天的事存进记忆。",
+      "summaryEn": "The lateral brain lobe essential for auditory perception, language comprehension (Wernicke's area), and episodic memory encoding (hippocampus).",
+      "explain": {
+        "basic": "就在双耳两侧。它不仅能让你听清优美的音乐和妈妈的声音，还藏着理解语言的魔法密码（韦尼克区）。在它的深处，还住着名叫「海马体」的记忆小管家，负责把今天经历的好玩事情盖章打包，存进大脑长久回忆的相册里。",
+        "advanced": "位于外侧裂下方的大脑侧叶。包含初级听觉皮层（Heschl's Gyrus，声调拓扑处理）、韦尼克区（Wernicke's Area，感觉性言语中枢，解码语音语义），以及内侧的边缘结构——海马体（Hippocampus，情景记忆编码与空间导航）和杏仁核（Amygdala，情绪警觉与威胁评估）。"
+      },
+      "explainEn": {
+        "basic": "Located right behind your ears, this area listens to sweet music, understands words, and uses the seahorse-shaped hippocampus to save today's memories!",
+        "advanced": "Houses primary auditory cortex, Wernicke's area for semantic comprehension, and medial temporal lobe memory systems (hippocampus/amygdala)."
+      },
+      "relatedIds": ["cerebral-cortex", "frontal-lobe", "synapse-circuit"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "sky",
+          "badge": "🎯 G8 听觉与平衡",
+          "title": "耳朵耳蜗毛细胞与听神经传递",
+          "desc": "机械声波转变为微伏电信号的微观奥秘",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "cerebellum",
+      "name": "小脑",
+      "en": "Cerebellum",
+      "ipa": "/ˌserəˈbeləm/",
+      "emoji": "🎪",
+      "domain": "life",
+      "summary": "身体的超级陀螺仪与杂技师，容纳全脑大半神经元，精细调控肌肉动作与平衡。",
+      "summaryEn": "The tightly folded posterior structure housing ~69 billion neurons that coordinates fine motor execution, postural equilibrium, and procedural motor learning.",
+      "explain": {
+        "basic": "挂在大脑后下方，个头不大却拥有全脑将近80%的神经元（整整690亿个！）。它是身体不知疲倦的杂技师：学骑自行车、滑板、弹钢琴或者投篮时，只要练习形成肌肉记忆，小脑就会接管自动驾驶，让你不用低头想也能动作行云流水、不倒翁一样站得稳稳当当。",
+        "advanced": "位于脑桥和延髓后方的后颅窝内，具有高度均匀致密的皮层神经环路（分子层、普肯野细胞层、颗粒层），以惊人的神经元密度容纳约690亿神经元。它接收内耳前庭系统的加速度/角速度三轴陀螺仪信号与肌肉本体感觉，通过内部正向模型（Forward Model）实时比对预期运动与实际感觉反馈，修正运动误差，实现运动平滑化与程序性技能记忆固化。"
+      },
+      "explainEn": {
+        "basic": "A compact powerhouse holding over 80% of your brain's neurons! It keeps you balanced on a bicycle and helps your fingers fly over piano keys without stumbling.",
+        "advanced": "Contains ~69 billion neurons in crystalline Purkinje-granule circuits, computing real-time sensory-motor error correction with vestibular gyro inputs."
+      },
+      "relatedIds": ["cerebral-cortex", "parietal-lobe", "brainstem"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "⚛️ 0625 力学与平衡",
+          "title": "力矩平衡、重心稳定性与三轴加速度模型",
+          "desc": "比对航天飞机惯性制导陀螺仪与内耳前庭半规管的惊人物理共性",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "brainstem",
+      "name": "脑干",
+      "en": "Brainstem",
+      "ipa": "/ˈbreɪnstəm/",
+      "emoji": "⚡",
+      "domain": "life",
+      "summary": "永不停歇的生命发动机底座，自主掌管呼吸、心跳、血压与睡眠觉醒。",
+      "summaryEn": "The primitive stalk connecting the cerebrum to the spinal cord, orchestrating autonomic vital survival reflexes (cardiac, respiration, arousal).",
+      "explain": {
+        "basic": "连接大脑与脊髓的粗壮生命主干。即使你在深睡中、完全不用操心呼吸和心跳时，脑干也一刻不停地在站岗。它自动监测血液里的氧气和温度，指挥心脏有节奏地泵血、肺部平稳地吸气，是人体最原始、最不能出差错的「生命底盘守护神」。",
+        "advanced": "由中脑（Midbrain）、脑桥（Pons）和延髓（Medulla Oblongata）构成的脑干结构，是脑与脊髓的必经传导束通道。其网状结构（Reticular Formation）维持中枢觉醒状态；延髓腹外侧与孤束核是自主神经最高低位中枢，由迷走神经等直接节律调控窦房结心率、节律性呼吸驱动中枢（前包钦格复合体）及血管舒缩反射。"
+      },
+      "explainEn": {
+        "basic": "The mighty trunk at the base of your brain! It keeps your heart beating and lungs breathing steadily all night long while you dream.",
+        "advanced": "Composed of midbrain, pons, and medulla oblongata, housing the autonomic respiratory pacemakers and reticular activating system for consciousness."
+      },
+      "relatedIds": ["cerebral-cortex", "cerebellum", "synapse-circuit"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 呼吸与循环",
+          "title": "延髓化学感受器与二氧化碳刺激驱动呼吸",
+          "desc": "探究剧烈运动后血液 pH 改变如何自主激发肺部加频换气",
+          "url": "https://www.igcse.xyz"
+        },
+        {
+          "target": "sky",
+          "badge": "🎯 科学微动画",
+          "title": "胸廓容积与肺泡气压变化交互动画",
+          "desc": "观察自主呼吸运动的机械膨胀与回缩过程",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "synapse-circuit",
+      "name": "协同神经网络",
+      "en": "Synaptic Neural Network",
+      "ipa": "/sɪˈnæptɪk ˈnʊrəl ˈnetwɜːrk/",
+      "emoji": "🕸️",
+      "domain": "life",
+      "summary": "打破单脑区独占神话，全脑数万亿突触连接交织成语言、记忆与情绪的协同高速公路。",
+      "summaryEn": "Distributed multi-region neural circuits collaborating via trillions of electrochemical synapses to execute language, memory, attention, and emotion.",
+      "explain": {
+        "basic": "大脑不是一个脑区各管各的孤岛，而是一座超级协作的大都市！比如你说一句话：耳朵听进声音（颞叶）➔ 查字典听懂意思（韦尼克区）➔ 脑海构思回答（额叶布罗卡区）➔ 指挥嘴巴舌头振动（运动皮层）。大家手拉手紧密配合，才能在一瞬间完成奇迹！",
+        "advanced": "现代神经科学的核心图景——分布式脑功能网络（Large-Scale Brain Networks）。复杂认知并非由单一脑区机械独占，而是通过突触可塑性与白质神经纤维束（如弓状束、胼胝体）协同振荡：例如语言网络（额叶布罗卡+颞叶韦尼克+顶叶）、记忆网络（海马体瞬时编码+额颞皮层长程固化）、情绪调节网络（杏仁核威胁预警+前额叶自上而下抑制）。"
+      },
+      "explainEn": {
+        "basic": "Brain regions are not lonely islands; they work together like a great orchestra! Speaking a sentence needs the ears, comprehension zones, and tongue motor strips all in perfect harmony.",
+        "advanced": "Large-scale functional connectivity networks communicating via synaptic plasticity and axonal tract synchrony across language, executive, and limbic domains."
+      },
+      "relatedIds": ["cerebral-cortex", "frontal-lobe", "temporal-lobe", "parietal-lobe", "occipital-lobe"],
+      "issueIds": ["issue-003"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 突触传导",
+          "title": "突触小泡神经递质释放与受体结合模拟",
+          "desc": "观察电信号转化学信号、再转电信号的毫秒级跨膜传递",
+          "url": "https://www.igcse.xyz"
+        },
+        {
+          "target": "zperiod",
+          "badge": "🧪 3D 离子通道",
+          "title": "钠 (Na⁺)、钾 (K⁺)、钙 (Ca²⁺) 离子微观舞蹈",
+          "desc": "观察神经动作电位去极化与复极化的离子跨膜扩散动力学",
+          "url": "https://zperiod.igcse.xyz"
+        }
+      ]
     }
   ]
 }

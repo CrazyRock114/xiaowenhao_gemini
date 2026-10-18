@@ -10,7 +10,7 @@ import BlockVocab from './BlockVocab.vue'
 import BlockExperiment from './BlockExperiment.vue'
 import BlockOpenQuestion from './BlockOpenQuestion.vue'
 import BlockRelated from './BlockRelated.vue'
-import FermentationDemo from './FermentationDemo.vue'
+import BlockDemo from './BlockDemo.vue'
 
 /** 内容块类型 → 渲染组件。新增块类型只需在此注册。 */
 export const blockComponents: Record<Block['type'], Component> = {
@@ -22,7 +22,7 @@ export const blockComponents: Record<Block['type'], Component> = {
   sort: BlockSort,
   vocab: BlockVocab,
   experiment: BlockExperiment,
-  demo: FermentationDemo,
+  demo: BlockDemo,
   'open-question': BlockOpenQuestion,
   related: BlockRelated,
 }

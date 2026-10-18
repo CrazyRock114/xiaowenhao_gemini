@@ -8,6 +8,7 @@ import BlockHero from '../blocks/BlockHero.vue'
 import BlockOpenQuestion from '../blocks/BlockOpenQuestion.vue'
 import CompletionModal from '../components/CompletionModal.vue'
 import EcosystemBridge from '../components/EcosystemBridge.vue'
+import AgentShowcaseBanner from '../components/AgentShowcaseBanner.vue'
 
 const route = useRoute()
 const kids = useKidsStore()
@@ -63,6 +64,9 @@ function finish() {
 
       <!-- 走出小问号，穿梭全域科学宇宙传送门 -->
       <EcosystemBridge :issue-id="issue.id" />
+
+      <!-- 4 大 AI Agent 脑科学原版展廊与对比 -->
+      <AgentShowcaseBanner v-if="issue.id === 'issue-003'" />
 
       <!-- 结业区 -->
       <section class="finish card">

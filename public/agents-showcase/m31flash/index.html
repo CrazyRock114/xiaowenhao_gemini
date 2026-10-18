@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>你的高科技大脑 · Your High-Tech Brain — 双语脑科学图解</title>
+<meta name="description" content="跟随 8 种感官输入，逐层读懂人脑示意图：860 亿神经元、65 万亿连接、视觉层级 V1–V8、情绪奖赏回路、小脑与脊髓。中英双语完整图解。">
+<meta property="og:title" content="你的高科技大脑 · Your High-Tech Brain">
+<meta property="og:description" content="8 种感官输入 · 860 亿神经元 · 视觉处理系统 V1–V8 — 中英双语脑科学图解">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="dark light">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<a class="skip" href="#main">跳到主要内容 / Skip to content</a>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar" id="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="26" height="26"><path d="M16 3c-3 0-5 1.6-6 3.4C7.6 6 5.4 7.4 5 9.5 3.6 10.4 3 12 3 13.7c0 1.4.6 2.5 1.5 3.3C3.6 18 3 19.3 3 21c0 1.9 1.3 3.4 3.2 3.9.5 2.2 2.4 3.6 4.8 3.6 1.1 0 2-.3 2.8-.8V5.2C14.4 3.7 15 3.3 16 3z" fill="currentColor" opacity=".85"/><path d="M16 3c3 0 5 1.6 6 3.4 2.4-.4 4.6 1 5 3.1 1.4.9 2 2.5 2 4.2 0 1.4-.6 2.5-1.5 3.3.9 1 1.5 2.3 1.5 4 0 1.9-1.3 3.4-3.2 3.9-.5 2.2-2.4 3.6-4.8 3.6-1.1 0-2-.3-2.8-.8V5.2c-.4-1.5-1-1.9-2-2.2z" fill="currentColor" opacity=".55"/></svg>
+    </span>
+    <span class="brand-text">
+      <b data-i18n="brand">你的高科技大脑</b>
+      <i>Your High-Tech Brain</i>
+    </span>
+  </div>
+
+  <nav class="topnav" id="topnav" aria-label="章节导航 / Sections"></nav>
+
+  <div class="tools">
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="搜索 / Search" autocomplete="off" aria-label="搜索标签 / Search labels">
+      <span class="search-count" id="searchCount" aria-live="polite"></span>
+    </div>
+    <div class="lang" role="group" aria-label="语言 / Language">
+      <button data-setlang="zh" class="on">中文</button>
+      <button data-setlang="en">EN</button>
+      <button data-setlang="both">双语</button>
+    </div>
+    <button class="icon-btn" id="menuBtn" aria-label="菜单 / Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================= SEARCH RESULTS ================= -->
+<div class="results" id="results" hidden>
+  <div class="results-inner">
+    <div class="results-head">
+      <strong id="resultsTitle">搜索结果</strong>
+      <button class="link-btn" id="resultsClose">关闭 / Close</button>
+    </div>
+    <div id="resultsBody" class="results-body"></div>
+  </div>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">人脑示意图 · 全图双语解读</span></p>
+        <h1 class="hero-title">
+          <span class="t-zh" data-i18n="hero_title_zh">你的高科技大脑</span>
+          <span class="t-en" data-i18n="hero_title_en">Your High-Tech Brain</span>
+        </h1>
+        <p class="hero-sub">
+          <span class="t-zh" data-i18n="hero_sub_zh">跟随 8 种感官输入</span>
+          <span class="sep">·</span>
+          <span class="t-en" data-i18n="hero_sub_en">Follow the 8 Sensory Inputs</span>
+        </p>
+        <p class="hero-lede" id="heroLede"></p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#senses" data-i18n="cta1">从 8 种感官开始</a>
+          <a class="btn" href="#vision" data-i18n="cta2">看视觉处理系统</a>
+          <button class="btn ghost" id="viewPoster" data-i18n="cta3">查看原图</button>
+        </div>
+        <p class="legend" id="legend"></p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 380" class="brainsvg">
+          <defs>
+            <linearGradient id="gCortex" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff9a8b"/><stop offset="55%" stop-color="#f2607a"/><stop offset="100%" stop-color="#b9386b"/>
+            </linearGradient>
+            <linearGradient id="gStem" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f6a86a"/><stop offset="100%" stop-color="#d8722f"/>
+            </linearGradient>
+            <radialGradient id="gGlow" cx="50%" cy="45%" r="55%">
+              <stop offset="0%" stop-color="#ff6b81" stop-opacity=".38"/>
+              <stop offset="100%" stop-color="#ff6b81" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- brain silhouette -->
+          <g class="cortex">
+            <path fill="url(#gCortex)" d="M126 66c-24 2-42 17-48 35-19 5-31 21-31 39 0 10 4 19 10 26-11 9-17 22-17 36 0 12 5 22 13 30-4 9-4 19 0 28 6 13 18 22 32 23 3 15 16 26 32 26 6 0 12-1 17-4 2 12 13 21 26 21 8 0 15-3 20-9v-92c-6-30-24-58-52-70-11-5-23-7-34-6z"/>
+            <path fill="url(#gCortex)" opacity=".82" d="M294 66c24 2 42 17 48 35 19 5 31 21 31 39 0 10-4 19-10 26 11 9 17 22 17 36 0 12-5 22-13 30 4 9 4 19 0 28-6 13-18 22-32 23-3 15-16 26-32 26-6 0-12-1-17-4-2 12-13 21-26 21-8 0-15-3-20-9v-92c6-30 24-58 52-70 11-5 23-7 34-6z"/>
+            <g fill="#7d2450" opacity=".28">
+              <circle cx="205" cy="82" r="11"/><circle cx="205" cy="124" r="11"/><circle cx="205" cy="166" r="11"/>
+            </g>
+          </g>
+
+          <!-- cerebellum gears (inner group carries the CSS animation so the
+               translate() on the outer group is never overwritten) -->
+          <g class="gears">
+            <g transform="translate(262 250)"><g class="gear">
+              <circle r="26" fill="#f0a93c"/>
+              <g fill="#8a4a12">
+                <rect x="-3" y="-24" width="6" height="10" rx="1.5"/><rect x="-3" y="14" width="6" height="10" rx="1.5"/>
+                <rect x="-24" y="-3" width="10" height="6" rx="1.5"/><rect x="14" y="-3" width="10" height="6" rx="1.5"/>
+                <rect x="-17" y="-17" width="9" height="5" rx="1.5" transform="rotate(45 -12.5 -14.5)"/>
+                <rect x="8" y="12" width="9" height="5" rx="1.5" transform="rotate(45 12.5 14.5)"/>
+                <rect x="-17" y="12" width="9" height="5" rx="1.5" transform="rotate(-45 -12.5 14.5)"/>
+                <rect x="8" y="-17" width="9" height="5" rx="1.5" transform="rotate(-45 12.5 -14.5)"/>
+                <circle r="7" fill="#5d3208"/>
+              </g>
+            </g></g>
+            <g transform="translate(300 288) scale(.5)"><g class="gear rev">
+              <circle r="26" fill="#f0a93c"/>
+              <g fill="#8a4a12">
+                <rect x="-3" y="-24" width="6" height="10" rx="1.5"/><rect x="-3" y="14" width="6" height="10" rx="1.5"/>
+                <rect x="-24" y="-3" width="10" height="6" rx="1.5"/><rect x="14" y="-3" width="10" height="6" rx="1.5"/>
+                <circle r="7" fill="#5d3208"/>
+              </g>
+            </g></g>
+          </g>
+
+          <!-- brain stem -->
+          <path fill="url(#gStem)" d="M196 268c0 22-2 34-8 44-4 7-14 8-16 18-2 12 8 20 22 20 12 0 20-7 21-18 1-14-2-26-2-38z"/>
+          <path fill="none" stroke="#ffb27a" stroke-width="9" stroke-linecap="round" opacity=".85" d="M205 292v34"/>
+
+          <!-- synapse arcs -->
+          <g class="wires" fill="none" stroke-linecap="round">
+            <path d="M96 132C64 118 46 140 30 168" stroke="#ff5f6d" stroke-width="2.4"/>
+            <path d="M118 214C74 220 44 246 26 280" stroke="#57d9c4" stroke-width="2.2"/>
+            <path d="M330 150c32-6 52 12 68 40" stroke="#ffb454" stroke-width="2.4"/>
+            <path d="M300 226c30 10 44 34 54 64" stroke="#8f9dff" stroke-width="2.2"/>
+            <path d="M150 90c-22-24-52-24-70-6" stroke="#ff8fb1" stroke-width="2"/>
+          </g>
+          <g class="sparks">
+            <circle cx="30" cy="168" r="4.5" fill="#ff5f6d"/><circle cx="26" cy="280" r="4.5" fill="#57d9c4"/>
+            <circle cx="398" cy="190" r="4.5" fill="#ffb454"/><circle cx="354" cy="290" r="4.5" fill="#8f9dff"/>
+            <circle cx="80" cy="84" r="4" fill="#ff8fb1"/>
+          </g>
+        </svg>
+        <div class="hero-stats" id="heroStats"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- READING NOTE -->
+  <section class="band notice-band" id="howto">
+    <div class="wrap">
+      <div class="notice" id="noticeBox"></div>
+    </div>
+  </section>
+
+  <!-- 8 SENSES overview -->
+  <section class="band" id="overview">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_overview">全景</span>
+        <h2 id="overviewTitle"></h2>
+        <p id="overviewLede" class="sec-lede"></p>
+      </div>
+      <div class="sense-grid" id="senseGrid"></div>
+    </div>
+  </section>
+
+  <!-- NEURON -->
+  <section class="band alt" id="neuron">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_neuron">单元</span>
+        <h2 id="neuronTitle"></h2>
+        <p id="neuronSub" class="sec-lede"></p>
+      </div>
+
+      <div class="neuron-grid">
+        <div class="card formula-card">
+          <h3 class="card-h" data-i18n="fire_rule">放电规则</h3>
+          <p class="formula-lead" id="formulaLead"></p>
+          <div class="formula" id="formulaExpr"></div>
+          <p class="formula-note" id="formulaNote"></p>
+          <p class="caveat" id="formulaCaveat"></p>
+          <ul class="legend-lines">
+            <li><span class="sw red"></span><span data-i18n="lg_red">红色 = 抑制性回路</span></li>
+            <li><span class="sw cyan"></span><span data-i18n="lg_other">其他颜色 = 兴奋性回路</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-h" data-i18n="chem">神经化学物质</h3>
+          <ul class="chem" id="chem"></ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-h" data-i18n="parts">结构与线路</h3>
+          <ul class="chips cloud" id="parts"></ul>
+        </div>
+      </div>
+
+      <h3 class="sub-h" data-i18n="related">相关脑区与功能标签</h3>
+      <div class="chips cloud" id="related"></div>
+
+      <figure class="quote wide" id="mirrorQuote"></figure>
+    </div>
+  </section>
+
+  <!-- 8 SENSES detail -->
+  <section class="band" id="senses">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_senses">通道</span>
+        <h2 id="sensesTitle"></h2>
+        <p id="sensesLede" class="sec-lede"></p>
+      </div>
+      <div class="senses" id="sensesList"></div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="band alt" id="vision">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_vision">视觉</span>
+        <h2 id="visionTitle"></h2>
+        <p id="visionSub" class="sec-lede"></p>
+      </div>
+
+      <div class="vision-head">
+        <div class="big-num" id="visionSize"></div>
+        <div class="vstream" id="vstream"></div>
+      </div>
+
+      <div class="vision-cols">
+        <div class="card">
+          <h3 class="card-h" data-i18n="regions">加工区域与功能</h3>
+          <ul class="chips cloud" id="visionRegions"></ul>
+        </div>
+        <div class="card">
+          <h3 class="card-h" data-i18n="recall">记忆回传</h3>
+          <ul class="arrowed">
+            <li id="etchLi"></li>
+          </ul>
+          <h3 class="card-h" data-i18n="pursuit">平滑追踪与前庭协同</h3>
+          <ul class="arrowed">
+            <li id="pursuitLi"></li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="quote wide" id="visionQuote"></figure>
+      <figure class="quote wide" id="faceBodyQuote"></figure>
+      <figure class="quote wide" id="n170Quote"></figure>
+      <figure class="quote wide" id="ipsQuote"></figure>
+      <figure class="quote wide" id="wikiQuote"></figure>
+    </div>
+  </section>
+
+  <!-- DRIVES -->
+  <section class="band" id="drives">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_drives">动机</span>
+        <h2 id="drivesTitle"></h2>
+        <p id="drivesSub" class="sec-lede"></p>
+      </div>
+      <div class="drive-groups" id="driveGroups"></div>
+    </div>
+  </section>
+
+  <!-- MOTOR -->
+  <section class="band alt" id="motor">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_motor">运动</span>
+        <h2 id="motorTitle"></h2>
+        <p id="motorSub" class="sec-lede"></p>
+      </div>
+
+      <div class="motor-cols">
+        <div class="card organ">
+          <div class="organ-h">
+            <h3 id="cbName"></h3>
+            <span class="organ-role" id="cbRole"></span>
+          </div>
+          <p class="big-num sm" id="cbNum"></p>
+          <p class="muted" id="cbSize"></p>
+          <ul class="chips cloud" id="cbBits"></ul>
+        </div>
+        <div class="card organ">
+          <div class="organ-h">
+            <h3 id="scName"></h3>
+            <span class="organ-role" id="scRole"></span>
+          </div>
+          <p class="big-num sm" id="scNum"></p>
+          <ul class="chips cloud" id="scBits"></ul>
+        </div>
+      </div>
+
+      <figure class="quote wide" id="cordQuote"></figure>
+    </div>
+  </section>
+
+  <!-- CORTEX / AUTONOMIC / TRIAD / DNA -->
+  <section class="band" id="cortex">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_cortex">决策</span>
+        <h2 id="cortexTitle"></h2>
+      </div>
+      <div class="two">
+        <div class="card">
+          <h3 class="card-h" id="pfcName"></h3>
+          <p class="muted" id="pfcNote"></p>
+          <p class="muted" id="pfcCanInhibit"></p>
+          <h3 class="card-h" id="ofcName"></h3>
+          <p class="muted" id="ofcNote"></p>
+          <ul class="chips cloud" id="ofcFrames"></ul>
+        </div>
+        <div class="card">
+          <h3 class="card-h" data-i18n="decisions">三条决策回路</h3>
+          <ul class="routes">
+            <li><b>OFC</b> <span data-i18n="r1">眶额皮层</span></li>
+            <li><b>DLPFC</b> <span data-i18n="r2">背外侧前额叶皮层</span></li>
+            <li><b>ACC</b> <span data-i18n="r3">前扣带回</span></li>
+          </ul>
+        </div>
+      </div>
+      <div id="cortexQuotes"></div>
+
+      <div class="two mt">
+        <div class="card" id="autoCard">
+          <h3 class="card-h" data-i18n="k_auto">自主神经</h3>
+          <ul class="chips cloud" id="autoItems"></ul>
+        </div>
+        <div class="card" id="triadCard"></div>
+      </div>
+
+      <figure class="quote wide" id="dnaQuote"></figure>
+    </div>
+  </section>
+
+  <!-- INDEX -->
+  <section class="band alt" id="index">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_index">索引</span>
+        <h2 id="indexTitle"></h2>
+        <p id="indexIntro" class="sec-lede"></p>
+        <p class="count-pill" id="indexCount"></p>
+      </div>
+      <div class="index-groups" id="indexGroups"></div>
+    </div>
+  </section>
+
+  <!-- PROVENANCE -->
+  <section class="band" id="about">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="kicker" data-i18n="k_about">出处</span>
+        <h2 id="aboutTitle"></h2>
+      </div>
+      <div class="card" id="provBody"></div>
+      <figure class="quote" id="provQuote"></figure>
+      <p class="copy" id="provCopy"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <p><b data-i18n="foot_t">你的高科技大脑 · 双语图解</b></p>
+    <p class="muted" data-i18n="foot_n">英文原文逐条转录自海报；中文为对照译文。数字与引文均按原图保留，未作修正。</p>
+    <p class="muted" id="footCopy"></p>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="回到顶部 / Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- POSTER LIGHTBOX -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <div class="lb-bar">
+    <span id="lbTitle" data-i18n="lb_t">原图 · The Visual Processing System（2019）</span>
+    <button class="link-btn" id="lbClose">关闭 / Close ✕</button>
+  </div>
+  <div class="lb-body"><img id="lbImg" alt="原始海报 / Original poster"></div>
+</div>
+
+<noscript>
+  <div class="noscript">此页面的内容由 JavaScript 从 <code>content.js</code> 渲染。请开启 JavaScript / This page renders content from <code>content.js</code>; please enable JavaScript.</div>
+</noscript>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

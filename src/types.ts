@@ -30,7 +30,7 @@ export type Block =
       safety: string[]
       observe: string[]
     }
-  | { id: string; type: 'demo'; demo: 'fermentation'; title?: string; instruction?: string }
+  | { id: string; type: 'demo'; demo: 'fermentation' | 'brain-explorer'; title?: string; instruction?: string }
   | { id: string; type: 'open-question'; heading: string; text?: string; suggestions?: string[] }
   | { id: string; type: 'related'; knowledgeIds?: string[]; note?: string }
 

@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你的高科技大脑 · 跟随 8 种感官输入 | Your High-Tech Brain</title>
+<meta name="description" content="Your High-Tech Brain — Follow the 8 Sensory Inputs. 交互式双语科普：860 亿神经元、视觉 GPU 流水线、8 种感官，并在原海报上按图索骥。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230D0F16'/%3E%3Cpath d='M11 23c-3 0-5-2.2-5-5 0-2 .9-3.6 2.3-4.4C8 11.6 9 9 11.4 9c1.1 0 2 .4 2.6 1.1C14.7 9 15.8 8 17.6 8c2.6 0 4 2.3 3.8 4.3C23.3 12.9 25 14.5 25 17c0 3-2.2 6-5.5 6-1.2 0-2.3-.4-3-.9-.7.5-1.8.9-3 .9z' fill='none' stroke='%23E8859A' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%2343C6C1'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0C0E15;--ink2:#131726;--ink3:#1B2033;--line:rgba(255,255,255,.09);
+  --paper:#F1ECE3;--paper2:#C9CFDD;--muted:#8E97AB;
+  --brain:#E8859A;--brain-dim:#8E4656;--red:#E5484D;--blue:#4C8DFF;--green:#3DBE7B;
+  --amber:#F0A949;--purple:#9B7BE8;--cyan:#43C6C1;
+  --serif:"Noto Serif SC",serif;--sans:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brain);color:#1a0a0f}
+h1,h2,h3{font-family:var(--serif);line-height:1.25}
+a{color:var(--cyan);text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.sec{padding:96px 0;position:relative;scroll-margin-top:70px}
+.sec-head{margin-bottom:46px;max-width:820px}
+.sec-kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--cyan);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sec-kicker::before{content:"";width:34px;height:1px;background:var(--cyan);flex-shrink:0}
+.sec-title{font-size:clamp(28px,4vw,42px);font-weight:900;margin-bottom:16px}
+.sec-sub{color:var(--paper2);font-size:16px;max-width:760px}
+.card{background:linear-gradient(160deg,var(--ink2),var(--ink));border:1px solid var(--line);border-radius:14px}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+
+.src-chip{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-family:var(--mono);font-size:12px;
+  color:var(--cyan);background:rgba(67,198,193,.08);border:1px solid rgba(67,198,193,.35);
+  padding:7px 14px;border-radius:99px;cursor:pointer;transition:.2s}
+.src-chip:hover{background:rgba(67,198,193,.18);transform:translateY(-1px)}
+.src-chip svg{width:14px;height:14px;stroke:var(--cyan);fill:none;stroke-width:2}
+.bd-src,.sense-src{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-family:var(--mono);font-size:12px;
+  color:var(--cyan);border:1px solid rgba(67,198,193,.35);background:rgba(67,198,193,.08);padding:6px 13px;border-radius:99px;cursor:pointer}
+.bd-src:hover,.sense-src:hover{background:rgba(67,198,193,.18)}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:rgba(12,14,21,.72);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;gap:18px;min-width:0}
+.nav-logo{font-family:var(--serif);font-weight:900;font-size:16px;white-space:nowrap;display:flex;align-items:center;gap:9px;flex-shrink:0}
+.nav-logo svg{width:22px;height:22px}
+.nav-links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 auto;justify-content:flex-end}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:13px;color:var(--paper2);padding:7px 11px;border-radius:8px;white-space:nowrap;transition:.2s}
+.nav-links a:hover{color:var(--paper);background:rgba(255,255,255,.07)}
+.lang-toggle{flex-shrink:0;display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang-toggle button{background:transparent;border:none;color:var(--muted);font-family:var(--mono);font-size:12px;padding:6px 12px;cursor:pointer;transition:.18s}
+.lang-toggle button.on{background:var(--brain);color:#2a0e15;font-weight:700}
+
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,transparent 0%,rgba(12,14,21,.55) 70%,var(--ink) 100%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:120px 24px 80px}
+.hero-kicker{font-family:var(--mono);font-size:13px;letter-spacing:.24em;color:var(--cyan);margin-bottom:22px}
+.hero h1{font-size:clamp(40px,7.5vw,86px);font-weight:900;margin-bottom:18px}
+.hero h1 .hl{color:var(--brain)}
+.hero-sub{font-size:clamp(16px,2vw,21px);color:var(--paper2);max-width:660px;margin-bottom:14px}
+.hero-formula{font-family:var(--mono);font-size:clamp(13px,1.6vw,17px);background:rgba(19,23,38,.8);border:1px solid var(--line);border-left:3px solid var(--amber);padding:14px 20px;border-radius:10px;display:inline-block;margin:22px 0 30px}
+.hero-formula .ex{color:var(--green)}.hero-formula .in{color:var(--red)}.hero-formula .fire{color:var(--amber);font-weight:600}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-size:15px;font-weight:500;padding:13px 26px;border-radius:10px;border:1px solid var(--line);cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:9px}
+.btn-primary{background:var(--brain);color:#2a0e15;border-color:var(--brain);font-weight:700}
+.btn-primary:hover{background:#f09aab;transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.04);color:var(--paper)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px;max-width:900px}
+.hero-stat{background:rgba(19,23,38,.62);border:1px solid var(--line);border-radius:12px;padding:18px 16px;backdrop-filter:blur(4px)}
+.hero-stat .num{font-family:var(--mono);font-size:clamp(20px,2.4vw,28px);font-weight:600;color:var(--brain);line-height:1.2}
+.hero-stat .lbl{font-size:12px;color:var(--muted);margin-top:5px}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.2em;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,9px)}}
+@media (prefers-reduced-motion:reduce){.scroll-hint{animation:none}}
+
+#map{background:linear-gradient(180deg,rgba(232,133,154,.06),transparent)}
+.map-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(232,133,154,.35);background:#0a0c13}
+.map-img{width:100%;display:block;cursor:crosshair}
+#pins{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer;z-index:3}
+.pin-dot{width:26px;height:26px;border-radius:50%;background:var(--pin,var(--cyan));color:#0d0f16;
+  font-family:var(--mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  border:2px solid rgba(255,255,255,.85);box-shadow:0 0 0 3px rgba(0,0,0,.35);transition:transform .18s}
+.pin:hover .pin-dot,.pin.active .pin-dot{transform:scale(1.25)}
+.pin.active .pin-dot{box-shadow:0 0 0 4px rgba(240,169,73,.5),0 0 16px rgba(240,169,73,.9)}
+.pin::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--pin,var(--cyan));opacity:.55;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.7);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+.pin.quick::after{animation:none}
+.pin-tip{position:absolute;left:34px;top:50%;transform:translateY(-50%);white-space:nowrap;background:rgba(12,14,21,.94);
+  border:1px solid var(--line);border-radius:8px;padding:5px 11px;font-size:12px;color:var(--paper);display:none;z-index:5;pointer-events:none}
+.pin-tip .te{font-size:10.5px;color:var(--muted);font-family:var(--mono)}
+.pin:hover .pin-tip{display:block}
+.zone-rect{position:absolute;border:2px solid var(--amber);border-radius:4px;pointer-events:none;z-index:2;opacity:0;transition:opacity .3s}
+.zone-rect.show{opacity:1;animation:zoneflash 2.4s ease}
+@keyframes zoneflash{0%{opacity:0}18%{opacity:1}82%{opacity:1}100%{opacity:0}}
+.map-toolbar{margin-bottom:16px}
+.map-hint{font-size:13px;color:var(--muted)}
+.map-hint b{color:var(--cyan)}
+.legend-item{font-family:var(--sans)}
+.bd-src{font-family:var(--sans)}
+.sense-src{font-family:var(--sans)}
+.legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+.legend-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);
+  background:rgba(255,255,255,.03);cursor:pointer;font-size:12.5px;transition:.18s;text-align:left;color:var(--paper)}
+.legend-item:hover{border-color:var(--cyan);background:rgba(67,198,193,.08)}
+.legend-item .n{flex-shrink:0;width:21px;height:21px;border-radius:50%;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;color:#0d0f16}
+.legend-item .lt{min-width:0}
+.legend-item .le{display:block;font-size:10.5px;color:var(--muted);font-family:var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.flash{animation:flashsec 2s ease}
+@keyframes flashsec{0%{box-shadow:0 0 0 0 rgba(240,169,73,0)}20%{box-shadow:0 0 0 3px rgba(240,169,73,.65),0 0 44px rgba(240,169,73,.25)}100%{box-shadow:0 0 0 0 rgba(240,169,73,0)}}
+
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.spec{padding:26px 24px;position:relative;transition:transform .25s,border-color .25s}
+.spec:hover{transform:translateY(-4px);border-color:rgba(232,133,154,.4)}
+.spec .big{font-family:var(--mono);font-size:clamp(26px,3vw,36px);font-weight:600;color:var(--brain);line-height:1.15;margin-bottom:10px}
+.spec .t{font-size:16px;font-weight:700;margin-bottom:8px;font-family:var(--serif)}
+.spec .d{font-size:13.5px;color:var(--muted)}
+.spec .chip{position:absolute;top:14px;right:14px;font-size:10px}
+.note-box{margin-top:26px;padding:20px 24px;border-radius:12px;border:1px dashed rgba(255,255,255,.18);background:rgba(255,255,255,.025);font-size:14px;color:var(--paper2)}
+.note-box b{color:var(--amber)}
+
+.neuron-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}
+.neuron-layout>*{min-width:0}
+.neuron-svg{width:100%;background:linear-gradient(160deg,#121524,#0c0e15);border:1px solid var(--line);border-radius:16px;padding:14px}
+.neuron-svg svg{width:100%;height:auto;display:block}
+.nt-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.nt-legend span{font-family:var(--mono);font-size:12px;padding:4px 11px;border-radius:99px;border:1px solid var(--line)}
+.nt-ex{color:var(--green)}.nt-in{color:var(--red)}.nt-ion{color:var(--amber)}.nt-mod{color:var(--purple)}
+.sim-panel{padding:26px 24px}
+.sim-panel h3{font-size:20px;margin-bottom:8px}
+.sim-panel p.fs{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.voltmeter{font-family:var(--mono);text-align:center;padding:20px;border-radius:12px;background:#0a0c13;border:1px solid var(--line);margin-bottom:20px}
+.voltmeter .v{font-size:44px;font-weight:600;transition:color .2s}
+.voltmeter .st{font-size:12px;letter-spacing:.16em;margin-top:6px;color:var(--muted)}
+.vcanvas{width:100%;height:96px;display:block;margin-bottom:18px}
+.sim-controls{display:flex;flex-direction:column;gap:16px}
+.sim-row{display:flex;align-items:center;gap:12px}
+.sim-row label{font-size:13px;width:104px;flex-shrink:0}
+.sim-row input[type=range]{flex:1;accent-color:var(--green)}
+.sim-row input.r2{accent-color:var(--red)}
+.sim-row .val{font-family:var(--mono);font-size:13px;width:74px;text-align:right}
+.sim-note{font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.7}
+.neuro-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.neuro-card{padding:18px 16px;border-radius:12px;border:1px solid var(--line);background:var(--ink2)}
+.neuro-card .nm{font-family:var(--mono);font-weight:600;font-size:15px;margin-bottom:4px}
+.neuro-card .fr{font-size:11px;margin-bottom:8px}
+.neuro-card .dd{font-size:12.5px;color:var(--muted)}
+
+.brain-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.brain-layout>*{min-width:0}
+.brain-svg-box{position:sticky;top:80px}
+.brain-svg-box svg{width:100%;height:auto;display:block}
+.brain-region{cursor:pointer;transition:opacity .2s,filter .2s}
+.brain-region:hover{filter:brightness(1.25)}
+.brain-region.active{filter:brightness(1.35) drop-shadow(0 0 8px currentColor)}
+.brain-region text{font-family:var(--sans);pointer-events:none;fill:#1b1216;font-weight:700}
+.brain-detail{padding:26px 24px;min-height:420px}
+.brain-detail .bd-num{font-family:var(--mono);font-size:12px;color:var(--cyan);letter-spacing:.16em}
+.brain-detail h3{font-size:24px;margin:8px 0 6px}
+.brain-detail .bd-en{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:16px}
+.brain-detail ul{list-style:none;margin:14px 0}
+.brain-detail li{font-size:14px;padding:8px 0 8px 22px;position:relative;border-bottom:1px solid rgba(255,255,255,.05)}
+.brain-detail li::before{content:"";position:absolute;left:0;top:16px;width:9px;height:9px;border-radius:50%;background:var(--brain)}
+.brain-detail .quote{font-size:13px;color:var(--paper2);background:rgba(255,255,255,.04);border-left:3px solid var(--cyan);padding:12px 16px;border-radius:0 8px 8px 0;margin-top:14px;line-height:1.8}
+.brain-detail .quote .src{display:block;color:var(--muted);font-size:11.5px;margin-top:7px}
+.bd-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.bd-pills span{font-size:11.5px;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--paper2)}
+.region-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.region-tabs button{font-size:12.5px;padding:7px 13px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--paper2);cursor:pointer;transition:.18s;font-family:var(--sans)}
+.region-tabs button:hover{color:var(--paper);border-color:var(--brain)}
+.region-tabs button.active{background:var(--brain);color:#2a0e15;border-color:var(--brain);font-weight:700}
+
+.visual-flow{display:flex;flex-direction:column}
+.gpu-row{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
+.gpu-tag{font-family:var(--mono);font-weight:600;font-size:15px;text-align:center;padding:14px 6px;border-radius:10px;color:#0d0f16}
+.gpu-body .gt{font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:5px}
+.gpu-body .gd{font-size:13.5px;color:var(--paper2)}
+.gpu-body .gq{font-size:12px;color:var(--muted);margin-top:8px;font-style:italic}
+.gpu-icons{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.gpu-icons span{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--paper2);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:5px 11px;border-radius:8px}
+.gpu-icons svg{width:16px;height:16px;stroke:var(--cyan);fill:none;stroke-width:1.8}
+.visual-side{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px}
+.vs-card{padding:22px 20px}
+.vs-card h4{font-family:var(--serif);font-size:17px;margin-bottom:8px}
+.vs-card p{font-size:13px;color:var(--muted)}
+.vs-card .mn{font-family:var(--mono);color:var(--cyan);font-size:13px;font-weight:600}
+
+.sense-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sense-card{padding:22px 18px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(165deg,var(--ink2),#0e111c);cursor:pointer;transition:.25s;position:relative}
+.sense-card:hover{transform:translateY(-5px);border-color:var(--ac,var(--brain))}
+.sense-card .sn{font-family:var(--mono);font-size:12px;color:var(--ac,var(--brain));letter-spacing:.1em}
+.sense-card .sico{margin:12px 0 10px}
+.sense-card .sico svg{width:42px;height:42px;fill:none;stroke:var(--ac,var(--brain));stroke-width:1.6}
+.sense-card h3{font-size:18px;font-weight:700}
+.sense-card .smini{font-size:12.5px;color:var(--muted);margin-top:7px}
+.sense-card .more{display:inline-block;margin-top:12px;font-size:12px;color:var(--ac,var(--brain));font-family:var(--mono)}
+.sense-detail{display:none;margin-top:26px}
+.sense-detail.open{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.sd-inner{padding:32px 30px;display:grid;grid-template-columns:200px 1fr;gap:30px;align-items:center}
+.sd-icon{width:150px;height:150px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.sd-icon svg{width:84px;height:84px;fill:none;stroke:var(--sac,var(--brain));stroke-width:1.5}
+.sd-body h3{font-size:26px;margin-bottom:4px}
+.sd-body .en{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.sd-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.sd-stat{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:13px 12px}
+.sd-stat .n{font-family:var(--mono);font-size:18px;color:var(--sac,var(--brain));font-weight:600}
+.sd-stat .l{font-size:11.5px;color:var(--muted);margin-top:3px}
+.sd-body p{font-size:14px;color:var(--paper2)}
+.sd-close{margin-top:16px;background:none;border:1px solid var(--line);color:var(--paper2);padding:8px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:var(--sans)}
+.sd-close:hover{border-color:var(--paper);color:var(--paper)}
+
+.reward-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rw-card{padding:26px 22px;border-radius:14px;border:1px solid var(--line)}
+.rw-card h3{font-size:21px;margin-bottom:6px}
+.rw-card .sub{font-family:var(--mono);font-size:11.5px;margin-bottom:14px;letter-spacing:.08em}
+.rw-card ul{list-style:none}
+.rw-card li{font-size:13.5px;padding:6px 0 6px 18px;position:relative;color:var(--paper2)}
+.rw-card li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--rc,var(--brain))}
+.rw-card .mech{font-size:12.5px;color:var(--muted);margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.big-card{padding:30px 28px}
+.big-card h3{font-size:22px;margin-bottom:12px}
+.big-card p{font-size:14px;color:var(--paper2);margin-bottom:12px}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.stat-row .sr{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:9px;padding:10px 14px}
+.stat-row .sr b{font-family:var(--mono);color:var(--cyan);font-size:15px;display:block}
+.stat-row .sr span{font-size:11.5px;color:var(--muted)}
+.dna-num{font-family:var(--mono);font-size:clamp(30px,4vw,44px);color:var(--brain);font-weight:600;margin:10px 0}
+
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.q-card{padding:22px;border-radius:12px;border:1px solid var(--line);background:var(--ink2)}
+.q-card .qt{font-size:13.5px;color:var(--paper2);line-height:1.85}
+.q-card .qt.en{font-style:italic}
+.q-card .qtr{font-size:12.5px;color:var(--cyan);margin-top:10px;font-style:italic}
+.q-card .qs{font-size:12px;color:var(--cyan);margin-top:10px;font-family:var(--mono)}
+.poster-box{margin-top:20px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--ink2)}
+.poster-box img{width:100%;display:block}
+.poster-cap{padding:16px 22px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+
+.quiz-box{max-width:760px;margin:0 auto}
+.quiz-q{margin-bottom:26px}
+.quiz-q .qq{font-size:17px;font-weight:700;margin-bottom:14px;font-family:var(--serif)}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quiz-opts button{text-align:left;padding:13px 16px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--paper);font-size:14px;cursor:pointer;font-family:var(--sans);transition:.18s;line-height:1.5}
+.quiz-opts button:hover{border-color:var(--cyan)}
+.quiz-opts button.correct{background:rgba(61,190,123,.16);border-color:var(--green)}
+.quiz-opts button.wrong{background:rgba(229,72,77,.16);border-color:var(--red)}
+.quiz-fb{font-size:13.5px;margin-top:10px;min-height:20px}
+.quiz-fb.ok{color:var(--green)}.quiz-fb.no{color:var(--red)}
+.quiz-score{text-align:center;font-family:var(--serif);font-size:20px;margin-top:20px}
+.quiz-reset{display:block;margin:16px auto 0;padding:10px 26px;border-radius:9px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--paper);cursor:pointer;font-family:var(--sans)}
+
+footer{border-top:1px solid var(--line);padding:46px 0 60px;background:#090b11}
+footer .ftr{font-size:13px;color:var(--muted);line-height:2}
+footer .ftr b{color:var(--paper2)}
+
+@media (max-width:900px){
+  .spec-grid{grid-template-columns:repeat(2,1fr)}
+  .neuron-layout,.brain-layout{grid-template-columns:minmax(0,1fr)}
+  .brain-svg-box{position:static}
+  .sense-grid{grid-template-columns:repeat(2,1fr)}
+  .neuro-cards,.reward-grid,.visual-side,.quote-grid,.two-col{grid-template-columns:1fr}
+  .legend{grid-template-columns:repeat(2,1fr)}
+  .sd-inner{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .sd-stats{grid-template-columns:repeat(3,1fr)}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .gpu-row{grid-template-columns:1fr;gap:8px}
+  .gpu-tag{max-width:140px}
+}
+@media (max-width:560px){
+  .sec{padding:64px 0}
+  .spec-grid{grid-template-columns:1fr}
+  .sense-grid{grid-template-columns:1fr}
+  .legend{grid-template-columns:1fr}
+  .quiz-opts{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .sd-stats{grid-template-columns:1fr}
+  .pin-tip{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg viewBox="0 0 32 32"><path d="M11 23c-3 0-5-2.2-5-5 0-2 .9-3.6 2.3-4.4C8 11.6 9 9 11.4 9c1.1 0 2 .4 2.6 1.1C14.7 9 15.8 8 17.6 8c2.6 0 4 2.3 3.8 4.3C23.3 12.9 25 14.5 25 17c0 3-2.2 6-5.5 6-1.2 0-2.3-.4-3-.9-.7.5-1.8.9-3 .9z" fill="none" stroke="#E8859A" stroke-width="2"/><circle cx="16" cy="16" r="2.2" fill="#43C6C1"/></svg>
+      <span data-i18n="brand">高科技大脑</span>
+    </div>
+    <div class="nav-links" id="nav-links"></div>
+    <div class="lang-toggle">
+      <button id="lang-zh" class="on">中</button>
+      <button id="lang-en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="hero-canvas"></canvas>
+  <div class="wrap hero-inner">
+    <div class="hero-kicker">YOUR HIGH-TECH BRAIN · <span data-i18n="hero.kicker">跟随 8 种感官输入</span></div>
+    <h1 data-i18n-html="hero.title">你的<span class="hl">高科技</span>大脑</h1>
+    <p class="hero-sub" data-i18n="hero.sub">跟随 8 种感官输入，走进一台由 860 亿个神经元组成、用生物电路运行的超级计算机。红色回路 = 抑制；其余所有颜色 = 兴奋。</p>
+    <div class="hero-formula">
+      <span data-i18n="formula.label">动作电位</span>　IF（<span class="ex">D⁺ + G⁺</span> － <span class="in">GABA⁻</span>）&gt; +20 mV　<span class="fire" data-i18n="formula.fire">THEN 放电 FIRE</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#map" data-i18n="hero.cta1">按图索骥：点原图导航</a>
+      <a class="btn btn-ghost" href="#senses" data-i18n="hero.cta2">浏览 8 种感官</a>
+    </div>
+    <div class="hero-stats" id="hero-stats"></div>
+  </div>
+  <div class="scroll-hint">SCROLL ↓</div>
+</header>
+
+<!-- ===== 按图索骥 ===== -->
+<section class="sec" id="map">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">USE THE POSTER AS THE MAP · 按图索骥</div>
+      <h2 class="sec-title" data-i18n="map.title">在原海报上点选，直接跳到对应内容</h2>
+      <p class="sec-sub" data-i18n="map.sub">海报原图就是本站的导航起点。点击图上的编号热点，或下方图例，即可跳转到对应章节并展开细节。每一段内容也都标注了它在海报中的位置。</p>
+    </div>
+    <div class="map-toolbar">
+      <span class="map-hint" data-i18n-html="map.hint">点击 <b>①–③①</b> 编号热点跳转 · 悬停查看名称 · 每个章节可一键回到这里定位</span>
+    </div>
+    <div class="map-wrap" id="map-wrap">
+      <img class="map-img" id="map-img" src="assets/poster.jpg" alt="Your High-Tech Brain poster">
+      <div class="zone-rect" id="zone-rect"></div>
+      <div id="pins"></div>
+    </div>
+    <div class="legend" id="legend"></div>
+  </div>
+</section>
+
+<!-- ===== 硬件参数 ===== -->
+<section class="sec" id="specs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">SPECIFICATIONS · <span data-i18n="specs.kicker">核心硬件参数</span></div>
+      <h2 class="sec-title" data-i18n="specs.title">这台“生物计算机”的出厂规格</h2>
+      <p class="sec-sub" data-i18n="specs.sub">海报把大脑直接比作一台装满电子元件的折叠电路板。把它和最先进的芯片放在一起，尺度令人难以置信。</p>
+      <button class="src-chip" data-locate="specs"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="spec-grid" id="spec-grid"></div>
+    <div class="note-box" id="spec-note"></div>
+    <div class="note-box" id="spec-caveat" style="margin-top:16px;border-color:rgba(240,169,73,.45);background:rgba(240,169,73,.06)"></div>
+  </div>
+</section>
+
+<!-- ===== 神经元 ===== -->
+<section class="sec" id="neuron">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">THE NEURON · <span data-i18n="neuron.kicker">神经元与动作电位</span></div>
+      <h2 class="sec-title" data-i18n="neuron.title">一个神经元，就是一个带电的决策单元</h2>
+      <p class="sec-sub" data-i18n="neuron.sub">树突把来自其他神经元的信号汇集到胞体，静息电位约 −70 mV。当兴奋信号超过抑制信号、使膜电位越过阈值，神经元就“点火”放电，沿轴突发出动作电位。</p>
+      <button class="src-chip" data-locate="formula"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="neuron-layout">
+      <div>
+        <div class="neuron-svg">
+          <svg viewBox="0 0 560 460" role="img" aria-label="Neuron">
+            <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#F0A949"/></marker></defs>
+            <rect width="560" height="460" fill="#0c0e15"/>
+            <g stroke="#C9CFDD" stroke-width="2" fill="none" opacity=".85">
+              <path d="M250 120 C200 80,160 70,120 50 M250 120 C205 100,170 100,135 92 M250 120 C210 125,175 135,140 135 M250 120 C215 150,185 170,150 185"/>
+              <path d="M310 120 C360 80,400 70,440 50 M310 120 C355 100,390 100,425 92 M310 120 C350 125,385 135,420 135 M310 120 C345 150,375 170,410 185"/>
+              <path d="M250 120 C235 60,255 45,240 18 M310 120 C325 60,305 45,320 18 M280 105 C280 60,280 40,280 12"/>
+            </g>
+            <circle cx="280" cy="130" r="34" fill="#131726" stroke="#C9CFDD" stroke-width="2"/>
+            <text x="280" y="138" text-anchor="middle" fill="#F0A949" font-family="IBM Plex Mono" font-size="16">−70mV</text>
+            <text x="280" y="60" text-anchor="middle" fill="#C9CFDD" font-size="13">Dendrites 树突</text>
+            <path d="M280 164 C280 210,280 250,280 290" stroke="#F0A949" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+            <text x="330" y="240" fill="#F0A949" font-size="13" transform="rotate(90 320 240)" text-anchor="middle">Ion Flow 离子流</text>
+            <g stroke="#C9CFDD" stroke-width="2" fill="none">
+              <path d="M280 295 C240 330,210 345,175 370 M280 295 C260 335,250 360,240 395 M280 295 C320 330,350 345,385 370 M280 295 C300 335,310 360,320 395 M280 295 C280 340,280 370,280 410"/>
+            </g>
+            <text x="330" y="310" fill="#C9CFDD" font-size="13">Axons 轴突</text>
+            <g font-family="IBM Plex Mono" font-size="13">
+              <circle cx="90" cy="230" r="7" fill="#E5484D"/><text x="104" y="235" fill="#E5484D">GABA⁻</text>
+              <circle cx="470" cy="230" r="7" fill="#3DBE7B"/><text x="366" y="235" fill="#3DBE7B">Dopamine⁺</text>
+              <circle cx="100" cy="280" r="7" fill="#4C8DFF"/><text x="114" y="285" fill="#4C8DFF">Glutamate⁺</text>
+              <circle cx="470" cy="280" r="7" fill="#F0A949"/><text x="420" y="285" fill="#F0A949">Na⁺</text>
+              <circle cx="150" cy="330" r="7" fill="#F0A949"/><text x="164" y="335" fill="#F0A949">K⁺</text>
+              <circle cx="420" cy="330" r="7" fill="#F0A949"/><text x="366" y="335" fill="#F0A949">Ca²⁺</text>
+              <circle cx="120" cy="410" r="7" fill="#9B7BE8"/><text x="134" y="415" fill="#9B7BE8">Serotonin</text>
+            </g>
+            <text x="280" y="448" text-anchor="middle" fill="#8E97AB" font-size="12">6 层皮层 · 厚 1.5–4.5 mm</text>
+          </svg>
+        </div>
+        <div class="nt-legend" id="nt-legend"></div>
+      </div>
+      <div class="card sim-panel">
+        <h3 data-i18n="sim.h3">动手实验：让膜电位越过阈值</h3>
+        <p class="fs" data-i18n="sim.p">调整兴奋性输入（D⁺ + G⁺）与抑制性输入（GABA⁻）的强度。膜电位 = 静息 −70 mV + 兴奋 − 抑制；当总电位越过 −50 mV 阈值，神经元触发动作电位。</p>
+        <div class="voltmeter">
+          <div class="v" id="sim-vol" style="color:var(--paper2)">−70 mV</div>
+          <div class="st" id="sim-state">RESTING · 静息中</div>
+        </div>
+        <canvas class="vcanvas" id="sim-canvas"></canvas>
+        <div class="sim-controls">
+          <div class="sim-row"><label data-i18n="sim.ex">兴奋输入</label><input type="range" id="sim-ex" min="0" max="60" value="10"><span class="val" id="sim-ex-v">+10</span></div>
+          <div class="sim-row"><label data-i18n="sim.in">抑制输入</label><input type="range" class="r2" id="sim-in" min="0" max="60" value="10"><span class="val" id="sim-in-v" style="color:var(--red)">−10</span></div>
+        </div>
+        <div class="sim-note" data-i18n-html="sim.note">海报公式：<span class="mono">IF（D⁺ + G⁺ － GABA⁻）&gt; +20 mV THEN FIRE</span>。即当兴奋信号显著压过抑制信号时，神经元才点火。这就是大脑“说不”与“说做”的最小开关。</div>
+      </div>
+    </div>
+    <div class="neuro-cards" id="neuro-cards"></div>
+  </div>
+</section>
+
+<!-- ===== 脑区地图 ===== -->
+<section class="sec" id="brainmap" style="background:linear-gradient(180deg,transparent,rgba(19,23,38,.45),transparent)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">INTERACTIVE BRAIN MAP · <span data-i18n="brainmap.kicker">交互式脑区地图</span></div>
+      <h2 class="sec-title" data-i18n="brainmap.title">点击脑区，查看每一个“功能模块”</h2>
+      <p class="sec-sub" data-i18n="brainmap.sub">海报把大脑侧面画成一张密集布线图：每个脑区都是一块芯片，彩色线路是神经回路。点击图中区域或按钮，查看该区的功能、海报上的全部标注与引用的研究原文。</p>
+      <button class="src-chip" data-locate="pfc"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="region-tabs" id="region-tabs"></div>
+    <div class="brain-layout">
+      <div class="card brain-svg-box" style="padding:18px">
+        <svg viewBox="0 0 680 580" role="img" aria-label="Brain map">
+          <rect width="680" height="580" fill="#0f1220" rx="12"/>
+          <path d="M110 240 C110 150 200 88 300 95 C420 80 560 120 602 218 C642 280 600 342 560 352 C555 360 548 366 540 370" fill="rgba(232,133,154,.06)" stroke="#5a4049" stroke-width="2.5"/>
+          <path d="M112 318 C90 322 70 326 48 332" stroke="#F0A949" stroke-width="2.5" fill="none"/>
+          <circle cx="45" cy="333" r="9" fill="none" stroke="#F0A949" stroke-width="2"/>
+          <text x="30" y="360" fill="#F0A949" font-size="11" font-family="IBM Plex Mono" class="svg-loc" data-zh="1M 视神经" data-en="1M Optic N">1M 视神经</text>
+          <g id="brain-regions">
+            <g class="brain-region" data-r="pfc" style="color:#9B7BE8"><path d="M120 200 C140 145 215 118 262 140 C272 180 268 235 252 270 C210 286 150 278 128 250 Z" fill="rgba(155,123,232,.42)" stroke="#9B7BE8" stroke-width="1.6"/><text x="192" y="190" text-anchor="middle">PFC</text><text x="192" y="208" text-anchor="middle" class="brain-label svg-loc" style="font-weight:400" data-zh="前额叶" data-en="Frontal">前额叶</text></g>
+            <g class="brain-region" data-r="ofc" style="color:#b585e8"><path d="M128 288 C155 272 240 272 258 295 C256 340 240 380 210 390 C165 392 130 360 122 322 Z" fill="rgba(181,133,232,.4)" stroke="#b585e8" stroke-width="1.6"/><text x="192" y="330" text-anchor="middle">OFC</text><text x="192" y="348" text-anchor="middle" class="brain-label svg-loc" style="font-weight:400" data-zh="眶额" data-en="Orbital">眶额</text></g>
+            <g class="brain-region" data-r="attention" style="color:#F0A949"><path d="M258 140 C290 120 320 120 332 148 C326 180 300 192 272 182 Z" fill="rgba(240,169,73,.45)" stroke="#F0A949" stroke-width="1.6"/><text x="296" y="165" text-anchor="middle" font-size="10" class="svg-loc" data-zh="FEF 注意" data-en="FEF Attention">FEF 注意</text></g>
+            <g class="brain-region" data-r="motor" style="color:#4C8DFF"><path d="M330 140 C370 122 408 128 420 158 C414 190 385 198 350 188 Z" fill="rgba(76,141,255,.4)" stroke="#4C8DFF" stroke-width="1.6"/><text x="376" y="168" text-anchor="middle" font-size="10" class="svg-loc" data-zh="运动" data-en="Motor">运动</text></g>
+            <g class="brain-region" data-r="sensory" style="color:#43C6C1"><path d="M418 156 C448 142 470 152 476 182 C468 208 445 214 424 200 Z" fill="rgba(67,198,193,.4)" stroke="#43C6C1" stroke-width="1.6"/><text x="447" y="180" text-anchor="middle" font-size="10" class="svg-loc" data-zh="感觉区" data-en="Sensory">感觉区</text></g>
+            <g class="brain-region" data-r="parietal" style="color:#3DBE7B"><path d="M470 178 C510 150 560 170 572 214 C568 260 540 272 505 252 C484 236 472 205 470 178 Z" fill="rgba(61,190,123,.38)" stroke="#3DBE7B" stroke-width="1.6"/><text x="520" y="200" text-anchor="middle" font-size="10" class="svg-loc" data-zh="顶叶 IPS" data-en="Parietal IPS">顶叶 IPS</text><text x="520" y="216" text-anchor="middle" font-size="9" style="font-weight:400" class="svg-loc" data-zh="抓握" data-en="Grasp">抓握</text></g>
+            <g class="brain-region" data-r="acc" style="color:#E8859A"><path d="M272 200 C310 190 340 200 340 235 C336 270 310 280 278 270 C262 250 262 220 272 200 Z" fill="rgba(232,133,154,.45)" stroke="#E8859A" stroke-width="1.6"/><text x="306" y="240" text-anchor="middle" font-size="11">ACC</text></g>
+            <g class="brain-region" data-r="cingulate" style="color:#7bb8e8"><path d="M342 208 C380 198 410 210 410 245 C404 278 378 288 348 276 C340 254 338 228 342 208 Z" fill="rgba(123,184,232,.36)" stroke="#7bb8e8" stroke-width="1.6"/><text x="376" y="240" text-anchor="middle" font-size="9" class="svg-loc" data-zh="扣带/PCC" data-en="Cingulate/PCC">扣带/PCC</text></g>
+            <g class="brain-region" data-r="insular" style="color:#e8b84c"><path d="M262 290 C300 280 340 286 346 318 C340 348 300 352 268 340 Z" fill="rgba(232,184,76,.4)" stroke="#e8b84c" stroke-width="1.6"/><text x="306" y="322" text-anchor="middle" font-size="10" class="svg-loc" data-zh="岛叶" data-en="Insula">岛叶</text></g>
+            <g class="brain-region" data-r="reward" style="color:#E5484D"><path d="M350 290 C392 282 425 296 424 332 C418 372 380 384 352 362 C344 338 342 308 350 290 Z" fill="rgba(229,72,77,.36)" stroke="#E5484D" stroke-width="1.6"/><text x="388" y="320" text-anchor="middle" font-size="10" class="svg-loc" data-zh="奖赏/快乐" data-en="Reward/Pleasure">奖赏/快乐</text><text x="388" y="336" text-anchor="middle" font-size="9" style="font-weight:400" class="svg-loc" data-zh="多巴胺" data-en="Dopamine">多巴胺</text></g>
+            <g class="brain-region" data-r="temporal" style="color:#9B7BE8"><path d="M170 392 C240 360 400 360 470 380 C460 420 420 440 360 442 C280 444 210 430 170 408 Z" fill="rgba(155,123,232,.32)" stroke="#9B7BE8" stroke-width="1.6"/><text x="320" y="406" text-anchor="middle" class="svg-loc" data-zh="颞叶" data-en="Temporal">颞叶</text><text x="320" y="424" text-anchor="middle" font-size="9" style="font-weight:400" class="svg-loc" data-zh="语言·面孔·压力" data-en="Lang·Face·Stress">语言·面孔·压力</text></g>
+            <g class="brain-region" data-r="occipital" style="color:#4C8DFF"><path d="M512 250 C550 240 596 260 596 300 C590 336 560 348 528 336 C510 318 504 280 512 250 Z" fill="rgba(76,141,255,.35)" stroke="#4C8DFF" stroke-width="1.6"/><text x="552" y="292" text-anchor="middle" font-size="10" class="svg-loc" data-zh="枕叶 V1" data-en="Occipital V1">枕叶 V1</text><text x="552" y="308" text-anchor="middle" font-size="9" style="font-weight:400" class="svg-loc" data-zh="视觉" data-en="Vision">视觉</text></g>
+            <g class="brain-region" data-r="cerebellum" style="color:#43C6C1"><ellipse cx="510" cy="408" rx="72" ry="50" fill="rgba(67,198,193,.35)" stroke="#43C6C1" stroke-width="1.6"/><path d="M452 408 q14 -26 28 0 q14 26 28 0 q14 -26 28 0" fill="none" stroke="#43C6C1" stroke-width="1.2" opacity=".8"/><path d="M452 408 q14 26 28 0 q14 -26 28 0 q14 26 28 0" fill="none" stroke="#43C6C1" stroke-width="1.2" opacity=".8"/><text x="510" y="404" text-anchor="middle" font-size="11" class="svg-loc" data-zh="小脑" data-en="Cerebellum">小脑</text><text x="510" y="420" text-anchor="middle" font-size="9" style="font-weight:400" class="svg-loc" data-zh="690 亿" data-en="69B">690 亿</text></g>
+            <g class="brain-region" data-r="vagus" style="color:#3DBE7B"><path d="M180 420 C150 460 140 500 132 540" fill="none" stroke="#3DBE7B" stroke-width="3"/><circle cx="180" cy="420" r="5" fill="#3DBE7B"/><text x="66" y="496" font-size="11" fill="#3DBE7B" class="svg-loc" data-zh="迷走神经" data-en="Vagus">迷走神经</text></g>
+            <g class="brain-region" data-r="spinal" style="color:#C9CFDD"><rect x="322" y="438" width="30" height="120" rx="12" fill="rgba(201,207,221,.18)" stroke="#C9CFDD" stroke-width="1.6"/><text x="337" y="500" text-anchor="middle" font-size="10" fill="#C9CFDD" transform="rotate(-90 337 500)" class="svg-loc" data-zh="脊髓" data-en="Spinal">脊髓</text></g>
+          </g>
+          <g stroke-width="1" fill="none" opacity=".25"><path d="M40 380 C200 340 400 360 640 320" stroke="#43C6C1"/><path d="M40 430 C220 470 420 450 640 470" stroke="#E5484D"/></g>
+        </svg>
+      </div>
+      <div class="card brain-detail" id="brain-detail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 视觉 ===== -->
+<section class="sec" id="visual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">THE VISUAL PROCESSING SYSTEM · <span data-i18n="visual.kicker">视觉处理系统</span></div>
+      <h2 class="sec-title" data-i18n="visual.title">4–6 亿神经元组成的“显卡流水线”</h2>
+      <p class="sec-sub" data-i18n="visual.sub">海报把视觉通路的每一级画成一张显卡：视网膜送来的信号先在早期视觉皮层做局部计算（视差、运动、朝向），再逐级向上整合，从线段走向形状、面孔、物体、颜色，最终到手眼协调。</p>
+      <button class="src-chip" data-locate="visual"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="visual-flow" id="visual-flow"></div>
+    <div class="visual-side" id="visual-side"></div>
+  </div>
+</section>
+
+<!-- ===== 8 感官 ===== -->
+<section class="sec" id="senses" style="background:linear-gradient(180deg,transparent,rgba(19,23,38,.45),transparent)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">FOLLOW THE 8 SENSORY INPUTS · <span data-i18n="senses.kicker">八种感官输入</span></div>
+      <h2 class="sec-title" data-i18n="senses.title">跟随 8 条输入线路，看世界如何进入大脑</h2>
+      <p class="sec-sub" data-i18n="senses.sub">点击每张卡片，跟随该感官的线路一路追踪到脑区；详情中可一键回到海报定位。海报标注的每一个数字都在这里。</p>
+      <button class="src-chip" data-locate="sight"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="sense-grid" id="sense-grid"></div>
+    <div class="card sense-detail" id="sense-detail" aria-live="polite"><div class="sd-inner" id="sd-inner"></div></div>
+  </div>
+</section>
+
+<!-- ===== 奖惩 ===== -->
+<section class="sec" id="reward">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">REWARDS · PLEASURE · PUNISHMENT · <span data-i18n="reward.kicker">奖惩、动机与情绪</span></div>
+      <h2 class="sec-title" data-i18n="reward.title">多巴胺、阿片与恐惧：行为的方向盘</h2>
+      <p class="sec-sub" data-i18n="reward.sub">大脑核心的奖赏–快乐–惩罚回路决定“想要什么、享受什么、逃避什么”。海报在这里用大量表情、符号与网络节点，标出了欲望、信任、恐惧与情绪的走向。</p>
+      <button class="src-chip" data-locate="reward"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="reward-grid" id="reward-grid"></div>
+    <div class="note-box" id="reward-note" style="margin-top:26px"></div>
+  </div>
+</section>
+
+<!-- ===== 脊髓 ===== -->
+<section class="sec" id="spinal" style="background:linear-gradient(180deg,transparent,rgba(19,23,38,.45),transparent)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">CEREBELLUM · SPINAL CORD · VAGUS · <span data-i18n="spinal.kicker">小脑、脊髓与自主神经</span></div>
+      <h2 class="sec-title" data-i18n="spinal.title">从 690 亿神经元的小脑，到 10 亿神经元的脊髓</h2>
+      <p class="sec-sub" data-i18n="spinal.sub">大脑之外，脑干与脊髓构成了身体的实时总线：小脑负责惯性导航与熟练动作，脊髓负责毫秒级反射，迷走神经掌管内脏与平静。</p>
+      <button class="src-chip" data-locate="cerebellum"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="two-col" id="spinal-cards"></div>
+  </div>
+</section>
+
+<!-- ===== 引文 ===== -->
+<section class="sec" id="sources">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">CITATIONS · <span data-i18n="sources.kicker">海报引用的研究原文</span></div>
+      <h2 class="sec-title" data-i18n="sources.title">海报上的每一句话，都有出处</h2>
+      <p class="sec-sub" data-i18n="sources.sub">以下为海报引用的研究原文（英文）与中文译意。</p>
+      <button class="src-chip" data-locate="footer"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="srcchip">在海报上定位</span></button>
+    </div>
+    <div class="quote-grid" id="quote-grid"></div>
+    <div class="poster-box">
+      <img src="assets/poster.jpg" alt="Your High-Tech Brain poster">
+      <div class="poster-cap" id="poster-cap"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 小测 ===== -->
+<section class="sec" id="quiz" style="background:linear-gradient(180deg,transparent,rgba(19,23,38,.45),transparent)">
+  <div class="wrap">
+    <div class="sec-head" style="margin-left:auto;margin-right:auto;text-align:center">
+      <div class="sec-kicker" style="justify-content:center">KNOWLEDGE CHECK · <span data-i18n="quiz.kicker">快速自测</span></div>
+      <h2 class="sec-title" data-i18n="quiz.title">三道题，检验你的“高科技大脑”</h2>
+    </div>
+    <div class="card quiz-box" style="padding:34px 30px" id="quiz-box"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ftr" id="footer-text"></div>
+</footer>
+
+<script>
+/* ================= 双语引擎 ================= */
+var L=0;try{if(localStorage.getItem('htb-lang')==='en')L=1;}catch(e){}
+function T(v){return Array.isArray(v)?v[L]:v;}
+var I18N={
+ brand:['高科技大脑','High-Tech Brain'],
+ 'hero.kicker':['跟随 8 种感官输入','Follow the 8 Sensory Inputs'],
+ 'hero.title':['你的<span class="hl">高科技</span>大脑','Your <span class="hl">High-Tech</span> Brain'],
+ 'hero.sub':['跟随 8 种感官输入，走进一台由 860 亿个神经元组成、用生物电路运行的超级计算机。红色回路 = 抑制；其余所有颜色 = 兴奋。',
+   'Follow the 8 sensory inputs into a supercomputer made of 86+ billion neurons running on biological circuits. Red circuits are inhibitory; all other colors are excitatory.'],
+ 'formula.label':['动作电位','Action potential'],
+ 'formula.fire':['THEN 放电 FIRE','THEN FIRE'],
+ 'hero.cta1':['按图索骥：点原图导航','Use the poster map'],
+ 'hero.cta2':['浏览 8 种感官','Explore the 8 senses'],
+ 'srcchip':['在海报上定位','Locate on poster'],
+ 'map.title':['在原海报上点选，直接跳到对应内容','Tap the poster to jump straight to each topic'],
+ 'map.sub':['海报原图就是本站的导航起点。点击图上的编号热点，或下方图例，即可跳转到对应章节并展开细节。每一段内容也都标注了它在海报中的位置。',
+   'The original poster is the navigation hub. Click a numbered hotspot on the image (or an item in the legend) to jump to its section and expand the detail. Every section also shows where it lives on the poster.'],
+ 'map.hint':['点击 <b>①–③①</b> 编号热点跳转 · 悬停查看名称 · 每个章节可一键回到这里定位',
+   'Click numbered pins <b>1–31</b> to jump · hover for names · each section can return here to locate itself'],
+ 'specs.kicker':['核心硬件参数','Core specifications'],
+ 'specs.title':['这台“生物计算机”的出厂规格','The factory specs of this “biological computer”'],
+ 'specs.sub':['海报把大脑直接比作一台装满电子元件的折叠电路板。把它和最先进的芯片放在一起，尺度令人难以置信。',
+   'The poster compares the brain to a folded circuit board packed with electronics. Set beside the latest chips, the scale is staggering.'],
+ 'neuron.kicker':['神经元与动作电位','Neuron & action potential'],
+ 'neuron.title':['一个神经元，就是一个带电的决策单元','Each neuron is a charged decision unit'],
+ 'neuron.sub':['树突把来自其他神经元的信号汇集到胞体，静息电位约 −70 mV。当兴奋信号超过抑制信号、使膜电位越过阈值，神经元就“点火”放电，沿轴突发出动作电位。',
+   'Dendrites collect signals from other neurons into the cell body, which rests near −70 mV. When excitation outweighs inhibition and crosses the threshold, the neuron “fires” an action potential down its axon.'],
+ 'sim.h3':['动手实验：让膜电位越过阈值','Hands-on: drive the membrane past threshold'],
+ 'sim.p':['调整兴奋性输入（D⁺ + G⁺）与抑制性输入（GABA⁻）的强度。膜电位 = 静息 −70 mV + 兴奋 − 抑制；当总电位越过 −50 mV 阈值，神经元触发动作电位。',
+   'Adjust excitatory input (D⁺ + G⁺) and inhibitory input (GABA⁻). Membrane voltage = −70 mV resting + excitation − inhibition. Above −50 mV the neuron fires an action potential.'],
+ 'sim.ex':['兴奋输入','Excitation'],
+ 'sim.in':['抑制输入','Inhibition'],
+ 'sim.note':['海报公式：<span class="mono">IF（D⁺ + G⁺ － GABA⁻）&gt; +20 mV THEN FIRE</span>。即当兴奋信号显著压过抑制信号时，神经元才点火。这就是大脑“说不”与“说做”的最小开关。',
+   'Poster formula: <span class="mono">IF (D⁺ + G⁺ − GABA⁻) &gt; +20 mV THEN FIRE</span>. The neuron fires only when excitation clearly outweighs inhibition — the brain’s smallest “go / no-go” switch.'],
+ 'brainmap.kicker':['交互式脑区地图','Interactive brain map'],
+ 'brainmap.title':['点击脑区，查看每一个“功能模块”','Tap a region to inspect each “module”'],
+ 'brainmap.sub':['海报把大脑侧面画成一张密集布线图：每个脑区都是一块芯片，彩色线路是神经回路。点击图中区域或按钮，查看该区的功能、海报上的全部标注与引用的研究原文。',
+   'The poster draws the brain as a dense wiring diagram: each region is a chip and colored lines are circuits. Tap a region or button to see its functions, every poster label, and cited studies.'],
+ 'visual.kicker':['视觉处理系统','The visual processing system'],
+ 'visual.title':['4–6 亿神经元组成的“显卡流水线”','A “GPU pipeline” of 4–6 hundred million neurons'],
+ 'visual.sub':['海报把视觉通路的每一级画成一张显卡：视网膜送来的信号先在早期视觉皮层做局部计算（视差、运动、朝向），再逐级向上整合，从线段走向形状、面孔、物体、颜色，最终到手眼协调。',
+   'Each stage is drawn as a graphics card: early visual cortex performs local computations (disparity, motion, orientation), then higher stages integrate lines into shapes, faces, objects, colors, and finally hand-eye coordination.'],
+ 'senses.kicker':['八种感官输入','The 8 sensory inputs'],
+ 'senses.title':['跟随 8 条输入线路，看世界如何进入大脑','Follow 8 input lines from the world into the brain'],
+ 'senses.sub':['点击每张卡片，跟随该感官的线路一路追踪到脑区；详情中可一键回到海报定位。海报标注的每一个数字都在这里。',
+   'Tap a card to trace each sense into the brain; inside, jump back to its spot on the poster. Every figure printed on the poster is included.'],
+ 'reward.kicker':['奖惩、动机与情绪','Rewards, motivation & emotion'],
+ 'reward.title':['多巴胺、阿片与恐惧：行为的方向盘','Dopamine, opioids and fear: the steering wheel'],
+ 'reward.sub':['大脑核心的奖赏–快乐–惩罚回路决定“想要什么、享受什么、逃避什么”。海报在这里用大量表情、符号与网络节点，标出了欲望、信任、恐惧与情绪的走向。',
+   'The core reward–pleasure–punishment circuits decide what you want, enjoy and avoid. The poster maps desire, trust, fear and emotion with emojis, symbols and network nodes.'],
+ 'spinal.kicker':['小脑、脊髓与自主神经','Cerebellum, spinal cord & autonomic nerves'],
+ 'spinal.title':['从 690 亿神经元的小脑，到 10 亿神经元的脊髓','From the 69-billion-neuron cerebellum to the 1-billion spinal cord'],
+ 'spinal.sub':['大脑之外，脑干与脊髓构成了身体的实时总线：小脑负责惯性导航与熟练动作，脊髓负责毫秒级反射，迷走神经掌管内脏与平静。',
+   'Beyond the cortex, the brainstem and spinal cord form the body’s real-time bus: the cerebellum handles inertial navigation and skilled action, the spinal cord handles millisecond reflexes, and the vagus nerve runs the organs.'],
+ 'sources.kicker':['海报引用的研究原文','Studies cited on the poster'],
+ 'sources.title':['海报上的每一句话，都有出处','Every line on the poster has a source'],
+ 'sources.sub':['以下为海报引用的研究原文（英文）与中文译意。','Below are the studies cited, with the English original and Chinese gloss.'],
+ 'quiz.kicker':['快速自测','Knowledge check'],
+ 'quiz.title':['四道题，检验你的“高科技大脑”','Four questions to test your high-tech brain'],
+ 'quiz.reset':['重做一遍','Try again']
+};
+function applyStatic(){
+  document.documentElement.lang=L?'en':'zh-CN';
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k=el.getAttribute('data-i18n');if(I18N[k])el.textContent=I18N[k][L];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    var k=el.getAttribute('data-i18n-html');if(I18N[k])el.innerHTML=I18N[k][L];
+  });
+  document.getElementById('lang-zh').classList.toggle('on',L===0);
+  document.getElementById('lang-en').classList.toggle('on',L===1);
+}
+document.getElementById('lang-zh').onclick=function(){setLang(0);};
+document.getElementById('lang-en').onclick=function(){setLang(1);};
+function setLang(l){
+  L=l;try{localStorage.setItem('htb-lang',l?'en':'zh');}catch(e){}
+  applyStatic();renderAll();
+}
+
+/* ================= 导航 ================= */
+var NAV=[
+ {id:'map',z:['按图索骥','Poster map']},{id:'specs',z:['硬件参数','Specs']},{id:'neuron',z:['神经元','Neuron']},
+ {id:'brainmap',z:['脑区地图','Brain map']},{id:'visual',z:['视觉系统','Vision']},{id:'senses',z:['8 种感官','8 senses']},
+ {id:'reward',z:['奖惩情绪','Reward']},{id:'spinal',z:['小脑脊髓','Cerebellum']},{id:'sources',z:['引文','Sources']},{id:'quiz',z:['小测','Quiz']}
+];
+function renderNav(){
+  document.getElementById('nav-links').innerHTML=NAV.map(function(n){return '<a href="#'+n.id+'">'+T(n.z)+'</a>';}).join('');
+}
+
+/* ================= 首屏画布 ================= */
+(function(){
+  var c=document.getElementById('hero-canvas'),ctx=c.getContext('2d');
+  var nodes=[],w,h,dpr=Math.min(window.devicePixelRatio||1,2),reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var COLORS=['#E8859A','#4C8DFF','#3DBE7B','#F0A949','#9B7BE8','#43C6C1'];
+  function resize(){var r=c.parentElement.getBoundingClientRect();w=r.width;h=r.height;c.width=w*dpr;c.height=h*dpr;c.style.width=w+'px';c.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.round(Math.min(90,Math.max(34,w*h/16000)));nodes=[];
+    for(var i=0;i<n;i++)nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,color:COLORS[Math.floor(Math.random()*COLORS.length)],pulse:Math.random()*100,flash:Math.random()<.12});}
+  window.addEventListener('resize',resize);resize();
+  var t=0;
+  function draw(){t++;ctx.clearRect(0,0,w,h);
+    for(var i=0;i<nodes.length;i++)for(var j=i+1;j<nodes.length;j++){
+      var a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130){var fire=(a.flash&&(t+a.pulse)%60<6)||(b.flash&&(t+b.pulse)%60<6);
+        ctx.strokeStyle=fire?'rgba(240,169,73,'+(0.55*(1-d/130))+')':'rgba(255,255,255,'+(0.10*(1-d/130))+')';
+        ctx.lineWidth=fire?1.4:.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
+    nodes.forEach(function(n){n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>w)n.vx*=-1;if(n.y<0||n.y>h)n.vy*=-1;
+      var firing=n.flash&&(t+n.pulse)%60<7,r=firing?3.2:1.7;ctx.beginPath();ctx.arc(n.x,n.y,r,0,7);ctx.fillStyle=firing?'#F0A949':n.color;ctx.globalAlpha=firing?1:.75;ctx.fill();ctx.globalAlpha=1;
+      if(firing){ctx.beginPath();ctx.arc(n.x,n.y,7,0,7);ctx.strokeStyle='rgba(240,169,73,.25)';ctx.stroke();}});
+    if(!reduce)requestAnimationFrame(draw);}
+  draw();
+})();
+
+/* ================= 首屏统计 / 规格 / 神经递质 ================= */
+var HERO_STATS=[
+ {n:['860 亿+','86 Billion+'],l:['神经元总数（86+ Billion）','Total neurons (86+ Billion)']},
+ {n:['65 万亿+','65 Trillion+'],l:['大脑皮层中的连接','Connections in the cortex']},
+ {n:['1000–10000','1,000–10,000'],l:['每个神经元的平均连接数','Synapses per neuron (avg.)']},
+ {n:['6 层','6 layers'],l:['大脑皮层 = 折叠的电路板','Cortex = folded circuit board']}
+];
+var SPECS=[
+ {big:['860 亿+','86B+'],t:['神经元','Neurons'],d:['86+ Billion Neurons，全脑神经元总数。','86+ billion neurons in the whole brain.'],chip:['总量','Total']},
+ {big:['150 亿+','15B+'],t:['大脑皮层神经元','Cortical neurons'],d:['15+ Billion Neurons in the Cerebral Cortex。','15+ billion neurons in the cerebral cortex.'],chip:['皮层','Cortex']},
+ {big:['65 万亿+','65T+'],t:['皮层连接（突触）','Cortical connections'],d:['65+ Trillion Connections in the Cerebral Cortex。','65+ trillion connections in the cortex.'],chip:['连接','Links']},
+ {big:['1000–10000','1k–10k'],t:['每个神经元的平均连接','Synapses per neuron'],d:['突触像晶体管开关一样工作——按海报的开关数量类比，约相当于 45,000 台 i7 双核处理器（仅为类比，非算力等同）。','Synapses work like transistor switches — by the poster’s switch-count analogy, equal to 45,000 i7 dual-core processors (an analogy, not equivalent computing power).'],chip:['单神经元','Per neuron']},
+ {big:['50,000+','50,000+'],t:['1 mm³ 皮层中的神经元','Neurons per mm³'],d:['这 1 mm³ 内形成超过 1 亿个突触（开关）；海报估计其处理能力超过 5 个苹果 A8 处理器（量级类比）。','That mm³ makes over 100 million synapses (switches); the poster estimates over five Apple A8 chips’ worth of processing (an order-of-magnitude analogy).'],chip:['密度','Density']},
+ {big:['2300 万','23 million'],t:['A8 芯片的晶体管 / mm³','A8 transistors / mm³'],d:['iPhone 6 的苹果 A8 处理器每 mm³ 约有 2300 万个晶体管——而同样体积的脑组织有 1 亿个突触。','The Apple A8 (iPhone 6) has about 23 million transistors per mm³; the same volume of brain tissue holds 100 million synapses.'],chip:['对比','vs. chip']},
+ {big:['2500 cm²','2,500 cm²'],t:['大脑皮层总表面积','Total cortical area'],d:['折叠后才能塞进颅腔。','The Total Surface area of the Cerebral Cortex = 2,500 cm², folded to fit the skull.'],chip:['面积','Area']},
+ {big:['6 层','6 layers'],t:['折叠电路板','Folded circuit board'],d:['皮层是一块 6 层的折叠电路板，厚度仅 1.5–4.5 mm，所有神经元胞体都在其中。','The cortex is a 6-layer folded board, only 1.5–4.5 mm thick, containing all neuron cell bodies.'],chip:['结构','Structure']},
+ {big:['红 = 抑制','Red = inhibit'],t:['其他颜色 = 兴奋','Other colors = excite'],d:['GABA 是主要的抑制性信号。','Red circuits are inhibitory; every other color is excitatory. GABA is the main inhibitory signal.'],chip:['规则','Rule']}
+];
+var SPEC_NOTE=['<b>类比：</b>突触的工作方式类似晶体管开关。每个神经元平均拥有 1,000–10,000 个突触连接，按海报的开关数量类比，皮层连接的“开关当量”约等于 <b>45,000 台 i7 双核处理器</b>。1 mm³ 脑组织（约一个小方块），海报估计其处理能力超过 <b>5 个苹果 A8 处理器</b>（单眼超过 4 个 A8）。',
+ '<b>Analogy:</b> synapses act like transistor switches. With 1,000–10,000 synapses per neuron, the cortex’s switch count is about <b>45,000 i7 dual-core processors</b>. The poster estimates one mm³ of cortex at over <b>five Apple A8 chips</b> (and over four A8 per eye).'];
+var SPEC_CAVEAT=['<b>数据口径说明（请先阅读，避免误读）：</b>本页所有数字均忠实转引自 2018 年原海报，用于帮助理解，<b>不是精确测量值</b>，需注意：① 全脑突触总数的通行估计约为 <b>100 万亿（10¹⁴）</b>，新皮层约 150 万亿——海报的“65 万亿+”专指大脑皮层；② “45,000 台 i7”“5 个 A8 / 单眼 4 个 A8”只是按<b>开关数量</b>做的量级类比：突触是会学习、可增强或减弱的模拟连接，不是数字晶体管，神经元也不是 CPU，<b>不能直接划等号</b>；③ 脊髓“10 亿神经元”出自较早的教材（Kalat, 1998），现代细胞计数研究（Herculano-Houzel 等）给出的估计明显更低（约 2000 万量级），尚无定论；④ 味蕾（海报写每蕾 5–10 受体，现代研究通常认为每个味蕾含 50–150 个味觉细胞）、皮肤与嗅觉感受器数量随身体部位与统计口径变化很大；⑤ 视杆细胞数海报标题写 125M、眼球图写 126M。神经元 860 亿、皮层约 150–160 亿、小脑 690 亿则与 Azevedo 等（2009）的细胞计数研究基本一致。',
+ '<b>A note on the numbers (please read first):</b> every figure is reproduced from the original 2018 poster to aid understanding and is <b>not a precise measurement</b>. (1) Whole-brain synapses are commonly estimated at about <b>100 trillion (10¹⁴)</b> (~150 trillion in the neocortex); the poster’s “65+ trillion” refers specifically to the cortex. (2) “45,000 i7” and “5 A8 / over 4 A8 per eye” are only <b>order-of-magnitude analogies by switch count</b>: synapses are analog, learning connections that strengthen or weaken, not digital transistors, and neurons are not CPUs — the equivalence is not literal. (3) The spinal cord’s “1 billion neurons” comes from an older textbook (Kalat, 1998); modern cell-counting work (Herculano-Houzel et al.) yields far lower estimates (on the order of 20 million), and no figure is settled. (4) Taste buds (the poster lists 5–10 receptors per bud; modern studies typically cite 50–150 taste cells), skin and smell receptors vary greatly by body site and counting method. (5) Rods are labeled 125M in the heading and 126M in the eye diagram. The 86 billion total, ~15–16 billion cortical and 69 billion cerebellar neuron figures are broadly consistent with Azevedo et al. (2009).'];
+var NT_LEGEND=[
+ ['nt-ex','● 兴奋性：多巴胺 / 谷氨酸 / 其他','● Excitatory: dopamine / glutamate / others'],
+ ['nt-in','● 抑制性：GABA','● Inhibitory: GABA'],
+ ['nt-ion','● 离子：Na⁺ K⁺ Ca²⁺','● Ions: Na⁺ K⁺ Ca²⁺'],
+ ['nt-mod','● 调质：血清素','● Modulator: serotonin']
+];
+var NEURO=[
+ {nm:['多巴胺 Dopamine⁺','Dopamine⁺'],c:'nt-ex',fr:['兴奋性','Excitatory'],dd:['驱动“想要”（Wants）与奖赏学习，是动机和习惯回路的核心燃料。','Drives “wants” and reward learning — the fuel of motivation and habits.']},
+ {nm:['谷氨酸 Glutamate⁺','Glutamate⁺'],c:'nt-ex',fr:['兴奋性','Excitatory'],dd:['脑内最主要的兴奋性递质，海报公式中的 G⁺，广泛参与感知与运动。','The brain’s main excitatory transmitter (G⁺ in the formula), broadly involved in perception and motion.']},
+ {nm:['GABA⁻','GABA⁻'],c:'nt-in',fr:['抑制性','Inhibitory'],dd:['主要的抑制性递质，对应海报中的红色回路，负责“踩刹车”、防止过度兴奋。','The main inhibitory transmitter — the red circuits — applying the brakes against over-excitation.']}
+];
+function renderHero(){
+  document.getElementById('hero-stats').innerHTML=HERO_STATS.map(function(s){return '<div class="hero-stat"><div class="num">'+T(s.n)+'</div><div class="lbl">'+T(s.l)+'</div></div>';}).join('');
+}
+function renderSpecs(){
+  document.getElementById('spec-grid').innerHTML=SPECS.map(function(s){
+    return '<div class="card spec"><span class="tag chip">'+T(s.chip)+'</span><div class="big">'+T(s.big)+'</div><div class="t">'+T(s.t)+'</div><div class="d">'+T(s.d)+'</div></div>';}).join('');
+  document.getElementById('spec-note').innerHTML=T(SPEC_NOTE);
+  var cv=document.getElementById('spec-caveat');if(cv)cv.innerHTML=T(SPEC_CAVEAT);
+  document.getElementById('nt-legend').innerHTML=NT_LEGEND.map(function(n){return '<span class="'+n[0]+'">'+T([n[1],n[2]])+'</span>';}).join('');
+  document.getElementById('neuro-cards').innerHTML=NEURO.map(function(n){
+    return '<div class="neuro-card"><div class="nm '+n.c+'">'+T(n.nm)+'</div><div class="fr tag">'+T(n.fr)+'</div><div class="dd">'+T(n.dd)+'</div></div>';}).join('');
+}
+</script>
+
+<script>
+/* ================= 动作电位模拟器 ================= */
+(function(){
+  var ex=document.getElementById('sim-ex'),inh=document.getElementById('sim-in'),
+      exv=document.getElementById('sim-ex-v'),inv=document.getElementById('sim-in-v'),
+      vol=document.getElementById('sim-vol'),st=document.getElementById('sim-state'),
+      c=document.getElementById('sim-canvas'),x=c.getContext('2d'),hist=[],spike=0;
+  function z2(){return Math.min(window.devicePixelRatio||1,2);}
+  function size(){var r=c.getBoundingClientRect();var z=z2();c.width=r.width*z;c.height=r.height*z;x.setTransform(z,0,0,z,0,0);}
+  window.addEventListener('resize',size);size();
+  function labels(base){
+    if(L===0){
+      if(base>-50&&spike>0)return ['放电！','ACTION POTENTIAL'];
+      if(base>-50)return ['接近阈值','NEAR THRESHOLD'];
+      if(base<-70)return ['超极化','HYPERPOLARIZED'];
+      return ['静息中','RESTING'];
+    }else{
+      if(base>-50&&spike>0)return ['Firing!','ACTION POTENTIAL'];
+      if(base>-50)return ['Near threshold','NEAR THRESHOLD'];
+      if(base<-70)return ['Hyperpolarized','HYPERPOLARIZED'];
+      return ['Resting','RESTING'];
+    }
+  }
+  function update(){
+    var e=+ex.value,i=+inh.value;exv.textContent='+'+e;inv.textContent='−'+i;
+    var base=-70+e-i,v=base;
+    if(spike>0){v=40;spike--;}
+    if(base>-50&&spike===0){spike=10;}
+    hist.push(Math.max(-80,Math.min(45,v)));if(hist.length>160)hist.shift();
+    vol.textContent=(v>0?'+':'')+v+' mV';
+    var lb=labels(base);
+    st.textContent=lb[1]+' · '+lb[0];
+    if(base>-50){vol.style.color='var(--amber)';}else if(base<-70){vol.style.color='var(--blue)';}else{vol.style.color='var(--paper2)';}
+    draw();
+  }
+  function draw(){
+    var w=c.width/z2(),h=c.height/z2();x.clearRect(0,0,w,h);
+    x.strokeStyle='rgba(229,72,77,.5)';x.setLineDash([5,5]);var ty=my(-50);x.beginPath();x.moveTo(0,ty);x.lineTo(w,ty);x.stroke();x.setLineDash([]);
+    x.fillStyle='#E5484D';x.font='10px IBM Plex Mono';x.fillText(L?'Threshold −50 mV':'阈值 −50 mV',6,ty-4);
+    var ry=my(-70);x.strokeStyle='rgba(255,255,255,.15)';x.beginPath();x.moveTo(0,ry);x.lineTo(w,ry);x.stroke();
+    x.fillStyle='#8E97AB';x.fillText(L?'Resting −70 mV':'静息 −70 mV',6,ry-4);
+    x.strokeStyle='#F0A949';x.lineWidth=2;x.beginPath();
+    hist.forEach(function(v,i){var px=i/159*w,py=my(v);i?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();
+    var li=hist.length-1;if(li>=0){x.fillStyle='#F0A949';x.beginPath();x.arc(li/159*w,my(hist[li]),3,0,7);x.fill();}
+  }
+  function my(v){var h=c.height/z2();return h-((v+80)/125)*(h-14)-7;}
+  ex.addEventListener('input',update);inh.addEventListener('input',update);
+  setInterval(update,60);update();
+  window.__simRerender=update;
+})();
+
+/* ================= 脑区数据 ================= */
+var REGIONS=[
+{id:'pfc',name:['前额叶皮层','Prefrontal Cortex'],en:'Prefrontal Cortex (PFC)',color:'#9B7BE8',
+ items:[
+  ['非感觉处理（Non-Sensory Processing）','Non-sensory processing'],
+  ['可以抑制感觉奖赏（Can Inhibit Sensory Rewards）','Can inhibit sensory rewards'],
+  ['约 25 岁后才成熟（Matures late, Age 25+）','Matures late (Age 25+)'],
+  ['好坏判断（Bad vs Good Processing）——形成你的信念','Bad vs Good processing — your beliefs'],
+  ['道德、法律、价值观（Morals / Laws / Values）','Morals, laws, values'],
+  ['背外侧前额叶（Dorsolateral PFC）：行为的执行控制','Dorsolateral PFC: executive control of behavior'],
+  ['唤醒（Arousal）','Arousal']],
+ pills:[['决策','Decision'],['自控','Self-control'],['人格成熟','Maturity']],
+ quote:['三个额叶回路与决策有关：1) OFC，2) DLPFC，3) ACC；它们在相互冲突的选项中排序很重要，也负责结果加工。',
+  'Three frontal circuits have been associated with decision making: 1) the OFC, 2) the DLPFC, and 3) the ACC, important in sorting among conflicting options, as well as outcome-processing.'],
+ src:'— The Functional Neuroanatomy of Decision-Making'},
+{id:'ofc',name:['眶额皮层','Orbital Frontal Cortex'],en:'Orbital Frontal Cortex (OFC)',color:'#b585e8',
+ items:[
+  ['“灵”（spirit）：学习、平静/睡眠、美感区、古典音乐','“Spirit”: learning, calming/sleep, beauty area, classical music'],
+  ['“肉”（flesh）：习得的自动感官奖赏，发育较早','“Flesh”: learned auto-sensory rewards (develops early)'],
+  ['贪婪、纹身、物质主义（Greed / Tattoos / Materialism）','Greed, tattoos, materialism'],
+  ['偶像崇拜如何控制我们、偶像崇拜（How Idolatry controls us / Idol worship）','How idolatry controls us / idol worship'],
+  ['自夸、rap、争斗、管教、Kind Words（Boasting / Quarrel / Discipline）','Boasting, rap, quarrel, discipline, kind words']],
+ pills:[['奖赏价值','Reward value'],['灵与肉','Spirit & flesh']],
+ quote:['眶额与内侧前额叶皮层作为一个整体，接收高度加工的感觉传入，对内脏功能提供皮层层面的影响，并参与高级认知和情绪过程。',
+  'It can now be recognized that the region (Orbital and Medial Prefrontal Cortex) as a whole receives highly processed sensory afferents, provides for cortical influence over visceral functions, and participates in high-level cognitive and emotional processes.'],
+ src:'— The Organization of Networks within the Orbital and Medial Prefrontal Cortex of Rats, Monkeys and Humans'},
+{id:'acc',name:['前扣带回','Anterior Cingulate Cortex'],en:'Anterior Cingulate Cortex (ACC)',color:'#E8859A',
+ items:[
+  ['好 / 坏（Good / Bad）评价','Good / Bad evaluation'],
+  ['悔改（Repentance）','Repentance'],
+  ['教育、电子游戏、食物（Education / Video Games / Food）','Education, video games, food'],
+  ['奖赏（Rewards）评估与情绪冲突监控','Reward evaluation and emotional conflict monitoring']],
+ pills:[['冲突监控','Conflict'],['情绪调节','Emotion']],
+ quote:['宗教信念像抗焦虑剂一样起作用，减少对错误或不确定的情绪反应，为人们提供一套有意义的体系，帮助理解我们所处的复杂而不确定的世界；在生理层面，它降低 ACC 活动并减少随之而来的苦恼。',
+  'Religious conviction acts like an anxiolytic, reducing emotional reactions to errors or uncertainty, providing people with a meaningful system helping them to understand the complex and uncertain world that we live in. In physiological terms, it reduces ACC activity and consequently distress.'],
+ src:'— The Anterior Cingulate Cortex'},
+{id:'motor',name:['运动皮层','Motor Cortex'],en:'Motor Control',color:'#4C8DFF',
+ items:[
+  ['镜像运动学习（Mirror Motor Learning）','Mirror motor learning'],
+  ['运动规划（Motor Planning）','Motor planning'],
+  ['抓握存储（Grip Storage）','Grip storage'],
+  ['齿轮组：运动控制的执行程序','Gears: motor control programs'],
+  ['与小脑协同执行小脑程序','Executes cerebellar programs']],
+ pills:[['运动规划','Motor planning'],['镜像神经元','Mirror neurons']],
+ quote:['镜像神经元是一类特殊的视觉运动神经元：它在自己执行某个特定动作、以及观察另一个个体做相似动作时都会放电。',
+  'Mirror neurons are a particular class of visuomotor neurons that discharge both when performing a particular action and when observing another individual doing a similar action.'],
+ src:'— The Mirror-Neuron System'},
+{id:'attention',name:['注意 / 额叶眼动区','Attention / FEF'],en:'Attention · Frontal Eye Fields (FEF)',color:'#F0A949',
+ items:[
+  ['眼动控制（Eye Control）','Eye control'],
+  ['平滑追踪（Smooth Pursuit）：用准星追踪野鸭目标','Smooth pursuit: tracking a moving target'],
+  ['执行小脑程序（Execute Cerebellar Programs）','Execute cerebellar programs'],
+  ['投篮（Shoot）：运动检测与中央凹反射','Shoot: motion detection & foveal reflex']],
+ pills:[['注意','Attention'],['眼动','Eye movement']]},
+{id:'sensory',name:['感觉区','Sensory Area'],en:'Sensory Area',color:'#43C6C1',
+ items:[
+  ['痛觉–触觉–本体感觉（Pain-Touch-Proprioception）','Pain – touch – proprioception'],
+  ['感觉反馈（Sensory Feedback）','Sensory feedback'],
+  ['抓握（Grasp）：手、锤子与工具的触感','Grasp: the feel of hands, hammers and tools']],
+ pills:[['触觉','Touch'],['痛觉','Pain'],['本体感觉','Proprioception']]},
+{id:'parietal',name:['顶叶 / 顶内沟','Parietal / IPS'],en:'Parietal Cortex · Intraparietal Sulcus (IPS)',color:'#3DBE7B',
+ items:[
+  ['视觉引导的肢体（Visual Guided Limbs）','Visual-guided limbs'],
+  ['词处理（Word Processing：S / R）','Word processing (S / R)'],
+  ['地点处理（Place Processing）与地点映射（Place Mapping）','Place processing and place mapping'],
+  ['伸手、抓握、操作机械臂等复杂手部动作','Reaching, grasping, operating robotic arms']],
+ pills:[['手眼协调','Hand-eye'],['空间参照','Spatial frame']],
+ quote:['有压倒性证据表明，IPS 区域参与复杂的手部使用、伸手、抓握，为伸手与抓握匹配视觉与身体中心参照系，并对有意的手部动作进行编程。',
+  'There is overwhelming evidence that areas in the IPS are involved in complex hand use, reaching, grasping, matching visual and body centered frames of references for reaching and grasping, and programming intentional hand movements.'],
+ src:'— Topographic Maps within Brodmann\u2019s Area 5 of Macaque Monkeys'},
+{id:'cingulate',name:['扣带回 / 后扣带','Cingulate / PCC'],en:'Cingulate Cortex · PCC',color:'#7bb8e8',
+ items:[
+  ['镜像感受（Mirror Feelings）','Mirror feelings'],
+  ['被感知的感觉（Perceived sensations）','Perceived sensations'],
+  ['色情 / 共情（Pornography / Empathy）','Pornography / empathy'],
+  ['后扣带 PCC：想法（Ideas）','PCC: ideas']],
+ pills:[['共情','Empathy'],['自我参照','Self-reference']]},
+{id:'insular',name:['岛叶','Insular Cortex'],en:'Insular Cortex',color:'#e8b84c',
+ items:[
+  ['性与味觉（Sexual & Taste）','Sexual & taste'],
+  ['触觉（Tactile）','Tactile'],
+  ['言语 / 视觉整合（Verbal / Visual）','Verbal / visual integration']],
+ pills:[['内感受','Interoception'],['味觉','Taste'],['情绪身体','Emotion body']]},
+{id:'reward',name:['奖赏 · 快乐 · 惩罚','Rewards · Pleasure · Punishment'],en:'Rewards / Pleasure / Punishment',color:'#E5484D',
+ items:[
+  ['奖赏（Wants）：多巴胺驱动','Rewards (wants): driven by dopamine'],
+  ['快乐（Needs）：阿片、催产素、交配、饥饿、信任回路','Pleasure (needs): opioids, oxytocin, mating, hunger, trust circuit'],
+  ['肥胖、药物、信息素、气味（Obesity / Drugs / Pheromones / Odors）','Obesity, drugs, pheromones, odors'],
+  ['惩罚：多巴胺关闭（Dopamine off）、阿片','Punishment: dopamine off; opioids'],
+  ['恐惧、情绪、停止习惯（Fear / Emotion / Stop Habits）','Fear, emotion, stop habits']],
+ pills:[['多巴胺','Dopamine'],['动机','Motivation'],['恐惧','Fear']]},
+{id:'temporal',name:['颞叶','Temporal Lobe'],en:'Temporal Lobe',color:'#9B7BE8',
+ items:[
+  ['词语（Words / sounds）、面孔识别“谁”（Who：正面/侧面）','Words (sounds); “Who” face recognition (front / profile)'],
+  ['时钟、睡眠、学习开关（Clock / Sleep / Learning Switch）','Clock, sleep, learning switch'],
+  ['压力、激素、疼痛控制（Stress / Hormones / Pain Control）','Stress, hormones, pain control'],
+  ['视觉中继、听觉中继、视听反射（Vision / Sound Relay · Visual-Audio Reflexes）','Vision relay, sound relay, visual-audio reflexes'],
+  ['裸体、面部表情、面孔、身体部位、物体处理','Nudity, facial expression, face, body parts, object processing'],
+  ['2 亿条输入程序、来自器官的消化信号','200 million input programs; digestion signals from organs'],
+  ['动眼神经控制眼肌、面神经（Oculomotor / Facial Nerve）','Oculomotor nerve (eye muscles); facial nerve']],
+ pills:[['语言','Language'],['面孔','Faces'],['压力','Stress'],['记忆','Memory']]},
+{id:'occipital',name:['枕叶 / 视觉区','Occipital / Sight Area'],en:'Occipital Lobe · Sight Area (V1–V7)',color:'#4C8DFF',
+ items:[
+  ['V1–V7 视觉处理流水线（见“视觉系统”章节）','V1–V7 visual pipeline (see Vision section)'],
+  ['V3-5/MT：运动（Motion）','V3-5/MT: motion'],
+  ['视辐射 Optic Radiations：570K','Optic radiations: 570K'],
+  ['视交叉信号“到右眼”（to Right Eye）','Signal to the right eye at the optic chiasm']],
+ pills:[['视觉加工','Vision'],['GPU 流水线','GPU pipeline']]},
+{id:'cerebellum',name:['小脑','Cerebellum'],en:'Cerebellum (Learned Habits / Skills)',color:'#43C6C1',
+ items:[
+  ['习得的习惯与技能（Learned Habits / Skills）','Learned habits and skills'],
+  ['690 亿神经元；展开后 1 米长（500 cm²）','69 billion neurons; 1 meter long unfolded (500 cm²)'],
+  ['刹车 / 瞄准 / 投篮（Brake / Aim / Shoot）','Brake / aim / shoot'],
+  ['争吵 / 打招呼 / 唱歌（Quarrel / Say Hi / Sing）','Quarrel / say hi / sing'],
+  ['平行位置追踪纤维、浦肯野纤维、苔藓状计时回路、攀爬纤维','Parallel position-tracking fibers, Purkinje fibers, mossy timing circuits, climbing fibers'],
+  ['齿状核（Dentate Nuclei）：运动 / 停止（Move / Stop）','Dentate nuclei: move / stop'],
+  ['接收本体感觉（肢体位置）、陀螺仪/加速度计与声音输入','Inputs: proprioception (limb position), gyro/accelerometer, sound']],
+ pills:[['惯性导航','Inertial navigation'],['熟练动作','Skilled action'],['平衡','Balance']]},
+{id:'vagus',name:['迷走神经','Vagus Nerve'],en:'Vagus Nerve (Cranial Nerve X)',color:'#3DBE7B',
+ items:[
+  ['激活后通常降低心率、血压，或两者皆降（Wikipedia）','Activation typically lowers heart rate, blood pressure, or both (Wikipedia)'],
+  ['连接消化（Digestion）、心率/血压、呼吸（Breathing）','Connects digestion, heart rate/blood pressure, breathing'],
+  ['身体“休息与消化”的平静开关','The body’s “rest and digest” calm switch']],
+ pills:[['副交感','Parasympathetic'],['内脏调节','Organs']]},
+{id:'spinal',name:['脊髓','Spinal Cord'],en:'Spinal Cord (poster: 1 Billion Neurons)',color:'#C9CFDD',
+ items:[
+  ['10 亿神经元（1 Billion Neurons，海报口径；现代研究估计约 2000 万，详见下方“脊髓”卡片）','1 billion neurons (poster figure; modern studies estimate ~20 million — see the Spinal Cord card below)'],
+  ['蝴蝶状灰质（Butterfly / grey matter）：脊髓板层反射回路','Butterfly (grey matter): spinal cord lamina reflex circuitry'],
+  ['疼痛反射回路（Pain Reflex Circuitry）：缩手先于感觉','Pain reflex circuitry: withdrawal before sensation'],
+  ['中间神经元占脊髓细胞的 97%','Interneurons make up as much as 97% of cord cells'],
+  ['从运动皮层到肌肉、到感觉皮层；髓鞘轴突上下穿行','From motor cortex to muscles; to sensory cortex; myelinated axons run up/down'],
+  ['最长的运动神经元轴突可超过 1 米','The longest motor-neuron axon can exceed one meter']],
+ pills:[['反射','Reflex'],['高速总线','High-speed bus']]}
+];
+function renderRegions(){
+  var tabs=document.getElementById('region-tabs'),detail=document.getElementById('brain-detail');
+  tabs.innerHTML=REGIONS.map(function(r){return '<button data-id="'+r.id+'">'+T(r.name)+'</button>';}).join('');
+  tabs.querySelectorAll('button').forEach(function(b){b.onclick=function(){showRegion(b.dataset.id,true);};});
+  document.querySelectorAll('.brain-region').forEach(function(g){g.onclick=function(){showRegion(g.dataset.r,true);};});
+  showRegion('pfc',false);
+}
+function showRegion(id,scroll){
+  var r=REGIONS.filter(function(x){return x.id===id;})[0];if(!r)return;
+  document.querySelectorAll('#region-tabs button').forEach(function(b){b.classList.toggle('active',b.dataset.id===id);});
+  document.querySelectorAll('.brain-region').forEach(function(g){g.classList.toggle('active',g.dataset.r===id);});
+  var html='<div class="bd-num">REGION · '+r.en.split('（')[0].toUpperCase()+'</div><h3>'+T(r.name)+'</h3>'+
+    '<div class="bd-en">'+r.en+'</div><ul>'+r.items.map(function(i){return '<li>'+T(i)+'</li>';}).join('')+'</ul>'+
+    '<div class="bd-pills">'+r.pills.map(function(p){return '<span>'+T(p)+'</span>';}).join('')+'</div>';
+  if(r.quote)html+='<div class="quote">'+T(r.quote)+'<span class="src">'+r.src+'</span></div>';
+  html+='<button class="bd-src" onclick="locate(\''+id+'\')">◎ '+(L?'Locate on poster':'在海报上定位')+'</button>';
+  document.getElementById('brain-detail').innerHTML=html;
+  document.getElementById('brain-detail').style.borderColor=r.color;
+  if(scroll)document.getElementById('brain-detail').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ================= 视觉流水线 ================= */
+var VISUAL=[
+ {tag:'V1',bg:'linear-gradient(135deg,#4C8DFF,#355fae)',
+  t:['初级视觉皮层 · 最基础的元素','V1 · Primary visual cortex — basic elements'],
+  d:['识别边缘、线段与基础朝向：山脉轮廓、三角形、房子、字母 A、数字 123、身体剪影、汽车、侧脸、蝴蝶、手掌。','Edges, lines and orientation: mountain outlines, triangles, houses, the letter A, digits 123, body silhouettes, cars, profiles, butterflies, hands.'],
+  icons:['lines','edges','shape']},
+ {tag:'V2a',bg:'linear-gradient(135deg,#3d7bd8,#2a4f8c)',
+  t:['形状 · 由线段拼成物体','V2a · Shapes from edges'],
+  d:['把多条线索整合为形状、边缘与表面表征：山脉、房屋、立体卡片（S₁）。','Integrates multiple cues into representations of shapes, edges and surfaces: mountains, houses, the S₁ card.'],
+  q:['——《Representation of Shapes, Edges, and Surfaces Across Multiple Cues in the Human Visual Cortex》','— Representation of Shapes, Edges, and Surfaces Across Multiple Cues in the Human Visual Cortex']},
+ {tag:'V2b',bg:'linear-gradient(135deg,#43C6C1,#2a7d7a)',
+  t:['面孔与身体 · 分布式的人脸网络','V2b · Faces and bodies — a distributed network'],
+  d:['识别人脸与身体：男女人物头像、正脸、裸体、嘴唇、手掌、腿、惊讶表情。面孔与身体由枕颞皮层中“面孔敏感 + 身体敏感”的分布式网络完成。','Recognizes faces and bodies: portraits, front views, nude bodies, lips, hands, legs, a surprised face. Carried by distributed face- and body-sensitive networks in the occipito-temporal cortex.'],
+  q:['“功能性神经影像证据表明，对人脸与身体的视觉感知，是由枕颞皮层中对面孔和身体敏感的分布式网络完成的。”——《Different Cortical Dynamics in Face and Body Perception》<br>“我们的结果证实，人体裸露在视觉加工早期就被检出；面对他人裸体时，人脑会增强视觉加工。有趣的是，N170 对裸体身体的反应甚至强于对面孔的反应。”——《The Naked Truth: The Face and Body Sensitive N170 Response Is Enhanced for Nude Bodies》','“Evidence from functional neuroimaging indicates that visual perception of human faces and bodies is carried out by distributed networks of face and body-sensitive areas in the occipito-temporal cortex.” — Different Cortical Dynamics in Face and Body Perception<br>“Our results thus confirm that nudity of human bodies is detected early on during visual processing, and that the human brain exhibits enhanced visual processing to other people’s nude bodies. Interestingly, the N170 response to nude bodies was even greater than that to faces.” — The Naked Truth: The Face and Body Sensitive N170 Response Is Enhanced for Nude Bodies']},
+ {tag:'V3b',bg:'linear-gradient(135deg,#3DBE7B,#287a50)',
+  t:['物体识别 · 识别后送入眶额皮层','V3b · Objects, then forwarded to the OFC'],
+  d:['具体物体：野鸭、玫瑰、钞票、蛇。习得的图像被刻入记忆，完成识别后转发到 OFC（眶额皮层）赋予意义。','Concrete objects: duck, rose, money, snake. Learned images are etched in memory and forwarded to the OFC for meaning after recognition.']},
+ {tag:'V4h',bg:'linear-gradient(135deg,#F0A949,#b07a2e)',
+  t:['颜色 · 色轮与彩色世界','V4h · Color'],
+  d:['处理颜色：色轮、蝴蝶、绿色汽车、木棒。','Processes color: color wheel, butterfly, green car, stick.']},
+ {tag:'V3-5/MT',bg:'linear-gradient(135deg,#9B7BE8,#6a4eb0)',
+  t:['运动 · 视觉运动探测器','V3-5/MT · Motion detector'],
+  d:['MT 区检测运动：飞行的野鸭、警告标志，还包含裸体处理（Nudity Processing）与面部表情处理。','MT detects motion: flying ducks, warning signs; also nudity processing and facial-expression processing.']},
+ {tag:'V6 & V7',bg:'linear-gradient(135deg,#E5484D,#a52f35)',
+  t:['手眼协调 · 顶内沟 IPS 的动作编程','V6 & V7 · Hand-eye coordination in the IPS'],
+  d:['复杂的手部使用：射击、挥棒击球、踢球、握方向盘、握笔写字、抡锤。把视觉与身体参照系匹配，对有意的手部动作编程。','Complex hand use: shooting, batting, kicking, steering, writing, hammering. Matches visual and body-centered frames and programs intentional hand actions.'],
+  q:['“有压倒性证据表明，IPS 区域参与复杂的手部使用、伸手、抓握，为伸手与抓握匹配视觉与身体中心参照系，并对有意的手部动作进行编程。”——《Topographic Maps within Brodmann’s Area 5 of Macaque Monkeys》','“There is overwhelming evidence that areas in the IPS are involved in complex hand use, reaching, grasping, matching visual and body centered frames of references for reaching and grasping, and programming intentional hand movements.” — Topographic Maps within Brodmann’s Area 5']},
+ {tag:'导航',bg:'linear-gradient(135deg,#8E97AB,#5a6275)',
+  t:['Navigation · 陀螺仪与加速度计输入','Navigation · gyro & accelerometer input'],
+  d:['“研究者在小脑深处发现了一台精密的神经计算机，它进行惯性导航计算，确定人在空间中的运动。”海报还指出，前庭系统与军事制导和航天飞机上使用的主传感器（三轴陀螺仪 / 加速度计，Military Accelerometer-Gyro Triad）原理相似。','“Researchers have discovered a sophisticated neural computer, buried deep in the cerebellum, that performs inertial navigation calculations to figure out a person’s movement through space.” The poster adds that the vestibule is similar to the main sensor used in military guidance and the Space Shuttle (the military accelerometer–gyro triad).'],
+  q:['——《Brain’s Inertial Navigation System Pinpointed》；“Vestibule is similar to the main sensor used in Military Guidance and the Space Shuttle.”','— Brain’s Inertial Navigation System Pinpointed; “Vestibule is similar to the main sensor used in Military Guidance and the Space Shuttle.”']}
+];
+var VISUAL_SIDE=[
+ {h:['层级加工的核心思想','The core idea of hierarchical processing'],
+  p:['“识别过程很可能是跨视觉皮层的一系列计算：早期视觉皮层先对视觉刺激的低级属性（如视差、运动或朝向）做局部计算，此时对整体物体形状几乎没有感知；随后在视觉加工层级的更高层级逐级进行更全局的计算。”','“The recognition process likely entails a sequence of computations across visual cortex, starting from local computations in early visual cortex related to low-level properties of the visual stimulus, such as disparity, motion, or orientation, conveying little sense of the global object shape, then proceeding to more global computations in higher levels of the hierarchy of visual processing.”'],
+  extra:['在视觉通路中，信号经 <span class="mn">视辐射 Optic Radiations 570K</span> 从视觉区送往各处理模块。','Signals travel through the <span class="mn">Optic Radiations (570K)</span> to the processing modules.']},
+ {h:['头动、追踪与单细胞计算','Head movement, pursuit, single-neuron computation'],
+  p:['“头部运动时，两个系统都必须与前庭系统协同。追踪（平滑追随）系统的目标，是通过让眼球速度匹配目标速度，使视网膜目标像停留在中央凹上。”','“During head movements, both systems must interact with the vestibular system. The goal of the pursuit system is to keep the retinal target image on the fovea by matching the eye velocity to target velocity.”'],
+  extra:['“现在越来越明显的是，即使单个神经元也能完成复杂计算。” <span style="color:var(--muted)">——Wikipedia</span>','“It is now becoming increasingly apparent that even single neurons can perform complex computations.” <span style="color:var(--muted)">— Wikipedia</span>']}
+];
+var ICONS_SVG={
+ lines:'<svg viewBox="0 0 24 24"><path d="M4 18 L12 4 L20 18"/></svg>',
+ edges:'<svg viewBox="0 0 24 24"><path d="M3 18h18M6 18l4-8 4 8 4-5"/></svg>',
+ shape:'<svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12"/><path d="M4 8l4-4h8l4 4"/></svg>'
+};
+function renderVisual(){
+  var VKEY={'V1':'v1','V2a':'v2a','V2b':'v2b','V3b':'v3b','V4h':'v4h','V3-5/MT':'v5mt','V6 & V7':'v67','导航':'nav'};
+  document.getElementById('visual-flow').innerHTML=VISUAL.map(function(v){
+    var icons=(v.icons||[]).map(function(k){
+      var lab={lines:['线条','Lines'],edges:['边缘','Edges'],shape:['形状','Shapes']}[k];
+      return '<span>'+ICONS_SVG[k]+T(lab)+'</span>';}).join('');
+    return '<div class="gpu-row" id="row-'+(VKEY[v.tag]||'')+'"><div class="gpu-tag" style="background:'+v.bg+'">'+v.tag+'</div><div class="gpu-body">'+
+      '<div class="gt">'+T(v.t)+'</div><div class="gd">'+T(v.d)+'</div>'+
+      (icons?'<div class="gpu-icons">'+icons+'</div>':'')+
+      (v.q?'<div class="gq">'+T(v.q)+'</div>':'')+'</div></div>';
+  }).join('');
+  document.getElementById('visual-side').innerHTML=VISUAL_SIDE.map(function(s){
+    return '<div class="card vs-card"><h4>'+T(s.h)+'</h4><p>'+T(s.p)+'</p><p style="margin-top:10px">'+T(s.extra)+'</p></div>';
+  }).join('');
+}
+</script>
+
+<script>
+/* ================= 8 感官 ================= */
+var SI={
+ eye:'<svg viewBox="0 0 48 48"><path d="M4 24s8-13 20-13 20 13 20 13-8 13-20 13S4 24 4 24z"/><circle cx="24" cy="24" r="6"/><path d="M24 18v-5M24 35v-5M18 24h-5M35 24h-5"/></svg>',
+ nose:'<svg viewBox="0 0 48 48"><path d="M24 5c-4 8-6 13-6 19 0 3-3 5-3 9a9 9 0 0 0 18 0c0-4-3-6-3-9 0-6-2-11-6-19z"/><circle cx="20" cy="36" r="1.6"/><circle cx="28" cy="36" r="1.6"/></svg>',
+ tongue:'<svg viewBox="0 0 48 48"><path d="M24 8v12c0 14 10 14 10 18 0 3-3 5-6 3-1.5-1-2.5-2-4-3-1.5 1-2.5 2-4 3-3 2-6 0-6-3 0-4 10-4 10-18z"/><path d="M14 8h20"/></svg>',
+ hand:'<svg viewBox="0 0 48 48"><path d="M19 42V16c0-2 3-2 3 0v10l2-2V11c0-2 3-2 3 0v13l2-3V9c0-2 3-2 3 0v14l2-5c1-2 4 0 3 2l-4 9c-2 6-6 13-11 13z"/></svg>',
+ ear:'<svg viewBox="0 0 48 48"><path d="M31 5a9 9 0 0 0-9 9v16c0 7-5 12-9 12-2 0-3-2-1-4 3-3 4-5 4-8"/><path d="M31 5c5 0 8 4 8 9 0 4-2 7-4 9-3 3-4 5-4 9"/></svg>',
+ gyro:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><ellipse cx="24" cy="24" rx="16" ry="6"/><ellipse cx="24" cy="24" rx="6" ry="16"/><circle cx="24" cy="24" r="3"/></svg>',
+ joint:'<svg viewBox="0 0 48 48"><circle cx="14" cy="10" r="5"/><path d="M14 15l8 14 12 4"/><circle cx="22" cy="29" r="4"/><path d="M34 33l6 6"/></svg>',
+ face:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="18" cy="20" r="2"/><circle cx="30" cy="20" r="2"/><path d="M18 30c2 3 10 3 12 0"/></svg>'
+};
+var SENSES=[
+{id:'sight',name:['视觉','Sight'],en:'Sight',c:'#4C8DFF',ico:'eye',
+ mini:['1.25 亿视杆 · 视网膜压缩成像','125–126 million rods · compressed retina'],
+ stats:[
+  {n:'1.25 亿',l:['视杆细胞（海报：125M / 126M）','Rods (poster: 125M / 126M)']},
+  {n:'600 万',l:['视锥细胞 Cones（6M）','Cones (6M)']},
+  {n:'100 万',l:['视神经轴突 Optic nerve（1M）','Optic nerve axons (1M)']}],
+ paras:[
+  ['海报标题写“125 Million Rods & 6 Million Color Cone Photoreceptors”，眼球图写 126M（1.25 亿视杆）；但所有感光细胞只汇聚到 100 万根视神经轴突——眼睛在送入大脑前就完成了空间编码（压缩）。',
+   'The poster heading says “125 Million Rods & 6 Million Color Cone Photoreceptors” (the eye diagram says 126M), yet they converge into only 1 million optic nerve axons — the eye spatially encodes (compresses) the image before sending it.'],
+  ['中央凹（Fovea）约有 20 万个视锥；中央凹切迹直径 1.5 mm，视网膜厚 0.12 mm、面积约 2500 mm²；海报估计单眼处理能力超过 4 个苹果 A8 处理器（量级类比）。',
+   'The fovea holds about 200,000 cones; the foveal notch diameter is 1.5 mm, the retina is 0.12 mm thick and ~2,500 mm²; the poster estimates per-eye processing power over four Apple A8 chips (an order-of-magnitude analogy).'],
+  ['视网膜图像上下颠倒、前后翻转（imaged flipped upside down and backwards）；周边视网膜分辨率低、主要感知运动，中央负责运动检测与平滑追踪的中央凹反射。',
+   'The image is “flipped upside down and backwards”; the peripheral retina is low-resolution and mainly senses motion, while the center handles motion detection and the smooth-pursuit foveal reflex.']],
+ q:['“视网膜并不是简单地把一张图片发给大脑：它会先对图像进行空间编码（压缩），以适应视神经有限的容量。”——Wikipedia，Retina','“The retina does not simply send a picture to the brain. The retina spatially encodes (compresses) the image to fit the limited capacity of the optic nerve.” — Wikipedia, Retina'],
+ qz:['“现在已经清楚：即使是看起来相当无害的经历，也能深刻影响大脑发育；能够改变大脑发育的经历范围，比曾经认为的要大得多。”——《Experience and the developing prefrontal cortex》','“It is now clear that even fairly innocuous-looking experiences can profoundly affect brain development and that the range of experiences that can alter brain development is much larger than had once been believed.” — Experience and the developing prefrontal cortex']},
+{id:'smell',name:['嗅觉','Smell'],en:'Smell',c:'#9B7BE8',ico:'nose',
+ mini:['人类 1200 万；猎犬 50 亿','Humans 12M; bloodhound 5B'],
+ stats:[
+  {n:'1200 万',l:['人类嗅觉受体 Olfactory receptors','Human olfactory receptors']},
+  {n:'10 亿',l:['狗（1 Billion）','Dog (1 billion)']},
+  {n:'50 亿',l:['猎犬（5 Billion）','Bloodhound (5 billion)']}],
+ paras:[
+  ['海报列出：人类约 1200 万个嗅觉受体细胞（12 Million Olfactory Receptor Cells, Human），狗约 10 亿（1 Billion），猎犬可达 50 亿（5 Billion）。',
+   'The poster lists 12 million olfactory receptor cells in humans, 1 billion in dogs, and 5 billion in hounds.'],
+  ['在主要感官中，嗅觉的主通路不经过丘脑中继：受体细胞的轴突直接进入嗅球（之后的次级通路仍会经丘脑）。',
+   'Among the major senses, the primary olfactory pathway bypasses the thalamus: receptor-cell axons run straight to the olfactory bulb (a later secondary pathway still reaches the thalamus).'],
+  ['嗅觉与信息素（Pheromones）、气味、食物、求偶与记忆紧密相连。',
+   'Smell is tightly linked to pheromones, odors, food, mating and memory.']]},
+{id:'taste',name:['味觉','Taste'],en:'Taste',c:'#F0A949',ico:'tongue',
+ mini:['9000 个味蕾，每蕾 5–10 个受体','9,000 taste buds, 5–10 receptors each'],
+ stats:[
+  {n:'9000',l:['味蕾 Taste buds','Taste buds']},
+  {n:'5–10',l:['每个味蕾的受体数','Receptors per bud']},
+  {n:'5',l:['甜/咸/酸/苦/鲜','Sweet/salty/sour/bitter/umami']}],
+ paras:[
+  ['海报原文：约 9,000 个味蕾，每个味蕾有 5–10 个受体，信号进入岛叶（味觉区）。（口径说明：现代研究通常认为每个味蕾含约 50–150 个味觉受体细胞，数字随统计方法变化。）',
+   'The poster lists about 9,000 taste buds with 5–10 receptors per bud, feeding the insular taste cortex. (Caveat: modern studies typically cite ~50–150 taste receptor cells per bud; figures vary by counting method.)'],
+  ['味觉与嗅觉共同决定“风味”，并与奖赏、快乐回路相连。',
+   'Taste and smell together create “flavor,” connected to the reward and pleasure circuits.']]},
+{id:'touch',name:['触觉','Touch'],en:'Touch',c:'#3DBE7B',ico:'hand',
+ mini:['每 cm²：200 痛 / 15 压 / 6 冷 / 1 温','Per cm²: 200 pain / 15 pressure / 6 cold / 1 heat'],
+ stats:[
+  {n:'200',l:['每 cm² 疼痛感受器','Pain receptors / cm²']},
+  {n:'15',l:['每 cm² 压力感受器','Pressure / cm²']},
+  {n:'6 / 1',l:['每 cm² 冷 / 温感受器','Cold / heat per cm²']}],
+ paras:[
+  ['每平方厘米皮肤约有 200 个疼痛感受器、15 个压力感受器、6 个冷感受器和 1 个温感受器。',
+   'Each square centimeter of skin has about 200 pain receptors, 15 pressure receptors, 6 cold receptors and 1 heat receptor.'],
+  ['触觉是抓握、抚摸、痛觉反射与情绪安全感的基础。',
+   'Touch underpins grasping, caress, pain reflexes and emotional safety.']],
+ q:['“每平方厘米皮肤约有 200 个疼痛感受器，但只有 15 个压力感受器、6 个冷感受器和 1 个温感受器。”——BBC Science & Nature','“Every square centimetre of your skin contains around 200 pain receptors but only 15 receptors for pressure, 6 for cold and 1 for warmth.” — BBC Science & Nature']},
+{id:'hearing',name:['听觉','Hearing'],en:'Hearing',c:'#43C6C1',ico:'ear',
+ mini:['听神经 3 万连接；听觉皮层 1 亿神经元','30K nerve links; 100M auditory cortex neurons'],
+ stats:[
+  {n:'30,000',l:['听神经连接 Auditory nerve links','Auditory nerve links']},
+  {n:'15,500',l:['耳蜗毛细胞 Cochlear hair cells','Cochlear hair cells']},
+  {n:'1 亿',l:['听觉皮层神经元（100M）','Auditory cortex neurons (100M)']}],
+ paras:[
+  ['耳蜗内约有 15,500 个毛细胞，听神经有 3 万个连接，听觉皮层则有 1 亿个神经元。',
+   'The cochlea contains about 15,500 hair cells, the auditory nerve has 30,000 connections, and the auditory cortex has 100 million neurons.'],
+  ['听觉参与词语（Words）、声音中继、视听反射与情绪（音乐、争吵）。',
+   'Hearing feeds words, the sound relay, audio-visual reflexes and emotion (music, quarrel).']]},
+{id:'balance',name:['平衡与加速','Balance & Acceleration'],en:'Balance & Acceleration',c:'#E5484D',ico:'gyro',
+ mini:['内耳三轴陀螺仪 + 加速度计','Three-axis gyroscope + accelerometer in the ear'],
+ stats:[
+  {n:'3 轴',l:['陀螺仪 / 加速度计','Gyro / accelerometer axes']},
+  {n:'3',l:['图像稳定 / 导航 / 眼动反射','Image stabilizer / navigation / eye reflex']},
+  {n:'军事级',l:['与制导、航天飞机传感器同类','Same as military guidance / Shuttle']}],
+ paras:[
+  ['前庭系统（Vestibular System）相当于军事制导和航天飞机上的主传感器：三轴陀螺仪 + 加速度计。',
+   'The vestibular system is equivalent to the main sensor used in military guidance and the Space Shuttle: a three-axis gyroscope plus accelerometer.'],
+  ['它承担三项功能：图像稳定（image stabilization）、惯性导航（navigation）、眼动反射（eye movement reflex）。',
+   'It performs three functions: image stabilization, inertial navigation, and eye movement reflexes.'],
+  ['“你的耳朵后面，就装着一套三轴陀螺仪和加速度计。”',
+   '“Right behind your ear sits a three-axis gyroscope and accelerometer.”']],
+ q:['“研究者在小脑深处发现了一台精密的神经计算机，进行惯性导航计算，确定人在空间中的运动。”——《Brain’s Inertial Navigation System Pinpointed》；“追踪系统的目标，是通过让眼球速度匹配目标速度，使视网膜目标像停留在中央凹上。”——《The vestibular-related frontal cortex and its role in smooth-pursuit》','“Researchers have discovered a sophisticated neural computer, buried deep in the cerebellum, that performs inertial navigation calculations to figure out a person’s movement through space.” — Brain’s Inertial Navigation System Pinpointed; “The goal of the pursuit system is to keep the retinal target image on the fovea by matching the eye velocity to target velocity.” — The vestibular-related frontal cortex and its role in smooth-pursuit']},
+{id:'joint',name:['关节位置','Joint Position'],en:'Joint Position (Proprioception)',c:'#8E97AB',ico:'joint',
+ mini:['本体感觉 · 平衡至双腿 Balance to Legs','Proprioception · balance to legs'],
+ stats:[
+  {n:'本体',l:['四肢位置感知（Proprioception）','Limb-position awareness (proprioception)']},
+  {n:'Balance to Legs',l:['“平衡至双腿”回路','Balance-to-legs circuit']},
+  {n:'机械感受器',l:['决定力量极限（Strength Limits）','Mechanoreceptors set strength limits']}],
+ paras:[
+  ['本体感觉（Proprioception / Limb Position）让你闭眼也知道四肢的位置；信号经“Balance to Legs”回路与“平行肢体位置追踪纤维”传向小脑。',
+   'Proprioception (limb position) tells you where your limbs are even with eyes closed; signals travel via “Balance to Legs” circuits and parallel limb-position tracking fibers to the cerebellum.'],
+  ['机械感受器提供的反馈决定你“力量的极限”（Strength Limits），并让抓握、行走保持精确。',
+   'Mechanoreceptor feedback sets your “strength limits” and keeps grasping and walking precise.']]},
+{id:'face',name:['面部表情','Facial Expression'],en:'Facial Expression',c:'#E8859A',ico:'face',
+ mini:['6 种基本表情，自动产生与读取','Six basic expressions, auto-made and auto-read'],
+ stats:[
+  {n:'6',l:['基本表情','Basic expressions']},
+  {n:'自动',l:['面部表情自动产生','Automatically produced']},
+  {n:'自动',l:['并被自动读取','Automatically read']}],
+ paras:[
+  ['六种基本表情：快乐、悲伤、惊讶、恐惧、愤怒、厌恶。',
+   'Six basic expressions: happiness, sadness, surprise, fear, anger, disgust.'],
+  ['面部表情是自动产生的，也会被他人自动读取——这是工程学上的奇迹，由面神经与颞叶、扣带的镜像系统共同完成。',
+   'Facial expressions are produced automatically and read automatically by others — an engineering marvel built by the facial nerve and temporal/cingulate mirror systems.']],
+ q:['“人的面部是工程学上的奇迹：在皮肤之下，大量肌肉让我们能够产生无数种表情组合。”——《A Model of the Perception of Facial Expressions of Emotion by Humans》','“The human face is an engineering marvel. Underneath our skin, a large number of muscles allow us to produce many configurations.” — A Model of the Perception of Facial Expressions of Emotion by Humans']}
+];
+function renderSenses(){
+  document.getElementById('sense-grid').innerHTML=SENSES.map(function(s){
+    return '<div class="sense-card" style="--ac:'+s.c+'" onclick="openSense(\''+s.id+'\')"><div class="sn">'+String(SENSES.indexOf(s)+1).padStart(2,'0')+' · '+s.en.toUpperCase()+'</div>'+
+      '<div class="sico">'+SI[s.ico]+'</div><h3>'+T(s.name)+'</h3><div class="smini">'+T(s.mini)+'</div>'+
+      '<span class="more">▸ '+(L?'Open detail':'展开细节')+'</span></div>';
+  }).join('');
+}
+function openSense(id){
+  lastSense=id;
+  var s=SENSES.filter(function(x){return x.id===id;})[0];
+  var box=document.getElementById('sense-detail'),inner=document.getElementById('sd-inner');
+  box.style.setProperty('--sac',s.c);
+  inner.innerHTML='<div class="sd-icon" style="background:rgba(255,255,255,.03)">'+SI[s.ico].replace('viewBox','style="stroke:'+s.c+'" viewBox')+'</div>'+
+    '<div class="sd-body"><h3 style="color:'+s.c+'">'+T(s.name)+'</h3><div class="en">'+s.en+'</div>'+
+    '<div class="sd-stats">'+s.stats.map(function(x){return '<div class="sd-stat"><div class="n">'+x.n+'</div><div class="l">'+T(x.l)+'</div></div>';}).join('')+'</div>'+
+    s.paras.map(function(p){return '<p>'+T(p)+'</p>';}).join('')+
+    (s.q?'<div class="quote" style="margin-top:14px">'+T(s.q)+'</div>':'')+
+    (s.qz?'<div class="quote" style="margin-top:10px">'+T(s.qz)+'</div>':'')+
+    '<button class="sense-src" style="margin-top:16px" onclick="locate(\''+s.id+'\')">◎ '+(L?'Locate on poster':'在海报上定位')+'</button>'+
+    '<button class="sd-close" style="margin-left:10px" onclick="closeSense()">'+(L?'Close':'收起')+'</button></div>';
+  box.classList.add('open');
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function closeSense(){lastSense=null;document.getElementById('sense-detail').classList.remove('open');}
+
+/* ================= 奖惩 ================= */
+var REWARDS=[
+ {h:['奖赏（Wants）','Rewards (Wants)'],sub:'DOPAMINE · 多巴胺',rc:'#F0A949',
+  li:[['多巴胺驱动的“想要”','Dopamine-driven “wanting”'],['动机、目标与努力','Motivation, goals and effort'],['习惯、赌博、刷手机','Habits, gambling, phone-checking'],['惩罚时多巴胺关闭','Dopamine turns off under punishment']],
+  mech:['海报把多巴胺画成网络中的燃料：它不直接等于“快乐”，而是让你“想要”。','The poster draws dopamine as network fuel: it is not pleasure itself — it makes you want.']},
+ {h:['快乐（Needs）','Pleasure (Needs)'],sub:'OPIOIDS · OXYTOCIN · 阿片 / 催产素',rc:'#E8859A',
+  li:[['交配、饥饿、信任回路','Mating, hunger, trust circuit'],['阿片类物质带来满足','Opioids produce satisfaction'],['催产素、肥胖、药物','Oxytocin, obesity, drugs'],['信息素与气味','Pheromones and odors']],
+  mech:['“喜欢”与“想要”由不同系统完成：阿片负责享受，多巴胺负责追求。','“Liking” and “wanting” are separate systems: opioids handle enjoyment, dopamine the pursuit.']},
+ {h:['惩罚与恐惧','Punishment & Fear'],sub:'FEAR · EMOTION · 恐惧 / 情绪',rc:'#E5484D',
+  li:[['恐惧：杏仁核与停止习惯','Fear: amygdala and stop habits'],['疼痛、羞耻、悔改','Pain, shame, repentance'],['情绪网络与表情中继','Emotion network and expression relay'],['视觉 / 听觉反射先行','Visual / audio reflexes come first']],
+  mech:['恐惧回路比意识更快：在你“知道”之前，身体已经躲开。','Fear circuits are faster than consciousness: the body flinches before you “know.”']}
+];
+var REWARD_NOTE=['<b>读海报的方式：</b>所有情绪、表情与欲望最终都汇入中间的核心网络——前额叶可以“抑制感觉奖赏”，而恐惧也能让多巴胺关闭。这解释了为什么你明知不该做却仍会冲动，也解释了自控为何可行。',
+ '<b>How to read the poster:</b> all emotion, expression and desire converge into the central network — the PFC can inhibit sensory rewards, and fear can shut dopamine off. This explains both impulsive action and the possibility of self-control.'];
+function renderReward(){
+  document.getElementById('reward-grid').innerHTML=REWARDS.map(function(r){
+    return '<div class="card rw-card" style="--rc:'+r.rc+'"><h3>'+T(r.h)+'</h3><div class="sub">'+r.sub+'</div><ul>'+
+      r.li.map(function(x){return '<li>'+T(x)+'</li>';}).join('')+'</ul><div class="mech">'+T(r.mech)+'</div></div>';
+  }).join('');
+  document.getElementById('reward-note').innerHTML=T(REWARD_NOTE);
+}
+
+/* ================= 脊髓 / 迷走 / DNA ================= */
+var SPINALS=[
+ {h:['小脑：习得习惯与惯性导航','Cerebellum: learned habits & inertial navigation'],
+  sr:[['690 亿',['神经元（69B）','Neurons (69B)']],['1m / 500cm²',['海报标注的展开尺寸','Unfolded dimensions on the poster']],['4 类',['平行 / 浦肯野 / 苔藓 / 攀爬纤维','Parallel / Purkinje / mossy / climbing fibers']]],
+  ps:[['平行纤维记录位置，浦肯野纤维做输出，苔藓纤维负责计时，攀爬纤维把错误“教”给小脑；齿状核（Dentate Nuclei）发出“运动 / 停止”指令。','Parallel fibers record position, Purkinje fibers output, mossy fibers time the action, and climbing fibers teach errors; the dentate nuclei issue “move / stop” commands.'],
+      ['刹车、瞄准、投篮（Brake / Aim / Shoot），争吵、打招呼、唱歌（Quarrel / Say Hi / Sing）——这些熟练动作都在小脑里。','Brake / aim / shoot, quarrel / say hi / sing — all skilled actions live here.']]},
+ {h:['脊髓：10 亿神经元的高速总线','Spinal cord: the 1-billion-neuron high-speed bus'],
+  sr:[['10 亿',['海报数字（1B，旧口径）','Poster figure (1B, older estimate)']],['97%',['中间神经元比例','Interneurons in the cord']],['>1 米',['最长运动轴突','Longest motor axon']]],
+  ps:[['蝴蝶状灰质（Butterfly）是脊髓板层反射回路；手碰到烫物，疼痛反射先于“感觉”让你缩手。','The butterfly grey matter is the lamina reflex circuitry; touch a hot pan and the pain reflex withdraws your hand before you feel it.'],
+      ['运动信号从运动皮层下到肌肉（from Motor Cortex to Muscles），感觉信号上到感觉皮层（to Sensory Cortex）；海报引文：“必须存在一套复杂的中间神经元回路，以双侧协调多个关节的伸肌与屈肌控制；事实上，中间神经元可占脊髓全部细胞的 97%。”——Spinal cord。','Motor signals run from motor cortex to muscles and sensory signals to sensory cortex; poster quote: “A complex interneuronal circuitry must exist to coordinate the control of limb extensor and flexor activity across multiple joints bilaterally. Indeed, interneurons make up as much as 97% of all cells in the cord.” — Spinal cord.'],
+      ['“人类运动神经元最长的轴突可超过 1 米。”——Wikipedia。','“The longest axon of a human motor neuron can be over a meter long.” — Wikipedia.'],
+      ['口径提示：脊髓“10 亿神经元”是较早教材（Kalat, 1998）的估计，现代细胞计数研究（Herculano-Houzel 等）给出的数值明显更低（约 2000 万量级），并无定论。','Caveat: the “1 billion” spinal-cord figure comes from an older textbook (Kalat, 1998); modern cell-counting work (Herculano-Houzel et al.) yields far lower estimates (on the order of 20 million), with no settled figure.']]},
+ {h:['迷走神经：身体的“休息与消化”开关','Vagus nerve: the “rest and digest” switch'],
+  sr:[['↓ 心率','Heart rate'],['↓ 血压','Blood pressure'],['消化 / 呼吸','Digestion / breathing']],
+  ps:[['激活后通常降低心率、血压，或两者皆降，并连接消化与呼吸——深呼吸能激活它，让你平静下来。','Activation typically lowers heart rate, blood pressure, or both, and links digestion and breathing — deep breaths activate it to calm you.']]},
+ {h:['DNA：每克编码 4550 亿 GB','DNA: 455 billion GB per gram'],
+  sr:[['4550 亿 GB',['每克 DNA 理论存储量','Theoretical storage per gram of DNA']],['哈佛',['研究来源 Harvard','Source: Harvard']],['生物',['高维密集存储','Ultra-dense biological storage']]],
+  ps:[['“DNA 存储非常密集：在理论最大值下，每克 DNA 可编码 4550 亿 GB（455 Billion Gigabytes per gram）。”——《Next-Generation Digital Information Storage in DNA》，哈佛大学。注意：这是理论存储密度上限，不是活体大脑的实际存储量。','“DNA storage is very dense. At theoretical maximum, DNA can encode 455 billion gigabytes per gram.” — Next-Generation Digital Information Storage in DNA, Harvard University. Note: this is a theoretical storage-density ceiling, not the actual storage of a living brain.']]}
+];
+function renderSpinal(){
+  document.getElementById('spinal-cards').innerHTML=SPINALS.map(function(s){
+    return '<div class="card big-card"><h3>'+T(s.h)+'</h3><div class="stat-row">'+
+      s.sr.map(function(x){return '<div class="sr"><b>'+x[0]+'</b><span>'+T(x[1])+'</span></div>';}).join('')+'</div>'+
+      s.ps.map(function(p){return '<p>'+T(p)+'</p>';}).join('')+'</div>';
+  }).join('');
+}
+</script>
+
+<script>
+/* ================= 引文 ================= */
+var QUOTES=[
+ {zh:'镜像神经元是一类特殊的视觉运动神经元：它在自己执行某个特定动作、以及观察另一个个体做相似动作时都会放电。',en:'Mirror neurons are a particular class of visuomotor neurons that discharge both when performing a particular action and when observing another individual doing a similar action.',src:'The Mirror-Neuron System'},
+ {zh:'三个额叶回路与决策有关：1) OFC，2) DLPFC，3) ACC；它们在相互冲突的选项中排序很重要，也负责结果加工。',en:'Three frontal circuits have been associated with decision making: 1) the OFC, 2) the DLPFC, and 3) the ACC, important in sorting among conflicting options, as well as outcome-processing.',src:'The Functional Neuroanatomy of Decision-Making'},
+ {zh:'眶额与内侧前额叶皮层作为一个整体，接收高度加工的感觉传入，对内脏功能提供皮层层面的影响，并参与高级认知和情绪过程。',en:'It can now be recognized that the region (Orbital and Medial Prefrontal Cortex) as a whole receives highly processed sensory afferents, provides for cortical influence over visceral functions, and participates in high-level cognitive and emotional processes.',src:'The Organization of Networks within the Orbital and Medial Prefrontal Cortex'},
+ {zh:'宗教信念像抗焦虑剂一样起作用，减少对错误或不确定的情绪反应，为人们提供一套有意义的体系，帮助理解我们所处的复杂而不确定的世界；在生理层面，它降低 ACC 活动并减少随之而来的苦恼。',en:'Religious conviction acts like an anxiolytic, reducing emotional reactions to errors or uncertainty, providing people with a meaningful system helping them to understand the complex and uncertain world that we live in. In physiological terms, it reduces ACC activity and consequently distress.',src:'The Anterior Cingulate Cortex'},
+ {zh:'有压倒性证据表明，IPS 区域参与复杂的手部使用、伸手、抓握，为伸手与抓握匹配视觉与身体中心参照系，并对有意的手部动作进行编程。',en:'There is overwhelming evidence that areas in the IPS are involved in complex hand use, reaching, grasping, matching visual and body centered frames of references for reaching and grasping, and programming intentional hand movements.',src:"Topographic Maps within Brodmann's Area 5 of Macaque Monkeys"},
+ {zh:'识别过程很可能是跨视觉皮层的一系列计算：早期视觉皮层先对视觉刺激的低级属性（如视差、运动或朝向）做局部计算，此时对整体物体形状几乎没有感知，随后在视觉加工层级的更高层级逐级进行更全局的计算。',en:'The recognition process likely entails a sequence of computations across visual cortex, starting from local computations in early visual cortex related to low-level properties of the visual stimulus, such as disparity, motion, or orientation, conveying little sense of the global object shape, then proceeding to more global computations in higher levels of the hierarchy of visual processing.',src:'Representation of Shapes, Edges, and Surfaces Across Multiple Cues in the Human Visual Cortex'},
+ {zh:'我们的结果证实，人体裸露在视觉加工早期就被检出，面对他人裸体时人脑会增强视觉加工；有趣的是，N170 对裸体身体的反应甚至强于对面孔的反应。',en:'Our results thus confirm that nudity of human bodies is detected early on during visual processing, and that the human brain exhibits enhanced visual processing to other people’s nude bodies. Interestingly, the N170 response to nude bodies was even greater than that to faces.',src:'The Naked Truth: The Face and Body Sensitive N170 Response Is Enhanced for Nude Bodies'},
+ {zh:'研究者在小脑深处发现了一台精密的神经计算机，它进行惯性导航计算，确定人在空间中的运动。',en:'Researchers have discovered a sophisticated neural computer, buried deep in the cerebellum, that performs inertial navigation calculations to figure out a person’s movement through space.',src:"Brain's Inertial Navigation System Pinpointed"},
+ {zh:'头部运动时，两个系统都必须与前庭系统协同。追踪（平滑追随）系统的目标，是通过让眼球速度匹配目标速度，使视网膜目标像停留在中央凹上。',en:'During head movements, both systems must interact with the vestibular system. The goal of the pursuit system is to keep the retinal target image on the fovea by matching the eye velocity to target velocity.',src:'The vestibular-related frontal cortex and its role in smooth-pursuit'},
+ {zh:'现在越来越明显的是，即使单个神经元也能完成复杂计算。',en:'It is now becoming increasingly apparent that even single neurons can perform complex computations.',src:'Wikipedia'},
+ {zh:'视网膜并不是简单地把一张图片发给大脑：它会先对图像进行空间编码（压缩），以适应视神经有限的容量。',en:'The retina does not simply send a picture to the brain. The retina spatially encodes (compresses) the image to fit the limited capacity of the optic nerve.',src:'Wikipedia, Retina'},
+ {zh:'迷走神经激活后通常导致心率、血压下降，或两者皆降（海报另标注它连接消化、心率/血压与呼吸）。',en:'Activation of the vagus nerve typically leads to a reduction in heart rate, blood pressure, or both. (The poster also labels its links to digestion, heart rate/blood pressure and breathing.)',src:'Wikipedia, Vagus nerve'},
+ {zh:'现在已经清楚：即使是看起来相当无害的经历，也能深刻影响大脑发育；能够改变大脑发育的经历范围，比曾经认为的要大得多。',en:'It is now clear that even fairly innocuous-looking experiences can profoundly affect brain development and that the range of experiences that can alter brain development is much larger than had once been believed.',src:'Experience and the developing prefrontal cortex'},
+ {zh:'DNA 存储非常密集：在理论最大值下，每克 DNA 可编码 4550 亿 GB。',en:'DNA storage is very dense. At theoretical maximum, DNA can encode 455 billion gigabytes per gram.',src:'Next-Generation Digital Information Storage in DNA, Harvard University'}
+];
+function renderQuotes(){
+  document.getElementById('quote-grid').innerHTML=QUOTES.map(function(q){
+    return '<div class="q-card"><div class="qt '+(L?'':'en')+'">'+(L?q.en:'“'+q.en+'”')+'</div><div class="qtr">'+(L?'':'“'+q.zh+'”')+'</div><div class="qs">— '+q.src+'</div></div>';
+  }).join('');
+  document.getElementById('poster-cap').textContent=L
+    ? 'Original poster: “Your High-Tech Brain — Follow the 8 Sensory Inputs.” Copyright 2018 www.thehighestofthemountains.com. The numbered hotspots above correspond to every section of this site.'
+    : '原始海报：《Your High-Tech Brain — Follow the 8 Sensory Inputs》。Copyright 2018 www.thehighestofthemountains.com。图上编号热点与本页各章节一一对应。';
+}
+
+/* ================= 自测 ================= */
+var QUIZ=[
+ {q:['一个神经元在什么情况下会“点火”放电？','When does a neuron “fire” an action potential?'],
+  opts:[['兴奋信号压过抑制、膜电位越过 −50 mV 阈值','Excitation outweighs inhibition and membrane voltage crosses −50 mV'],
+        ['只要接收到任何一点兴奋信号','Whenever it receives any excitation'],
+        ['抑制信号 GABA 越多越容易放电','The more GABA inhibition, the more it fires'],
+        ['无论输入如何，固定每秒放电一次','It fires at a fixed rate regardless of input']],a:0,
+  fb:['正确。IF（D⁺ + G⁺ − GABA⁻）> +20 mV THEN FIRE。','Correct. IF (D⁺ + G⁺ − GABA⁻) > +20 mV THEN FIRE.']},
+ {q:['小脑拥有约多少神经元？','About how many neurons does the cerebellum contain?'],
+  opts:[['690 亿（69 Billion）','69 billion'],['10 亿（1 Billion）','1 billion'],['150 亿（15 Billion）','15 billion'],['860 亿（86 Billion）','86 billion']],a:0,
+  fb:['正确。小脑 690 亿神经元，展开后约 1 米长。','Correct. The cerebellum has 69 billion neurons and is about 1 meter long when unfolded.']},
+ {q:['1.25 亿视杆 + 600 万视锥，却只汇聚到 100 万根视神经轴突——这一现象被称为？','126M rods and 6M cones converge into only 1M optic nerve axons — this is called?'],
+  opts:[['视网膜压缩（compression）','Retinal compression'],['视网膜放大（amplification）','Amplification'],['平滑追踪（smooth pursuit）','Smooth pursuit'],['惯性导航（inertial navigation）','Inertial navigation']],a:0,
+  fb:['正确。视网膜在送信号前就完成了大幅压缩，单眼处理能力相当于 4 个以上 A8。','Correct. The retina compresses before sending; one eye’s processing exceeds four A8 chips.']},
+ {q:['内耳前庭系统（陀螺仪 + 加速度计）承担的三项功能是？','The vestibular system (gyro + accelerometer) performs which three functions?'],
+  opts:[['图像稳定、惯性导航、眼动反射','Image stabilization, navigation, eye-movement reflex'],
+        ['呼吸、消化、心跳','Breathing, digestion, heartbeat'],
+        ['味觉、嗅觉、触觉','Taste, smell, touch'],
+        ['记忆、语言、面孔','Memory, language, faces']],a:0,
+  fb:['正确。“你的耳朵后面，就装着一套三轴陀螺仪和加速度计。”','Correct. “Behind your ear sits a three-axis gyroscope and accelerometer.”']}
+];
+function renderQuiz(){
+  var box=document.getElementById('quiz-box');
+  box.innerHTML=QUIZ.map(function(q,i){
+    return '<div class="quiz-q"><div class="qq">'+(i+1)+'. '+T(q.q)+'</div><div class="quiz-opts">'+
+      q.opts.map(function(o,j){return '<button data-q="'+i+'" data-o="'+j+'">'+T(o)+'</button>';}).join('')+
+      '</div><div class="quiz-fb" id="qfb-'+i+'"></div></div>';
+  }).join('')+'<div class="quiz-score" id="quiz-score"></div><button class="quiz-reset" id="quiz-reset">'+T(I18N['quiz.reset'])+'</button>';
+  var answered={};
+  box.querySelectorAll('.quiz-opts button').forEach(function(b){
+    b.onclick=function(){
+      var qi=+b.dataset.q,oi=+b.dataset.o;
+      var btns=box.querySelectorAll('button[data-q="'+qi+'"]');
+      if(answered[qi]!==undefined)return;
+      btns.forEach(function(x){x.disabled=true;});
+      answered[qi]=oi===QUIZ[qi].a;
+      btns[QUIZ[qi].a].classList.add('correct');
+      var fb=document.getElementById('qfb-'+qi);
+      if(oi===QUIZ[qi].a){fb.className='quiz-fb ok';fb.textContent='✓ '+T(QUIZ[qi].fb);}
+      else{btns[oi].classList.add('wrong');fb.className='quiz-fb no';fb.textContent='✗ '+T(QUIZ[qi].fb);}
+      var done=Object.keys(answered).length;
+      if(done===QUIZ.length){
+        var score=Object.values(answered).filter(Boolean).length;
+        document.getElementById('quiz-score').textContent=L?('Your score: '+score+' / '+QUIZ.length):('你的得分：'+score+' / '+QUIZ.length);
+      }
+    };
+  });
+  document.getElementById('quiz-reset').onclick=function(){renderQuiz();};
+}
+
+/* ================= 页脚 ================= */
+var FOOTER=[
+ '<b>关于这张海报（The engineer）：</b>海报由一位航空航天工程师完成（1984 年获 Villanova 大学机械工程学士学位），曾任某顶级军事制导与导航公司的计算机辅助设计（CAD）主管，参与过航天飞机制导系统设计，后成为统计软件开发者。他历时约 4 年分析了 1000 多项神经科学研究，拼成这张大型示意图。他的原话：“我们装在航天飞机和所有导弹制导系统里的三轴陀螺仪/加速度计三合一传感器，就在你耳朵后面。我们是高科技产物。”',
+ '<b>About the engineer:</b> the poster was researched by an aerospace engineer (BA Mechanical Engineering, Villanova ’84), supervisor of Computer Aided Design (CAD) for a top military guidance and navigation company that worked on the design of the Space Shuttle guidance system, later a statistics software developer. Over 1,000 neuroscience studies were analyzed over a four-year period and assembled into this large schematic. His words: “The 3 axis gyro/accelerometer triad sensor we put in the Space Shuttle and all missile guidance systems is behind your ear. We’re ultra high tech.”'];
+function renderFooter(){
+  document.getElementById('footer-text').innerHTML='<div>'+T(FOOTER)+'</div><div style="margin-top:12px;color:#5a6275">Copyright 2018 www.thehighestofthemountains.com · 本页为科普再设计，数据与引文均来自原海报。 / A science-communication redesign; all figures and citations come from the original poster.</div>';
+}
+
+/* ================= 按图索骥：热点地图 ================= */
+var PINS=[
+ {id:'specs',x:.015,y:.11,x2:.24,y2:.40,type:'section',t:['硬件规格','Factory specs'],te:'SPECS'},
+ {id:'neuron',x:.29,y:.11,x2:.50,y2:.26,type:'section',t:['神经元','The neuron'],te:'NEURON'},
+ {id:'formula',x:.50,y:.10,x2:.75,y2:.17,type:'section',t:['放电公式','Fire formula'],te:'IF>20mV'},
+ {id:'pfc',x:.13,y:.38,x2:.28,y2:.56,type:'region',t:['前额叶 PFC','Prefrontal'],te:'PFC'},
+ {id:'ofc',x:.18,y:.52,x2:.30,y2:.70,type:'region',t:['眶额 OFC','Orbital frontal'],te:'OFC'},
+ {id:'attention',x:.25,y:.22,x2:.33,y2:.40,type:'region',t:['注意 / 眼动','Attention / FEF'],te:'FEF'},
+ {id:'motor',x:.30,y:.22,x2:.42,y2:.42,type:'region',t:['运动皮层','Motor cortex'],te:'MOTOR'},
+ {id:'sensory',x:.40,y:.13,x2:.50,y2:.30,type:'region',t:['感觉区','Sensory area'],te:'SENSORY'},
+ {id:'parietal',x:.45,y:.13,x2:.60,y2:.32,type:'region',t:['顶叶 IPS','Parietal / IPS'],te:'IPS'},
+ {id:'acc',x:.34,y:.26,x2:.50,y2:.46,type:'region',t:['前扣带 ACC','Anterior cingulate'],te:'ACC'},
+ {id:'cingulate',x:.50,y:.28,x2:.66,y2:.54,type:'region',t:['扣带 / 后扣带 PCC','Cingulate / PCC'],te:'PCC'},
+ {id:'insular',x:.31,y:.40,x2:.43,y2:.54,type:'region',t:['岛叶','Insular'],te:'INSULAR'},
+ {id:'reward',x:.36,y:.45,x2:.58,y2:.72,type:'region',t:['奖赏·快乐·惩罚','Rewards / pleasure'],te:'REWARD'},
+ {id:'temporal',x:.28,y:.62,x2:.52,y2:.82,type:'region',t:['颞叶','Temporal'],te:'TEMPORAL'},
+ {id:'occipital',x:.45,y:.42,x2:.58,y2:.62,type:'region',t:['枕叶 V1–V7','Occipital'],te:'V1–V7'},
+ {id:'visual',x:.78,y:.09,x2:.99,y2:.24,type:'visual',row:'v1',t:['视觉 GPU 流水线','Visual GPU pipeline'],te:'VISION'},
+ {id:'v67',x:.64,y:.08,x2:.80,y2:.22,type:'visual',row:'v67',t:['V6 & V7 手眼协调','V6 & V7 hand-eye'],te:'V6/V7'},
+ {id:'v1',x:.60,y:.20,x2:.76,y2:.80,type:'visual',row:'v1',t:['V1–V4 视觉卡组','V1–V4 cards'],te:'V1–V4'},
+ {id:'v5mt',x:.38,y:.50,x2:.50,y2:.62,type:'visual',row:'v5mt',t:['V3-5/MT 运动检测','V3-5/MT motion'],te:'MT'},
+ {id:'nav',x:.55,y:.52,x2:.96,y2:.72,type:'visual',row:'nav',t:['陀螺仪 / 惯性导航','Gyro / inertial nav'],te:'NAV'},
+ {id:'sight',x:.02,y:.50,x2:.35,y2:.80,type:'sense',t:['视觉 Sight','Sight'],te:'SIGHT'},
+ {id:'smell',x:.02,y:.72,x2:.25,y2:.84,type:'sense',t:['嗅觉 Smell','Smell'],te:'SMELL'},
+ {id:'face',x:.22,y:.66,x2:.40,y2:.82,type:'sense',t:['面部表情','Facial expression'],te:'FACE'},
+ {id:'taste',x:.34,y:.52,x2:.50,y2:.64,type:'sense',t:['味觉 Taste','Taste'],te:'TASTE'},
+ {id:'touch',x:.35,y:.60,x2:.62,y2:.80,type:'sense',t:['触觉 Touch','Touch'],te:'TOUCH'},
+ {id:'vagus',x:.55,y:.55,x2:.72,y2:.82,type:'region',t:['迷走神经','Vagus nerve'],te:'VAGUS'},
+ {id:'joint',x:.45,y:.72,x2:.68,y2:.90,type:'sense',t:['关节位置 / 本体感觉','Joint position'],te:'PROPRIO'},
+ {id:'cerebellum',x:.42,y:.55,x2:.62,y2:.80,type:'region',t:['小脑','Cerebellum'],te:'CEREBELLUM'},
+ {id:'spinal',x:.35,y:.80,x2:.55,y2:.98,type:'region',t:['脊髓','Spinal cord'],te:'SPINAL'},
+ {id:'balance',x:.62,y:.60,x2:.88,y2:.82,type:'sense',t:['平衡与加速','Balance & accel'],te:'VESTIBULAR'},
+ {id:'hearing',x:.70,y:.78,x2:.98,y2:.96,type:'sense',t:['听觉 Hearing','Hearing'],te:'HEARING'},
+ {id:'dna',x:.48,y:.86,x2:.72,y2:.99,type:'section',t:['DNA 存储','DNA storage'],te:'DNA'},
+ {id:'footer',x:.02,y:.82,x2:.33,y2:.98,type:'section',t:['研究出处 / 页脚','Sources / footer'],te:'SOURCES'}
+];
+var TYPE_COLOR={section:'#43C6C1',region:'#9B7BE8',sense:'#4C8DFF',visual:'#F0A949'};
+var SECTION_OF={specs:'specs',neuron:'neuron',formula:'neuron',dna:'spinal',footer:'sources'};
+function renderPins(){
+  var pins=document.getElementById('pins'),legend=document.getElementById('legend');
+  pins.innerHTML=PINS.map(function(p,i){
+    var cx=(p.x+p.x2)/2*100,cy=(p.y+p.y2)/2*100;
+    return '<div class="pin" id="pin-'+p.id+'" style="left:'+cx+'%;top:'+cy+'%;--pin:'+TYPE_COLOR[p.type]+'" onclick="goPin(\''+p.id+'\')">'+
+      '<div class="pin-dot">'+(i+1)+'</div><div class="pin-tip">'+T(p.t)+'<span class="te">'+p.te+'</span></div></div>';
+  }).join('');
+  var typeLabel={section:['章节','Section'],region:['脑区','Brain region'],sense:['感官','Sense'],visual:['视觉','Visual']};
+  legend.innerHTML=PINS.map(function(p,i){
+    return '<button class="legend-item" onclick="goPin(\''+p.id+'\')"><span class="n" style="background:'+TYPE_COLOR[p.type]+'">'+(i+1)+'</span>'+
+      '<span class="lt">'+T(p.t)+'<span class="le">'+p.te+' · '+T(typeLabel[p.type])+'</span></span></button>';
+  }).join('');
+  var hint=document.querySelector('[data-i18n-html="map.hint"]');
+  if(hint)hint.innerHTML=(L?('Click numbered pins <b>1–'+PINS.length+'</b> to jump · hover for names · each section can return here to locate itself'):('点击 <b>①–'+cnNum(PINS.length)+'</b> 编号热点跳转 · 悬停查看名称 · 每个章节可一键回到这里定位'));
+}
+function cnNum(n){var s='';String(n).split('').forEach(function(d){s+='①②③④⑤⑥⑦⑧⑨⑩'[+d]||d;});return s;}
+function goPin(id){
+  var p=PINS.filter(function(x){return x.id===id;})[0];if(!p)return;
+  if(p.type==='section'){
+    var sec=document.getElementById(SECTION_OF[id]||id);
+    sec.scrollIntoView({behavior:'smooth',block:'start'});flash(sec);
+  }else if(p.type==='region'){
+    document.getElementById('brainmap').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){showRegion(id,false);},500);
+  }else if(p.type==='sense'){
+    document.getElementById('senses').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){openSense(id);},500);
+  }else if(p.type==='visual'){
+    var el=document.getElementById('row-'+p.row)||document.getElementById('visual');
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(function(){flash(el);},450);
+  }
+}
+function flash(el){
+  if(!el)return;el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');
+}
+var locateTimer=null;
+function locate(id){
+  var p=PINS.filter(function(x){return x.id===id;})[0];if(!p)return;
+  document.getElementById('map').scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(function(){
+    var z=document.getElementById('zone-rect');
+    z.style.left=(p.x*100)+'%';z.style.top=(p.y*100)+'%';
+    z.style.width=((p.x2-p.x)*100)+'%';z.style.height=((p.y2-p.y)*100)+'%';
+    z.classList.remove('show');void z.offsetWidth;z.classList.add('show');
+    var pin=document.getElementById('pin-'+id);
+    if(pin){pin.classList.add('active');setTimeout(function(){pin.classList.remove('active');},2400);}
+  },650);
+}
+document.addEventListener('click',function(e){
+  var c=e.target.closest('.src-chip');if(c&&c.dataset.locate)locate(c.dataset.locate);
+});
+
+/* ================= 渲染汇总与初始化 ================= */
+var lastSense=null;
+function applySvgLabels(){
+  document.querySelectorAll('.svg-loc').forEach(function(el){
+    el.textContent=L?el.dataset.en:el.dataset.zh;
+  });
+}
+function renderAll(){
+  applySvgLabels();
+  renderNav();renderHero();renderSpecs();renderRegions();renderVisual();
+  renderSenses();renderReward();renderSpinal();renderQuotes();renderQuiz();renderPins();renderFooter();
+  if(lastSense)openSense(lastSense);
+  if(window.__simRerender)window.__simRerender();
+}
+applyStatic();renderAll();
+</script>
+</body>
+</html>
