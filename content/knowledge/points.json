@@ -383,10 +383,10 @@
       "bridges": [
         {
           "target": "minimax",
-          "badge": "🔬 0610 神经系统",
-          "title": "剑桥中枢神经与反射中枢架构",
-          "desc": "探索大脑高级皮层与脊髓反射弧的分工与协同",
-          "url": "https://www.igcse.xyz"
+          "badge": "🧊 0610 3D 解剖",
+          "title": "剑桥中枢神经与人脑全屏 3D 实验室",
+          "desc": "在全屏三维观察台旋转探索大脑高级皮层与神经核团",
+          "url": "https://www.igcse.xyz/anatomy/0610/14-1-nervous-system"
         },
         {
           "target": "sky",
@@ -419,10 +419,10 @@
       "bridges": [
         {
           "target": "minimax",
-          "badge": "🔬 0610 神经调控",
-          "title": "自主运动神经元与效应器肌肉驱动",
+          "badge": "🔬 0610 神经系统",
+          "title": "中枢神经传导与反射弧交互仿真",
           "desc": "观察神经冲动如何沿着运动神经元传递至骨骼肌",
-          "url": "https://www.igcse.xyz"
+          "url": "https://www.igcse.xyz/lessons/0610/14-1-nervous-system"
         }
       ]
     },
@@ -477,10 +477,10 @@
       "bridges": [
         {
           "target": "minimax",
-          "badge": "🔬 0610 感觉器官",
-          "title": "眼睛解剖与视网膜视锥/视杆细胞成像",
+          "badge": "🧊 0610 3D 眼球",
+          "title": "眼睛 3D 解剖与视网膜视锥/视杆细胞成像",
           "desc": "光线经角膜和晶状体折射聚焦，在视网膜形成倒立实像",
-          "url": "https://www.igcse.xyz"
+          "url": "https://www.igcse.xyz/anatomy/0610/14-1-nervous-system"
         }
       ]
     },

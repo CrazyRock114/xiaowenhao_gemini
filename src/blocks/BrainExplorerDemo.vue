@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { speakWord } from '../utils/speech'
+import Model3DViewer, { type ModelPart } from '../components/Model3DViewer.vue'
 
 const props = defineProps<{
   block?: any
@@ -13,8 +14,42 @@ const activeTab = ref<'map' | 'action-potential' | 'vision' | 'senses' | 'networ
 // 适龄阅读分轨：'basic' (弟弟/生活趣味) | 'advanced' (哥哥/严谨神经生物学)
 const level = ref<'basic' | 'advanced'>('basic')
 
-// 底图模式：'overview' (ChatGPT全景图) | 'poster' (原海报)
-const mapSource = ref<'overview' | 'poster'>('overview')
+// 底图模式：'overview' (ChatGPT全景图) | '3d-brain' (Three.js 3D真实大脑) | 'poster' (原海报)
+const mapSource = ref<'overview' | '3d-brain' | 'poster'>('overview')
+
+// 3D 真实大脑部件映射 (基于剑桥考纲 0610/14-1 标准)
+const brain3DParts: ModelPart[] = [
+  {
+    id: 'frontal',
+    nameZh: '额叶',
+    nameEn: 'Frontal Lobe',
+    desc: '位于脑门正后方，是人类最发达的决策总指挥中心，掌管计划、冲动自控与随意运动。',
+  },
+  {
+    id: 'parietal',
+    nameZh: '顶叶',
+    nameEn: 'Parietal Lobe',
+    desc: '位于头顶偏后，身体三维空间雷达与触觉整合中枢，负责温度、痛感与立体定位。',
+  },
+  {
+    id: 'occipital',
+    nameZh: '枕叶',
+    nameEn: 'Occipital Lobe',
+    desc: '位于后脑勺，视觉超级GPU，接收双眼100万光缆信号并分级渲染成立体动态全彩世界。',
+  },
+  {
+    id: 'temporal',
+    nameZh: '颞叶',
+    nameEn: 'Temporal Lobe',
+    desc: '位于双耳内侧，听觉语言解码中枢（韦尼克区）与情景记忆大相册（海马体）。',
+  },
+  {
+    id: 'cerebellum',
+    nameZh: '小脑',
+    nameEn: 'Cerebellum',
+    desc: '位于大脑后下方，容纳全脑约 80% 神经元，负责毫秒级平衡调控与肌肉记忆自动化。',
+  },
+]
 
 // 脑区数据定义
 interface RegionDetail {
@@ -305,6 +340,52 @@ const visualSteps = [
   },
 ]
 
+// 3D 真实眼球模型与部件映射 (源自 IGCSE 0610/14-1 眼球解剖考纲)
+const showEyeball3D = ref<boolean>(true)
+const selectedEyePartId = ref<string>('retina')
+const eyeball3DParts: ModelPart[] = [
+  {
+    id: 'cornea',
+    nameZh: '角膜',
+    nameEn: 'Cornea',
+    desc: '最前端的透明圆顶无血管组织。承担全眼 70% 以上的光线折射聚焦工作，如同相机的精密前置定焦透镜。',
+  },
+  {
+    id: 'iris',
+    nameZh: '虹膜与瞳孔',
+    nameEn: 'Iris & Pupil',
+    desc: '彩色的肌肉环光圈。强光下 0.3 秒内自主收缩瞳孔防过曝；暗光下迅速放大增加进光量（瞳孔对光反射）。',
+  },
+  {
+    id: 'lens',
+    nameZh: '晶状体',
+    nameEn: 'Lens',
+    desc: '虹膜后方柔韧有弹性的透明凸透镜。睫状肌收缩使它变厚看近物，睫状肌舒张使它变薄看远物（睫状调节）。',
+  },
+  {
+    id: 'retina',
+    nameZh: '视网膜',
+    nameEn: 'Retina',
+    desc: '眼底内衬的生物感光胶片。1.25 亿视杆细胞捕捉弱光轮廓，600 万视锥细胞捕捉全彩细节，将光子转化为微伏电冲动。',
+  },
+  {
+    id: 'optic-nerve',
+    nameZh: '视神经',
+    nameEn: 'Optic Nerve',
+    desc: '由约 100 万根轴突神经纤维捆扎而成的高速生物光缆，穿出眼底直插大脑（穿出点无感光细胞，形成生理盲点）。',
+  },
+]
+
+function selectEyePart(id: string) {
+  selectedEyePartId.value = id
+  const part = eyeball3DParts.find((p) => p.id === id)
+  if (part) speakWord(part.nameEn)
+}
+
+// 经典实验：生理盲点自测模拟器
+const blindSpotDist = ref<number>(30) // 屏幕距离 (cm)
+const isBlindSpotHidden = computed(() => blindSpotDist.value >= 26 && blindSpotDist.value <= 32)
+
 // -------------------------------------------------------------
 // 舱位四：8 大感官通道硬核对比 (8 Sensory Inputs)
 // -------------------------------------------------------------
@@ -492,12 +573,12 @@ onMounted(() => {
     </div>
 
     <!-- ═══════════════════════════════════════════════
-         舱位 1：超清全景脑图互动探针 (ChatGPT全景图 / 原海报)
+         舱位 1：超清全景脑图互动探针 (ChatGPT全景图 / 3D真实大脑 / 原海报)
          ═══════════════════════════════════════════════ -->
     <div v-if="activeTab === 'map'" class="tab-pane anim-fade">
       <div class="map-toolbar">
         <span class="toolbar-hint">
-          💡 点击大图上的<strong>呼吸光标探针</strong>，或点击下方脑区导航，在下方深度解剖每个脑区：
+          💡 支持<strong>全景图热点探针</strong>与<strong>3D 真实旋转大脑</strong>，点击脑区可联动深度解剖：
         </span>
         <div class="source-switch">
           <button
@@ -506,7 +587,15 @@ onMounted(() => {
             :class="{ active: mapSource === 'overview' }"
             @click="mapSource = 'overview'"
           >
-            🎨 ChatGPT 大脑结构全景图
+            🎨 ChatGPT 大脑全景图
+          </button>
+          <button
+            type="button"
+            class="src-btn"
+            :class="{ active: mapSource === '3d-brain' }"
+            @click="mapSource = '3d-brain'"
+          >
+            🧊 3D 真实大脑模型 (Three.js)
           </button>
           <button
             type="button"
@@ -520,9 +609,25 @@ onMounted(() => {
       </div>
 
       <div class="map-layout">
-        <!-- 左侧：超清图与覆盖探针 -->
+        <!-- 上方展示区：3D 真实模型 或 2D 超清图 -->
         <div class="map-view-box">
-          <div class="img-wrapper">
+          <!-- 3D 真实大脑模式 -->
+          <div v-if="mapSource === '3d-brain'" class="model-3d-box">
+            <Model3DViewer
+              modelUrl="/models/3d/brain.glb"
+              title="人脑大体解剖三维立体模型 (Human Brain 3D)"
+              subtitle="源自剑桥 IGCSE 0610 考纲标准三维模型 · 支持 360° 阻尼拖拽与部件点击"
+              :height="500"
+              :parts="brain3DParts"
+              :selectedPartId="activeRegionKey"
+              bridgeLink="https://www.igcse.xyz/anatomy/0610/14-1-nervous-system"
+              bridgeText="母舰 3D 全屏解剖实验室 (0610/14-1) ➔"
+              @selectPart="pickRegion"
+            />
+          </div>
+
+          <!-- 2D 超清图模式 -->
+          <div v-else class="img-wrapper">
             <img
               v-if="mapSource === 'overview'"
               src="/assets/brain-diagram-overview.jpg"
@@ -551,7 +656,8 @@ onMounted(() => {
               </div>
             </template>
           </div>
-          <div class="img-bottom-tip">
+
+          <div v-if="mapSource !== '3d-brain'" class="img-bottom-tip">
             <span>🔍 超清大图 · 支持点击探针精细定位</span>
             <a
               :href="mapSource === 'overview' ? '/assets/brain-diagram-overview.jpg' : '/agents-showcase/doubao21pro/assets/poster.jpg'"
@@ -745,6 +851,125 @@ onMounted(() => {
         <p class="step-desc">{{ visualSteps[visualStep].desc }}</p>
         <div class="step-highlight">
           <strong>🔬 核心机制：</strong>{{ visualSteps[visualStep].highlight }}
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════
+           眼睛 3D 解剖实验室与经典视光学实验 (源自 IGCSE 母舰 0610/14-1)
+           ═══════════════════════════════════════════════ -->
+      <div class="eye-3d-section">
+        <div class="eye-section-top">
+          <div class="eye-title-group">
+            <span class="eye-badge">🔬 眼睛 3D 实验室</span>
+            <h4 class="eye-main-title">眼球屈光解剖台与视光学亲子实验</h4>
+          </div>
+          <button
+            type="button"
+            class="toggle-eye-btn"
+            @click="showEyeball3D = !showEyeball3D"
+          >
+            {{ showEyeball3D ? '🔼 收起 3D 眼球观察器' : '🔽 展开 3D 眼球观察器' }}
+          </button>
+        </div>
+
+        <!-- 3D 真实眼球模型渲染器 -->
+        <div v-show="showEyeball3D" class="eye-viewer-box anim-fade">
+          <Model3DViewer
+            modelUrl="/models/3d/eyeball.glb"
+            title="眼球光学与神经解剖 3D 模型 (The Eyeball, in 3D)"
+            subtitle="剑桥 0610 考纲标准：角膜与晶状体屈光、虹膜瞳孔调光圈、视网膜光电转换、视神经百万光缆"
+            :height="440"
+            :parts="eyeball3DParts"
+            :selectedPartId="selectedEyePartId"
+            bridgeLink="https://www.igcse.xyz/anatomy/0610/14-1-nervous-system"
+            bridgeText="母舰 3D 全屏解剖台 (0610/14-1) ➔"
+            @selectPart="selectEyePart"
+          />
+        </div>
+
+        <!-- 实验一与实验二双列卡片 (源自主站母舰 0610/14-1 实验与反思) -->
+        <div class="optics-experiments-grid">
+          <!-- 实验一：生理盲点亲测 -->
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-badge">亲子动手实验 ①</span>
+              <h5 class="exp-title">❌ 寻找你眼球的「生理盲点」 (The Blind Spot)</h5>
+            </div>
+            <p class="exp-guide">
+              <strong>测试操作方法：</strong>闭上你的<strong>左眼</strong>，用<strong>右眼盯住左侧的 ✕</strong>。<br>
+              缓慢拖动下方滑块（模拟前后移动头部），当距离约 <strong>28~30cm</strong> 时，右侧的黑圆点 <strong>●</strong> 会瞬间完全隐形！
+            </p>
+
+            <div class="blind-spot-tester">
+              <div class="blind-canvas">
+                <span class="fixation-target">✕ (右眼注视此点)</span>
+                <span
+                  class="blind-dot"
+                  :class="{ hidden: isBlindSpotHidden }"
+                >
+                  ● (消失点)
+                </span>
+              </div>
+
+              <div class="dist-slider-box">
+                <div class="dist-slider-label">
+                  <span>眼睛距离屏幕估计：<strong>{{ blindSpotDist }} cm</strong></span>
+                  <span v-if="isBlindSpotHidden" class="found-tag">🎯 正中生理盲点！圆点消失了！</span>
+                  <span v-else class="miss-tag">未入盲点，圆点仍可见</span>
+                </div>
+                <input
+                  v-model.number="blindSpotDist"
+                  type="range"
+                  min="15"
+                  max="45"
+                  class="dist-slider"
+                />
+              </div>
+            </div>
+
+            <div class="exp-why">
+              <strong>🔬 为什么会发生？</strong>
+              <span>
+                每只眼睛的视网膜上都有一块完全没有感光细胞的“死角”——那就是 100 万根视神经纤维穿出眼球的出口（视神经乳头）。当圆点的光线恰好投射在这个出口上时，大脑接收不到任何光信号，并且聪明的大脑皮层还会自动用周围的米白底色将它“脑补”平滑！
+              </span>
+            </div>
+          </div>
+
+          <!-- 实验二：瞳孔对光反射 -->
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-badge">亲子动手实验 ②</span>
+              <h5 class="exp-title">💡 瞳孔对光反射 (The Consensual Pupil Reflex)</h5>
+            </div>
+            <p class="exp-guide">
+              <strong>家庭观察实验：</strong>在稍暗的房间里，让爸爸拿手机手电筒从侧面照一下你的<strong>右眼</strong>，同时观察你的<strong>左眼</strong>！<br>
+              你会发现：明明只照亮了右眼，<strong>两只眼睛的瞳孔却在 0.3 秒内同时缩小！</strong>
+            </p>
+
+            <div class="pupil-reflex-diagram">
+              <div class="reflex-step">
+                <span class="r-badge">① 强光射入</span>
+                <p>视网膜感光细胞被激发，光信号沿视神经高速传入中脑顶盖前区（Pretectal Area）。</p>
+              </div>
+              <div class="reflex-arrow">➔</div>
+              <div class="reflex-step">
+                <span class="r-badge">② 双侧交感联动</span>
+                <p>顶盖前区同时向左右两侧的动眼神经副交感核发出神经冲动（双侧均被通电！）。</p>
+              </div>
+              <div class="reflex-arrow">➔</div>
+              <div class="reflex-step">
+                <span class="r-badge">③ 瞳孔瞬间缩小</span>
+                <p>左右虹膜的环形括约肌同时收缩，瞳孔在 0.3 秒内快速变小，防止强光灼伤眼底感光细胞。</p>
+              </div>
+            </div>
+
+            <div class="exp-why">
+              <strong>🩺 医生查房小秘密：</strong>
+              <span>
+                在急诊和神经内科，医生经常用小手电照射病人的双眼瞳孔。如果两只瞳孔反应不一致或者瞳孔散大且无反射，就提示中脑或脑干神经传导可能受到挤压，是极其关键的神经学体征！
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1657,5 +1882,253 @@ onMounted(() => {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3D 真实模型视窗包裹容器 */
+.model-3d-box {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+/* 舱位 3：3D 眼球与视光学实验 */
+.eye-3d-section {
+  margin-top: 24px;
+  background: #fbf7f0;
+  border: 2px dashed #cbd5e1;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.eye-section-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eye-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eye-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0284c7;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.eye-main-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.toggle-eye-btn {
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toggle-eye-btn:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.eye-viewer-box {
+  margin-bottom: 20px;
+}
+
+/* 亲子视光学实验双列网格 */
+.optics-experiments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.exp-card {
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.exp-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.exp-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #d97706;
+  background: #fef3c7;
+  padding: 2px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.exp-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.exp-guide {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0 0 14px;
+}
+
+/* 盲点交互测试 */
+.blind-spot-tester {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.blind-canvas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+.fixation-target {
+  font-size: 18px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.blind-dot {
+  font-size: 24px;
+  font-weight: 900;
+  color: #0f172a;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.blind-dot.hidden {
+  opacity: 0 !important;
+  transform: scale(0);
+}
+
+.dist-slider-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dist-slider-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #475569;
+}
+
+.found-tag {
+  color: #16a34a;
+  font-weight: 800;
+  background: #dcfce7;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.miss-tag {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.dist-slider {
+  width: 100%;
+  accent-color: #0284c7;
+  cursor: pointer;
+}
+
+/* 瞳孔反射示意 */
+.pupil-reflex-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.reflex-step {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.r-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: #6366f1;
+  background: #eef2ff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.reflex-step p {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.reflex-arrow {
+  text-align: center;
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1;
+}
+
+.exp-why {
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: #334155;
+  margin-top: auto;
+}
+
+.exp-why strong {
+  color: #0f172a;
+  display: block;
+  margin-bottom: 2px;
 }
 </style>

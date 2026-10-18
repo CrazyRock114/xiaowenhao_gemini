@@ -218,6 +218,21 @@
         "brainstem",
         "synapse-circuit"
       ]
+    },
+    {
+      "id": "related-1",
+      "type": "related",
+      "note": "恭喜你！这一期我们一口气点亮了大脑指挥部的 8 个核心神经网络知识星标，并在 3D 实验室中完成了大脑与眼球的旋转解剖探索！快去【知识地图】查阅你的新徽章吧！",
+      "knowledgeIds": [
+        "cerebral-cortex",
+        "frontal-lobe",
+        "parietal-lobe",
+        "occipital-lobe",
+        "temporal-lobe",
+        "cerebellum",
+        "brainstem",
+        "synapse-circuit"
+      ]
     }
   ]
 }
