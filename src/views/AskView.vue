@@ -41,6 +41,12 @@ async function send() {
 function statusClass(s: string) {
   return s === 'new' ? 'st-new' : s === 'answered' ? 'st-answered' : 'st-planned'
 }
+
+function issueLabel(id?: string) {
+  if (!id) return ''
+  const found = publishedIssues.find((i) => i.id === id)
+  return found ? `第 ${found.no} 期 · ${found.title}` : id
+}
 </script>
 
 <template>
@@ -96,7 +102,7 @@ function statusClass(s: string) {
             <div class="q-head">
               <span v-if="kids.isTwin" class="q-kid">{{ q.kid }}</span>
               <span class="q-date">{{ q.date.slice(0, 10) }}</span>
-              <span v-if="q.sourceIssue" class="chip chip-gray">来自 {{ q.sourceIssue === 'issue-001' ? '第 1 期' : q.sourceIssue }}</span>
+              <span v-if="q.sourceIssue" class="chip chip-gray">来自 {{ issueLabel(q.sourceIssue) }}</span>
               <span class="chip status" :class="statusClass(q.status)">{{ questions.statusLabel(q.status) }}</span>
             </div>
             <p class="q-text">{{ q.text }}</p>

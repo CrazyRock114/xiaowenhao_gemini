@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { knowledgePoints, domainOf } from '../data/registry'
+import { knowledgePoints, domainOf, allIssues } from '../data/registry'
 import { useKidsStore } from '../stores/kids'
 import { useQuestionsStore } from '../stores/questions'
 import GalaxyMap from '../map/GalaxyMap.vue'
+
+function issueOf(id: string) {
+  return allIssues.find((i) => i.id === id)
+}
 
 const kids = useKidsStore()
 const questions = useQuestionsStore()
@@ -77,7 +81,14 @@ const explainText = computed(() => {
         <div v-if="selected.issueIds.length" class="d-sec">
           <h4 class="d-label">📚 在哪学的</h4>
           <div class="chips">
-            <RouterLink v-for="iid in selected.issueIds" :key="iid" to="/" class="chip">{{ iid === 'issue-001' ? '第 1 期 · 酿酒和酿醋的秘密' : iid }}</RouterLink>
+            <RouterLink
+              v-for="iid in selected.issueIds"
+              :key="iid"
+              :to="issueOf(iid) ? `/issue/${issueOf(iid)!.slug}` : '/'"
+              class="chip"
+            >
+              {{ issueOf(iid) ? `第 ${issueOf(iid)!.no} 期 · ${issueOf(iid)!.title}` : iid }}
+            </RouterLink>
           </div>
         </div>
 
