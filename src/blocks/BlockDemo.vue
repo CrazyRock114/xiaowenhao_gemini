@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import FermentationDemo from './FermentationDemo.vue'
 import BrainExplorerDemo from './BrainExplorerDemo.vue'
+import ImmuneDefenseDemo from './ImmuneDefenseDemo.vue'
 
 const props = defineProps<{
   block: any
@@ -9,9 +10,11 @@ const props = defineProps<{
 }>()
 
 const isBrain = computed(() => props.block?.demo === 'brain-explorer')
+const isImmune = computed(() => props.block?.demo === 'immune-defense')
 </script>
 
 <template>
-  <BrainExplorerDemo v-if="isBrain" :block="block" :issue-id="issueId" />
+  <ImmuneDefenseDemo v-if="isImmune" :block="block" :issue-id="issueId" />
+  <BrainExplorerDemo v-else-if="isBrain" :block="block" :issue-id="issueId" />
   <FermentationDemo v-else :block="block" :issue-id="issueId" />
 </template>

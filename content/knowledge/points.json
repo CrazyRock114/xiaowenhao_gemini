@@ -613,6 +613,238 @@
           "url": "https://zperiod.igcse.xyz"
         }
       ]
+    },
+    {
+      "id": "skin-mucosa-barrier",
+      "name": "皮肤与黏膜屏障",
+      "en": "Skin & Mucous Barrier",
+      "ipa": "/skɪn ænd ˈmjuːkəs ˈbæriər/",
+      "emoji": "🏰",
+      "domain": "life",
+      "summary": "人体城堡不可侵犯的第一道防线，用角质层死细胞盔甲、胃酸与鼻涕胶水把坏蛋拒之门外。",
+      "summaryEn": "The primary physical and chemical barrier preventing pathogen entry via keratinized epithelium, ciliated mucus elevators, and hydrochloric acid.",
+      "explain": {
+        "basic": "包在我们身体最外面的皮肤，就像一件严丝合缝的太空宇航服！表面堆满了厚厚的干燥死皮细胞，细菌根本咬不动也钻不进。而在鼻子、嘴巴和眼睛这些必须呼吸看东西的“窗户”上，身体布置了黏黏的鼻涕胶水、眼泪里的杀菌药水，以及肚子里滚烫的胃酸护城河，99%的细菌连门都没进就被融化了！",
+        "advanced": "非特异性免疫的第一道物理与化学屏障（First Line of Defence）。复层扁平角质化上皮通过紧密连接（Tight Junctions）形成机械屏障；皮脂腺分泌游离脂肪酸维持弱酸性微环境（pH 5.5）；呼吸道假复层纤毛柱状上皮伴随黏液纤毛电梯（Mucociliary Escalator）将尘埃病原体逆向推出；泪液与唾液富含溶菌酶（Lysozyme）水解细菌肽聚糖细胞壁；胃液高浓度盐酸（pH 1~2）快速变性外来蛋白质。"
+      },
+      "explainEn": {
+        "basic": "Your skin is like a tough suit of armor! It keeps millions of germs outside. Inside your nose and mouth, sticky mucus and tears act like glue traps.",
+        "advanced": "Primary non-specific physical-chemical barrier utilizing keratinized squamous epithelium, low skin pH, mucus elevators, and lysozymes to prevent colonization."
+      },
+      "relatedIds": ["diapedesis-patrol", "macrophage-phagocyte"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 免疫防线",
+          "title": "病原体侵染与第一道物理化学屏障",
+          "desc": "探索剑桥考纲中皮肤、纤毛黏液与胃酸如何阻断病原体传播途径",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
+    },
+    {
+      "id": "diapedesis-patrol",
+      "name": "白细胞血管游出",
+      "en": "Leukocyte Diapedesis",
+      "ipa": "/ˈluːkəsaɪt ˌdaɪəpəˈdiːsɪs/",
+      "emoji": "🚓",
+      "domain": "life",
+      "summary": "平时在血管高速路巡逻，闻到战场警报信号便能像软糖一样把自己挤过血管壁缝隙奔赴前线。",
+      "summaryEn": "The transendothelial migration process where circulating leukocytes roll, adhere, and squeeze through capillary endothelial junctions toward infection sites.",
+      "explain": {
+        "basic": "白细胞平时就像警车一样，顺着血管这条体内大马路呼啸巡逻。一旦哪里擦破皮发炎了，受伤的组织就会释放出“救命信号分子”。警车闻到味道立刻刹车贴紧血管壁，然后像变形软糖一样，顺着血管细胞之间微小的缝隙硬生生“挤”出去，直接跳到战场上抓坏蛋！",
+        "advanced": "白细胞跨内皮迁移（Transendothelial Migration / Diapedesis）是急性炎症反应的核心动力学过程。受损组织肥大细胞与巨噬细胞释放组胺、白三烯及趋化因子（IL-8），诱导毛细血管后微静脉内皮细胞表达选择素（Selectins）与整合素配体（ICAM-1）。循环中的中性粒细胞经历滚动（Rolling）、高亲和力整合素牢固粘附（Firm Adhesion），随后通过阿米巴变形穿透内皮细胞间隙和基底膜，顺化学浓度梯度趋化渗透至感染组织。"
+      },
+      "explainEn": {
+        "basic": "White blood cells patrol inside blood vessels like police cars. When you get a scratch, they brake, change shape like jelly, and squeeze through tiny blood vessel cracks to fight germs!",
+        "advanced": "The active extravasation cascade comprising chemoattractant sensing, selectin-mediated rolling, integrin-ICAM arrest, and transendothelial squeezing."
+      },
+      "relatedIds": ["skin-mucosa-barrier", "macrophage-phagocyte", "neutrophil-sacrifice"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 循环与免疫",
+          "title": "微循环毛细血管通透性与炎症渗出机制",
+          "desc": "观察红细胞与白细胞在微血管中的流速差异与白细胞附壁滚动",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
+    },
+    {
+      "id": "macrophage-phagocyte",
+      "name": "巨噬细胞",
+      "en": "Macrophage",
+      "ipa": "/ˈmækrəfeɪdʒ/",
+      "emoji": "👾",
+      "domain": "life",
+      "summary": "第二道防线的大胃王吃豆人，伸出灵活伪足把入侵细菌整只生吞吞掉，并在肚子里消化。",
+      "summaryEn": "Large tissue-resident phagocytic cells that engulf pathogens, digest cellular debris via phagolysosomes, and present antigens to initiate adaptive immunity.",
+      "explain": {
+        "basic": "身体里超级凶猛又可爱的大胃王！它长得圆滚滚的，像游戏里的吃豆人。只要看到溜进来的细菌怪兽，它就会伸出长长的两只“小手”（伪足）把细菌团团抱住，一口塞进肚子里的胃酸熔炉（溶酶体）给活活融化掉！它一只细胞就能连续吃掉上百个细菌！",
+        "advanced": "单核-巨噬细胞系统（Mononuclear Phagocyte System）的核心效应细胞，主导非特异性吞噬防御（Phagocytosis）。巨噬细胞利用表面模式识别受体（PRRs，如 Toll 样受体 TLRs）识别细菌表面保守的病原相关分子模式（PAMPs，如脂多糖 LPS）。通过肌动蛋白驱动质膜延伸形成吞噬体（Phagosome），随后与溶酶体融合为吞噬溶酶体（Phagolysosome），利用活性氧自由基（ROS）、一氧化氮及酸性水解酶降解病原体，并将抗原肽通过 MHC-II 分子呈递给辅助 T 细胞。"
+      },
+      "explainEn": {
+        "basic": "The giant Pac-Man of your body! It roams your tissues, stretches out squishy arms, and gobbles up hundreds of invading bacteria, melting them inside its belly.",
+        "advanced": "Professional antigen-presenting phagocyte utilizing TLR recognition, phagolysosomal oxidative burst, and MHC-II peptide presentation."
+      },
+      "relatedIds": ["diapedesis-patrol", "neutrophil-sacrifice", "helper-t-cell"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "sky",
+          "badge": "🎯 G8 吞噬词汇",
+          "title": "G8 Unit 10 Phagocytes & Pathogens 词汇攻坚",
+          "desc": "掌握吞噬细胞（Phagocyte）吞噬作用与病原体消除考点",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "neutrophil-sacrifice",
+      "name": "中性粒细胞",
+      "en": "Neutrophil",
+      "ipa": "/ˈnuːtrəfɪl/",
+      "emoji": "💥",
+      "domain": "life",
+      "summary": "冲在最前线的英勇敢死队，数量极其庞大，用自爆释放诱捕网与细菌同归于尽，留下白脓勋章。",
+      "summaryEn": "The most abundant first-responder granulocytes that destroy microbes through rapid phagocytosis, degranulation, and suicidal NETosis traps, forming pus.",
+      "explain": {
+        "basic": "城堡里数量最多的冲锋敢死队！每当你擦破皮，几分钟内就会有成千上万的中性粒细胞猛冲过来。它们打起仗来极其英勇，生命虽然只有几天，但为了消灭细菌，它们会吐出自己的 DNA 变成一张黏糊糊的大捕鱼网，和敌人「同归于尽」！伤口结痂时看到的白浓脓液，就是这些小英雄牺牲的勋章！",
+        "advanced": "人体血液中数量最多的白细胞（占 50%~70%），是急性化脓性炎症的最早期反应部队。中性粒细胞不仅具有高速吞噬能力，更能启动独特的自杀式防御——中性粒细胞细胞外诱捕网（NETosis）：染色质解聚并携带着髓过氧化物酶（MPO）、弹性蛋白酶与防御素被挤出胞外，形成高黏滞的三维纤维网，在细胞死亡瞬间物理禁锢并原位水解大量致病菌。炎症区域大量死亡的中性粒细胞、组织液崩解产物与细菌残骸共同构成临床肉眼可见的“脓液”（Pus）。"
+      },
+      "explainEn": {
+        "basic": "The brave frontline daredevils! They fight relentlessly and even sacrifice their own lives, spitting out sticky DNA nets to trap bacteria. The white pus on a scratch is made of these fallen heroes!",
+        "advanced": "Abundant polymorphonuclear granulocytes executing respiratory burst and NETosis (suicidal neutrophil extracellular trap release) to kill extracellular pathogens."
+      },
+      "relatedIds": ["diapedesis-patrol", "macrophage-phagocyte"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 白细胞考点",
+          "title": "血液成分：红细胞、白细胞与血小板形态辨析",
+          "desc": "在显微视野下比对分叶核中性粒细胞与大单核巨噬细胞的细胞质特征",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
+    },
+    {
+      "id": "killer-t-cell",
+      "name": "杀伤T细胞",
+      "en": "Cytotoxic T Cell",
+      "ipa": "/ˌsaɪtəˈtɑːksɪk tiː sel/",
+      "emoji": "🗡️",
+      "domain": "life",
+      "summary": "皇家特种刺客，专查被病毒占领的倒霉细胞，拿出纳米穿孔素针头将其戳破裂解。",
+      "summaryEn": "CD8+ effector T lymphocytes that recognize viral antigens presented on MHC-I and induce apoptotic lysis of infected host cells via perforin and granzymes.",
+      "explain": {
+        "basic": "狡猾的病毒最喜欢偷偷钻进我们自己的健康细胞里，关起门来疯狂生小病毒。这时候普通吃豆人看不见它，杀伤T细胞就会像戴着墨镜的皇家特工一样登场！它一旦发现哪个细胞不对劲、被病毒霸占了，就会掏出特制的生化针头（穿孔素），啪地在那个细胞膜上戳出一圈窟窿眼，直接把叛变细胞戳破撑爆，让病毒无处藏身！",
+        "advanced": "CD8+ 细胞毒性 T 淋巴细胞（CTL），主导细胞免疫应答（Cell-Mediated Immunity）。宿主细胞被病毒感染或发生癌变时，胞内异常肽段通过 MHC-I 类分子展示在细胞表面。CTL 表面的 T 细胞受体（TCR）高度特异性识别 MHC-I/抗原肽复合体后被激活，定向极化分泌穿孔素（Perforin）在靶细胞膜上形成多聚孔道，随后协同注入颗粒酶（Granzyme B）激活 Caspase 级联凋亡途径，使被感染靶细胞发生程序性渗透性溶解，瓦解胞内病毒复制工厂。"
+      },
+      "explainEn": {
+        "basic": "The secret agent of your body! When sneaky viruses hide inside your own cells, Killer T cells inspect them and use molecular needles (perforin) to pop the infected cell like a balloon!",
+        "advanced": "MHC-I-restricted CD8+ effector T cells that kill virus-infected cells via targeted exocytosis of perforin-granzyme pores and FasL-mediated apoptosis."
+      },
+      "relatedIds": ["helper-t-cell", "b-cell-antibody"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 细胞免疫",
+          "title": "特异性淋巴细胞受体识别与细胞裂解模拟",
+          "desc": "探索剑桥 0610 考纲关于淋巴细胞（Lymphocytes）与细胞破坏的靶向机制",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
+    },
+    {
+      "id": "helper-t-cell",
+      "name": "辅助T细胞",
+      "en": "Helper T Cell",
+      "ipa": "/ˈhelpər tiː sel/",
+      "emoji": "📢",
+      "domain": "life",
+      "summary": "城堡最高作战指挥官，审阅敌人通缉情报，吹响警报调遣中性粒细胞和B细胞合成武器。",
+      "summaryEn": "CD4+ master regulator T cells that coordinate cellular and humoral immunity by secreting cytokines following antigen presentation by APCs.",
+      "explain": {
+        "basic": "它是整个城堡兵团的总指挥官！巨噬细胞在前线吃掉细菌后，会拿着细菌的小碎片跑来找辅助T细胞汇报：“报告长官，抓到了敌人这个证据！”辅助T细胞用放大镜仔细辨认后，立刻拿起红色大喇叭呼叫全军：“警报！这是危险敌人！中性粒细胞快去包围！B细胞兵工厂快造针对性的制导导弹！”没有它的指挥，身体就会乱成一锅粥。",
+        "advanced": "CD4+ 辅助性 T 淋巴细胞（Th 细胞），是获得性免疫网络的核心枢纽。抗原呈递细胞（APCs，如树突状细胞、巨噬细胞）通过 MHC-II 分子将外源性多肽呈递给初始 CD4+ T 细胞。经共刺激信号（CD28/B7）完全激活后，Th 细胞分化为 Th1（分泌 IFN-γ 激活巨噬细胞与 CTL 细胞免疫）或 Th2（分泌 IL-4/IL-5 刺激 B 细胞克隆增殖并发生抗体类别转换，驱动体液免疫）。HIV 病毒攻击的靶点正是 CD4+ T 细胞，导致整个免疫指挥系统瘫痪。"
+      },
+      "explainEn": {
+        "basic": "The grand captain of the immune army! It inspects enemy clues brought by macrophages and blows the whistle, commanding B cells to manufacture custom-made missiles.",
+        "advanced": "Central immunological regulator (CD4+) receiving MHC-II peptide signals and directing Th1/Th2 cytokine cascades to bridge innate and adaptive arms."
+      },
+      "relatedIds": ["macrophage-phagocyte", "killer-t-cell", "b-cell-antibody"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 免疫调节",
+          "title": "抗原呈递（APC）与淋巴细胞克隆选择",
+          "desc": "深入理解辅助T细胞如何作为枢纽调控全身体液免疫与细胞免疫",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
+    },
+    {
+      "id": "b-cell-antibody",
+      "name": "B细胞与抗体导弹",
+      "en": "B Cell & Antibody",
+      "ipa": "/biː sel ænd ˈæntibɑːdi/",
+      "emoji": "🚀",
+      "domain": "life",
+      "summary": "身体的军火兵工厂，能发射海量Y字形特异性抗体，给怪兽贴上吃我标签，并串成糖葫芦。",
+      "summaryEn": "Plasma B lymphocytes that secrete Y-shaped immunoglobulins designed to neutralize, opsonize, and agglutinate target antigens with molecular precision.",
+      "explain": {
+        "basic": "身体里最神奇的高科技军工厂！接到指挥官命令后，B细胞会变身成狂暴生产线，一秒钟造出几千枚叫「抗体」的 Y 字形追踪小夹子。这些小夹子像巡航导弹一样飞向战场：它们先像贴条一样死死贴在病毒脑门上（贴上“我是坏人”标签，让吃豆人一口吞），更绝的是，小夹子有两个钳子，把一群细菌像“串糖葫芦”一样死死连在一起，让它们动弹不得！",
+        "advanced": "B 淋巴细胞是体液免疫（Humoral Immunity）的执行者。经抗原刺激和 Th 细胞辅助后，B 细胞增殖分化为大量浆细胞（Plasma Cells），以每秒数千个的速率合成分泌免疫球蛋白（Immunoglobulins / Antibodies，主为 IgG/IgM）。Y 型抗体分子由两条重链和两条轻链组成，可变区（Fab 臂）与特定抗原表位实现锁钥互补结合，展现三大杀敌绝活：① 中和作用（Neutralization）：空间位阻阻断病原体附着宿主受体；② 调理作用（Opsonization）：Fc 段结合巨噬细胞 Fc 受体，吞噬效率暴增数十倍；③ 凝集沉淀（Agglutination）：双价 Fab 臂交联多个病原体形成肉眼可见的大团簇，限制其扩散并便于统一清除。"
+      },
+      "explainEn": {
+        "basic": "Your body's high-tech weapons factory! B cells pump out thousands of Y-shaped antibody missiles per second. They stick 'EAT ME' badges onto germs and tie them together like tanghulu!",
+        "advanced": "B-lineage plasma cells secreting bivalent Y-shaped immunoglobulins mediating antigen neutralization, Fc-receptor opsonization, and lattice agglutination."
+      },
+      "relatedIds": ["helper-t-cell", "memory-cell-vaccine", "macrophage-phagocyte"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "sky",
+          "badge": "🎯 G8 抗体与抗原",
+          "title": "G8 Unit 15 Antibody & Antigen 锁钥匹配",
+          "desc": "实战攻克剑桥初中科学抗体（Antibody）与抗原（Antigen）特异性结合习题",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "memory-cell-vaccine",
+      "name": "记忆细胞与疫苗",
+      "en": "Memory Cell & Vaccine",
+      "ipa": "/ˈmeməri sel ænd vækˈsiːn/",
+      "emoji": "💉",
+      "domain": "life",
+      "summary": "把打倒的怪兽画进通缉相册，让城堡士兵在疫苗演习中练出肌肉记忆，实现终生免疫。",
+      "summaryEn": "Long-lived memory B and T cells that persist for decades, conferring rapid high-affinity secondary immune responses following natural infection or vaccination.",
+      "explain": {
+        "basic": "一场大战打赢之后，士兵们绝不会把敌人给忘了！B细胞和T细胞会挑选出一批老兵转职成「记忆细胞」，把坏蛋的长相拍成通缉令照片存进城堡相册，在身体里守卫几十年！下次同样的怪兽敢再来，记忆细胞在半天之内就能爆发出成千上万倍的导弹，怪兽还没来得及让你生病就被秒杀了！而打疫苗（预防针），其实就是用拔了尖牙的假怪兽，给士兵们搞了一场“实战消防演习”！",
+        "advanced": "免疫记忆（Immunological Memory）是脊椎动物适应性免疫的核心进化学奇迹。原发免疫应答（Primary Response）中少数活化 B/T 细胞分化为长寿命记忆细胞（Memory B & T Cells），长期潜伏在淋巴结与骨髓中。当相同抗原再次侵入触发继发免疫应答（Secondary Response）时，潜伏期极短（从数天缩短至数小时），记忆 B 细胞迅速分化出亲和力成熟的浆细胞，分泌 IgG 抗体峰值滴度提高数十至数百倍且持续更久。人工主动免疫（疫苗接种 Vaccination）利用灭活病原体、减毒株或重组抗原诱导机体建立高亲和力记忆细胞库，实现免于临床发病。"
+      },
+      "explainEn": {
+        "basic": "The veteran soldiers with photographic memories! They keep wanted posters of every virus you've ever beaten. Vaccines give them practice matches using fake harmless germs so you never get sick!",
+        "advanced": "Long-lived memory clones driving hyper-rapid, high-affinity IgG secondary immune surges upon antigen re-exposure, forming the theoretical bedrock of clinical vaccination."
+      },
+      "relatedIds": ["b-cell-antibody", "helper-t-cell", "killer-t-cell"],
+      "issueIds": ["issue-004"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 疫苗接种",
+          "title": "原发应答 vs 继发应答抗体滴度曲线实验",
+          "desc": "在交互图表中观察初次感染与二次感染时抗体爆发浓度与反应速度的指数级差异",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
     }
   ]
 }
