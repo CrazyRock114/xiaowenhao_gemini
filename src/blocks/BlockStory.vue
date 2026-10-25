@@ -123,7 +123,7 @@ function goToSlide(idx: number) {
           <div class="takeaway-banner">
             <span class="takeaway-icon">💡</span>
             <div class="takeaway-text">
-              <strong>弟弟核心金句：</strong>
+              <strong>核心演说要点：</strong>
               <span>{{ activeSlide.takeaway }}</span>
             </div>
           </div>
