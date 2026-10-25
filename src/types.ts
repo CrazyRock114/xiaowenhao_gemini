@@ -10,9 +10,40 @@ export interface QuizQuestion {
   explain: { basic: string; advanced: string }
 }
 
+export interface StorySlidePoint {
+  icon?: string
+  title: string
+  desc: string
+}
+
+export interface StorySlide {
+  tag: string
+  title: string
+  takeaway: string
+  diagramKey: string
+  speakerNote?: string
+  realPhoto?: { src: string; label: string }
+  points: StorySlidePoint[]
+}
+
+export interface StorySpeaker {
+  name: string
+  role: string
+  avatar: string
+}
+
 export type Block =
   | { id: string; type: 'hero' }
-  | { id: string; type: 'story'; heading: string; paragraphs: string[]; illustration?: 'jars' | 'microscope' | 'flow' }
+  | {
+      id: string
+      type: 'story'
+      heading: string
+      paragraphs: string[]
+      illustration?: 'jars' | 'microscope' | 'flow'
+      speaker?: StorySpeaker
+      deckTitle?: string
+      slides?: StorySlide[]
+    }
   | { id: string; type: 'qa-card'; question: string; emoji?: string; answer: { basic: string; advanced: string } }
   | { id: string; type: 'quiz'; questions: QuizQuestion[] }
   | { id: string; type: 'match'; title: string; instruction?: string; pairs: { left: string; right: string; emoji?: string }[] }
@@ -30,7 +61,7 @@ export type Block =
       safety: string[]
       observe: string[]
     }
-  | { id: string; type: 'demo'; demo: 'fermentation' | 'brain-explorer'; title?: string; instruction?: string }
+  | { id: string; type: 'demo'; demo: 'fermentation' | 'brain-explorer' | 'immune-defense'; title?: string; instruction?: string }
   | { id: string; type: 'open-question'; heading: string; text?: string; suggestions?: string[] }
   | { id: string; type: 'related'; knowledgeIds?: string[]; note?: string }
 
