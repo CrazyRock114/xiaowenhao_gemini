@@ -145,6 +145,10 @@ function goToSlide(idx: number) {
                   <div class="point-desc">
                     <RichText :text="pt.desc" />
                   </div>
+                  <div v-if="pt.action" class="point-action-pill">
+                    <span class="action-icon">🗣️ 演示手势：</span>
+                    <span class="action-text">{{ pt.action }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -244,6 +248,10 @@ function goToSlide(idx: number) {
                   <h4 class="point-title">{{ pt.title }}</h4>
                   <div class="point-desc">
                     <RichText :text="pt.desc" />
+                  </div>
+                  <div v-if="pt.action" class="point-action-pill">
+                    <span class="action-icon">🗣️ 演示手势：</span>
+                    <span class="action-text">{{ pt.action }}</span>
                   </div>
                 </div>
               </div>
@@ -578,6 +586,28 @@ function goToSlide(idx: number) {
   font-size: 13.5px;
   color: #5d4f43;
   line-height: 1.55;
+}
+
+.point-action-pill {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fef9c3;
+  border: 1px dashed #ca8a04;
+  font-size: 11.5px;
+  color: #854d0e;
+}
+
+.action-icon {
+  font-weight: 800;
+  color: #a16207;
+}
+
+.action-text {
+  font-weight: 600;
 }
 
 /* 视觉列与微观切片 */

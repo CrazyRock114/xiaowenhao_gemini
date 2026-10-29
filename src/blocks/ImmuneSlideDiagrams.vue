@@ -5,385 +5,424 @@ defineProps<{
 </script>
 
 <template>
-  <div class="deck-diagram">
-    <!-- Diagram 1: 城堡总体三道防线战术概览 -->
+  <div class="deck-diagram-theater">
+    <!-- ══════════════════════════════════════════════════════════════════════
+         Scene 1: 身体的三道神仙装备全景 (保鲜膜 + 捕蝇胶 + 消毒池)
+         ══════════════════════════════════════════════════════════════════════ -->
     <svg
       v-if="diagramKey === 'body-castle-overview'"
-      viewBox="0 0 540 320"
-      class="diagram-svg"
+      viewBox="0 0 600 360"
+      class="diagram-stage-svg"
       role="img"
-      aria-label="人体城堡三道防线战术概览"
+      aria-label="身体的三道神仙防御大剧场"
     >
       <defs>
-        <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.2" />
-          <stop offset="100%" stop-color="#2c5282" stop-opacity="0.05" />
+        <!-- 护盾光芒渐变 -->
+        <radialGradient id="shieldGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.9" />
+          <stop offset="70%" stop-color="#fef3c7" stop-opacity="0.6" />
+          <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.15" />
+        </radialGradient>
+        <linearGradient id="bodySkinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffedd5" />
+          <stop offset="100%" stop-color="#fed7aa" />
         </linearGradient>
-        <linearGradient id="vesselGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#fc8181" stop-opacity="0.25" />
-          <stop offset="100%" stop-color="#e53e3e" stop-opacity="0.1" />
-        </linearGradient>
-        <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="3" result="glow" />
-          <feComposite in="SourceGraphic" in2="glow" operator="over" />
-        </filter>
       </defs>
 
-      <!-- 背景城堡层次示意 -->
-      <rect x="20" y="20" width="500" height="280" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+      <!-- 舞台底衬 -->
+      <rect x="10" y="10" width="580" height="340" rx="20" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" />
 
-      <!-- 第 1 防线区：城门防护层 -->
-      <g class="tier-1">
-        <rect x="35" y="35" width="470" height="70" rx="10" fill="url(#wallGrad)" stroke="#3182ce" stroke-width="1.5" stroke-dasharray="4 2" />
-        <rect x="45" y="45" width="130" height="24" rx="6" fill="#3182ce" />
-        <text x="110" y="61" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">第 1 道防线 · 钢铁城门</text>
-        <text x="190" y="61" fill="#2b6cb0" font-size="12" font-weight="600">皮肤铠甲 + 黏膜胶水 + 胃酸护城河</text>
+      <!-- 中央舞台：健康人体与发光保鲜膜金钟罩 -->
+      <g transform="translate(160, 40)">
+        <!-- 金色保鲜膜护盾圆弧 -->
+        <ellipse cx="140" cy="140" rx="130" ry="135" fill="url(#shieldGlow)" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8 4" />
+        
+        <!-- 盾牌标牌 -->
+        <rect x="65" y="10" width="150" height="26" rx="13" fill="#f59e0b" />
+        <text x="140" y="27" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">🛡️ 天然坚韧“保鲜膜”</text>
 
-        <!-- 砖墙微观小方块 -->
-        <g transform="translate(45, 78)">
-          <rect v-for="n in 12" :key="n" :x="(n-1)*38" y="0" width="34" height="16" rx="3" fill="#ebf8ff" stroke="#bee3f8" stroke-width="1" />
-          <text x="235" y="12" text-anchor="middle" fill="#4a5568" font-size="10">严丝合缝角质层 · 阻挡 99% 隐形小坏蛋</text>
+        <!-- 人体轮廓示意 (头部与身体) -->
+        <circle cx="140" cy="75" r="32" fill="url(#bodySkinGrad)" stroke="#f97316" stroke-width="2" />
+        <!-- 笑脸 -->
+        <circle cx="130" cy="70" r="3.5" fill="#431407" />
+        <circle cx="150" cy="70" r="3.5" fill="#431407" />
+        <path d="M 132,82 Q 140,90 148,82" stroke="#431407" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        <!-- 身体躯干与双臂护胸 -->
+        <path d="M 105,120 Q 140,110 175,120 L 185,220 Q 140,230 95,220 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="2" />
+        <text x="140" y="165" text-anchor="middle" fill="#0369a1" font-size="13" font-weight="800">身体健康城堡</text>
+        <text x="140" y="185" text-anchor="middle" fill="#0c4a6e" font-size="11">内部有精锐特警日夜站岗</text>
+      </g>
+
+      <!-- 护盾外围：被弹飞的细菌小怪兽们 (左侧与右侧) -->
+      <!-- 细菌 1 撞得头晕眼花 (左) -->
+      <g transform="translate(45, 80)">
+        <ellipse cx="30" cy="30" rx="22" ry="18" fill="#86efac" stroke="#16a34a" stroke-width="2.5" />
+        <!-- 螺旋晕眼 -->
+        <text x="22" y="28" font-size="14">😵</text>
+        <text x="38" y="24" font-size="10">💫</text>
+        <!-- 弹飞冲击波线条 -->
+        <path d="M 60,30 Q 75,30 90,20" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 3" />
+        <text x="30" y="65" text-anchor="middle" fill="#15803d" font-size="11" font-weight="700">撞在保鲜膜上！</text>
+        <text x="30" y="78" text-anchor="middle" fill="#64748b" font-size="10">弹飞眼冒金星</text>
+      </g>
+
+      <!-- 细菌 2 举着小叉子钻不动 (左下) -->
+      <g transform="translate(50, 190)">
+        <ellipse cx="28" cy="28" rx="20" ry="16" fill="#fca5a5" stroke="#dc2626" stroke-width="2.5" />
+        <!-- 气急败坏表情 -->
+        <circle cx="20" cy="24" r="3" fill="#7f1d1d" />
+        <circle cx="34" cy="24" r="3" fill="#7f1d1d" />
+        <path d="M 22,34 Q 27,28 32,34" stroke="#7f1d1d" stroke-width="2" fill="none" />
+        <!-- 弯掉的钻头小叉子 -->
+        <path d="M 48,28 L 65,28 L 60,35" stroke="#7f1d1d" stroke-width="2.5" stroke-linecap="round" />
+        <text x="30" y="62" text-anchor="middle" fill="#b91c1c" font-size="11" font-weight="700">小钻头钻弯了！</text>
+      </g>
+
+      <!-- 右侧两大装备卡片：捕蝇胶与强酸池 -->
+      <g transform="translate(435, 45)">
+        <!-- 装备 2：鼻腔捕蝇板 -->
+        <rect x="0" y="0" width="135" height="110" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
+        <rect x="10" y="10" width="115" height="22" rx="6" fill="#3b82f6" />
+        <text x="67" y="25" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🍯 强力捕蝇胶 (鼻涕)</text>
+        <!-- 被粘住的细菌 -->
+        <g transform="translate(25, 45)">
+          <rect x="0" y="0" width="85" height="16" rx="4" fill="#93c5fd" />
+          <text x="42" y="12" text-anchor="middle" fill="#1e40af" font-size="9" font-weight="700">超强黏胶板</text>
+          <circle cx="20" cy="8" r="5" fill="#ef4444" />
+          <circle cx="50" cy="8" r="5" fill="#10b981" />
+          <!-- 挣扎眼泪 -->
+          <text x="65" y="12" font-size="9">💦 动不了</text>
+          <text x="42" y="32" text-anchor="middle" fill="#1e3a8a" font-size="10">小刷子一刷 ➔ 阿嚏！</text>
         </g>
       </g>
 
-      <!-- 第 2 防线区：巡警血管通道与先锋吞噬 -->
-      <g class="tier-2" transform="translate(0, 85)">
-        <rect x="35" y="35" width="470" height="75" rx="10" fill="url(#vesselGrad)" stroke="#e53e3e" stroke-width="1.5" />
-        <rect x="45" y="45" width="130" height="24" rx="6" fill="#e53e3e" />
-        <text x="110" y="61" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">第 2 道防线 · 巡警先锋</text>
-        <text x="190" y="61" fill="#c53030" font-size="12" font-weight="600">白细胞钻缝游出 + 吃豆人巨噬细胞 + 中性粒自爆</text>
-
-        <!-- 巡警与吞噬微标 -->
-        <g transform="translate(50, 78)">
-          <!-- 巡警车/白细胞变形 -->
-          <circle cx="30" cy="16" r="14" fill="#fed7d7" stroke="#e53e3e" stroke-width="2" />
-          <circle cx="28" cy="14" r="5" fill="#c53030" />
-          <text x="55" y="19" fill="#2d3748" font-size="11" font-weight="600">软糖变身钻缝隙</text>
-
-          <!-- 吃豆人大嘴 -->
-          <path d="M 210,16 L 230,6 A 14 14 0 1 0 230,26 Z" fill="#f6ad55" stroke="#dd6b20" stroke-width="2" />
-          <circle cx="218" cy="10" r="2.5" fill="#7b341e" />
-          <text x="240" y="19" fill="#2d3748" font-size="11" font-weight="600">吃豆人嗷呜生吞</text>
-
-          <!-- 英雄白脓徽章 -->
-          <circle cx="395" cy="16" r="12" fill="#fffaf0" stroke="#d69e2e" stroke-width="2" />
-          <text x="395" y="20" text-anchor="middle" font-size="12">🎖️</text>
-          <text x="415" y="19" fill="#2d3748" font-size="11" font-weight="600">自爆白脓英雄勋章</text>
+      <g transform="translate(435, 175)">
+        <!-- 装备 3：胃酸超级消毒池 -->
+        <rect x="0" y="0" width="135" height="110" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5" />
+        <rect x="10" y="10" width="115" height="22" rx="6" fill="#16a34a" />
+        <text x="67" y="25" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🧪 浓缩消毒水 (胃酸)</text>
+        <g transform="translate(20, 45)">
+          <path d="M 0,15 Q 25,5 50,15 T 95,15 L 95,35 L 0,35 Z" fill="#86efac" opacity="0.6" />
+          <circle cx="20" cy="20" r="3" fill="#15803d" />
+          <circle cx="60" cy="18" r="4" fill="#15803d" />
+          <text x="47" y="32" text-anchor="middle" fill="#14532d" font-size="10" font-weight="800">掉进去化成渣渣！</text>
         </g>
       </g>
 
-      <!-- 第 3 防线区：皇家特种刺客与兵工厂导弹 -->
-      <g class="tier-3" transform="translate(0, 175)">
-        <rect x="35" y="35" width="470" height="75" rx="10" fill="#faf5ff" stroke="#805ad5" stroke-width="1.5" />
-        <rect x="45" y="45" width="130" height="24" rx="6" fill="#805ad5" />
-        <text x="110" y="61" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">第 3 道防线 · 皇家特战</text>
-        <text x="190" y="61" fill="#6b46c1" font-size="12" font-weight="600">杀伤T细胞戳破老巢 + B细胞Y型导弹串糖葫芦</text>
-
-        <g transform="translate(50, 78)">
-          <!-- T细胞刺客生化针 -->
-          <circle cx="30" cy="16" r="14" fill="#e9d8fd" stroke="#805ad5" stroke-width="2" />
-          <line x1="38" y1="22" x2="52" y2="30" stroke="#805ad5" stroke-width="3" stroke-linecap="round" />
-          <text x="65" y="19" fill="#2d3748" font-size="11" font-weight="600">特工刺客戳破老巢</text>
-
-          <!-- B细胞与Y型抗体 -->
-          <g transform="translate(240, 6)">
-            <path d="M 0,0 L 8,12 L 8,22 M 16,0 L 8,12" stroke="#319795" stroke-width="3" fill="none" stroke-linecap="round" />
-          </g>
-          <text x="265" y="19" fill="#2d3748" font-size="11" font-weight="600">Y型追踪导弹锁死</text>
-
-          <!-- 终身通缉相册 -->
-          <rect x="390" y="6" width="22" height="20" rx="3" fill="#ffffff" stroke="#4a5568" stroke-width="1.5" />
-          <circle cx="401" cy="14" r="4" fill="#cbd5e0" />
-          <text x="420" y="19" fill="#2d3748" font-size="11" font-weight="600">通缉相册终身免疫</text>
-        </g>
-      </g>
-
-      <!-- 底部总结标语 -->
-      <text x="270" y="304" text-anchor="middle" fill="#718096" font-size="11">
-        🏰 身体城堡三层递进：外阻 (物理化学) ➔ 中清 (先锋吞噬) ➔ 深歼 (特异特种)
+      <!-- 底部大横幅总结 -->
+      <rect x="30" y="300" width="540" height="38" rx="10" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5" />
+      <text x="300" y="324" text-anchor="middle" fill="#9a3412" font-size="13" font-weight="800">
+        💡 演讲第一声吼：只要皮肤保鲜膜不划破，99% 的细菌连身体大门都摸不着！
       </text>
     </svg>
 
-    <!-- Diagram 2: 第 1 道防线细解 (皮肤砖墙 + 纤毛胶水 + 胃酸) -->
+    <!-- ══════════════════════════════════════════════════════════════════════
+         Scene 2: 皮肤保鲜膜细节 (手背防弹保鲜膜 vs 鼻涕捕蝇草)
+         ══════════════════════════════════════════════════════════════════════ -->
     <svg
       v-else-if="diagramKey === 'skin-barrier-defense'"
-      viewBox="0 0 540 320"
-      class="diagram-svg"
+      viewBox="0 0 600 360"
+      class="diagram-stage-svg"
       role="img"
-      aria-label="第一道防线：皮肤、黏膜与化学屏障解剖"
+      aria-label="第一道防线生活三件套"
     >
-      <rect x="20" y="20" width="500" height="280" rx="16" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+      <rect x="10" y="10" width="580" height="340" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
 
-      <!-- 分区 1: 皮肤砖墙 (左半区) -->
-      <g transform="translate(35, 35)">
-        <rect x="0" y="0" width="225" height="240" rx="12" fill="#fffaf0" stroke="#fbd38d" stroke-width="1.5" />
-        <rect x="15" y="15" width="110" height="24" rx="6" fill="#dd6b20" />
-        <text x="70" y="31" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🧱 皮肤砖墙结构</text>
-        <text x="15" y="56" fill="#744210" font-size="11">角质死细胞致密相扣，细菌撞在玻璃上</text>
+      <!-- 左半区: 手背上的防弹保鲜膜 (巨大视觉) -->
+      <g transform="translate(35, 30)">
+        <rect x="0" y="0" width="250" height="260" rx="16" fill="#fff7ed" stroke="#fdba74" stroke-width="2" />
+        <rect x="20" y="15" width="130" height="26" rx="8" fill="#ea580c" />
+        <text x="85" y="32" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">① 全身天然保鲜膜</text>
 
-        <!-- 砖墙图 -->
-        <g transform="translate(15, 68)">
-          <!-- 第一层砖 -->
-          <rect x="0" y="0" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <rect x="50" y="0" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <rect x="100" y="0" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <rect x="150" y="0" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <!-- 第二层错位砖 -->
-          <rect x="25" y="20" width="45" height="16" rx="3" fill="#feebc8" stroke="#c05621" stroke-width="1" />
-          <rect x="75" y="20" width="45" height="16" rx="3" fill="#feebc8" stroke="#c05621" stroke-width="1" />
-          <rect x="125" y="20" width="45" height="16" rx="3" fill="#feebc8" stroke="#c05621" stroke-width="1" />
-          <!-- 第三层砖 -->
-          <rect x="0" y="40" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <rect x="50" y="40" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <rect x="100" y="40" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
-          <rect x="150" y="40" width="45" height="16" rx="3" fill="#fbd38d" stroke="#c05621" stroke-width="1" />
+        <!-- 显微镜下的致密保鲜膜切面 -->
+        <g transform="translate(20, 60)">
+          <!-- 砖墙保鲜膜层 -->
+          <g v-for="row in 4" :key="row">
+            <rect
+              v-for="col in 5"
+              :key="col"
+              :x="(col - 1) * 42 + ((row % 2) * 20) - 10"
+              :y="(row - 1) * 22"
+              width="38"
+              height="18"
+              rx="4"
+              fill="#fed7aa"
+              stroke="#ea580c"
+              stroke-width="1.5"
+            />
+          </g>
+          <text x="105" y="110" text-anchor="middle" fill="#7c2d12" font-size="11" font-weight="700">死角质层：比城墙砖头还要严丝合缝！</text>
 
-          <!-- 外界细菌弹开轨迹 -->
-          <g transform="translate(30, -18)">
-            <ellipse cx="20" cy="0" rx="8" ry="4" fill="#fc8181" stroke="#e53e3e" stroke-width="1.5" />
-            <path d="M 20,-8 L 30,-22 M 25,-15 L 35,-15" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round" />
-            <text x="45" y="-14" fill="#e53e3e" font-size="10" font-weight="700">🚫 无法穿透！</text>
+          <!-- 细菌撞在保鲜膜上弹飞 -->
+          <g transform="translate(60, -35)">
+            <ellipse cx="25" cy="15" rx="14" ry="10" fill="#86efac" stroke="#16a34a" stroke-width="2" />
+            <text x="25" y="19" text-anchor="middle" font-size="11">😵</text>
+            <path d="M 25,2 L 25,-12 M 15,-6 L 35,-6" stroke="#ea580c" stroke-width="2" stroke-linecap="round" />
+            <text x="25" y="-16" text-anchor="middle" fill="#c2410c" font-size="11" font-weight="800">Duang！弹开！</text>
           </g>
 
-          <!-- 砖缝脂质水泥标注 -->
-          <rect x="10" y="70" width="175" height="30" rx="6" fill="#ffffff" stroke="#e2e8f0" />
-          <text x="97" y="85" text-anchor="middle" fill="#4a5568" font-size="10" font-weight="600">脂质细胞间质（天然防水胶水）</text>
-          <text x="97" y="96" text-anchor="middle" fill="#718096" font-size="9">干燥微酸环境抑制菌群滋生</text>
+          <!-- 说明提示 -->
+          <rect x="5" y="125" width="200" height="55" rx="8" fill="#ffffff" stroke="#fed7aa" />
+          <text x="15" y="145" fill="#431407" font-size="11" font-weight="700">✋ 现场互动动作：</text>
+          <text x="15" y="165" fill="#7c2d12" font-size="11">用手指捏捏手背皮肤：“看！这就是保鲜膜！”</text>
         </g>
       </g>
 
-      <!-- 分区 2: 气管黏液与纤毛 (右上) -->
-      <g transform="translate(280, 35)">
-        <rect x="0" y="0" width="225" height="112" rx="12" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.5" />
-        <rect x="15" y="12" width="115" height="22" rx="6" fill="#3182ce" />
-        <text x="72" y="27" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🍯 呼吸道黏液纤毛</text>
-        <!-- 纤毛摆动图示 -->
+      <!-- 右半区上: 呼吸道强力苍蝇胶 + 扫地小毛刷 -->
+      <g transform="translate(315, 30)">
+        <rect x="0" y="0" width="250" height="120" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2" />
+        <rect x="15" y="12" width="130" height="24" rx="6" fill="#2563eb" />
+        <text x="80" y="28" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">② 捕蝇胶 + 扫地机</text>
+
+        <g transform="translate(20, 50)">
+          <!-- 黏稠鼻涕黏液层 -->
+          <rect x="0" y="0" width="210" height="16" rx="4" fill="#60a5fa" opacity="0.6" />
+          <text x="105" y="12" text-anchor="middle" fill="#1e3a8a" font-size="10" font-weight="700">粘糊糊的鼻涕黏液（像苍蝇胶板）</text>
+          
+          <!-- 一排金色纤毛小刷子，向右上方整齐刷动 -->
+          <path
+            v-for="i in 10"
+            :key="i"
+            :d="`M ${(i-1)*20 + 15},40 Q ${(i-1)*20 + 25},25 ${(i-1)*20 + 18},16`"
+            stroke="#f59e0b"
+            stroke-width="3"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <text x="105" y="55" text-anchor="middle" fill="#b45309" font-size="10" font-weight="700">小毛刷一齐往外刷 ➔ “阿嚏！”</text>
+        </g>
+      </g>
+
+      <!-- 右半区下: 胃酸大熔炉 -->
+      <g transform="translate(315, 170)">
+        <rect x="0" y="0" width="250" height="120" rx="16" fill="#f0fdf4" stroke="#86efac" stroke-width="2" />
+        <rect x="15" y="12" width="130" height="24" rx="6" fill="#16a34a" />
+        <text x="80" y="28" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">③ 胃里浓缩消毒水</text>
+
         <g transform="translate(20, 48)">
-          <!-- 黏液层 -->
-          <rect x="0" y="0" width="185" height="14" rx="4" fill="#bee3f8" />
-          <text x="92" y="10" text-anchor="middle" fill="#2b6cb0" font-size="9">粘稠鼻涕/黏液（黏住细菌尘埃）</text>
-          <!-- 向上摆动的纤毛 -->
-          <path v-for="i in 9" :key="i" :d="`M ${(i-1)*20+15},35 Q ${(i-1)*20+22},24 ${(i-1)*20+12},14`" stroke="#3182ce" stroke-width="2.5" fill="none" stroke-linecap="round" />
-          <!-- 细胞基底 -->
-          <rect x="0" y="35" width="185" height="18" fill="#e2e8f0" rx="3" />
-          <text x="92" y="48" text-anchor="middle" fill="#4a5568" font-size="9">纤毛传送带：节律向上刷向喉咙吞下</text>
+          <path d="M 0,20 Q 50,8 105,20 T 210,20 L 210,48 L 0,48 Z" fill="#4ade80" opacity="0.5" />
+          <circle cx="40" cy="28" r="4" fill="#15803d" />
+          <circle cx="120" cy="24" r="5" fill="#15803d" />
+          <text x="105" y="38" text-anchor="middle" fill="#14532d" font-size="11" font-weight="800">pH 1.5 强酸：吃进肚子的细菌秒变泡泡！</text>
         </g>
       </g>
 
-      <!-- 分区 3: 胃酸超级护城河 (右下) -->
-      <g transform="translate(280, 163)">
-        <rect x="0" y="0" width="225" height="112" rx="12" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.5" />
-        <rect x="15" y="12" width="125" height="22" rx="6" fill="#38a169" />
-        <text x="77" y="27" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🧪 胃酸化学护城河</text>
-        <g transform="translate(20, 45)">
-          <path d="M 0,20 Q 45,5 90,20 T 185,20 L 185,50 L 0,50 Z" fill="#c6f6d5" />
-          <circle cx="45" cy="28" r="4" fill="#38a169" opacity="0.6" />
-          <circle cx="110" cy="24" r="3" fill="#38a169" opacity="0.5" />
-          <circle cx="140" cy="32" r="5" fill="#38a169" opacity="0.7" />
-          <text x="92" y="42" text-anchor="middle" fill="#22543d" font-size="10" font-weight="700">pH 1.5~2 强酸强力熔解细菌外壳！</text>
-        </g>
-      </g>
+      <!-- 底部生活真相 -->
+      <text x="300" y="325" text-anchor="middle" fill="#475569" font-size="12" font-weight="700">
+        🧼 为什么饭前要用肥皂洗手？肥皂水能直接把病毒外面的脂肪小皮衣彻底撕碎融化！
+      </text>
     </svg>
 
-    <!-- Diagram 3: 第 2 道防线 (钻缝游出 + 巨噬吃豆 + 中性粒自爆) -->
+    <!-- ══════════════════════════════════════════════════════════════════════
+         Scene 3: 第二道防线 (挤牙膏穿墙 + 大胃王吃豆人 + 白脓英雄纪念碑)
+         ══════════════════════════════════════════════════════════════════════ -->
     <svg
       v-else-if="diagramKey === 'patrol-phagocytosis-net'"
-      viewBox="0 0 540 320"
-      class="diagram-svg"
+      viewBox="0 0 600 360"
+      class="diagram-stage-svg"
       role="img"
-      aria-label="第二道防线：白细胞游出、巨噬吞噬与中性粒细胞诱捕网"
+      aria-label="白细胞挤牙膏出击与自爆成白脓"
     >
-      <rect x="20" y="20" width="500" height="280" rx="16" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+      <rect x="10" y="10" width="580" height="340" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
 
-      <!-- 场景 A: 毛细血管壁与白细胞橡皮泥游出 (上部) -->
-      <g transform="translate(35, 30)">
-        <rect x="0" y="0" width="470" height="115" rx="10" fill="#fff5f5" stroke="#feb2b2" stroke-width="1.2" />
-        <rect x="15" y="10" width="165" height="22" rx="5" fill="#e53e3e" />
-        <text x="97" y="25" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🚓 白细胞血管游出 (Diapedesis)</text>
+      <!-- 上半区：神奇穿墙术 (挤牙膏从血管缝隙挤出) -->
+      <g transform="translate(30, 25)">
+        <rect x="0" y="0" width="540" height="135" rx="14" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.5" />
+        <rect x="15" y="10" width="180" height="24" rx="6" fill="#e11d48" />
+        <text x="105" y="26" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">🚓 穿墙术：像挤牙膏一样钻缝隙！</text>
 
-        <!-- 血管上下管壁 -->
-        <g transform="translate(15, 40)">
-          <!-- 血管上壁（内皮细胞排成行） -->
-          <rect v-for="i in 7" :key="i" :x="(i-1)*62" y="0" width="56" height="12" rx="4" fill="#fc8181" />
-          <!-- 血管腔 (血流方向箭头) -->
-          <path d="M 30,22 L 400,22" stroke="#feb2b2" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#arrowRed)" />
-          <text x="50" y="20" fill="#9b2c2c" font-size="9">血液大马路高速巡逻 ➔</text>
-          <!-- 红细胞 -->
-          <ellipse cx="140" cy="22" rx="10" ry="6" fill="#e53e3e" />
-          <ellipse cx="260" cy="20" rx="10" ry="6" fill="#e53e3e" />
+        <!-- 血管剖面结构 -->
+        <g transform="translate(20, 42)">
+          <!-- 血管上管壁 -->
+          <rect v-for="i in 8" :key="i" :x="(i-1)*62" y="0" width="56" height="12" rx="4" fill="#fb7185" />
+          
+          <!-- 血管内部血流：红细胞顺流 -->
+          <ellipse cx="60" cy="24" rx="14" ry="7" fill="#e11d48" />
+          <ellipse cx="140" cy="22" rx="14" ry="7" fill="#e11d48" />
+          <text x="70" y="26" fill="#881337" font-size="10" font-weight="700">血液高速马路 ➔ ➔</text>
 
-          <!-- 血管下壁（中间留出发丝级缝隙！） -->
-          <rect x="0" y="32" width="170" height="12" rx="4" fill="#fc8181" />
-          <!-- 留出缝隙 x=170~195 -->
-          <rect x="200" y="32" width="240" height="12" rx="4" fill="#fc8181" />
+          <!-- 血管下管壁 (中间裂开发丝级小缝！) -->
+          <rect x="0" y="34" width="220" height="12" rx="4" fill="#fb7185" />
+          <!-- 缝隙就在 220 ~ 255 之间 -->
+          <rect x="255" y="34" width="245" height="12" rx="4" fill="#fb7185" />
 
-          <!-- 变身橡皮泥钻过缝隙的白细胞 -->
+          <!-- 白细胞像牙膏/软泥一样从缝隙挤出！ -->
+          <!-- 血管内圆球、缝隙处极细、组织外大水滴形 -->
           <path
-            d="M 175,20 C 170,24 165,36 175,44 C 185,52 195,50 195,36 C 195,26 185,16 175,20 Z"
-            fill="#edf2f7"
-            stroke="#4a5568"
-            stroke-width="2"
+            d="M 230,18 C 220,24 232,36 235,46 C 238,58 225,72 238,78 C 252,78 248,58 242,46 C 240,36 250,24 240,18 Z"
+            fill="#ffffff"
+            stroke="#334155"
+            stroke-width="2.5"
           />
-          <circle cx="182" cy="35" r="4" fill="#a0aec0" />
-          <text x="210" y="55" fill="#c53030" font-size="10" font-weight="700">闻到求救气味，像软糖挤过发丝小缝！</text>
+          <!-- 两个小黑眼珠 -->
+          <circle cx="236" cy="62" r="2.5" fill="#0f172a" />
+          <circle cx="244" cy="62" r="2.5" fill="#0f172a" />
+          <!-- 旁边动态箭头与标语 -->
+          <text x="270" y="55" fill="#be123c" font-size="12" font-weight="800">噗溜！</text>
+          <text x="270" y="70" fill="#4c0519" font-size="11" font-weight="600">闻到求救气味，软泥白细胞从细缝硬挤出去！</text>
         </g>
       </g>
 
-      <!-- 场景 B: 巨噬细胞吃豆人 (左下) -->
-      <g transform="translate(35, 160)">
-        <rect x="0" y="0" width="225" height="125" rx="10" fill="#fffaf0" stroke="#fbd38d" stroke-width="1.2" />
-        <rect x="12" y="10" width="135" height="20" rx="5" fill="#dd6b20" />
-        <text x="79" y="24" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">👾 巨噬吃豆人大胃王</text>
+      <!-- 左下区：大胃王吃豆人 (巨噬细胞) -->
+      <g transform="translate(30, 175)">
+        <rect x="0" y="0" width="255" height="155" rx="14" fill="#fefce8" stroke="#fef08a" stroke-width="2" />
+        <rect x="15" y="12" width="130" height="22" rx="6" fill="#ca8a04" />
+        <text x="80" y="27" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">👾 大胃王吃豆人</text>
 
-        <!-- 伸出伪足包围细菌 -->
-        <g transform="translate(20, 38)">
-          <!-- 巨噬细胞大嘴阿米巴形态 -->
-          <path
-            d="M 10,40 C 5,15 35,5 60,15 C 80,25 90,10 100,20 C 105,30 95,45 80,45 C 95,55 85,75 65,70 C 40,75 10,65 10,40 Z"
-            fill="#fefcbf"
-            stroke="#d69e2e"
-            stroke-width="2"
-          />
-          <!-- 细胞核 -->
-          <path d="M 35,35 Q 40,25 50,30 Q 55,42 45,48 Z" fill="#b7791f" opacity="0.6" />
-          <!-- 即将被吞掉的小细菌 -->
-          <ellipse cx="88" cy="22" rx="7" ry="4" fill="#fc8181" stroke="#e53e3e" stroke-width="1.5" />
-          <ellipse cx="80" cy="52" rx="6" ry="3.5" fill="#fc8181" stroke="#e53e3e" stroke-width="1.5" />
-          <text x="105" y="65" fill="#744210" font-size="10" font-weight="700">嗷呜生吞！</text>
+        <g transform="translate(25, 45)">
+          <!-- 吃豆人大嘴巴 -->
+          <path d="M 50,45 L 85,25 A 40 40 0 1 0 85,65 Z" fill="#fde047" stroke="#ca8a04" stroke-width="3" />
+          <!-- 呆萌大眼睛 -->
+          <circle cx="45" cy="25" r="5" fill="#713f12" />
+          <circle cx="47" cy="24" r="1.8" fill="#ffffff" />
+          <!-- 惊恐逃窜的小绿细菌 -->
+          <ellipse cx="105" cy="40" rx="9" ry="6" fill="#86efac" stroke="#16a34a" stroke-width="1.5" />
+          <ellipse cx="120" cy="22" rx="8" ry="5" fill="#86efac" stroke="#16a34a" stroke-width="1.5" />
+          <text x="135" y="45" fill="#854d0e" font-size="11" font-weight="800">嗷呜生吞！</text>
+          <text x="85" y="92" text-anchor="middle" fill="#713f12" font-size="11">个头大 10 倍，连嚼都不嚼整只活吞！</text>
         </g>
       </g>
 
-      <!-- 场景 C: 中性粒细胞敢死队与白脓勋章 (右下) -->
-      <g transform="translate(280, 160)">
-        <rect x="0" y="0" width="225" height="125" rx="10" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.2" />
-        <rect x="12" y="10" width="145" height="20" rx="5" fill="#4a5568" />
-        <text x="84" y="24" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">💥 中性粒敢死队与白脓</text>
+      <!-- 右下区：自爆敢死队 ➔ 震撼真相：白脓是英雄勋章！ -->
+      <g transform="translate(315, 175)">
+        <rect x="0" y="0" width="255" height="155" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
+        <rect x="15" y="12" width="145" height="22" rx="6" fill="#475569" />
+        <text x="87" y="27" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">💥 抱团自爆 ➔ 白脓真相</text>
 
-        <!-- 吐出大网同归于尽 -->
-        <g transform="translate(20, 40)">
-          <!-- 诱捕大网 (NETs) 线条 -->
-          <path d="M 10,15 L 75,55 M 25,10 L 85,45 M 5,35 L 80,20 M 15,55 L 75,10" stroke="#718096" stroke-width="1.5" stroke-dasharray="3 3" />
-          <!-- 网住的细菌死伤枕藉 -->
-          <ellipse cx="35" cy="25" rx="6" ry="3" fill="#cbd5e0" />
-          <ellipse cx="55" cy="35" rx="5" ry="3" fill="#cbd5e0" />
-          <text x="95" y="25" fill="#2d3748" font-size="10" font-weight="700">释放 DNA 诱捕网</text>
-          <text x="95" y="42" fill="#e53e3e" font-size="11" font-weight="800">🎖️ 白脓 = 英雄勋章</text>
-          <text x="95" y="56" fill="#718096" font-size="9">同归于尽保护伤口</text>
+        <g transform="translate(20, 45)">
+          <!-- 炸开的蜘蛛大网 (DNA 捕鱼网) -->
+          <path d="M 10,15 L 75,55 M 20,5 L 80,45 M 5,35 L 75,15 M 15,55 L 70,5" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="4 2" />
+          <text x="45" y="25" font-size="14">🕸️</text>
+          <!-- 伤口与白脓真实示意 -->
+          <g transform="translate(100, 10)">
+            <rect x="0" y="0" width="125" height="70" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5" />
+            <!-- 皮肤伤口结痂与白脓水滴 -->
+            <ellipse cx="40" cy="35" rx="20" ry="12" fill="#fda4af" />
+            <ellipse cx="40" cy="35" rx="10" ry="7" fill="#fef08a" stroke="#ca8a04" stroke-width="1.5" />
+            <text x="60" y="32" fill="#e11d48" font-size="11" font-weight="800">这就是白脓！</text>
+            <text x="60" y="48" fill="#475569" font-size="10">自爆白细胞的</text>
+            <text x="60" y="60" fill="#be123c" font-size="10" font-weight="800">英雄烈士遗体！</text>
+          </g>
+          <text x="110" y="95" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="700">
+            全场震撼点：不要嫌白脓脏，那是英雄！
+          </text>
         </g>
       </g>
     </svg>
 
-    <!-- Diagram 4: 第 3 道防线 (杀伤T细胞戳破老巢 + B细胞抗体糖葫芦) -->
+    <!-- ══════════════════════════════════════════════════════════════════════
+         Scene 4: 第三道防线 (特工电钻拆作坊 + 连环衣夹子手铐糖葫芦 + 通缉令)
+         ══════════════════════════════════════════════════════════════════════ -->
     <svg
       v-else-if="diagramKey === 'killer-t-antibody-missile'"
-      viewBox="0 0 540 320"
-      class="diagram-svg"
+      viewBox="0 0 600 360"
+      class="diagram-stage-svg"
       role="img"
-      aria-label="第三道防线：特异性T细胞生化穿孔与B细胞Y型抗体凝集"
+      aria-label="特工拆迁与连环衣夹子糖葫芦"
     >
-      <rect x="20" y="20" width="500" height="280" rx="16" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5" />
+      <rect x="10" y="10" width="580" height="340" rx="20" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
 
-      <!-- 左半区: 杀伤T细胞生化针头戳破老巢 -->
-      <g transform="translate(35, 35)">
-        <rect x="0" y="0" width="225" height="240" rx="12" fill="#faf5ff" stroke="#d6bcfa" stroke-width="1.5" />
-        <rect x="15" y="15" width="135" height="24" rx="6" fill="#805ad5" />
-        <text x="82" y="31" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🗡️ 杀伤T细胞戳破老巢</text>
+      <!-- 左半区: 拆迁特警 T 细胞 (电钻戳破病毒黑作坊) -->
+      <g transform="translate(30, 25)">
+        <rect x="0" y="0" width="255" height="245" rx="16" fill="#faf5ff" stroke="#d8b4fe" stroke-width="2" />
+        <rect x="15" y="12" width="145" height="24" rx="6" fill="#9333ea" />
+        <text x="87" y="28" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">🗡️ 特工电钻戳破老巢</text>
 
-        <!-- 刺客对接与穿孔素孔道 -->
-        <g transform="translate(15, 55)">
-          <!-- 杀伤T细胞 (墨镜特工) -->
-          <circle cx="50" cy="50" r="34" fill="#e9d8fd" stroke="#805ad5" stroke-width="2.5" />
-          <!-- 特工墨镜 -->
-          <rect x="35" y="36" width="14" height="8" rx="2" fill="#44337a" />
-          <rect x="52" y="36" width="14" height="8" rx="2" fill="#44337a" />
-          <line x1="48" y1="40" x2="53" y2="40" stroke="#44337a" stroke-width="2" />
-          <text x="50" y="62" text-anchor="middle" fill="#6b46c1" font-size="10" font-weight="700">杀伤T细胞</text>
+        <g transform="translate(20, 50)">
+          <!-- 杀伤 T 细胞 (戴墨镜帅气特工) -->
+          <circle cx="45" cy="45" r="32" fill="#e9d8fd" stroke="#7e22ce" stroke-width="3" />
+          <!-- 帅气特工墨镜 -->
+          <rect x="30" y="32" width="13" height="8" rx="2" fill="#3b0764" />
+          <rect x="47" y="32" width="13" height="8" rx="2" fill="#3b0764" />
+          <line x1="43" y1="36" x2="47" y2="36" stroke="#3b0764" stroke-width="2" />
+          <text x="45" y="60" text-anchor="middle" fill="#581c87" font-size="10" font-weight="800">杀伤 T 细胞</text>
 
-          <!-- 生化穿孔素针头注射 -->
-          <g transform="translate(80, 48)">
-            <line x1="0" y1="0" x2="25" y2="0" stroke="#e53e3e" stroke-width="3" stroke-linecap="round" />
-            <circle cx="26" cy="0" r="3" fill="#e53e3e" />
+          <!-- 穿孔素特制小电钻 -->
+          <line x1="75" y1="45" x2="105" y2="45" stroke="#dc2626" stroke-width="3.5" stroke-linecap="round" />
+          <circle cx="106" cy="45" r="3" fill="#dc2626" />
+          <text x="90" y="38" fill="#dc2626" font-size="10" font-weight="800">钻孔！</text>
+
+          <!-- 藏满病毒的倒霉细胞 (黑作坊被戳破炸毁) -->
+          <g transform="translate(120, 10)">
+            <circle cx="40" cy="40" r="34" fill="#fee2e2" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6 3" />
+            <!-- 里面的小坏蛋惊恐冒出 -->
+            <circle cx="30" cy="30" r="5" fill="#991b1b" />
+            <circle cx="48" cy="45" r="5" fill="#991b1b" />
+            <text x="40" y="88" text-anchor="middle" fill="#b91c1c" font-size="12" font-weight="800">💥 老巢炸毁！</text>
           </g>
-
-          <!-- 藏有病毒的被感染细胞 (老巢被戳破爆裂) -->
-          <g transform="translate(115, 15)">
-            <path
-              d="M 20,10 C 40,5 65,15 70,35 C 75,55 55,75 35,70 C 15,65 5,50 5,30 C 5,15 15,10 20,10 Z"
-              fill="#fed7d7"
-              stroke="#e53e3e"
-              stroke-width="2"
-              stroke-dasharray="4 2"
-            />
-            <!-- 病毒坏蛋惊恐四散 -->
-            <circle cx="28" cy="32" r="5" fill="#9b2c2c" />
-            <circle cx="48" cy="45" r="5" fill="#9b2c2c" />
-            <!-- 穿孔爆裂小火花 -->
-            <text x="35" y="88" text-anchor="middle" fill="#c53030" font-size="10" font-weight="700">💥 穿孔素戳破！</text>
-            <text x="35" y="100" text-anchor="middle" fill="#742a2a" font-size="9">老巢炸毁，病毒无处可藏</text>
-          </g>
+          <text x="105" y="125" text-anchor="middle" fill="#6b21a8" font-size="11" font-weight="700">
+            水灌进小孔 ➔ 整个病毒黑作坊被冲垮！
+          </text>
         </g>
       </g>
 
-      <!-- 右半区: B细胞Y型导弹与串糖葫芦 (凝集反应) -->
-      <g transform="translate(280, 35)">
-        <rect x="0" y="0" width="225" height="240" rx="12" fill="#e6fffa" stroke="#81e6d9" stroke-width="1.5" />
-        <rect x="15" y="15" width="145" height="24" rx="6" fill="#319795" />
-        <text x="87" y="31" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700">🚀 Y型导弹串糖葫芦</text>
+      <!-- 右半区: B 细胞与连环衣夹子手铐 (串成死结大糖葫芦) -->
+      <g transform="translate(315, 25)">
+        <rect x="0" y="0" width="255" height="245" rx="16" fill="#f0fdfa" stroke="#99f6e4" stroke-width="2" />
+        <rect x="15" y="12" width="155" height="24" rx="6" fill="#0d9488" />
+        <text x="92" y="28" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">🚀 连环衣夹子串糖葫芦</text>
 
-        <!-- Y型抗体夹住两只细菌并交联成串 -->
-        <g transform="translate(20, 55)">
-          <!-- 糖葫芦竹签与串联网络 -->
-          <g transform="translate(25, 20)">
-            <!-- 细菌 1 -->
-            <ellipse cx="25" cy="20" rx="15" ry="9" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5" />
-            <text x="25" y="23" text-anchor="middle" fill="#7b341e" font-size="9">细菌A</text>
+        <g transform="translate(25, 45)">
+          <!-- 糖葫芦细菌网络 -->
+          <!-- 细菌 1 -->
+          <ellipse cx="30" cy="25" rx="16" ry="10" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+          <text x="30" y="28" text-anchor="middle" font-size="9" font-weight="700">细菌A</text>
 
-            <!-- Y型抗体 1 连接细菌A和细菌B -->
-            <g transform="translate(42, 10)">
-              <path d="M 0,5 L 10,12 L 10,24 M 20,5 L 10,12" stroke="#319795" stroke-width="3.5" fill="none" stroke-linecap="round" />
-              <!-- 尾巴标签 -->
-              <circle cx="10" cy="25" r="3.5" fill="#e53e3e" />
-            </g>
-
-            <!-- 细菌 2 -->
-            <ellipse cx="80" cy="20" rx="15" ry="9" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5" />
-            <text x="80" y="23" text-anchor="middle" fill="#7b341e" font-size="9">细菌B</text>
-
-            <!-- Y型抗体 2 往下连接细菌C -->
-            <g transform="translate(68, 30)">
-              <path d="M 5,0 L 12,10 L 12,22 M 20,0 L 12,10" stroke="#319795" stroke-width="3.5" fill="none" stroke-linecap="round" />
-              <circle cx="12" cy="23" r="3.5" fill="#e53e3e" />
-            </g>
-
-            <!-- 细菌 3 -->
-            <ellipse cx="60" cy="65" rx="15" ry="9" fill="#feebc8" stroke="#dd6b20" stroke-width="1.5" />
-            <text x="60" y="68" text-anchor="middle" fill="#7b341e" font-size="9">细菌C</text>
+          <!-- Y型衣夹子 1 (两只大手紧紧拷住) -->
+          <g transform="translate(48, 15)">
+            <path d="M 0,5 L 12,14 L 12,28 M 24,5 L 12,14" stroke="#0f766e" stroke-width="4" fill="none" stroke-linecap="round" />
+            <!-- 尾巴大红灯 -->
+            <circle cx="12" cy="29" r="4.5" fill="#ef4444" />
           </g>
 
-          <rect x="10" y="115" width="170" height="36" rx="6" fill="#ffffff" stroke="#cbd5e0" />
-          <text x="95" y="130" text-anchor="middle" fill="#234e52" font-size="10" font-weight="700">🍡 凝集成团 · 动弹不得！</text>
-          <text x="95" y="143" text-anchor="middle" fill="#4a5568" font-size="9">Y尾部红灯：“快来吃我”标签</text>
+          <!-- 细菌 2 -->
+          <ellipse cx="95" cy="25" rx="16" ry="10" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+          <text x="95" y="28" text-anchor="middle" font-size="9" font-weight="700">细菌B</text>
+
+          <!-- Y型衣夹子 2 往下拷住细菌 3 -->
+          <g transform="translate(80, 42)">
+            <path d="M 5,0 L 14,12 L 14,26 M 23,0 L 14,12" stroke="#0f766e" stroke-width="4" fill="none" stroke-linecap="round" />
+            <circle cx="14" cy="27" r="4.5" fill="#ef4444" />
+          </g>
+
+          <!-- 细菌 3 -->
+          <ellipse cx="70" cy="85" rx="16" ry="10" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+          <text x="70" y="88" text-anchor="middle" font-size="9" font-weight="700">细菌C</text>
+
+          <!-- 糖葫芦结论标签 -->
+          <rect x="15" y="115" width="175" height="32" rx="8" fill="#ffffff" stroke="#5eead4" />
+          <text x="102" y="130" text-anchor="middle" fill="#134e4a" font-size="11" font-weight="800">🍡 拷成死结 · 动弹不得！</text>
+          <text x="102" y="142" text-anchor="middle" fill="#042f2e" font-size="9">红灯大喊：“快来吃！这里有坏蛋！”</text>
         </g>
+      </g>
+
+      <!-- 底部终身通缉令与打疫苗大揭秘 -->
+      <g transform="translate(30, 285)">
+        <rect x="0" y="0" width="540" height="52" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" />
+        <text x="25" y="23" fill="#0f172a" font-size="12" font-weight="800">📸 记忆细胞与打疫苗的真相：</text>
+        <text x="25" y="42" fill="#334155" font-size="11">
+          打疫苗不是真生病，而是把拔了牙的假病毒送进来搞一次<strong>“军事大演习”</strong>，让老侦探提前画好通缉令，从此终身不怕它！
+        </text>
       </g>
     </svg>
   </div>
 </template>
 
 <style scoped>
-.deck-diagram {
+.deck-diagram-theater {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   background: #fbfbfd;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
-.diagram-svg {
+.diagram-stage-svg {
   width: 100%;
-  max-width: 540px;
+  max-width: 600px;
   height: auto;
   display: block;
 }

@@ -14,6 +14,7 @@ export interface StorySlidePoint {
   icon?: string
   title: string
   desc: string
+  action?: string
 }
 
 export interface StorySlide {

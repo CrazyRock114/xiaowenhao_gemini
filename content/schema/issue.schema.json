@@ -89,7 +89,8 @@
                         "properties": {
                           "icon": { "type": "string" },
                           "title": { "type": "string" },
-                          "desc": { "$ref": "#/$defs/richText" }
+                          "desc": { "$ref": "#/$defs/richText" },
+                          "action": { "type": "string" }
                         }
                       }
                     }
