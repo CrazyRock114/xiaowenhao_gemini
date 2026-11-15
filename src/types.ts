@@ -40,7 +40,7 @@ export type Block =
       type: 'story'
       heading: string
       paragraphs: string[]
-      illustration?: 'jars' | 'microscope' | 'flow'
+      illustration?: 'jars' | 'microscope' | 'flow' | 'baking'
       speaker?: StorySpeaker
       deckTitle?: string
       slides?: StorySlide[]

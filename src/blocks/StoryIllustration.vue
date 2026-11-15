@@ -1,6 +1,6 @@
 <script setup lang="ts">
-/** 故事块的简单插画（纯 SVG，三种场景） */
-defineProps<{ kind: 'jars' | 'microscope' | 'flow' }>()
+/** 故事块的简单插画（纯 SVG，四种场景） */
+defineProps<{ kind: 'jars' | 'microscope' | 'flow' | 'baking' }>()
 </script>
 
 <template>
@@ -51,6 +51,27 @@ defineProps<{ kind: 'jars' | 'microscope' | 'flow' }>()
     </g>
     <circle cx="216" cy="40" r="7" fill="#f3e6fb" stroke="#8b72e9" stroke-width="2.2" class="cell c4" />
     <text x="212" y="138" text-anchor="middle" font-size="12" fill="#8a7666">显微镜下的小工人</text>
+  </svg>
+
+  <svg v-else-if="kind === 'baking'" viewBox="0 0 340 150" class="illus flow" role="img" aria-label="烤箱烘烤变身三步：膨胀、定型、出炉">
+    <g v-for="(step, i) in [
+      { x: 20, emoji: '🎈', label: '① 膨胀', sub: '30~60°C 烤箱惊蹿', color: '#ff8a3d' },
+      { x: 125, emoji: '🧱', label: '② 定型', sub: '>65°C 糊化固化', color: '#4caf6d' },
+      { x: 230, emoji: '🍞', label: '③ 出炉', sub: '酒精蒸发 金黄麦香', color: '#e5802a' },
+    ]" :key="i" :transform="`translate(${step.x}, 20)`">
+      <rect x="0" y="0" width="90" height="96" rx="14" :fill="step.color" opacity="0.1" />
+      <text x="45" y="46" text-anchor="middle" font-size="28">{{ step.emoji }}</text>
+      <text x="45" y="70" text-anchor="middle" font-size="13" font-weight="700" :fill="step.color">{{ step.label }}</text>
+      <text x="45" y="88" text-anchor="middle" font-size="10.5" fill="#8a7666">{{ step.sub }}</text>
+    </g>
+    <path d="M112 66 L123 66" stroke="#b3a291" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBake)" />
+    <path d="M217 66 L228 66" stroke="#b3a291" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBake)" />
+    <defs>
+      <marker id="arrowBake" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+        <path d="M0 0 L8 4 L0 8 Z" fill="#b3a291" />
+      </marker>
+    </defs>
+    <text x="170" y="142" text-anchor="middle" font-size="12" fill="#8a7666">200°C 烤箱里的三步神奇变身</text>
   </svg>
 
   <svg v-else viewBox="0 0 340 150" class="illus flow" role="img" aria-label="糖化、酒化、酸化三步">

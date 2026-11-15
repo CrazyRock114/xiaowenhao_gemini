@@ -46,7 +46,7 @@
               "type": { "const": "story" },
               "heading": { "type": "string" },
               "paragraphs": { "type": "array", "items": { "$ref": "#/$defs/richText" }, "minItems": 1 },
-              "illustration": { "type": "string", "enum": ["jars", "microscope", "flow"] },
+              "illustration": { "type": "string", "enum": ["jars", "microscope", "flow", "baking"] },
               "speaker": {
                 "type": "object",
                 "required": ["name", "role", "avatar"],
