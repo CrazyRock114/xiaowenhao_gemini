@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, provide, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { getIssueBySlug, publishedIssues } from '../data/registry'
 import { useKidsStore } from '../stores/kids'
@@ -9,6 +9,7 @@ import BlockOpenQuestion from '../blocks/BlockOpenQuestion.vue'
 import CompletionModal from '../components/CompletionModal.vue'
 import EcosystemBridge from '../components/EcosystemBridge.vue'
 import AgentShowcaseBanner from '../components/AgentShowcaseBanner.vue'
+import ParentGuideDrawer from '../components/ParentGuideDrawer.vue'
 
 const route = useRoute()
 const kids = useKidsStore()
@@ -35,6 +36,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 const showCert = ref(false)
 const justCompleted = ref(false)
+const parentMode = ref(false)
+provide('parentMode', parentMode)
 
 function finish() {
   if (!issue.value) return
@@ -60,6 +63,13 @@ function finish() {
           :issue-id="issue.id"
         />
         <div v-if="i === 0" class="hero-gap" />
+        <ParentGuideDrawer
+          v-if="i === 0 && issue.parentGuide"
+          :guide="issue.parentGuide"
+          :parent-mode="parentMode"
+          class="mt"
+          @update:parent-mode="parentMode = $event"
+        />
       </template>
 
       <!-- 走出小问号，穿梭全域科学宇宙传送门 -->

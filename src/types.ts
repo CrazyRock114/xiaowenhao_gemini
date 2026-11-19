@@ -45,7 +45,7 @@ export type Block =
       deckTitle?: string
       slides?: StorySlide[]
     }
-  | { id: string; type: 'qa-card'; question: string; emoji?: string; answer: { basic: string; advanced: string } }
+  | { id: string; type: 'qa-card'; question: string; emoji?: string; answer: { basic: string; advanced: string; parent?: string } }
   | { id: string; type: 'quiz'; questions: QuizQuestion[] }
   | { id: string; type: 'match'; title: string; instruction?: string; pairs: { left: string; right: string; emoji?: string }[] }
   | { id: string; type: 'sort'; title: string; instruction?: string; goal?: string; items: string[] }
@@ -63,8 +63,21 @@ export type Block =
       observe: string[]
     }
   | { id: string; type: 'demo'; demo: 'fermentation' | 'brain-explorer' | 'immune-defense' | 'electrolyzed-water' | 'ammonia-diffusion'; title?: string; instruction?: string }
-  | { id: string; type: 'open-question'; heading: string; text?: string; suggestions?: string[] }
+  | {
+      id: string
+      type: 'open-question'
+      heading: string
+      text?: string
+      suggestions?: string[]
+      deepDives?: { question: string; kidAnswer: string; parentInsight: string }[]
+    }
   | { id: string; type: 'related'; knowledgeIds?: string[]; note?: string }
+
+export interface ParentGuide {
+  corePrinciple: string
+  teachingTips: string[]
+  misconceptions: { myth: string; truth: string }[]
+}
 
 export interface Issue {
   id: string
@@ -78,6 +91,7 @@ export interface Issue {
   status: 'published' | 'draft'
   intro: string
   knowledgeIds: string[]
+  parentGuide?: ParentGuide
   blocks: Block[]
 }
 

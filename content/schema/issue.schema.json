@@ -16,6 +16,28 @@
     "status": { "enum": ["published", "draft"] },
     "intro": { "type": "string", "minLength": 10 },
     "knowledgeIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "parentGuide": {
+      "type": "object",
+      "required": ["corePrinciple", "teachingTips", "misconceptions"],
+      "additionalProperties": false,
+      "properties": {
+        "corePrinciple": { "type": "string", "minLength": 20 },
+        "teachingTips": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "misconceptions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["myth", "truth"],
+            "additionalProperties": false,
+            "properties": {
+              "myth": { "type": "string" },
+              "truth": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
     "blocks": { "type": "array", "items": { "$ref": "#/$defs/block" }, "minItems": 3 }
   },
   "$defs": {
@@ -113,7 +135,11 @@
                 "type": "object",
                 "required": ["basic", "advanced"],
                 "additionalProperties": false,
-                "properties": { "basic": { "$ref": "#/$defs/richText" }, "advanced": { "$ref": "#/$defs/richText" } }
+                "properties": {
+                  "basic": { "$ref": "#/$defs/richText" },
+                  "advanced": { "$ref": "#/$defs/richText" },
+                  "parent": { "$ref": "#/$defs/richText" }
+                }
               }
             }
           }
@@ -210,7 +236,20 @@
               "id": { "type": "string" }, "type": { "const": "open-question" },
               "heading": { "type": "string" },
               "text": { "type": "string" },
-              "suggestions": { "type": "array", "items": { "type": "string" } }
+              "suggestions": { "type": "array", "items": { "type": "string" } },
+              "deepDives": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["question", "kidAnswer", "parentInsight"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "question": { "type": "string" },
+                    "kidAnswer": { "$ref": "#/$defs/richText" },
+                    "parentInsight": { "$ref": "#/$defs/richText" }
+                  }
+                }
+              }
             }
           }
         },

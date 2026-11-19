@@ -83,6 +83,17 @@ if (existsSync(issuesDir)) {
       for (const kid of issue.knowledgeIds) {
         if (!pointIds.has(kid)) fail(`${issue.id}: knowledgeIds 引用了不存在的知识点 ${kid}`)
       }
+      if (!issue.parentGuide) {
+        fail(`${issue.id}: 已发布期缺少 parentGuide（家长深度解读手册）`)
+      }
+      for (const b of issue.blocks) {
+        if (b.type === 'qa-card' && (!b.answer?.parent || b.answer.parent.trim().length < 20)) {
+          fail(`${issue.id}/${b.id}: qa-card 缺少完整家长深度解读版 answer.parent`)
+        }
+        if (b.type === 'open-question' && (!Array.isArray(b.deepDives) || b.deepDives.length < 2)) {
+          fail(`${issue.id}/${b.id}: open-question 至少应包含 2 条延伸追问深挖 deepDives`)
+        }
+      }
     }
   }
   if (issues.length === 0) fail('content/issues/ 下没有任何期')
