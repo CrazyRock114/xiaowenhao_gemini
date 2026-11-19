@@ -62,7 +62,7 @@ export type Block =
       safety: string[]
       observe: string[]
     }
-  | { id: string; type: 'demo'; demo: 'fermentation' | 'brain-explorer' | 'immune-defense'; title?: string; instruction?: string }
+  | { id: string; type: 'demo'; demo: 'fermentation' | 'brain-explorer' | 'immune-defense' | 'electrolyzed-water' | 'ammonia-diffusion'; title?: string; instruction?: string }
   | { id: string; type: 'open-question'; heading: string; text?: string; suggestions?: string[] }
   | { id: string; type: 'related'; knowledgeIds?: string[]; note?: string }
 

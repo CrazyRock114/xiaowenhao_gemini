@@ -195,7 +195,7 @@
             "required": ["id", "type", "demo"],
             "properties": {
               "id": { "type": "string" }, "type": { "const": "demo" },
-              "demo": { "enum": ["fermentation", "brain-explorer", "immune-defense"] },
+              "demo": { "enum": ["fermentation", "brain-explorer", "immune-defense", "electrolyzed-water", "ammonia-diffusion"] },
               "title": { "type": "string" },
               "instruction": { "type": "string" }
             }

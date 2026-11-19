@@ -845,6 +845,354 @@
           "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
         }
       ]
+    },
+    {
+      "id": "water-electrolysis",
+      "name": "水电解",
+      "en": "Water Electrolysis",
+      "ipa": "/ˈwɔːtər ɪˌlekˈtrɑːləsɪs/",
+      "emoji": "⚡",
+      "domain": "matter",
+      "summary": "通电把水分子拆开：阳极冒氧气泡并聚集氢离子变酸，阴极冒氢气泡并聚集氢氧根变碱。",
+      "summaryEn": "Splitting water using direct electric current: the anode releases oxygen gas and H⁺ ions (acidic), while the cathode releases hydrogen gas and OH⁻ ions (alkaline).",
+      "explain": {
+        "basic": "给水通上直流电，水分子就像乐高积木一样被电流拆开！在正极（阳极）这边，会冒出细小的氧气（O₂）气泡，水里留下很多酸酸的氢离子（H⁺），变成酸性水；在负极（阴极）那边，冒出氢气泡并变成碱性水。",
+        "advanced": "在直流电场与离子交换膜作用下，水在电极表面发生氧化还原反应。阳极氧化反应：2H₂O → O₂↑ + 4H⁺ + 4e⁻（产生氧气泡与酸性水）；阴极还原反应：4H₂O + 4e⁻ → 2H₂↑ + 4OH⁻（产生氢气泡与碱性水）。家用电解水机正是借此分离出不同 pH 的出水。"
+      },
+      "explainEn": {
+        "basic": "Passing electricity through water splits water molecules apart! The positive side fizzes with oxygen bubbles and turns acidic, while the negative side turns alkaline.",
+        "advanced": "Electrochemical decomposition of water: anode oxidation yields O₂ and H⁺ (lowering pH), while cathode reduction yields H₂ and OH⁻ (raising pH)."
+      },
+      "relatedIds": ["hypochlorous-acid", "ph-scale"],
+      "issueIds": ["issue-005"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧪 0620 电解工坊",
+          "title": "剑桥 0620 电解池阳极与阴极半反应",
+          "desc": "观察离子定向迁移与电极析气规律",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
+    },
+    {
+      "id": "hypochlorous-acid",
+      "name": "次氯酸",
+      "en": "Hypochlorous Acid",
+      "ipa": "/ˌhaɪpoʊˈklɔːrəs ˈæsɪd/",
+      "emoji": "🧪",
+      "domain": "matter",
+      "summary": "化学式 HOCl，温和而高效的抑菌弱酸，见光易分解，也是人体中性粒细胞用来杀菌的同款武器。",
+      "summaryEn": "A weak acid (HOCl) with strong antimicrobial oxidizing power that breaks down easily in light; also naturally produced by human neutrophils.",
+      "explain": {
+        "basic": "电解含有微量氯离子的水时，正极会顺便造出一点点次氯酸（HOCl）。它能温和地抑制表面细菌，有趣的是我们身体里的中性粒细胞打仗时也会自己造次氯酸！但它特别怕阳光，放久了就会分解失效，而且绝对不能喝。",
+        "advanced": "次氯酸（HOCl）是含氯弱酸，在 pH 4.0~6.5 区间主要以电中性分子形式存在，易穿透细菌细胞壁氧化巯基酶系而高效抑菌。人体中性粒细胞亦通过髓过氧化物酶（MPO）催化生成 HOCl 杀菌。HOCl 具光热不稳定性（2HOCl → 2HCl + O₂↑），须避光现制现用且严禁饮用。"
+      },
+      "explainEn": {
+        "basic": "A gentle germ-fighting acid (HOCl) that even your own white blood cells make! It breaks down quickly in sunlight and is strictly for external cleaning, never for drinking.",
+        "advanced": "An uncharged antimicrobial oxidant (HOCl) capable of penetrating microbial membranes; photolabile and strictly non-potable."
+      },
+      "relatedIds": ["water-electrolysis", "ph-scale", "neutrophil-sacrifice"],
+      "issueIds": ["issue-005"],
+      "bridges": [
+        {
+          "target": "zperiod",
+          "badge": "🧪 3D 元素工坊",
+          "title": "氯 (Cl)、氧 (O)、氢 (H) 原子结构与键合",
+          "desc": "观察强氧化性含氯分子的微观电子排布",
+          "url": "https://zperiod.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "ph-scale",
+      "name": "pH 酸碱度",
+      "en": "pH Scale",
+      "ipa": "/piːˈeɪtʃ skeɪl/",
+      "emoji": "🌈",
+      "domain": "matter",
+      "summary": "衡量液体有多酸或多碱的 0~14 刻度尺：7 是中性，小于 7 为酸性，大于 7 为碱性。",
+      "summaryEn": "A logarithmic 0–14 scale measuring acidity or alkalinity: 7 is neutral, below 7 is acidic, and above 7 is alkaline.",
+      "explain": {
+        "basic": "就像温度计用来量冷热一样，pH 尺子专门用来量液体有多酸或多碱！数字 7 刚好在正中间，代表不酸不碱的中性（比如纯净水）；数字越小越酸（比如柠檬汁、胃酸）；数字越大越碱（比如肥皂水、氨水）。",
+        "advanced": "pH 定义为水溶液中氢离子活度的负常用对数（pH = -lg[H⁺]）。常温下 pH = 7 为中性，pH < 7 为酸性（每降低 1 个单位，[H⁺] 增大 10 倍），pH > 7 为碱性。健康皮肤表面 pH 约 4.5~5.5，而厕所氨水液膜 pH 可高达 8.5~9.5。"
+      },
+      "explainEn": {
+        "basic": "A 0-to-14 ruler for acids and bases! 7 is neutral like pure water, lower numbers are acidic like lemon juice, and higher numbers are alkaline like soapy water.",
+        "advanced": "Logarithmic scale of hydrogen ion concentration (pH = -log₁₀[H⁺]), where each unit represents a tenfold shift in acidity."
+      },
+      "relatedIds": ["water-electrolysis", "skin-acid-mantle", "acid-base-neutralization"],
+      "issueIds": ["issue-005", "issue-006"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧪 0620 酸碱实验",
+          "title": "通用指示剂与 pH 0~14 彩虹色谱测试",
+          "desc": "亲手滴加指示剂测定常见酸碱溶液的 pH 值",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
+    },
+    {
+      "id": "skin-acid-mantle",
+      "name": "皮肤弱酸性保护膜",
+      "en": "Skin Acid Mantle",
+      "ipa": "/skɪn ˈæsɪd ˈmæntl/",
+      "emoji": "🛡️",
+      "domain": "life",
+      "summary": "健康皮肤表面天然形成的 pH 4.5~5.5 弱酸性皮脂膜，能锁住水分并抑制有害菌繁殖。",
+      "summaryEn": "The naturally occurring weakly acidic film (pH 4.5–5.5) on healthy human skin that maintains barrier integrity and inhibits harmful microbes.",
+      "explain": {
+        "basic": "我们的皮肤表面悄悄涂着一层看不见的“弱酸性隐形盾牌”（pH 约 4.5~5.5），由皮肤分泌的油脂和汗液混合而成。这层盾牌能让皮肤水润不干裂，还能把喜欢碱性环境的坏细菌挡在门外！",
+        "advanced": "由皮脂腺分泌的游离脂肪酸、角质层脂质与汗液乳酸/氨基酸共同构筑的弱酸性表面微环境（pH 4.5~5.5）。它是角质层神经酰胺合成酶（如 β-葡糖脑苷脂酶）的最适 pH 区间，并可选择性抑制金黄色葡萄球菌等条件致病菌的过度增殖。"
+      },
+      "explainEn": {
+        "basic": "An invisible, slightly acidic shield (pH 4.5–5.5) naturally coating your skin to lock in moisture and keep unwanted germs away!",
+        "advanced": "A hydrolipidic surface film (pH 4.5–5.5) essential for optimal lipid-processing enzyme activity and cutaneous microbiome homeostasis."
+      },
+      "relatedIds": ["ph-scale", "skin-mucosa-barrier", "acne-bacteria"],
+      "issueIds": ["issue-005"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 皮肤屏障",
+          "title": "人体第一道防线：皮肤结构与化学屏障",
+          "desc": "了解表皮角质层与弱酸性皮脂膜的协同防护",
+          "url": "https://www.igcse.xyz/lessons/0610/10-1-disease-immunity"
+        }
+      ]
+    },
+    {
+      "id": "uv-sunburn",
+      "name": "紫外线晒伤",
+      "en": "UV Sunburn",
+      "ipa": "/ˌjuːˈviː ˈsʌnbɜːrn/",
+      "emoji": "☀️",
+      "domain": "life",
+      "summary": "阳光中过量紫外线照伤皮肤细胞引发的红肿发炎，需要物理冷敷、保湿与防晒，而非偏方酸水治疗。",
+      "summaryEn": "Acute inflammatory skin damage caused by excessive ultraviolet (UVB/UVA) radiation, requiring cooling, gentle moisturizing, and medical care for blisters.",
+      "explain": {
+        "basic": "在烈日下晒太久，阳光里看不见的紫外线会把皮肤细胞照伤，身体立刻拉响警报让血管扩张，皮肤就变得又红又烫甚至起水泡。正确做法是立刻躲阴凉、凉白开冷敷、涂温和保湿乳，破皮起泡必须看医生，千万别乱涂强酸水！",
+        "advanced": "中波紫外线（UVB, 280~315 nm）直接诱发表皮细胞 DNA 产生嘧啶二聚体，激活炎症因子（前列腺素、IL-6、TNF-α）导致真皮毛细血管扩张、红斑、水肿与疼痛（日光性皮炎）。弱酸性水仅能靠水分蒸发短暂物理降温，无修复 DNA 损伤作用，破损水疱严禁涂抹酸性或氧化性液体。"
+      },
+      "explainEn": {
+        "basic": "Too much invisible UV light from the sun injures skin cells, turning skin red and hot. Cool water compresses, gentle moisturizer, and shade are the real helpers—never put harsh acids on blistered skin!",
+        "advanced": "UVB-induced photodamage causing DNA pyrimidine dimers and acute cutaneous inflammation; managed with cooling, emollients, sun avoidance, and clinical care when blistered."
+      },
+      "relatedIds": ["skin-acid-mantle", "skin-mucosa-barrier"],
+      "issueIds": ["issue-005"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "⚛️ 0625 电磁波谱",
+          "title": "紫外线（UV）波长能量与皮肤防护科学",
+          "desc": "对比可见光、UVA 与高能 UVB 对生物细胞的穿透差异",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "acne-bacteria",
+      "name": "青春痘与痤疮杆菌",
+      "en": "Acne & Cutibacterium acnes",
+      "ipa": "/ˈækni ænd bækˈtɪriə/",
+      "emoji": "🔴",
+      "domain": "life",
+      "summary": "毛孔出油堵塞后，厌氧的痤疮丙酸杆菌过度繁殖并引发毛囊发炎形成红肿痘痘。",
+      "summaryEn": "Inflammatory hair follicle lesions driven by excess sebum, clogged pores, and overgrowth of anaerobic Cutibacterium acnes bacteria.",
+      "explain": {
+        "basic": "到了青春期，皮肤爱出油，如果老废角质把毛孔口堵住了，藏在毛孔深处的痤疮丙酸杆菌就会大口吃油、疯狂繁殖，引来免疫小士兵发炎打仗，脸上就鼓起了红红的青春痘。温和洗脸、别用手挤、严重时看皮肤科医生才最科学！",
+        "advanced": "寻常痤疮（Acne vulgaris）是毛囊皮脂腺单位的慢性炎症性疾病，由四大环节驱动：雄激素诱导皮脂过量分泌、毛囊漏斗部角化过度形成微粉刺、厌氧菌 *Cutibacterium acnes* 增殖分解皮脂产生游离脂肪酸，以及免疫炎症级联。表层弱酸性水仅作用于皮肤表面，无法替代规范皮肤科用药。"
+      },
+      "explainEn": {
+        "basic": "When extra oil and dead skin plug a pore, acne bacteria multiply inside and trigger redness. Gentle cleansing helps, don't pop pimples, and see a dermatologist for severe breakouts!",
+        "advanced": "Multifactorial pilosebaceous inflammation involving sebum hypersecretion, follicular hyperkeratinization, Cutibacterium acnes proliferation, and host immune response."
+      },
+      "relatedIds": ["skin-acid-mantle", "microorganism", "hypochlorous-acid"],
+      "issueIds": ["issue-005"],
+      "bridges": [
+        {
+          "target": "sky",
+          "badge": "🎯 G8 微生物防线",
+          "title": "皮肤共生菌群与条件致病菌平衡",
+          "desc": "了解为什么健康菌群平衡比“把细菌杀光”更重要",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "urea-hydrolysis",
+      "name": "尿素水解",
+      "en": "Urea Hydrolysis",
+      "ipa": "/jʊˈriːə haɪˈdrɑːləsɪs/",
+      "emoji": "✂️",
+      "domain": "matter",
+      "summary": "原本无色无味的尿素，在细菌分泌的脲酶催化下加水分解，源源不断产生刺鼻氨气和二氧化碳。",
+      "summaryEn": "The enzymatic breakdown of odorless urea with water catalyzed by bacterial urease, releasing pungent ammonia gas and carbon dioxide.",
+      "explain": {
+        "basic": "新鲜尿液里的尿素本来是个没有味道的乖宝宝。可一旦尿液沾在厕所地砖或便池里，躲在缝隙里的细菌就会拿出名叫「脲酶」的小剪刀，把尿素和水剪开，变出刺鼻的氨气（NH₃）和二氧化碳！这就是尿骚味真正的诞生地。",
+        "advanced": "产氨细菌（如变形杆菌属 *Proteus*）分泌的含镍金属酶——脲酶（Urease），高效催化尿素水解：CO(NH₂)₂ + H₂O → 2NH₃↑ + CO₂↑。该反应使原本非挥发性、无气味的尿素转化为高挥发性碱性氨气，同时显著拉高局部溶液 pH 值。"
+      },
+      "explainEn": {
+        "basic": "Fresh urea has no smell at all! But sneaky bathroom bacteria use enzyme scissors called urease to snip urea and water into sharp-smelling ammonia gas.",
+        "advanced": "Urease-catalyzed hydrolysis of urea (CO(NH₂)₂ + H₂O → 2NH₃ + CO₂), converting non-volatile urea into pungent alkaline ammonia gas."
+      },
+      "relatedIds": ["ammonia-gas", "microorganism", "urine-scale"],
+      "issueIds": ["issue-006"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🔬 0610 酶催化",
+          "title": "酶的特异性催化与温度对反应速率的影响",
+          "desc": "理解为什么夏天高温下厕所尿素分解产氨速度暴增",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
+    },
+    {
+      "id": "ammonia-gas",
+      "name": "氨气",
+      "en": "Ammonia Gas",
+      "ipa": "/əˈmoʊniə ɡæs/",
+      "emoji": "💨",
+      "domain": "matter",
+      "summary": "化学式 NH₃，无色却极其刺鼻的碱性气体，极易溶于水，正是厕所“尿骚味”的头号元凶。",
+      "summaryEn": "A colorless, pungent alkaline gas (NH₃) that is highly soluble in water and lighter than air—the primary culprit behind toilet odor.",
+      "explain": {
+        "basic": "氨气（NH₃）长得无色透明，但脾气超级冲！只要空气里飘着一点点，钻进鼻孔溶在鼻腔水分里变成微弱碱性的氨水，就会刺激鼻子让人觉得又呛又辣眼睛。它还是水里的“躲猫猫高手”，1 杯水能溶解约 700 杯氨气！",
+        "advanced": "氨气（NH₃，摩尔质量 17 g/mol）为三角锥形极性分子，常温下为无色强刺激性碱性气体，极易溶于水（体积比约 1:700，生成一水合氨 NH₃·H₂O ⇌ NH₄⁺ + OH⁻）。人类对氨气的嗅觉阈值极低（约 5 ppm），极易刺激鼻黏膜与结膜三叉神经。"
+      },
+      "explainEn": {
+        "basic": "An invisible, sharp-smelling alkaline gas (NH₃). Even a tiny whiff dissolves in the moisture inside your nose and triggers that unmistakable stinging toilet smell!",
+        "advanced": "A polar trigonal pyramidal gas (M = 17 g/mol) with extreme water solubility (700:1 by volume) and a very low human olfactory irritation threshold."
+      },
+      "relatedIds": ["urea-hydrolysis", "molecular-diffusion", "gas-density-buoyancy", "acid-base-neutralization"],
+      "issueIds": ["issue-006"],
+      "bridges": [
+        {
+          "target": "zperiod",
+          "badge": "🧪 3D 分子工坊",
+          "title": "氮 (N) 与氢 (H) 组成氨分子 NH₃ 结构",
+          "desc": "观察氮原子孤对电子与极性分子为何如此易溶于水",
+          "url": "https://zperiod.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "molecular-diffusion",
+      "name": "分子扩散",
+      "en": "Molecular Diffusion",
+      "ipa": "/məˈlekjələr dɪˈfjuːʒn/",
+      "emoji": "🎲",
+      "domain": "matter",
+      "summary": "气体分子永不停歇地高速热运动，自发从浓度高的地方往浓度低的地方四散奔跑。",
+      "summaryEn": "The spontaneous net movement of gas or liquid molecules from regions of higher concentration to lower concentration due to constant thermal motion.",
+      "explain": {
+        "basic": "空气和气味都是由无数看不见的微小分子组成的，它们像永远停不下来的小弹珠一样疯狂乱撞。厕所里氨气分子挤得满满当当，它们就会不断往人少空旷的走廊乱窜，直到四面八方都飘满味道！",
+        "advanced": "物质微粒因无规则热运动而发生的自发传质现象，遵循菲克扩散定律（Fick's Law）与格雷厄姆扩散定律（扩散速率 v ∝ 1/√M）。由于氨气分子质量小（17 g/mol），其均方根热运动速率高于空气中的氮气与氧气，因而扩散尤为迅速。"
+      },
+      "explainEn": {
+        "basic": "Tiny invisible molecules never sit still—they bounce around like hyperactive ping-pong balls, spreading smells automatically from crowded rooms into open hallways!",
+        "advanced": "Net passive transport down a concentration gradient driven by kinetic thermal motion; lighter gases like NH₃ diffuse faster according to Graham's Law."
+      },
+      "relatedIds": ["ammonia-gas", "gas-density-buoyancy"],
+      "issueIds": ["issue-006"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "⚛️ 0625 分子动理论",
+          "title": "气体扩散速率与相对分子质量关系实验",
+          "desc": "经典的浓氨水与浓盐酸长玻璃管白烟定位实验",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
+    },
+    {
+      "id": "gas-density-buoyancy",
+      "name": "气体密度与浮力",
+      "en": "Gas Density & Buoyancy",
+      "ipa": "/ɡæs ˈdensəti ænd ˈbɔɪənsi/",
+      "emoji": "🎈",
+      "domain": "matter",
+      "summary": "氨气相对分子质量仅 17，远轻于空气平均 29，像微型氦气球一样向上浮升并随气流远扬。",
+      "summaryEn": "Because ammonia (M = 17) is much less dense than air (average M ≈ 29), it rises upward by buoyancy and rides air currents over long distances.",
+      "explain": {
+        "basic": "同体积的气体比体重：空气的平均“体重”约 29，而氨气只有 17，轻了将近一半！所以氨气不会乖乖沉在地板上，而是像迷你氦气球一样往上飘，轻松越过隔板、钻出高窗门缝，再乘着走廊穿堂风飘出几十米远！",
+        "advanced": "依据阿伏伽德罗定律，同温同压下气体密度与其摩尔质量成正比。氨气（17 g/mol）密度仅为空气（平均 ~29 g/mol）的约 59%，在空气中受净向上浮力形成上升羽流，随后与建筑走廊的自然对流（Convection）耦合实现远距离输运。"
+      },
+      "explainEn": {
+        "basic": "Ammonia weighs only 17 compared to air's 29! Like miniature helium balloons, ammonia molecules float upward and surf hallway breezes for dozens of meters.",
+        "advanced": "With a molar mass of 17 g/mol versus air's ~29 g/mol, ammonia exhibits positive buoyancy, rising into upper airflows for rapid convective transport."
+      },
+      "relatedIds": ["ammonia-gas", "molecular-diffusion"],
+      "issueIds": ["issue-006"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "⚛️ 0625 密度与对流",
+          "title": "热对流、气体密度差与排风换气设计",
+          "desc": "探究为什么厕所排风扇通常安装在靠近天花板的高处",
+          "url": "https://www.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "urine-scale",
+      "name": "尿垢与慢释源",
+      "en": "Urine Scale",
+      "ipa": "/ˈjʊrɪn skeɪl/",
+      "emoji": "🧱",
+      "domain": "matter",
+      "summary": "尿液矿物质在碱性氨环境中沉淀结成的顽固黄白硬垢，像海绵一样藏匿产氨细菌持续放臭。",
+      "summaryEn": "Hard alkaline mineral deposits (such as struvite and calcium phosphate) that harbor urease-producing bacteria and act as a persistent odor reservoir.",
+      "explain": {
+        "basic": "厕所便池拐角和瓷砖缝里那层黄白色、刷不掉的硬块，就是尿垢（尿碱）！它是尿液里的矿物质在碱性氨水里结成的“石头外壳”。里面密密麻麻藏着产氨细菌和残留尿液，像一颗 24 小时不断放臭气的“慢释胶囊”！",
+        "advanced": "尿素水解产生氨使局部 pH 升至 8.5 以上，促使尿液中的 Ca²⁺、Mg²⁺、PO₄³⁻ 与 NH₄⁺ 析出难溶性磷酸铵镁（鸟粪石）与磷酸钙沉淀，形成多孔矿化结石（尿垢）。尿垢保护内部细菌生物膜免受普通清水冲刷，成为公厕异味经久不散的顽固源头。"
+      },
+      "explainEn": {
+        "basic": "That stubborn yellowish crust in toilet corners acts like a tiny fortress for smell-making bacteria, slowly leaking ammonia gas all day long!",
+        "advanced": "Alkaline-induced precipitation of struvite and calcium phosphates forming porous mineral crusts that shield urease-producing bacterial biofilms."
+      },
+      "relatedIds": ["urea-hydrolysis", "acid-base-neutralization", "ph-scale"],
+      "issueIds": ["issue-006"],
+      "bridges": [
+        {
+          "target": "sky",
+          "badge": "🎯 G8 酸与盐沉淀",
+          "title": "难溶性矿物质水垢与酸解反应练习",
+          "desc": "掌握碳酸盐、磷酸盐水垢为何惧怕酸性清洁剂",
+          "url": "https://sky.igcse.xyz"
+        }
+      ]
+    },
+    {
+      "id": "acid-base-neutralization",
+      "name": "酸碱中和除臭",
+      "en": "Acid-Base Neutralization",
+      "ipa": "/ˌæsɪd beɪs ˌnuːtrələˈzeɪʃn/",
+      "emoji": "🍋",
+      "domain": "matter",
+      "summary": "用酸性清洁剂中和碱性氨气与尿垢，把会乱飞的氨气锁成无味铵盐；严禁与 84 消毒液混用！",
+      "summaryEn": "Neutralizing alkaline ammonia and mineral scale with acids (NH₃ + H⁺ → NH₄⁺) to lock odor into non-volatile salts—never mix acidic cleaners with chlorine bleach!",
+      "explain": {
+        "basic": "既然氨气和尿垢都是“碱性大坏蛋”，那就请“酸性小英雄”（比如柠檬酸、白醋或专用酸性洁厕剂）出马！酸一遇到氨气，立刻把它变成老老实实、不会乱飞也没有味道的铵盐，还能把硬尿垢溶解掉。切记铁律：酸性洁厕灵绝对不能和 84 消毒液混在一起，否则会产生剧毒氯气！",
+        "advanced": "质子酸（H⁺）与碱性氨分子迅速发生酸碱中和：NH₃ + H⁺ → NH₄⁺，将高挥发性气体转化为无挥发性的水溶性铵盐，从分子层面消除臭味；同时酸与碱性矿物质尿垢反应使其溶解剥离。安全红线：含盐酸洁厕剂与含次氯酸钠（NaClO）的 84 消毒液混合会发生反应 NaClO + 2HCl → NaCl + H₂O + Cl₂↑，释放致命剧毒氯气，严禁混用。"
+      },
+      "explainEn": {
+        "basic": "Acids like citric acid trap flying alkaline ammonia gas into odorless salts and dissolve hard scale—but NEVER mix acidic toilet cleaners with bleach, or toxic chlorine gas will form!",
+        "advanced": "Protonation of volatile ammonia into non-volatile ammonium ions (NH₃ + H⁺ → NH₄⁺) plus acid dissolution of alkaline scale; strictly incompatible with sodium hypochlorite bleach."
+      },
+      "relatedIds": ["ammonia-gas", "urine-scale", "ph-scale"],
+      "issueIds": ["issue-006"],
+      "bridges": [
+        {
+          "target": "minimax",
+          "badge": "🧪 0620 酸碱中和",
+          "title": "酸碱中和反应与实验室化学品安全红线",
+          "desc": "探究酸与碱、碳酸盐反应规律及有毒气体防护",
+          "url": "https://www.igcse.xyz/practical"
+        }
+      ]
     }
   ]
 }

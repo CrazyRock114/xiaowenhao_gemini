@@ -7,12 +7,14 @@
    → 解答 / 沉淀为知识点 / 催生下一期 → 知识地图生长 → 引出下一期
 ```
 
-当前已上线 **4 期** 互动科普主题：
+当前已上线 **6 期** 互动科普主题：
 
 1. **第 1 期《酿酒和酿醋的秘密》**（`001-brewing-vinegar` · 生命科学：发酵 / 微生物 / 家庭实验）
 2. **第 2 期《面包里的小气孔从哪来？》**（`002-bread-air-holes` · 物质科学：酵母发酵 / 面筋网络 / 烘焙定型）
 3. **第 3 期《你的小脑袋里藏着一座宇宙飞船指挥部？》**（`003-brain-command-center` · 生命科学：860 亿神经元 / 大脑分区 / 8 大感官）
 4. **第 4 期《身体城堡保卫战：微观特警大作战！》**（`004-body-castle-defense` · 生命科学：皮肤黏膜屏障 / 吞噬细胞 / T 细胞与抗体疫苗）
+5. **第 5 期《会冒气泡的神奇酸水：真能治晒伤和青春痘吗？》**（`005-acidic-bubble-water` · 物质科学：水电解 / 次氯酸 / 皮肤弱酸性保护膜与科学边界）
+6. **第 6 期《学校厕所为什么又臭又持久，还能飘出几十米？》**（`006-toilet-ammonia-smell` · 物质科学：尿素水解 / 氨气扩散与浮力 / 尿垢慢释与酸碱中和）
 
 ---
 
@@ -94,7 +96,9 @@ content/
 │   ├── 001-brewing-vinegar/index.json      # 第 1 期：酿酒和酿醋的秘密
 │   ├── 002-bread-air-holes/index.json      # 第 2 期：面包里的小气孔从哪来？
 │   ├── 003-brain-command-center/index.json # 第 3 期：你的小脑袋里藏着一座宇宙飞船指挥部？
-│   └── 004-body-castle-defense/index.json  # 第 4 期：身体城堡保卫战：微观特警大作战！
+│   ├── 004-body-castle-defense/index.json  # 第 4 期：身体城堡保卫战：微观特警大作战！
+│   ├── 005-acidic-bubble-water/index.json  # 第 5 期：会冒气泡的神奇酸水：真能治晒伤和青春痘吗？
+│   └── 006-toilet-ammonia-smell/index.json # 第 6 期：学校厕所为什么又臭又持久，还能飘出几十米？
 ├── knowledge/points.json                   # 知识点库（跨期沉淀，双档解释+关联）
 └── schema/                                 # JSON Schema
 ```
