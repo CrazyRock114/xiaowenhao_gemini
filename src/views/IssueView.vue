@@ -110,7 +110,7 @@ function finish() {
 
 .scroll-bar {
   position: sticky;
-  top: 60px;
+  top: 112px;
   left: 0;
   height: 4px;
   background: linear-gradient(90deg, var(--brand), var(--star));

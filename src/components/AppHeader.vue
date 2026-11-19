@@ -51,7 +51,7 @@ const kids = useKidsStore()
 <style scoped>
 .app-header {
   position: sticky;
-  top: 0;
+  top: 52px;
   z-index: 50;
   background: rgba(255, 246, 234, 0.86);
   backdrop-filter: blur(10px);

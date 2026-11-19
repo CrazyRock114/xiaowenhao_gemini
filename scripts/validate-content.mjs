@@ -102,6 +102,48 @@ if (existsSync(knowledgePath)) {
   }
 }
 
+// ---------- 生态顶栏与浮层层级防复发断言 ----------
+const appVuePath = join(root, 'src/App.vue')
+if (!existsSync(appVuePath)) {
+  fail('缺少入口组件: src/App.vue')
+} else {
+  const appVue = readFileSync(appVuePath, 'utf8')
+  if (!appVue.includes('<igcse-nav active="why" sticky>')) {
+    fail('src/App.vue 必须包含 <igcse-nav active="why" sticky>')
+  }
+}
+
+const zIndexChecks = [
+  { file: 'src/components/HoverPopover.vue', minCount: 1, minZ: 100000 },
+  { file: 'src/components/SelectionSearch.vue', minCount: 2, minZ: 100000 },
+]
+for (const { file, minCount, minZ } of zIndexChecks) {
+  const fullPath = join(root, file)
+  if (!existsSync(fullPath)) {
+    fail(`缺少浮层组件: ${file}`)
+    continue
+  }
+  const src = readFileSync(fullPath, 'utf8')
+  const matches = [...src.matchAll(/z-index\s*:\s*(\d+)/g)]
+  if (matches.length < minCount) {
+    fail(`${file} 至少应声明 ${minCount} 处 z-index（当前 ${matches.length} 处）`)
+  }
+  for (const m of matches) {
+    const val = Number(m[1])
+    if (val < minZ) {
+      fail(`${file} 存在过低层级 z-index: ${val}（必须 >= ${minZ}，严格高于生态顶栏 99990）`)
+    }
+  }
+}
+
+const appHeaderPath = join(root, 'src/components/AppHeader.vue')
+if (existsSync(appHeaderPath)) {
+  const headerSrc = readFileSync(appHeaderPath, 'utf8')
+  if (/\.app-header\s*\{[^}]*top\s*:\s*0\s*;/.test(headerSrc)) {
+    fail('src/components/AppHeader.vue 中 .app-header 的 top 不能为 0（会与 52px 吸顶生态顶栏重叠）')
+  }
+}
+
 // ---------- 输出 ----------
 if (problems.length) {
   console.error(`\n❌ 内容校验未通过（${problems.length} 个问题）:\n`)
@@ -111,5 +153,5 @@ if (problems.length) {
 } else {
   const nIssues = issues.length
   const nPoints = pointIds.size
-  console.log(`✅ 内容校验通过: ${nIssues} 期 · ${nPoints} 个知识点`)
+  console.log(`✅ 内容与生态层级校验通过: ${nIssues} 期 · ${nPoints} 个知识点 · 顶栏 sticky & 浮层 z-index >= 100000`)
 }

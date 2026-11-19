@@ -106,7 +106,7 @@ function onClickFull() {
 <style scoped>
 .hover-popover {
   position: fixed;
-  z-index: 9999;
+  z-index: 100010;
   transform: translate(-50%, -100%);
   width: 320px;
   background: rgba(255, 255, 255, 0.96);

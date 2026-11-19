@@ -224,7 +224,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .selection-pill {
   position: fixed;
-  z-index: 10000;
+  z-index: 100010;
   transform: translate(-50%, -100%);
   display: inline-flex;
   align-items: center;
@@ -249,7 +249,7 @@ onBeforeUnmount(() => {
 
 .selection-card {
   position: fixed;
-  z-index: 10001;
+  z-index: 100020;
   transform: translate(-50%, 0);
   width: 350px;
   max-width: calc(100vw - 32px);

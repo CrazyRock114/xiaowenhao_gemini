@@ -7,7 +7,7 @@ import SelectionSearch from './components/SelectionSearch.vue'
 
 <template>
   <!-- Cambridge IGCSE Science Ecosystem Universal Header Component -->
-  <igcse-nav active="why"></igcse-nav>
+  <igcse-nav active="why" sticky></igcse-nav>
   <AppHeader />
   <RouterView v-slot="{ Component }">
     <Transition name="fade" mode="out-in">

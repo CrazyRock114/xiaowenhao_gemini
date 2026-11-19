@@ -7,7 +7,12 @@
    → 解答 / 沉淀为知识点 / 催生下一期 → 知识地图生长 → 引出下一期
 ```
 
-当前已上线 **第 1 期《酿酒和酿醋的秘密》**（发酵 / 微生物 / 家庭实验）。
+当前已上线 **4 期** 互动科普主题：
+
+1. **第 1 期《酿酒和酿醋的秘密》**（`001-brewing-vinegar` · 生命科学：发酵 / 微生物 / 家庭实验）
+2. **第 2 期《面包里的小气孔从哪来？》**（`002-bread-air-holes` · 物质科学：酵母发酵 / 面筋网络 / 烘焙定型）
+3. **第 3 期《你的小脑袋里藏着一座宇宙飞船指挥部？》**（`003-brain-command-center` · 生命科学：860 亿神经元 / 大脑分区 / 8 大感官）
+4. **第 4 期《身体城堡保卫战：微观特警大作战！》**（`004-body-castle-defense` · 生命科学：皮肤黏膜屏障 / 吞噬细胞 / T 细胞与抗体疫苗）
 
 ---
 
@@ -85,7 +90,11 @@ create policy "anon insert only" on questions
 
 ```
 content/
-├── issues/001-brewing-vinegar/index.json   # 期内容（块序列 + 测验）
+├── issues/
+│   ├── 001-brewing-vinegar/index.json      # 第 1 期：酿酒和酿醋的秘密
+│   ├── 002-bread-air-holes/index.json      # 第 2 期：面包里的小气孔从哪来？
+│   ├── 003-brain-command-center/index.json # 第 3 期：你的小脑袋里藏着一座宇宙飞船指挥部？
+│   └── 004-body-castle-defense/index.json  # 第 4 期：身体城堡保卫战：微观特警大作战！
 ├── knowledge/points.json                   # 知识点库（跨期沉淀，双档解释+关联）
 └── schema/                                 # JSON Schema
 ```
@@ -103,7 +112,7 @@ content/
 
 ## 技术栈
 
-Vite 7 · Vue 3 · TypeScript · Vue Router（hash）· Pinia · 原生 CSS 设计令牌 · ajv（内容校验）
+Vite 7 · Vue 3 · TypeScript · Vue Router（hash）· Pinia · Three.js · 原生 CSS 设计令牌 · ajv（内容校验）
 无 UI 框架依赖、无运行时后端；`demo` 块是 Vue 组件插槽，往里放任意交互演示。
 
 ## V2 规划（架构已预留）
